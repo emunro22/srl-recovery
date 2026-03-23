@@ -1,0 +1,120 @@
+.testimonials {
+  background: var(--black);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.title {
+  margin-top: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background: var(--black-2);
+  border: 1px solid hsla(0, 0%, 100%, 0.07);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: '\201C';
+  position: absolute;
+  top: -1rem;
+  right: 2rem;
+  font-size: 12rem;
+  font-family: Georgia, serif;
+  line-height: 1;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.card:hover {
+  border-color: hsla(318, 82%, 45%, 0.3);
+  transform: translateY(-4px);
+}
+
+.stars {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.stars .material-symbols-rounded {
+  font-size: 1.8rem;
+  color: hsl(40, 100%, 60%);
+  font-variation-settings: 'FILL' 1;
+}
+
+.quote {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: var(--gray-light);
+  font-style: italic;
+  flex: 1;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding-top: 2rem;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.07);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: hsla(318, 82%, 45%, 0.1);
+  border: 1px solid hsla(318, 82%, 45%, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar .material-symbols-rounded {
+  font-size: 2.2rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.author strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.author span {
+  font-size: 1.2rem;
+  color: var(--gray);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+}
