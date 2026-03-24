@@ -73,9 +73,6 @@ export default function WorkPage() {
               ))}
             </div>
 
-            <div className={styles.addMore}>
-              <p>Want to add more images? Drop them in <code>public/images/</code> and add them to the array in <code>app/work/page.tsx</code></p>
-            </div>
           </div>
         </section>
 

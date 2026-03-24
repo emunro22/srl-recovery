@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './Work.module.css'
+import Link from 'next/link'
 
 const projects = [
   {
@@ -91,12 +92,12 @@ export default function Work() {
         </div>
 
         <div className={styles.viewAll}>
-          <a href="/work" className="btn btn-outline">
+          <Link href="/work" className="btn btn-outline">
             View All Our Work
             <span className="material-symbols-rounded">arrow_forward</span>
-          </a>
-        </div>
-
+          </Link>
+        </div>        
+        
         <div className={styles.callout}>
           <span className="material-symbols-rounded">photo_camera</span>
           <p>Follow us on <a href="https://www.facebook.com/profile.php?id=100091314683575" target="_blank" rel="noopener noreferrer">Facebook</a> for our latest jobs</p>
