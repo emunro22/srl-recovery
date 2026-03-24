@@ -3,49 +3,49 @@ import styles from './Work.module.css'
 
 const projects = [
   {
-    src: '/images/work-1.jpg',
+    src: '/images/work-10.jpg',
     title: 'Classic Car Recovery',
     subtitle: 'Vehicle Transport',
     tag: 'Prestige',
   },
   {
-    src: '/images/work-2.jpg',
+    src: '/images/work-14.jpg',
     title: 'Van Recovery – Night Call',
     subtitle: 'Emergency Breakdown',
     tag: '24/7',
   },
   {
-    src: '/images/work-3.jpg',
+    src: '/images/work-11.jpg',
     title: 'SUV Recovery',
     subtitle: 'Roadside Recovery',
     tag: 'Fast Response',
   },
   {
-    src: '/images/work-4.jpg',
+    src: '/images/work-12.jpg',
     title: 'Night-Time Recovery',
     subtitle: 'Emergency Breakdown',
     tag: '24/7',
   },
   {
-    src: '/images/work-5.jpg',
+    src: '/images/work-13.jpg',
     title: 'Car Transport',
     subtitle: 'Vehicle Transport',
     tag: 'Insured',
   },
   {
-    src: '/images/work-6.jpg',
+    src: '/images/work-15.jpg',
     title: 'Saloon Recovery',
     subtitle: 'Breakdown Recovery',
     tag: 'Glasgow',
   },
   {
-    src: '/images/work-7.jpg',
+    src: '/images/work-16.jpg',
     title: 'Flatbed Recovery',
     subtitle: 'Vehicle Transport',
     tag: 'Commercial',
   },
   {
-    src: '/images/work-8.jpg',
+    src: '/images/work-17.jpg',
     title: 'Performance Car Recovery',
     subtitle: 'Specialist Recovery',
     tag: 'Prestige',
@@ -88,6 +88,13 @@ export default function Work() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className={styles.viewAll}>
+          <a href="/work" className="btn btn-outline">
+            View All Our Work
+            <span className="material-symbols-rounded">arrow_forward</span>
+          </a>
         </div>
 
         <div className={styles.callout}>
