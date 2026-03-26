@@ -27,8 +27,11 @@ export const metadata: Metadata = {
       'Rapid-response breakdown and accident recovery in Glasgow. Available 24/7 for cars, vans, and commercial vehicles.',
     type: 'website',
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+  },
 }
-
 export default function RootLayout({
   children,
 }: {
