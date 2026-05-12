@@ -26,13 +26,14 @@ export default function Header() {
   }, [menuOpen])
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#work', label: 'Our Work' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/#home', label: 'Home' },
+    { href: '/#about', label: 'About' },
+    { href: '/#services', label: 'Services' },
+    { href: '/#work', label: 'Our Work' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/#contact', label: 'Contact' },
   ]
-
+  
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>

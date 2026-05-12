@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     'Fast, professional 24/7 breakdown and accident recovery across Glasgow and surrounding areas. Call SRL Recovery now for immediate dispatch.',
   keywords:
     'breakdown recovery Glasgow, car recovery near me Glasgow, 24 hour vehicle recovery Glasgow, accident recovery Glasgow',
+  verification: {
+    google: 'BdNKAou_zVux61Mzr0CnJl1CTB2MQ5VCLFubW6Xyar8',
+  },
   openGraph: {
     title: 'SRL Recovery – 24/7 Breakdown Recovery Glasgow',
     description:
@@ -32,6 +35,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
   },
 }
+
 export default function RootLayout({
   children,
 }: {

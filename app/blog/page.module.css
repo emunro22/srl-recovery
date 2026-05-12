@@ -1,0 +1,69 @@
+.main {
+    padding-top: 100px;
+    min-height: 100vh;
+  }
+  
+  .hero {
+    padding: 4rem 0 3rem;
+    text-align: center;
+  }
+  
+  .heroInner {
+    text-align: center;
+  }
+  
+  .title {
+    font-family: var(--font-chakra);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin: 1rem 0 1.5rem;
+    line-height: 1.1;
+  }
+  
+  .lead {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+  
+  .content {
+    padding: 2rem 0 6rem;
+  }
+  
+  .soroEmbed {
+    min-height: 400px;
+  }
+  
+  .cta {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(255, 110, 180, 0.08), rgba(120, 180, 255, 0.08));
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  .ctaInner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .ctaInner h2 {
+    font-family: var(--font-chakra);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0 0 0.5rem;
+  }
+  
+  .ctaInner p {
+    margin: 0;
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 640px) {
+    .ctaInner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
