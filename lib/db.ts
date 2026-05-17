@@ -1,10 +1,29 @@
-import { neon } from '@neondatabase/serverless'
+import { neon, type NeonQueryFunction } from '@neondatabase/serverless'
 
-if (!process.env.DATABASE_URL) {
-  throw new Error('DATABASE_URL is not set')
+let _sql: NeonQueryFunction<false, false> | null = null
+
+function getSql() {
+  if (_sql) return _sql
+  const url = process.env.DATABASE_URL
+  if (!url) {
+    throw new Error(
+      'DATABASE_URL is not set. Add a Neon Postgres database in Vercel → Storage.'
+    )
+  }
+  _sql = neon(url)
+  return _sql
 }
 
-export const sql = neon(process.env.DATABASE_URL)
+// Proxy so `sql` works at runtime but doesn't blow up at import time
+export const sql: NeonQueryFunction<false, false> = new Proxy(
+  (() => {}) as unknown as NeonQueryFunction<false, false>,
+  {
+    apply(_target, _thisArg, args) {
+      // @ts-expect-error tagged template forwarding
+      return getSql()(...args)
+    },
+  }
+)
 
 export type GalleryImage = {
   id: number
