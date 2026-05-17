@@ -1,8 +1,13 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 const contactEmail = process.env.CONTACT_EMAIL || 'srlautos@icloud.com'
+
+function getResend() {
+  const key = process.env.RESEND_API_KEY
+  if (!key) throw new Error('RESEND_API_KEY is not set')
+  return new Resend(key)
+}
 
 function escapeHtml(str: string) {
   return str
@@ -45,6 +50,7 @@ export async function POST(req: Request) {
       </div>
     `
 
+    const resend = getResend()
     const { error } = await resend.emails.send({
       from: 'SRL Recovery Website <noreply@srlrecovery.co.uk>',
       to: [contactEmail],
