@@ -31,7 +31,7 @@ export const metadata = {
   description: 'Browse our recent breakdown recovery and vehicle transport jobs across Glasgow and surrounding areas.',
 }
 
-export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 export default async function WorkPage() {
   let dbImages: Awaited<ReturnType<typeof getGalleryImages>> = []

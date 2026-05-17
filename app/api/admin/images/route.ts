@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { revalidatePath } from 'next/cache'
 import { put } from '@vercel/blob'
 import { addGalleryImage, getGalleryImages } from '@/lib/db'
 import { isAdminAuthenticated } from '@/lib/auth'
@@ -51,6 +52,9 @@ export async function POST(req: Request) {
       tag: tag.trim() || 'Glasgow',
       blob_path: blob.pathname,
     })
+
+    revalidatePath('/work')
+    revalidatePath('/')
 
     return NextResponse.json({ image }, { status: 201 })
   } catch (err) {

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { revalidatePath } from 'next/cache'
 import { del } from '@vercel/blob'
 import { deleteGalleryImage } from '@/lib/db'
 import { isAdminAuthenticated } from '@/lib/auth'
@@ -29,6 +30,10 @@ export async function DELETE(
         console.warn('Blob delete failed (non-fatal)', e)
       }
     }
+
+    revalidatePath('/work')
+    revalidatePath('/')
+
     return NextResponse.json({ ok: true })
   } catch (err) {
     console.error('DELETE image error', err)
