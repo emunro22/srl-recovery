@@ -1,0 +1,267 @@
+.loginShell {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--black);
+    padding: 2rem;
+  }
+  
+  .loginCard {
+    width: 100%;
+    max-width: 420px;
+    background: var(--black-2);
+    border: 1px solid hsla(0, 0%, 100%, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .loginTitle {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .loginLead {
+    color: var(--gray-light);
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+  }
+  
+  .input,
+  .fileInput {
+    width: 100%;
+    background: var(--black);
+    border: 1px solid hsla(0, 0%, 100%, 0.12);
+    border-radius: var(--radius-md);
+    padding: 1.2rem 1.4rem;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    transition: var(--transition);
+  }
+  
+  .input:focus,
+  .fileInput:focus {
+    outline: none;
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px hsla(318, 82%, 45%, 0.15);
+  }
+  
+  .submitBtn,
+  .uploadBtn {
+    width: 100%;
+    margin-top: 0.8rem;
+    justify-content: center;
+  }
+  
+  .error {
+    color: hsl(0, 85%, 70%);
+    font-size: 1.3rem;
+    margin: 0.4rem 0 0.8rem;
+  }
+  
+  .success {
+    color: hsl(140, 70%, 60%);
+    font-size: 1.3rem;
+    margin: 0.4rem 0 0.8rem;
+  }
+  
+  .shell {
+    min-height: 100vh;
+    background: var(--black);
+    padding: 2rem;
+    max-width: 1400px;
+    margin-inline: auto;
+  }
+  
+  .topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.6rem;
+    padding-block: 2rem 3rem;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.06);
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .topTitle {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .topSub {
+    color: var(--gray-light);
+    font-size: 1.4rem;
+    margin-top: 0.4rem;
+  }
+  
+  .topActions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .linkBtn {
+    background: var(--black-2);
+    color: var(--white);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+    padding: 0.8rem 1.4rem;
+    border-radius: var(--radius-md);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-family: inherit;
+  }
+  
+  .linkBtn:hover {
+    border-color: var(--pink);
+    color: var(--pink-light);
+  }
+  
+  .uploadCard {
+    background: var(--black-2);
+    border: 1px solid hsla(0, 0%, 100%, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 2.4rem;
+    margin-bottom: 3rem;
+  }
+  
+  .sectionTitle {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.6rem;
+  }
+  
+  .count {
+    color: var(--gray-light);
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+  
+  .uploadForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+  
+  .fieldRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+  }
+  
+  @media (max-width: 600px) {
+    .fieldRow { grid-template-columns: 1fr; }
+  }
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .label {
+    font-size: 1.2rem;
+    color: var(--gray-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  
+  .fileInput {
+    padding: 1rem;
+    font-size: 1.3rem;
+  }
+  
+  .gallery { margin-top: 1rem; }
+  
+  .empty {
+    color: var(--gray-light);
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--black-2);
+    border-radius: var(--radius-lg);
+    border: 1px dashed hsla(0, 0%, 100%, 0.1);
+    line-height: 1.6;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.6rem;
+  }
+  
+  .imageCard {
+    background: var(--black-2);
+    border: 1px solid hsla(0, 0%, 100%, 0.08);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  
+  .imageCard:hover {
+    border-color: hsla(318, 82%, 45%, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: var(--black);
+  }
+  
+  .thumbImg { object-fit: cover; }
+  
+  .imageBody { padding: 1.2rem; }
+  
+  .imageTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+  }
+  
+  .imageTag {
+    font-size: 1.1rem;
+    color: var(--pink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+  
+  .deleteBtn {
+    width: 100%;
+    background: hsla(0, 80%, 55%, 0.1);
+    border: 1px solid hsla(0, 80%, 55%, 0.3);
+    color: hsl(0, 80%, 75%);
+    padding: 0.8rem;
+    border-radius: var(--radius-md);
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+  }
+  
+  .deleteBtn:hover {
+    background: hsla(0, 80%, 55%, 0.2);
+    color: hsl(0, 80%, 80%);
+  }

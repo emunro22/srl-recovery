@@ -43,6 +43,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${chakraPetch.variable} ${mulish.variable}`}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+          precedence="default"
+        />
+      </head>
       <body>{children}</body>
     </html>
   )

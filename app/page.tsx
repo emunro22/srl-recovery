@@ -6,6 +6,7 @@ import Services from '@/components/Services'
 import Work from '@/components/Work'
 import Testimonials from '@/components/Testimonials'
 import Coverage from '@/components/Coverage'
+import CallbackForm from '@/components/CallbackForm'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <Services />
         <Work />
         <Testimonials />
+        <CallbackForm />
         <Coverage />
       </main>
       <Footer />

@@ -2,8 +2,9 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { getGalleryImages } from '@/lib/db'
 
-const images = [
+const staticImages = [
   { src: '/images/work-1.jpg', title: 'Classic Car Recovery', tag: 'Prestige' },
   { src: '/images/work-2.jpg', title: 'Van Recovery', tag: '24/7' },
   { src: '/images/work-3.jpg', title: 'SUV Recovery', tag: 'Roadside' },
@@ -23,8 +24,6 @@ const images = [
   { src: '/images/work-17.jpg', title: 'Saloon Recovery', tag: 'Glasgow' },
   { src: '/images/work-18.jpg', title: 'Flatbed Recovery', tag: 'Commercial' },
   { src: '/images/work-19.jpg', title: 'Performance Car', tag: 'Prestige' },
-
-
 ]
 
 export const metadata = {
@@ -32,12 +31,25 @@ export const metadata = {
   description: 'Browse our recent breakdown recovery and vehicle transport jobs across Glasgow and surrounding areas.',
 }
 
-export default function WorkPage() {
+export const revalidate = 60
+
+export default async function WorkPage() {
+  let dbImages: Awaited<ReturnType<typeof getGalleryImages>> = []
+  try {
+    dbImages = await getGalleryImages()
+  } catch (err) {
+    console.error('Failed to load gallery images', err)
+  }
+
+  const images = [
+    ...dbImages.map((img) => ({ src: img.url, title: img.title, tag: img.tag })),
+    ...staticImages,
+  ]
+
   return (
     <>
       <Header />
       <main className={styles.main}>
-
         <div className={styles.hero}>
           <div className={`container ${styles.heroInner}`}>
             <p className="section-subtitle">Portfolio</p>
@@ -54,7 +66,7 @@ export default function WorkPage() {
           <div className="container">
             <div className={styles.grid}>
               {images.map((img, i) => (
-                <div key={i} className={styles.card}>
+                <div key={`${img.src}-${i}`} className={styles.card}>
                   <figure className={styles.figure}>
                     <Image
                       src={img.src}
@@ -72,7 +84,6 @@ export default function WorkPage() {
                 </div>
               ))}
             </div>
-
           </div>
         </section>
 
@@ -90,7 +101,6 @@ export default function WorkPage() {
             </div>
           </div>
         </div>
-
       </main>
       <Footer />
     </>
