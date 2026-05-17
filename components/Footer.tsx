@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Footer.module.css'
 
-const INSTAGRAM_URL = 'https://www.instagram.com/srlrecovery' // ← UPDATE this with William's actual handle if different
+const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=100091314683575'
+const INSTAGRAM_URL = 'https://www.instagram.com/srl_recovery_'
 
 export default function Footer() {
   return (
@@ -40,7 +41,7 @@ export default function Footer() {
             </p>
             <div className={styles.socials}>
               <a
-                href="https://www.facebook.com/profile.php?id=100091314683575"
+                href={FACEBOOK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.social}
