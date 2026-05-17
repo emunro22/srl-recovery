@@ -4,8 +4,6 @@ import styles from './Hero.module.css'
 export default function Hero() {
   return (
     <section className={styles.hero} id="home">
-
-      {/* Full-bleed background truck image */}
       <div className={styles.truckWrap}>
         <Image
           src="/images/hero-truck.png"
@@ -22,7 +20,6 @@ export default function Hero() {
         <div className={styles.fadeOverall} />
       </div>
 
-      {/* Glow orbs */}
       <div className={`${styles.orb} ${styles.orb1}`} aria-hidden />
       <div className={`${styles.orb} ${styles.orb2}`} aria-hidden />
 
@@ -31,7 +28,6 @@ export default function Hero() {
           <span className="material-symbols-rounded">emergency</span>
           24/7 Emergency Response
         </div>
-
         <h1 className={styles.title}>
           Glasgow&apos;s
           <br />
@@ -39,37 +35,35 @@ export default function Hero() {
           <br />
           Service
         </h1>
-
         <p className={styles.tagline}>
           Broken down? Accident? Immobilised? We dispatch immediately — day or
-          night — across Glasgow and surrounding areas.
+          night — with an average arrival time of 30–45 minutes across Glasgow
+          and surrounding areas.
         </p>
-
         <div className={styles.actions}>
           <a href="tel:+447776356556" className="btn">
             <span className="material-symbols-rounded">call</span>
             Call Now – Immediate Dispatch
           </a>
-          <a href="#services" className="btn btn-outline">
-            Our Services
+          <a href="#pricing" className="btn btn-outline">
+            See Pricing
             <span className="material-symbols-rounded">arrow_downward</span>
           </a>
         </div>
-
         <div className={styles.stats}>
+          <div className={styles.stat}>
+            <strong>30–45</strong>
+            <span>Min Avg Arrival</span>
+          </div>
+          <div className={styles.divider} />
+          <div className={styles.stat}>
+            <strong>250+</strong>
+            <span>Jobs Monthly</span>
+          </div>
+          <div className={styles.divider} />
           <div className={styles.stat}>
             <strong>24/7</strong>
             <span>Always Available</span>
-          </div>
-          <div className={styles.divider} />
-          <div className={styles.stat}>
-            <strong>100+</strong>
-            <span>Happy Clients</span>
-          </div>
-          <div className={styles.divider} />
-          <div className={styles.stat}>
-            <strong>Fast</strong>
-            <span>Response Times</span>
           </div>
           <div className={styles.divider} />
           <div className={styles.stat}>
@@ -78,7 +72,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
       <div className={styles.scrollIndicator}>
         <span />
       </div>

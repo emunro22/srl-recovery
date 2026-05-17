@@ -1,10 +1,12 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './Footer.module.css'
+
+const INSTAGRAM_URL = 'https://www.instagram.com/srlrecovery' // ← UPDATE this with William's actual handle if different
 
 export default function Footer() {
   return (
     <footer className={styles.footer} id="contact">
-      {/* Emergency CTA Banner */}
       <div className={styles.emergency}>
         <div className={`container ${styles.emergencyInner}`}>
           <div className={styles.emergencyText}>
@@ -24,7 +26,6 @@ export default function Footer() {
       <div className={`section ${styles.footerBody}`}>
         <div className={`container ${styles.grid}`}>
 
-          {/* Brand */}
           <div className={styles.brand}>
             <Image
               src="/images/logo.png"
@@ -49,7 +50,13 @@ export default function Footer() {
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                 </svg>
               </a>
-              <a href="#" className={styles.social} aria-label="Instagram">
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.social}
+                aria-label="Instagram"
+              >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                   <circle cx="12" cy="12" r="4"/>
@@ -59,7 +66,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
           <div className={styles.col}>
             <h3 className={styles.colTitle}>Our Services</h3>
             <ul className={styles.links}>
@@ -72,7 +78,7 @@ export default function Footer() {
                 'Non-Fault Accident Support',
               ].map((s) => (
                 <li key={s}>
-                  <a href="#services" className={styles.link}>
+                  <a href="/#services" className={styles.link}>
                     <span className="material-symbols-rounded">arrow_forward_ios</span>
                     {s}
                   </a>
@@ -81,7 +87,28 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Hours & Contact */}
+          <div className={styles.col}>
+            <h3 className={styles.colTitle}>Areas We Cover</h3>
+            <ul className={styles.links}>
+              {[
+                { name: 'Paisley', slug: 'paisley' },
+                { name: 'East Kilbride', slug: 'east-kilbride' },
+                { name: 'Motherwell', slug: 'motherwell' },
+                { name: 'Hamilton', slug: 'hamilton' },
+                { name: 'Clydebank', slug: 'clydebank' },
+                { name: 'Coatbridge', slug: 'coatbridge' },
+                { name: 'View all areas', slug: '' },
+              ].map((a) => (
+                <li key={a.name}>
+                  <Link href={a.slug ? `/areas/${a.slug}` : '/areas'} className={styles.link}>
+                    <span className="material-symbols-rounded">arrow_forward_ios</span>
+                    {a.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <div className={styles.col}>
             <h3 className={styles.colTitle}>Contact & Hours</h3>
             <ul className={styles.contactList}>

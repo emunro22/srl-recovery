@@ -1,7 +1,7 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './Header.module.css'
 
 export default function Header() {
@@ -26,19 +26,20 @@ export default function Header() {
   }, [menuOpen])
 
   const navLinks = [
-    { href: '/#home', label: 'Home' },
+    { href: '/', label: 'Home' },
     { href: '/#about', label: 'About' },
     { href: '/#services', label: 'Services' },
-    { href: '/#work', label: 'Our Work' },
+    { href: '/#pricing', label: 'Pricing' },
+    { href: '/areas', label: 'Areas' },
+    { href: '/#faq', label: 'FAQ' },
     { href: '/blog', label: 'Blog' },
     { href: '/#contact', label: 'Contact' },
   ]
-  
+
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
-
-        <a href="#home" className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           <Image
             src="/images/logo.png"
             width={120}
@@ -46,25 +47,22 @@ export default function Header() {
             alt="SRL Recovery Glasgow"
             priority
           />
-        </a>
-
+        </Link>
         <nav className={`${styles.navbar} ${menuOpen ? styles.open : ''}`}>
           <ul className={styles.navList}>
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className={styles.navLink} onClick={() => setMenuOpen(false)}>
+                <Link href={link.href} className={styles.navLink} onClick={() => setMenuOpen(false)}>
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
-
         <a href="tel:+447776356556" className={`btn ${styles.ctaBtn}`}>
           <span className="material-symbols-rounded">call</span>
           <span>07776 356 556</span>
         </a>
-
         <button
           className={`${styles.menuBtn} ${menuOpen ? styles.menuOpen : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -74,7 +72,6 @@ export default function Header() {
           <span />
           <span />
         </button>
-
       </div>
     </header>
   )

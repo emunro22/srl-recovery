@@ -3,10 +3,12 @@ import Hero from '@/components/Hero'
 import Ticker from '@/components/Ticker'
 import About from '@/components/About'
 import Services from '@/components/Services'
+import Pricing from '@/components/Pricing'
 import Work from '@/components/Work'
 import Testimonials from '@/components/Testimonials'
-import Coverage from '@/components/Coverage'
 import CallbackForm from '@/components/CallbackForm'
+import FAQ from '@/components/FAQ'
+import Coverage from '@/components/Coverage'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -19,9 +21,11 @@ export default function Home() {
         <Ticker />
         <About />
         <Services />
+        <Pricing />
         <Work />
         <Testimonials />
         <CallbackForm />
+        <FAQ />
         <Coverage />
       </main>
       <Footer />

@@ -2,10 +2,10 @@ import Image from 'next/image'
 import styles from './About.module.css'
 
 const features = [
-  { icon: 'speed', label: 'Rapid Response', desc: 'Fast dispatch across Glasgow and surrounding areas' },
+  { icon: 'speed', label: 'Avg 30–45 Mins', desc: 'Average arrival time across our coverage area' },
   { icon: 'verified', label: 'Fully Insured', desc: 'Compliant, insured recovery you can trust' },
   { icon: 'support_agent', label: '24/7 Available', desc: 'Round-the-clock cover — nights, weekends, holidays' },
-  { icon: 'price_check', label: 'Transparent Pricing', desc: 'No hidden fees, no surprises' },
+  { icon: 'price_check', label: 'Transparent Pricing', desc: 'Clear quote on the phone, no hidden fees' },
 ]
 
 export default function About() {
@@ -24,13 +24,12 @@ export default function About() {
             <div className={styles.badge}>
               <span className="material-symbols-rounded">emoji_events</span>
               <div>
-                <strong>15+ Years</strong>
-                <span>In the Industry</span>
+                <strong>17 Years</strong>
+                <span>In the Motor Trade</span>
               </div>
             </div>
           </div>
         </div>
-
         <div className={styles.content}>
           <p className="section-subtitle">About Us</p>
           <h2 className={`section-title ${styles.title}`}>
@@ -43,10 +42,11 @@ export default function About() {
             excuses.
           </p>
           <p className={`section-text ${styles.spacer}`}>
-            We&apos;re experienced recovery specialists serving Glasgow and surrounding
-            areas — available 24 hours a day, 7 days a week, 365 days a year.
+            Founded in 2023 by William — with 17 years in the motor trade behind him —
+            SRL Recovery has grown rapidly to complete <strong>250+ recovery jobs every month</strong>
+            {' '}across Glasgow and surrounding areas. Thousands of happy customers later,
+            we&apos;re available 24 hours a day, 7 days a week, 365 days a year.
           </p>
-
           <div className={styles.features}>
             {features.map((f) => (
               <div key={f.label} className={styles.feature}>
@@ -60,15 +60,14 @@ export default function About() {
               </div>
             ))}
           </div>
-
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <strong>100+</strong>
-              <span>Happy Clients</span>
+              <strong>250+</strong>
+              <span>Jobs Per Month</span>
             </div>
             <div className={styles.stat}>
-              <strong>15+</strong>
-              <span>Years Experience</span>
+              <strong>17</strong>
+              <span>Years in Trade</span>
             </div>
             <div className={styles.stat}>
               <strong>24/7</strong>

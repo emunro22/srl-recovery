@@ -2,8 +2,18 @@
 
 import { useState, useRef } from 'react'
 import Image from 'next/image'
+import { upload } from '@vercel/blob/client'
 import styles from './admin.module.css'
 import type { GalleryImage } from '@/lib/db'
+
+type QueueItem = {
+  id: string
+  file: File
+  status: 'pending' | 'uploading' | 'success' | 'error'
+  progress: number
+  error?: string
+  preview: string
+}
 
 export default function AdminDashboard({
   initialImages,
@@ -11,12 +21,9 @@ export default function AdminDashboard({
   initialImages: GalleryImage[]
 }) {
   const [images, setImages] = useState<GalleryImage[]>(initialImages)
-  const [file, setFile] = useState<File | null>(null)
-  const [title, setTitle] = useState('')
+  const [queue, setQueue] = useState<QueueItem[]>([])
   const [tag, setTag] = useState('Glasgow')
-  const [uploading, setUploading] = useState(false)
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
+  const [isUploading, setIsUploading] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   async function logout() {
@@ -24,38 +31,112 @@ export default function AdminDashboard({
     window.location.reload()
   }
 
-  async function onUpload(e: React.FormEvent) {
-    e.preventDefault()
-    setError('')
-    setSuccess('')
-    if (!file) {
-      setError('Please choose an image')
-      return
-    }
-    setUploading(true)
+  function onFilesChosen(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(e.target.files ?? [])
+    if (!files.length) return
+    const items: QueueItem[] = files.map((f) => ({
+      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      file: f,
+      status: 'pending',
+      progress: 0,
+      preview: URL.createObjectURL(f),
+    }))
+    setQueue((prev) => [...prev, ...items])
+    if (fileInputRef.current) fileInputRef.current.value = ''
+  }
+
+  function removeFromQueue(id: string) {
+    setQueue((prev) => {
+      const item = prev.find((q) => q.id === id)
+      if (item) URL.revokeObjectURL(item.preview)
+      return prev.filter((q) => q.id !== id)
+    })
+  }
+
+  async function uploadOne(item: QueueItem): Promise<GalleryImage | null> {
     try {
-      const fd = new FormData()
-      fd.append('file', file)
-      fd.append('title', title || 'Recovery Job')
-      fd.append('tag', tag || 'Glasgow')
-      const res = await fetch('/api/admin/images', { method: 'POST', body: fd })
+      setQueue((prev) =>
+        prev.map((q) =>
+          q.id === item.id ? { ...q, status: 'uploading', progress: 0 } : q
+        )
+      )
+
+      // Step 1: upload directly to Vercel Blob from the browser
+      const blob = await upload(item.file.name, item.file, {
+        access: 'public',
+        handleUploadUrl: '/api/admin/images/upload-url',
+        contentType: item.file.type,
+        onUploadProgress: (e) => {
+          setQueue((prev) =>
+            prev.map((q) =>
+              q.id === item.id ? { ...q, progress: e.percentage } : q
+            )
+          )
+        },
+      })
+
+      // Step 2: save metadata to the DB
+      const res = await fetch('/api/admin/images', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          url: blob.url,
+          pathname: blob.pathname,
+          title: stripExt(item.file.name),
+          tag,
+        }),
+      })
+
       if (!res.ok) {
-        const { error: msg } = await res.json().catch(() => ({ error: 'Upload failed' }))
-        setError(msg || 'Upload failed')
-        setUploading(false)
-        return
+        const { error: msg } = await res.json().catch(() => ({ error: 'Save failed' }))
+        throw new Error(msg || 'Save failed')
       }
+
       const { image } = await res.json()
-      setImages((prev) => [image, ...prev])
-      setSuccess('Image uploaded successfully')
-      setFile(null)
-      setTitle('')
-      setTag('Glasgow')
-      if (fileInputRef.current) fileInputRef.current.value = ''
-    } catch {
-      setError('Network error')
+      setQueue((prev) =>
+        prev.map((q) =>
+          q.id === item.id ? { ...q, status: 'success', progress: 100 } : q
+        )
+      )
+      return image as GalleryImage
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Upload failed'
+      setQueue((prev) =>
+        prev.map((q) =>
+          q.id === item.id ? { ...q, status: 'error', error: msg } : q
+        )
+      )
+      return null
     }
-    setUploading(false)
+  }
+
+  async function uploadAll() {
+    if (!queue.length || isUploading) return
+    setIsUploading(true)
+
+    const pending = queue.filter((q) => q.status === 'pending' || q.status === 'error')
+    const successes: GalleryImage[] = []
+
+    for (const item of pending) {
+      const result = await uploadOne(item)
+      if (result) successes.push(result)
+    }
+
+    if (successes.length) {
+      setImages((prev) => [...successes.reverse(), ...prev])
+    }
+
+    setIsUploading(false)
+
+    // auto-clear the successful ones after a moment
+    setTimeout(() => {
+      setQueue((prev) => {
+        prev.forEach((q) => {
+          if (q.status === 'success') URL.revokeObjectURL(q.preview)
+        })
+        return prev.filter((q) => q.status !== 'success')
+      })
+    }, 1500)
   }
 
   async function onDelete(id: number) {
@@ -66,13 +147,15 @@ export default function AdminDashboard({
       const res = await fetch(`/api/admin/images/${id}`, { method: 'DELETE' })
       if (!res.ok) {
         setImages(previous)
-        setError('Failed to delete')
+        alert('Failed to delete')
       }
     } catch {
       setImages(previous)
-      setError('Network error')
+      alert('Network error')
     }
   }
+
+  const pendingCount = queue.filter((q) => q.status === 'pending' || q.status === 'error').length
 
   return (
     <div className={styles.shell}>
@@ -88,49 +171,90 @@ export default function AdminDashboard({
       </header>
 
       <section className={styles.uploadCard}>
-        <h2 className={styles.sectionTitle}>Upload new image</h2>
-        <form onSubmit={onUpload} className={styles.uploadForm}>
-          <div className={styles.field}>
-            <label className={styles.label}>Image (JPEG, PNG, WebP — max 8MB)</label>
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="image/jpeg,image/png,image/webp"
-              onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-              className={styles.fileInput}
-            />
-          </div>
-          <div className={styles.fieldRow}>
-            <div className={styles.field}>
-              <label className={styles.label}>Title</label>
-              <input
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="e.g. Van Recovery"
-                className={styles.input}
-                maxLength={80}
-              />
+        <h2 className={styles.sectionTitle}>Upload images</h2>
+
+        <div className={styles.field}>
+          <label className={styles.label}>Tag for all uploads</label>
+          <select
+            value={tag}
+            onChange={(e) => setTag(e.target.value)}
+            className={styles.input}
+            disabled={isUploading}
+          >
+            <option>Glasgow</option>
+            <option>24/7</option>
+            <option>Prestige</option>
+            <option>Commercial</option>
+            <option>Roadside</option>
+            <option>Transport</option>
+            <option>Accident</option>
+          </select>
+        </div>
+
+        <label className={styles.dropZone}>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            multiple
+            onChange={onFilesChosen}
+            className={styles.hiddenInput}
+            disabled={isUploading}
+          />
+          <span className={`material-symbols-rounded ${styles.dropIcon}`}>add_a_photo</span>
+          <span className={styles.dropTitle}>Tap to choose photos</span>
+          <span className={styles.dropHint}>JPEG, PNG, or WebP — up to 25MB each. You can pick multiple.</span>
+        </label>
+
+        {queue.length > 0 && (
+          <>
+            <div className={styles.queueList}>
+              {queue.map((q) => (
+                <div key={q.id} className={styles.queueItem}>
+                  <div className={styles.queueThumb}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={q.preview} alt="" />
+                  </div>
+                  <div className={styles.queueBody}>
+                    <p className={styles.queueName}>{q.file.name}</p>
+                    <p className={styles.queueMeta}>
+                      {formatSize(q.file.size)} · <span className={styles[`status_${q.status}`]}>
+                        {q.status === 'uploading' && `${Math.round(q.progress)}%`}
+                        {q.status === 'pending' && 'Ready'}
+                        {q.status === 'success' && 'Done ✓'}
+                        {q.status === 'error' && (q.error || 'Failed')}
+                      </span>
+                    </p>
+                    {q.status === 'uploading' && (
+                      <div className={styles.progressBar}>
+                        <div className={styles.progressFill} style={{ width: `${q.progress}%` }} />
+                      </div>
+                    )}
+                  </div>
+                  {q.status !== 'uploading' && (
+                    <button
+                      type="button"
+                      onClick={() => removeFromQueue(q.id)}
+                      className={styles.queueRemove}
+                      aria-label="Remove"
+                    >
+                      <span className="material-symbols-rounded">close</span>
+                    </button>
+                  )}
+                </div>
+              ))}
             </div>
-            <div className={styles.field}>
-              <label className={styles.label}>Tag</label>
-              <select value={tag} onChange={(e) => setTag(e.target.value)} className={styles.input}>
-                <option>Glasgow</option>
-                <option>24/7</option>
-                <option>Prestige</option>
-                <option>Commercial</option>
-                <option>Roadside</option>
-                <option>Transport</option>
-                <option>Accident</option>
-              </select>
-            </div>
-          </div>
-          {error && <p className={styles.error}>{error}</p>}
-          {success && <p className={styles.success}>{success}</p>}
-          <button type="submit" className={`btn ${styles.uploadBtn}`} disabled={uploading}>
-            {uploading ? 'Uploading...' : 'Upload Image'}
-          </button>
-        </form>
+
+            <button
+              type="button"
+              onClick={uploadAll}
+              disabled={isUploading || pendingCount === 0}
+              className={`btn ${styles.uploadBtn}`}
+            >
+              {isUploading ? 'Uploading...' : `Upload ${pendingCount} ${pendingCount === 1 ? 'image' : 'images'}`}
+            </button>
+          </>
+        )}
       </section>
 
       <section className={styles.gallery}>
@@ -152,7 +276,7 @@ export default function AdminDashboard({
                     src={img.url}
                     alt={img.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, 300px"
+                    sizes="(max-width: 640px) 50vw, 220px"
                     className={styles.thumbImg}
                   />
                 </div>
@@ -170,4 +294,14 @@ export default function AdminDashboard({
       </section>
     </div>
   )
+}
+
+function stripExt(name: string) {
+  return name.replace(/\.[^.]+$/, '').slice(0, 60) || 'Recovery Job'
+}
+
+function formatSize(bytes: number) {
+  if (bytes < 1024) return `${bytes} B`
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`
+  return `${(bytes / 1024 / 1024).toFixed(1)} MB`
 }

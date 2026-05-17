@@ -1,0 +1,136 @@
+.main {
+    background: var(--black);
+    color: var(--white);
+  }
+  
+  .hero {
+    position: relative;
+    padding: 14rem 0 5rem;
+    background:
+      radial-gradient(circle at 20% 30%, hsla(318, 82%, 45%, 0.15), transparent 50%),
+      radial-gradient(circle at 80% 70%, hsla(210, 90%, 55%, 0.12), transparent 50%),
+      var(--black);
+  }
+  
+  .heroInner {
+    text-align: center;
+    max-width: 760px;
+  }
+  
+  .title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 700;
+    margin: 1.6rem 0;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .lead {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: var(--gray-light);
+  }
+  
+  .phoneLink {
+    color: var(--pink-light);
+    font-weight: 700;
+    white-space: nowrap;
+    display: inline;
+  }
+  
+  .phoneLink:hover { text-decoration: underline; }
+  
+  .areas {
+    padding: 4rem 0 8rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+  }
+  
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  
+  .card {
+    background: var(--black-2);
+    border: 1px solid hsla(0, 0%, 100%, 0.06);
+    border-radius: var(--radius-lg);
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .card:hover {
+    border-color: hsla(318, 82%, 45%, 0.4);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .cardHeader .material-symbols-rounded {
+    font-size: 2.4rem;
+    color: var(--pink-light);
+  }
+  
+  .cardHeader h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+  
+  .postcodes {
+    font-size: 1.2rem;
+    color: var(--pink-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+  
+  .desc {
+    color: var(--gray-light);
+    font-size: 1.4rem;
+    line-height: 1.6;
+    flex: 1;
+  }
+  
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  
+  .cta .material-symbols-rounded {
+    font-size: 1.8rem;
+    transition: var(--transition);
+  }
+  
+  .card:hover .cta .material-symbols-rounded {
+    transform: translateX(4px);
+  }
