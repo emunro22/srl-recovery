@@ -72,9 +72,41 @@
   transform: scaleX(1);
 }
 
+.desktopSocials {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.socialBtn {
+  width: 3.6rem;
+  height: 3.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(0, 0%, 100%, 0.04);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: 50%;
+  color: var(--white);
+  transition: var(--transition);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.socialBtn:hover {
+  background: var(--gradient);
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-pink);
+}
+
+.mobileSocials {
+  display: none;
+}
+
 .ctaBtn {
   flex-shrink: 0;
-  margin-left: 1rem;
   font-size: 1.3rem;
   padding: 1.1rem 2rem;
   animation: pulse-glow 3s ease-in-out infinite;
@@ -90,7 +122,6 @@
   cursor: pointer;
   background: none;
   border: none;
-  margin-left: auto;
 }
 
 .menuBtn span {
@@ -105,23 +136,30 @@
 .menuBtn.menuOpen span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
+
 .menuBtn.menuOpen span:nth-child(2) {
   opacity: 0;
 }
+
 .menuBtn.menuOpen span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Hide desktop socials a bit before the mobile breakpoint to avoid crowding */
+@media (max-width: 1180px) {
+  .desktopSocials {
+    display: none;
+  }
 }
 
 @media (max-width: 900px) {
   .ctaBtn {
     display: none;
   }
-
   .menuBtn {
     display: flex;
+    margin-left: auto;
   }
-
-  /* Hide desktop nav, show only when open */
   .navbar {
     position: fixed;
     top: 0;
@@ -133,80 +171,41 @@
     background: var(--black);
     z-index: 999;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.05, 0.83, 0.52, 0.97);
     margin-left: 0;
   }
-
   .navbar.open {
     transform: translateX(0);
   }
-
   .navList {
     flex-direction: column;
     gap: 0;
     text-align: center;
   }
-
   .navLink {
     font-size: 2.8rem;
     padding: 1.8rem 3rem;
     color: var(--white);
   }
-
   .navLink::after {
     display: none;
   }
-
-  .desktopSocials {
-    display: flex;
-    gap: 0.6rem;
-    align-items: center;
-  }
-  
-  .socialBtn {
-    width: 3.6rem;
-    height: 3.6rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: hsla(0, 0%, 100%, 0.04);
-    border: 1px solid hsla(0, 0%, 100%, 0.08);
-    border-radius: 50%;
-    color: var(--white);
-    transition: var(--transition);
-    text-decoration: none;
-    flex-shrink: 0;
-  }
-  
-  .socialBtn:hover {
-    background: var(--gradient);
-    border-color: transparent;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-pink);
-  }
-  
   .mobileSocials {
-    display: none;
+    display: flex;
+    gap: 1.6rem;
+    justify-content: center;
+    padding: 2rem 0 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid hsla(0, 0%, 100%, 0.08);
+    width: 80%;
+    max-width: 320px;
   }
-  
-  @media (max-width: 1100px) {
-    .desktopSocials {
-      display: none;
-    }
-    .mobileSocials {
-      display: flex;
-      gap: 1.2rem;
-      justify-content: center;
-      padding: 2rem 0 1rem;
-      margin-top: 2rem;
-      border-top: 1px solid hsla(0, 0%, 100%, 0.08);
-    }
-    .mobileSocials .socialBtn {
-      width: 4.8rem;
-      height: 4.8rem;
-    }
+  .mobileSocials .socialBtn {
+    width: 4.8rem;
+    height: 4.8rem;
   }
 }
