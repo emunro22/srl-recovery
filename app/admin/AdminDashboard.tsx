@@ -9,6 +9,7 @@ import type { GalleryImage } from '@/lib/db'
 type QueueItem = {
   id: string
   file: File
+  title: string
   status: 'pending' | 'uploading' | 'success' | 'error'
   progress: number
   error?: string
@@ -48,7 +49,6 @@ export default function AdminDashboard({
           `Done — added ${data.inserted} image${data.inserted === 1 ? '' : 's'}.` +
           (data.skipped > 0 ? ` ${data.skipped} already in database.` : '')
         )
-        // Refresh the page so the new images show up
         window.location.reload()
       }
     } catch {
@@ -63,12 +63,19 @@ export default function AdminDashboard({
     const items: QueueItem[] = files.map((f) => ({
       id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
       file: f,
+      title: stripExt(f.name), // auto-populate from filename, user can edit
       status: 'pending',
       progress: 0,
       preview: URL.createObjectURL(f),
     }))
     setQueue((prev) => [...prev, ...items])
     if (fileInputRef.current) fileInputRef.current.value = ''
+  }
+
+  function updateTitle(id: string, title: string) {
+    setQueue((prev) =>
+      prev.map((q) => (q.id === id ? { ...q, title } : q))
+    )
   }
 
   function removeFromQueue(id: string) {
@@ -106,7 +113,7 @@ export default function AdminDashboard({
         body: JSON.stringify({
           url: blob.url,
           pathname: blob.pathname,
-          title: stripExt(item.file.name),
+          title: item.title.trim() || stripExt(item.file.name),
           tag,
         }),
       })
@@ -231,6 +238,9 @@ export default function AdminDashboard({
 
         {queue.length > 0 && (
           <>
+            <p className={styles.queueHint}>
+              Give each image a title before uploading (or leave the auto-filled one).
+            </p>
             <div className={styles.queueList}>
               {queue.map((q) => (
                 <div key={q.id} className={styles.queueItem}>
@@ -239,7 +249,15 @@ export default function AdminDashboard({
                     <img src={q.preview} alt="" />
                   </div>
                   <div className={styles.queueBody}>
-                    <p className={styles.queueName}>{q.file.name}</p>
+                    <input
+                      type="text"
+                      value={q.title}
+                      onChange={(e) => updateTitle(q.id, e.target.value)}
+                      disabled={q.status === 'uploading' || q.status === 'success'}
+                      placeholder="Image title"
+                      maxLength={80}
+                      className={styles.queueTitleInput}
+                    />
                     <p className={styles.queueMeta}>
                       {formatSize(q.file.size)} · <span className={styles[`status_${q.status}`]}>
                         {q.status === 'uploading' && `${Math.round(q.progress)}%`}
