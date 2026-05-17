@@ -52,7 +52,7 @@ export async function POST(req: Request) {
 
     const resend = getResend()
     const { error } = await resend.emails.send({
-      from: 'SRL Recovery Website <noreply@srlrecovery.co.uk>',
+      from: 'SRL Recovery Website <noreply@srlrecovery.com>',
       to: [contactEmail],
       subject: `Callback request: ${name} (${phone})`,
       html,
