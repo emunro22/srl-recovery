@@ -404,3 +404,42 @@
   background: hsla(0, 80%, 55%, 0.2);
   color: hsl(0, 80%, 80%);
 }
+
+/* ============================================================
+   APPEND THIS to the bottom of app/admin/admin.module.css
+   ============================================================ */
+
+   .seedCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    background: var(--black-2);
+    border: 1px solid hsla(0, 0%, 100%, 0.06);
+    border-radius: var(--radius-lg);
+    padding: 1.6rem 2rem;
+    margin-bottom: 2.4rem;
+  }
+  
+  .seedTitle {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+  
+  .seedDesc {
+    font-size: 1.3rem;
+    color: var(--gray-light);
+    line-height: 1.5;
+    max-width: 540px;
+  }
+  
+  .seedBtn {
+    padding: 1rem 1.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  

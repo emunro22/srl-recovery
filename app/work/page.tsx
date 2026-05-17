@@ -4,47 +4,21 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { getGalleryImages } from '@/lib/db'
 
-const staticImages = [
-  { src: '/images/work-1.jpg', title: 'Classic Car Recovery', tag: 'Prestige' },
-  { src: '/images/work-2.jpg', title: 'Van Recovery', tag: '24/7' },
-  { src: '/images/work-3.jpg', title: 'SUV Recovery', tag: 'Roadside' },
-  { src: '/images/work-4.jpg', title: 'Night Recovery', tag: '24/7' },
-  { src: '/images/work-5.jpg', title: 'Car Transport', tag: 'Transport' },
-  { src: '/images/work-6.jpg', title: 'Saloon Recovery', tag: 'Glasgow' },
-  { src: '/images/work-7.jpg', title: 'Flatbed Recovery', tag: 'Commercial' },
-  { src: '/images/work-8.jpg', title: 'Performance Car', tag: 'Prestige' },
-  { src: '/images/work-9.jpg', title: 'Classic Car Recovery', tag: 'Prestige' },
-  { src: '/images/work-10.jpg', title: 'Van Recovery', tag: '24/7' },
-  { src: '/images/work-11.jpg', title: 'SUV Recovery', tag: 'Roadside' },
-  { src: '/images/work-12.jpg', title: 'Night Recovery', tag: '24/7' },
-  { src: '/images/work-13.jpg', title: 'Car Transport', tag: 'Transport' },
-  { src: '/images/work-14.jpg', title: 'Saloon Recovery', tag: 'Glasgow' },
-  { src: '/images/work-15.jpg', title: 'Flatbed Recovery', tag: 'Commercial' },
-  { src: '/images/work-16.jpg', title: 'Performance Car', tag: 'Prestige' },
-  { src: '/images/work-17.jpg', title: 'Saloon Recovery', tag: 'Glasgow' },
-  { src: '/images/work-18.jpg', title: 'Flatbed Recovery', tag: 'Commercial' },
-  { src: '/images/work-19.jpg', title: 'Performance Car', tag: 'Prestige' },
-]
-
 export const metadata = {
   title: 'Our Work – SRL Recovery Glasgow',
-  description: 'Browse our recent breakdown recovery and vehicle transport jobs across Glasgow and surrounding areas.',
+  description:
+    'Browse our recent breakdown recovery and vehicle transport jobs across Glasgow and surrounding areas.',
 }
 
 export const dynamic = 'force-dynamic'
 
 export default async function WorkPage() {
-  let dbImages: Awaited<ReturnType<typeof getGalleryImages>> = []
+  let images: Awaited<ReturnType<typeof getGalleryImages>> = []
   try {
-    dbImages = await getGalleryImages()
+    images = await getGalleryImages()
   } catch (err) {
     console.error('Failed to load gallery images', err)
   }
-
-  const images = [
-    ...dbImages.map((img) => ({ src: img.url, title: img.title, tag: img.tag })),
-    ...staticImages,
-  ]
 
   return (
     <>
@@ -64,26 +38,32 @@ export default async function WorkPage() {
 
         <section className={styles.gallery}>
           <div className="container">
-            <div className={styles.grid}>
-              {images.map((img, i) => (
-                <div key={`${img.src}-${i}`} className={styles.card}>
-                  <figure className={styles.figure}>
-                    <Image
-                      src={img.src}
-                      alt={img.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className={styles.img}
-                      loading={i < 6 ? 'eager' : 'lazy'}
-                    />
-                  </figure>
-                  <div className={styles.overlay}>
-                    <span className={styles.tag}>{img.tag}</span>
-                    <p className={styles.cardTitle}>{img.title}</p>
+            {images.length === 0 ? (
+              <p className={styles.empty}>
+                Gallery coming soon — check back shortly.
+              </p>
+            ) : (
+              <div className={styles.grid}>
+                {images.map((img, i) => (
+                  <div key={img.id} className={styles.card}>
+                    <figure className={styles.figure}>
+                      <Image
+                        src={img.url}
+                        alt={img.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className={styles.img}
+                        loading={i < 6 ? 'eager' : 'lazy'}
+                      />
+                    </figure>
+                    <div className={styles.overlay}>
+                      <span className={styles.tag}>{img.tag}</span>
+                      <p className={styles.cardTitle}>{img.title}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 

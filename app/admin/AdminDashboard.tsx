@@ -24,11 +24,37 @@ export default function AdminDashboard({
   const [queue, setQueue] = useState<QueueItem[]>([])
   const [tag, setTag] = useState('Glasgow')
   const [isUploading, setIsUploading] = useState(false)
+  const [seeding, setSeeding] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   async function logout() {
     await fetch('/api/admin/logout', { method: 'POST' })
     window.location.reload()
+  }
+
+  async function seedStaticImages() {
+    if (seeding) return
+    if (!confirm('Add the original 19 gallery images to your database so you can manage them here? Existing ones will be skipped — this is safe to run more than once.')) {
+      return
+    }
+    setSeeding(true)
+    try {
+      const res = await fetch('/api/admin/seed-static', { method: 'POST' })
+      const data = await res.json()
+      if (!res.ok) {
+        alert(data.error || 'Seed failed')
+      } else {
+        alert(
+          `Done — added ${data.inserted} image${data.inserted === 1 ? '' : 's'}.` +
+          (data.skipped > 0 ? ` ${data.skipped} already in database.` : '')
+        )
+        // Refresh the page so the new images show up
+        window.location.reload()
+      }
+    } catch {
+      alert('Network error')
+    }
+    setSeeding(false)
   }
 
   function onFilesChosen(e: React.ChangeEvent<HTMLInputElement>) {
@@ -61,7 +87,6 @@ export default function AdminDashboard({
         )
       )
 
-      // Step 1: upload directly to Vercel Blob from the browser
       const blob = await upload(item.file.name, item.file, {
         access: 'public',
         handleUploadUrl: '/api/admin/images/upload-url',
@@ -75,7 +100,6 @@ export default function AdminDashboard({
         },
       })
 
-      // Step 2: save metadata to the DB
       const res = await fetch('/api/admin/images', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -128,7 +152,6 @@ export default function AdminDashboard({
 
     setIsUploading(false)
 
-    // auto-clear the successful ones after a moment
     setTimeout(() => {
       setQueue((prev) => {
         prev.forEach((q) => {
@@ -257,15 +280,31 @@ export default function AdminDashboard({
         )}
       </section>
 
+      <section className={styles.seedCard}>
+        <div>
+          <h3 className={styles.seedTitle}>Import the original 19 gallery images</h3>
+          <p className={styles.seedDesc}>
+            Add the existing static images (work-1 to work-19) to your database so you can delete or
+            re-order them from here. Safe to run multiple times — duplicates are skipped automatically.
+          </p>
+        </div>
+        <button
+          onClick={seedStaticImages}
+          disabled={seeding}
+          className={`${styles.linkBtn} ${styles.seedBtn}`}
+        >
+          {seeding ? 'Importing...' : 'Import original images'}
+        </button>
+      </section>
+
       <section className={styles.gallery}>
         <h2 className={styles.sectionTitle}>
-          Uploaded images <span className={styles.count}>({images.length})</span>
+          Gallery images <span className={styles.count}>({images.length})</span>
         </h2>
         {images.length === 0 ? (
           <p className={styles.empty}>
-            No images uploaded yet. Use the form above to add your first image.
-            <br />
-            (Your existing 19 static gallery images are still published — they live in the codebase.)
+            No images in your database yet. Upload your first photo above, or
+            click <strong>“Import original images”</strong> to load the existing gallery.
           </p>
         ) : (
           <div className={styles.grid}>
