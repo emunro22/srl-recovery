@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Chakra_Petch, Mulish } from 'next/font/google'
 import Schema from '@/components/Schema'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import './globals.css'
 
 const chakraPetch = Chakra_Petch({
@@ -58,7 +59,10 @@ export default function RootLayout({
         />
         <Schema />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   )
 }
