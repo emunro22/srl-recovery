@@ -40,6 +40,7 @@ export default function Hero() {
           night — with an average arrival time of 30–45 minutes across Glasgow
           and surrounding areas.
         </p>
+
         <div className={styles.actions}>
           <a href="tel:+447776356556" className="btn">
             <span className="material-symbols-rounded">call</span>
@@ -50,6 +51,25 @@ export default function Hero() {
             <span className="material-symbols-rounded">arrow_downward</span>
           </a>
         </div>
+
+        {/* Reviews badge moved up next to the CTA — biggest trust signal at the point of decision */}
+        <a
+          href="https://www.google.com/search?q=SRL+recovery+24%2F7+breakdown+recovery+Glasgow"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.reviewBadge}
+        >
+          <span className={styles.reviewStars}>
+            {Array.from({ length: 5 }).map((_, i) => (
+              <span key={i} className="material-symbols-rounded">star</span>
+            ))}
+          </span>
+          <span>
+            <strong>5.0</strong> from <strong>58+ reviews</strong> on Google
+          </span>
+          <span className={`material-symbols-rounded ${styles.reviewArrow}`}>arrow_outward</span>
+        </a>
+
         <div className={styles.stats}>
           <div className={styles.stat}>
             <strong>30–45</strong>

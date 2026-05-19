@@ -25,7 +25,7 @@ export default function About() {
               <span className="material-symbols-rounded">emoji_events</span>
               <div>
                 <strong>17 Years</strong>
-                <span>In the Motor Trade</span>
+                <span>Motor trade experience</span>
               </div>
             </div>
           </div>
@@ -42,10 +42,12 @@ export default function About() {
             excuses.
           </p>
           <p className={`section-text ${styles.spacer}`}>
-            Founded in 2023 by William — with 17 years in the motor trade behind him —
-            SRL Recovery has grown rapidly to complete <strong>250+ recovery jobs every month</strong>
-            {' '}across Glasgow and surrounding areas. Thousands of happy customers later,
-            we&apos;re available 24 hours a day, 7 days a week, 365 days a year.
+            SRL Recovery was founded in 2023 by William, who brings <strong>17 years of motor
+            trade experience</strong> to every job. Since then we&apos;ve grown rapidly,
+            completing <strong>250+ recovery jobs every month</strong> across Glasgow and
+            surrounding areas — with thousands of happy customers who&apos;ve trusted us during
+            stressful situations. We&apos;re available 24 hours a day, 7 days a week, 365 days a
+            year.
           </p>
           <div className={styles.features}>
             {features.map((f) => (
@@ -66,8 +68,8 @@ export default function About() {
               <span>Jobs Per Month</span>
             </div>
             <div className={styles.stat}>
-              <strong>17</strong>
-              <span>Years in Trade</span>
+              <strong>17yr</strong>
+              <span>Trade Experience</span>
             </div>
             <div className={styles.stat}>
               <strong>24/7</strong>

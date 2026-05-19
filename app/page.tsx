@@ -9,6 +9,7 @@ import Testimonials from '@/components/Testimonials'
 import CallbackForm from '@/components/CallbackForm'
 import FAQ from '@/components/FAQ'
 import Coverage from '@/components/Coverage'
+import CoverageMap from '@/components/CoverageMap'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <Testimonials />
         <CallbackForm />
         <FAQ />
+        <CoverageMap />
         <Coverage />
       </main>
       <Footer />

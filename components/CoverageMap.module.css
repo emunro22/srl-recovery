@@ -1,0 +1,132 @@
+.section {
+  background: var(--black);
+}
+
+.header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4rem;
+}
+
+.title { margin-bottom: 1.6rem; }
+.lead { margin-inline: auto; }
+
+.mapShell {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  box-shadow: var(--shadow-card);
+}
+
+.map {
+  width: 100%;
+  height: 500px;
+  background: var(--black-3);
+}
+
+@media (max-width: 700px) {
+  .map { height: 380px; }
+}
+
+.legend {
+  position: absolute;
+  bottom: 1.4rem;
+  left: 1.4rem;
+  z-index: 400;
+  background: hsla(0, 0%, 8%, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  pointer-events: none;
+}
+
+.legendRow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+.legendDot,
+.legendDotPrimary {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legendDot { background: #1f93f0; }
+.legendDotPrimary { background: var(--gradient); }
+
+.legendCircle {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  border: 2px dashed #cc1493;
+  flex-shrink: 0;
+}
+
+/* Pin styles for Leaflet div icons */
+.pinWrap { background: transparent !important; border: none !important; }
+
+.pin {
+  width: 32px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+  cursor: pointer;
+}
+
+.pinPrimary {
+  font-size: 28px;
+  filter: drop-shadow(0 0 12px hsla(318, 82%, 45%, 0.8)) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* Popup styles (rendered as raw HTML via Leaflet) */
+.popup {
+  font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.4rem 0;
+  min-width: 140px;
+}
+
+.popup strong {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: #111;
+}
+
+.popup a {
+  color: #cc1493;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-top: 0.4rem;
+}
+
+.popup a:hover { text-decoration: underline; }
+
+.primaryTag {
+  display: inline-block;
+  background: linear-gradient(135deg, #cc1493, #1f93f0);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  width: fit-content;
+}

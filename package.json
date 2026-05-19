@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
+    "@types/leaflet": "^1.9.21",
     "@vercel/blob": "^2.3.3",
     "critters": "^0.0.23",
+    "leaflet": "^1.9.4",
     "next": "^16.2.6",
     "react": "^18",
     "react-dom": "^18",

@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import CoverageMap from '@/components/CoverageMap'
 import styles from './page.module.css'
 
 export const metadata = {
   title: 'Areas We Cover | SRL Recovery — 24/7 Breakdown Recovery',
   description:
-    'SRL Recovery covers Glasgow, Paisley, East Kilbride, Motherwell, Hamilton, Clydebank, Coatbridge, and surrounding areas 24/7.',
+    'SRL Recovery covers Glasgow, Paisley, East Kilbride, Motherwell, Hamilton, Clydebank, Coatbridge, Bearsden, Rutherglen, Cambuslang, Bellshill, and Dumbarton 24/7.',
 }
 
 const areas = [
@@ -16,6 +17,11 @@ const areas = [
   { name: 'Hamilton', slug: 'hamilton', postcodes: 'ML3, ML9', desc: 'Town centre, Burnbank, Hillhouse, Earnock' },
   { name: 'Clydebank', slug: 'clydebank', postcodes: 'G81', desc: 'Town centre, Drumchapel, Faifley, Old Kilpatrick' },
   { name: 'Coatbridge', slug: 'coatbridge', postcodes: 'ML5', desc: 'Town centre, Townhead, Whifflet, industrial estates' },
+  { name: 'Bearsden', slug: 'bearsden', postcodes: 'G61', desc: 'Bearsden Cross, Westerton, Killermont' },
+  { name: 'Rutherglen', slug: 'rutherglen', postcodes: 'G73', desc: 'Town centre, Burnside, Cathkin, Fernhill' },
+  { name: 'Cambuslang', slug: 'cambuslang', postcodes: 'G72', desc: 'Main Street, Halfway, Whitlawburn, Newton' },
+  { name: 'Bellshill', slug: 'bellshill', postcodes: 'ML4', desc: 'Town centre, Mossend, Orbiston, Tannochside' },
+  { name: 'Dumbarton', slug: 'dumbarton', postcodes: 'G82', desc: 'Town centre, Bellsmyre, Brucehill, Castlehill' },
 ]
 
 export default function AreasIndex() {
@@ -35,6 +41,8 @@ export default function AreasIndex() {
             </p>
           </div>
         </div>
+
+        <CoverageMap />
 
         <section className={styles.areas}>
           <div className="container">

@@ -1,0 +1,80 @@
+.bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    background: hsla(0, 0%, 4%, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid hsla(318, 82%, 45%, 0.3);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+.call {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--gradient);
+  transition: opacity 0.2s;
+}
+
+.call:active { opacity: 0.85; }
+
+.call .material-symbols-rounded {
+  font-size: 2.8rem;
+  flex-shrink: 0;
+}
+
+.call div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.label {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.call strong {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.whats {
+  width: 6.4rem;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.whats:active { opacity: 0.85; }
+
+/* Hide the floating WhatsApp FAB on mobile so it doesn't overlap with the bar */
+@media (max-width: 768px) {
+  :global([aria-label="Chat on WhatsApp"]) {
+    display: none !important;
+  }
+}

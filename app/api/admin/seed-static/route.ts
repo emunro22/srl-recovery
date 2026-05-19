@@ -4,28 +4,27 @@ import { sql } from '@/lib/db'
 import { isAdminAuthenticated } from '@/lib/auth'
 
 // The original 19 hand-curated static images.
-// These get inserted into the DB so they can be managed from /admin.
-// Idempotent: re-running won't create duplicates (relies on the unique index on url).
+// Titles updated — fixed "Tranist" -> "Transit" and made each title slightly more SEO-friendly.
 const STATIC_IMAGES = [
   { url: '/images/work-1.jpg', title: 'Classic Car Recovery', tag: 'Prestige' },
-  { url: '/images/work-2.jpg', title: 'Van Recovery', tag: '24/7' },
-  { url: '/images/work-3.jpg', title: 'SUV Recovery', tag: 'Roadside' },
-  { url: '/images/work-4.jpg', title: 'Night Recovery', tag: '24/7' },
-  { url: '/images/work-5.jpg', title: 'Car Transport', tag: 'Transport' },
-  { url: '/images/work-6.jpg', title: 'Saloon Recovery', tag: 'Glasgow' },
-  { url: '/images/work-7.jpg', title: 'Flatbed Recovery', tag: 'Commercial' },
-  { url: '/images/work-8.jpg', title: 'Performance Car', tag: 'Prestige' },
-  { url: '/images/work-9.jpg', title: 'Classic Car Recovery', tag: 'Prestige' },
-  { url: '/images/work-10.jpg', title: 'Van Recovery', tag: '24/7' },
-  { url: '/images/work-11.jpg', title: 'SUV Recovery', tag: 'Roadside' },
-  { url: '/images/work-12.jpg', title: 'Night Recovery', tag: '24/7' },
-  { url: '/images/work-13.jpg', title: 'Car Transport', tag: 'Transport' },
-  { url: '/images/work-14.jpg', title: 'Saloon Recovery', tag: 'Glasgow' },
-  { url: '/images/work-15.jpg', title: 'Flatbed Recovery', tag: 'Commercial' },
-  { url: '/images/work-16.jpg', title: 'Performance Car', tag: 'Prestige' },
-  { url: '/images/work-17.jpg', title: 'Saloon Recovery', tag: 'Glasgow' },
-  { url: '/images/work-18.jpg', title: 'Flatbed Recovery', tag: 'Commercial' },
-  { url: '/images/work-19.jpg', title: 'Performance Car', tag: 'Prestige' },
+  { url: '/images/work-2.jpg', title: 'Ford Transit Van Recovery', tag: '24/7' },
+  { url: '/images/work-3.jpg', title: 'SUV Roadside Recovery', tag: 'Roadside' },
+  { url: '/images/work-4.jpg', title: 'Late-Night Recovery', tag: '24/7' },
+  { url: '/images/work-5.jpg', title: 'Car Transport Job', tag: 'Transport' },
+  { url: '/images/work-6.jpg', title: 'Glasgow Saloon Recovery', tag: 'Glasgow' },
+  { url: '/images/work-7.jpg', title: 'Flatbed Commercial Recovery', tag: 'Commercial' },
+  { url: '/images/work-8.jpg', title: 'Performance Car Recovery', tag: 'Prestige' },
+  { url: '/images/work-9.jpg', title: 'Classic Car Transport', tag: 'Prestige' },
+  { url: '/images/work-10.jpg', title: 'Van Recovery Glasgow', tag: '24/7' },
+  { url: '/images/work-11.jpg', title: '4x4 Recovery', tag: 'Roadside' },
+  { url: '/images/work-12.jpg', title: 'Night Recovery Glasgow', tag: '24/7' },
+  { url: '/images/work-13.jpg', title: 'Vehicle Transport', tag: 'Transport' },
+  { url: '/images/work-14.jpg', title: 'Saloon Car Recovery', tag: 'Glasgow' },
+  { url: '/images/work-15.jpg', title: 'Flatbed Recovery Truck', tag: 'Commercial' },
+  { url: '/images/work-16.jpg', title: 'Prestige Car Transport', tag: 'Prestige' },
+  { url: '/images/work-17.jpg', title: 'Saloon Recovery Glasgow', tag: 'Glasgow' },
+  { url: '/images/work-18.jpg', title: 'Commercial Flatbed Job', tag: 'Commercial' },
+  { url: '/images/work-19.jpg', title: 'Performance Recovery', tag: 'Prestige' },
 ]
 
 export async function POST() {
@@ -36,8 +35,6 @@ export async function POST() {
   try {
     let inserted = 0
 
-    // Insert each with a created_at that decreases from "30 days ago" backwards,
-    // so they sort after any future admin uploads (which use NOW()).
     for (let i = 0; i < STATIC_IMAGES.length; i++) {
       const img = STATIC_IMAGES[i]
       const result = (await sql`

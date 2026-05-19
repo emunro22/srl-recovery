@@ -248,3 +248,57 @@
     font-size: 2.8rem;
   }
 }
+
+/* ============================================================
+   APPEND THIS to the bottom of components/Hero.module.css
+   (for the new review badge above the stats)
+   ============================================================ */
+
+.reviewBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.4rem;
+  padding: 0.9rem 1.6rem;
+  background: hsla(0, 0%, 8%, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: var(--radius-pill);
+  font-size: 1.4rem;
+  color: var(--gray-light);
+  text-decoration: none;
+  transition: var(--transition);
+  width: fit-content;
+}
+
+.reviewBadge:hover {
+  border-color: hsla(318, 82%, 45%, 0.4);
+  color: var(--white);
+}
+
+.reviewBadge strong { color: var(--white); }
+
+.reviewStars {
+  display: inline-flex;
+  gap: 0.15rem;
+  color: hsl(45, 100%, 60%);
+}
+
+.reviewStars .material-symbols-rounded { font-size: 1.7rem; }
+
+.reviewArrow {
+  font-size: 1.6rem !important;
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .reviewBadge {
+    margin-top: 1.6rem;
+    font-size: 1.3rem;
+    padding: 0.8rem 1.3rem;
+    gap: 0.7rem;
+  }
+  .reviewStars .material-symbols-rounded { font-size: 1.5rem; }
+}
