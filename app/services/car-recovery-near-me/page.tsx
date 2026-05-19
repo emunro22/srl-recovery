@@ -10,7 +10,7 @@ export function generateMetadata() {
   return {
     title: data.title,
     description: data.metaDescription,
-    alternates: { canonical: `https://srlrecovery.co.uk/services/${SLUG}` },
+    alternates: { canonical: `https://srlrecovery.com/services/${SLUG}` },
   }
 }
 

@@ -2,17 +2,17 @@ export default function Schema() {
     const localBusiness = {
       '@context': 'https://schema.org',
       '@type': 'AutoRepair',
-      '@id': 'https://srlrecovery.co.uk/#business',
+      '@id': 'https://srlrecovery.com/#business',
       name: 'SRL Recovery',
       alternateName: 'SRL Recovery — 24/7 Breakdown Recovery Glasgow',
       description:
         "Glasgow's trusted 24/7 breakdown and accident recovery service. Owner with 17 years in the motor trade, completing 250+ recovery jobs every month.",
-      url: 'https://srlrecovery.co.uk',
+      url: 'https://srlrecovery.com',
       telephone: '+447776356556',
       email: 'srlautos@icloud.com',
       foundingDate: '2023',
-      image: 'https://srlrecovery.co.uk/images/logo.png',
-      logo: 'https://srlrecovery.co.uk/images/logo.png',
+      image: 'https://srlrecovery.com/images/logo.png',
+      logo: 'https://srlrecovery.com/images/logo.png',
       priceRange: '££',
       address: {
         '@type': 'PostalAddress',

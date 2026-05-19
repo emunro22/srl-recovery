@@ -19,7 +19,7 @@ const mulish = Mulish({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://srlrecovery.co.uk'),
+  metadataBase: new URL('https://srlrecovery.com'),
   title: {
     default: 'Breakdown Recovery Glasgow | 24/7 | From £60 | SRL Recovery',
     template: '%s | SRL Recovery',

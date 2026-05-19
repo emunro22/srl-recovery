@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { services } from '@/lib/services-data'
 import { motorways } from '@/lib/motorways-data'
 
-const BASE = 'https://srlrecovery.co.uk'
+const BASE = 'https://srlrecovery.com'
 
 const areaSlugs = [
   'paisley',

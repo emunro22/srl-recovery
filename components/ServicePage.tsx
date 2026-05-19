@@ -29,13 +29,13 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       '@type': 'AutoRepair',
       name: 'SRL Recovery',
       telephone: '+447776356556',
-      url: 'https://srlrecovery.co.uk',
+      url: 'https://srlrecovery.com',
     },
     areaServed: {
       '@type': 'City',
       name: 'Glasgow',
     },
-    url: `https://srlrecovery.co.uk/services/${data.slug}`,
+    url: `https://srlrecovery.com/services/${data.slug}`,
   }
 
   return (

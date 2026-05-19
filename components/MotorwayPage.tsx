@@ -19,7 +19,7 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
       telephone: '+447776356556',
     },
     areaServed: { '@type': 'Place', name: data.fullName },
-    url: `https://srlrecovery.co.uk/motorways/${data.slug}`,
+    url: `https://srlrecovery.com/motorways/${data.slug}`,
   }
 
   return (

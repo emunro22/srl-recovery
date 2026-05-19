@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/admin', '/api/'],
       },
     ],
-    sitemap: 'https://srlrecovery.co.uk/sitemap.xml',
-    host: 'https://srlrecovery.co.uk',
+    sitemap: 'https://srlrecovery.com/sitemap.xml',
+    host: 'https://srlrecovery.com',
   }
 }
