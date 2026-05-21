@@ -4,6 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Paisley | 24/7 Car Recovery | SRL Recovery',
   description:
     'Fast 24/7 breakdown and accident recovery in Paisley. Average arrival 30–45 minutes. From £60 local recovery. Call 07776 356 556.',
+  alternates: { canonical: '/areas/paisley' },
 }
 
 export default function PaisleyPage() {

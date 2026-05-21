@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Ticker from '@/components/Ticker'
@@ -11,6 +12,10 @@ import FAQ from '@/components/FAQ'
 import Coverage from '@/components/Coverage'
 import CoverageMap from '@/components/CoverageMap'
 import Footer from '@/components/Footer'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 export default function Home() {
   return (
