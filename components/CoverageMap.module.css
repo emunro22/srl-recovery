@@ -73,6 +73,15 @@
   flex-shrink: 0;
 }
 
+.legendCircleOuter {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  border: 1.5px dashed #cc1493;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
 /* Pin styles for Leaflet div icons */
 .pinWrap { background: transparent !important; border: none !important; }
 

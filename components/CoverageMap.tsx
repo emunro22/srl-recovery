@@ -35,10 +35,10 @@ export default function CoverageMap() {
 
       if (cancelled || !mapRef.current) return
 
-      // Initialise the map centred on Glasgow
+      // Initialise the map centred on Cambuslang, zoomed to show both coverage rings
       const map = L.map(mapRef.current, {
-        center: [55.85, -4.25],
-        zoom: 10,
+        center: [55.8194, -4.1719],
+        zoom: 8,
         scrollWheelZoom: false,
         zoomControl: true,
         attributionControl: true,
@@ -50,12 +50,22 @@ export default function CoverageMap() {
         maxZoom: 18,
       }).addTo(map)
 
-      // Coverage radius circle (rough — ~25 mile radius from Motherwell HQ)
-      L.circle([55.7916, -3.9852], {
-        radius: 40000, // ~25 miles in metres
+      // Outer ring — nationwide coverage, centred on G72 7SH (Cambuslang)
+      L.circle([55.8194, -4.1719], {
+        radius: 241401, // 150 miles in metres
         color: '#cc1493',
         fillColor: '#cc1493',
-        fillOpacity: 0.06,
+        fillOpacity: 0.03,
+        weight: 1.5,
+        dashArray: '10 8',
+      }).addTo(map)
+
+      // Inner ring — 30 mile local core area, centred on G72 7SH (Cambuslang)
+      L.circle([55.8194, -4.1719], {
+        radius: 48280, // 30 miles in metres
+        color: '#cc1493',
+        fillColor: '#cc1493',
+        fillOpacity: 0.08,
         weight: 2,
         dashArray: '6 6',
       }).addTo(map)
@@ -100,9 +110,9 @@ export default function CoverageMap() {
           <p className="section-subtitle">Coverage Area</p>
           <h2 className={`section-title ${styles.title}`}>Where We Operate</h2>
           <p className={`section-text ${styles.lead}`}>
-            SRL Recovery is based in Cleland near Motherwell, with daily coverage across the
-            shaded area. If you&apos;re inside the ring, we&apos;ll typically reach you in 30–45 minutes.
-            Outside it — call us anyway, we may still be able to help.
+            Based in Cambuslang (G72 7SH), our core 30-mile service area covers Greater Glasgow
+            and Lanarkshire with typical response times of 30–45 minutes. We also operate
+            nationwide — wherever you need us across the UK, just give us a call.
           </p>
         </div>
 
@@ -116,7 +126,10 @@ export default function CoverageMap() {
               <span className={styles.legendDot} /> Area we cover
             </div>
             <div className={styles.legendRow}>
-              <span className={styles.legendCircle} /> Core service area
+              <span className={styles.legendCircle} /> 30-mile core area
+            </div>
+            <div className={styles.legendRow}>
+              <span className={styles.legendCircleOuter} /> Nationwide coverage
             </div>
           </div>
         </div>
