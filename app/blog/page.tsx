@@ -1,16 +1,22 @@
-import Script from 'next/script'
+import Image from 'next/image'
+import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { getBlogPosts } from '@/lib/db'
 import styles from './page.module.css'
+
+export const dynamic = 'force-dynamic'
 
 export const metadata = {
   title: 'Blog – SRL Recovery Glasgow',
   description:
-    'News, advice, and updates from Glasgow\'s trusted 24/7 breakdown and recovery specialists.',
+    "News, advice, and updates from Glasgow's trusted 24/7 breakdown and recovery specialists.",
   alternates: { canonical: '/blog' },
 }
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getBlogPosts(true)
+
   return (
     <>
       <Header />
@@ -28,11 +34,37 @@ export default function BlogPage() {
 
         <section className={styles.content}>
           <div className="container">
-            <div id="soro-blog" className={styles.soroEmbed}></div>
-            <Script
-              src="https://app.trysoro.com/api/embed/0361cda8-25ec-4ac0-9b5f-29cb7646620d"
-              strategy="afterInteractive"
-            />
+            {posts.length === 0 ? (
+              <p className={styles.empty}>
+                No posts published yet — check back soon.
+              </p>
+            ) : (
+              <div className={styles.grid}>
+                {posts.map((post) => (
+                  <Link key={post.id} href={`/blog/${post.slug}`} className={styles.card}>
+                    {post.cover_image_url && (
+                      <div className={styles.cardThumb}>
+                        <Image
+                          src={post.cover_image_url}
+                          alt={post.title}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                          className={styles.cardImg}
+                        />
+                      </div>
+                    )}
+                    <div className={styles.cardBody}>
+                      <p className={styles.cardCategory}>{post.category}</p>
+                      <h2 className={styles.cardTitle}>{post.title}</h2>
+                      {post.excerpt && (
+                        <p className={styles.cardExcerpt}>{post.excerpt}</p>
+                      )}
+                      <p className={styles.cardDate}>{formatDate(post.created_at)}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
@@ -54,4 +86,12 @@ export default function BlogPage() {
       <Footer />
     </>
   )
+}
+
+function formatDate(iso: string) {
+  return new Date(iso).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
 }

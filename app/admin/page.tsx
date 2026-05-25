@@ -1,5 +1,5 @@
 import { isAdminAuthenticated } from '@/lib/auth'
-import { getGalleryImages } from '@/lib/db'
+import { getGalleryImages, getBlogPosts } from '@/lib/db'
 import AdminLogin from './AdminLogin'
 import AdminDashboard from './AdminDashboard'
 
@@ -13,6 +13,6 @@ export const metadata = {
 export default async function AdminPage() {
   const authed = await isAdminAuthenticated()
   if (!authed) return <AdminLogin />
-  const images = await getGalleryImages()
-  return <AdminDashboard initialImages={images} />
+  const [images, posts] = await Promise.all([getGalleryImages(), getBlogPosts(false)])
+  return <AdminDashboard initialImages={images} initialPosts={posts} />
 }

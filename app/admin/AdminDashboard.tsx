@@ -4,7 +4,8 @@ import { useState, useRef } from 'react'
 import Image from 'next/image'
 import { upload } from '@vercel/blob/client'
 import styles from './admin.module.css'
-import type { GalleryImage } from '@/lib/db'
+import type { GalleryImage, BlogPost } from '@/lib/db'
+import BlogPostManager from './BlogPostManager'
 
 type QueueItem = {
   id: string
@@ -18,9 +19,12 @@ type QueueItem = {
 
 export default function AdminDashboard({
   initialImages,
+  initialPosts,
 }: {
   initialImages: GalleryImage[]
+  initialPosts: BlogPost[]
 }) {
+  const [activeTab, setActiveTab] = useState<'gallery' | 'blog'>('gallery')
   const [images, setImages] = useState<GalleryImage[]>(initialImages)
   const [queue, setQueue] = useState<QueueItem[]>([])
   const [tag, setTag] = useState('Glasgow')
@@ -200,6 +204,34 @@ export default function AdminDashboard({
         </div>
       </header>
 
+      <div className={styles.tabNav} role="tablist">
+        <button
+          role="tab"
+          aria-selected={activeTab === 'gallery'}
+          onClick={() => setActiveTab('gallery')}
+          className={`${styles.tabBtn} ${activeTab === 'gallery' ? styles.tabBtnActive : ''}`}
+        >
+          <span className="material-symbols-rounded">photo_library</span>
+          Gallery
+        </button>
+        <button
+          role="tab"
+          aria-selected={activeTab === 'blog'}
+          onClick={() => setActiveTab('blog')}
+          className={`${styles.tabBtn} ${activeTab === 'blog' ? styles.tabBtnActive : ''}`}
+        >
+          <span className="material-symbols-rounded">edit_note</span>
+          Blog
+        </button>
+      </div>
+
+      {activeTab === 'blog' && (
+        <BlogPostManager initialPosts={initialPosts} />
+      )}
+
+      {activeTab === 'gallery' && (
+      <>
+
       <section className={styles.uploadCard}>
         <h2 className={styles.sectionTitle}>Upload images</h2>
 
@@ -322,7 +354,7 @@ export default function AdminDashboard({
         {images.length === 0 ? (
           <p className={styles.empty}>
             No images in your database yet. Upload your first photo above, or
-            click <strong>“Import original images”</strong> to load the existing gallery.
+            click <strong>"Import original images"</strong> to load the existing gallery.
           </p>
         ) : (
           <div className={styles.grid}>
@@ -349,6 +381,9 @@ export default function AdminDashboard({
           </div>
         )}
       </section>
+
+      </>
+      )}
     </div>
   )
 }

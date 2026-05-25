@@ -1,0 +1,133 @@
+.main {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+/* Hero cover image */
+.cover {
+  position: relative;
+  width: 100%;
+  height: clamp(220px, 40vw, 480px);
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.coverImg {
+  object-fit: cover;
+}
+
+.coverOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+/* Article */
+.article {
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+  max-width: 760px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: #ff6eb4;
+}
+
+.back .material-symbols-rounded {
+  font-size: 1.6rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ff6eb4;
+  margin: 0 0 0.8rem;
+}
+
+.title {
+  font-family: var(--font-chakra);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+.lead {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+  border-left: 3px solid #ff6eb4;
+  padding-left: 1.4rem;
+  margin: 0 0 2.4rem;
+}
+
+.body {
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.body p {
+  margin: 0 0 1.4em;
+}
+
+.noContent {
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+}
+
+/* CTA */
+.cta {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba(255, 110, 180, 0.08), rgba(120, 180, 255, 0.08));
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ctaInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.ctaInner h2 {
+  font-family: var(--font-chakra);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 0.5rem;
+}
+
+.ctaInner p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+@media (max-width: 640px) {
+  .ctaInner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
