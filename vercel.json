@@ -3,6 +3,12 @@
   "buildCommand": "next build",
   "devCommand": "next dev",
   "installCommand": "npm install",
+  "crons": [
+    {
+      "path": "/api/cron/monthly-reviews",
+      "schedule": "0 10 1 * *"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

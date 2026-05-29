@@ -184,3 +184,80 @@ export async function deleteBlogPost(id: number): Promise<BlogPost | null> {
   `) as BlogPost[]
   return rows[0] ?? null
 }
+
+// ─── Customers ────────────────────────────────────────────────────────────────
+
+export type Customer = {
+  id: number
+  name: string
+  phone: string
+  job_date: string
+  notes: string | null
+  created_at: string
+}
+
+let _customerTableReady: Promise<void> | null = null
+
+async function ensureCustomerTable() {
+  if (!_customerTableReady) {
+    _customerTableReady = (async () => {
+      await sql`
+        CREATE TABLE IF NOT EXISTS customers (
+          id         SERIAL PRIMARY KEY,
+          name       TEXT NOT NULL DEFAULT '',
+          phone      TEXT NOT NULL,
+          job_date   DATE NOT NULL DEFAULT CURRENT_DATE,
+          notes      TEXT,
+          created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+        )
+      `
+    })()
+  }
+  return _customerTableReady
+}
+
+export async function getCustomers(): Promise<Customer[]> {
+  await ensureCustomerTable()
+  const rows = (await sql`
+    SELECT id, name, phone, job_date::TEXT, notes, created_at
+    FROM customers
+    ORDER BY job_date DESC, created_at DESC
+  `) as Customer[]
+  return rows
+}
+
+export async function addCustomer(data: {
+  name: string
+  phone: string
+  job_date: string
+  notes?: string
+}): Promise<Customer> {
+  await ensureCustomerTable()
+  const rows = (await sql`
+    INSERT INTO customers (name, phone, job_date, notes)
+    VALUES (${data.name}, ${data.phone}, ${data.job_date}, ${data.notes ?? null})
+    RETURNING id, name, phone, job_date::TEXT, notes, created_at
+  `) as Customer[]
+  return rows[0]
+}
+
+export async function getCustomersByMonth(yearMonth: string): Promise<Customer[]> {
+  await ensureCustomerTable()
+  // yearMonth format: "2025-05"
+  const rows = (await sql`
+    SELECT id, name, phone, job_date::TEXT, notes, created_at
+    FROM customers
+    WHERE TO_CHAR(job_date, 'YYYY-MM') = ${yearMonth}
+    ORDER BY job_date ASC, created_at ASC
+  `) as Customer[]
+  return rows
+}
+
+export async function deleteCustomer(id: number): Promise<Customer | null> {
+  await ensureCustomerTable()
+  const rows = (await sql`
+    DELETE FROM customers WHERE id = ${id}
+    RETURNING id, name, phone, job_date::TEXT, notes, created_at
+  `) as Customer[]
+  return rows[0] ?? null
+}

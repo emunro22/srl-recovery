@@ -4,7 +4,7 @@ import { useState, useRef } from 'react'
 import Image from 'next/image'
 import { upload } from '@vercel/blob/client'
 import styles from './admin.module.css'
-import type { GalleryImage, BlogPost } from '@/lib/db'
+import type { GalleryImage, BlogPost, Customer } from '@/lib/db'
 import BlogPostManager from './BlogPostManager'
 
 type QueueItem = {
@@ -20,11 +20,13 @@ type QueueItem = {
 export default function AdminDashboard({
   initialImages,
   initialPosts,
+  initialCustomers,
 }: {
   initialImages: GalleryImage[]
   initialPosts: BlogPost[]
+  initialCustomers: Customer[]
 }) {
-  const [activeTab, setActiveTab] = useState<'gallery' | 'blog' | 'reviews'>('gallery')
+  const [activeTab, setActiveTab] = useState<'gallery' | 'blog' | 'reviews' | 'customers'>('gallery')
   const [images, setImages] = useState<GalleryImage[]>(initialImages)
   const [queue, setQueue] = useState<QueueItem[]>([])
   const [tag, setTag] = useState('Glasgow')
@@ -32,6 +34,19 @@ export default function AdminDashboard({
   const [seeding, setSeeding] = useState(false)
   const [seedingBlog, setSeedingBlog] = useState(false)
   const [reviewPhone, setReviewPhone] = useState('')
+
+  // Customers tab state
+  const [customers, setCustomers] = useState<Customer[]>(initialCustomers)
+  const [custName, setCustName] = useState('')
+  const [custPhone, setCustPhone] = useState('')
+  const [custDate, setCustDate] = useState(todayStr())
+  const [custNotes, setCustNotes] = useState('')
+  const [custSaving, setCustSaving] = useState(false)
+  const [custError, setCustError] = useState('')
+  const [filterMonth, setFilterMonth] = useState(currentMonthStr())
+  const [copied, setCopied] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendResult, setSendResult] = useState<{ sent: number; failed: number; month: string } | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   async function logout() {
@@ -83,6 +98,69 @@ export default function AdminDashboard({
       alert('Network error')
     }
     setSeedingBlog(false)
+  }
+
+  async function addCustomer(e: React.FormEvent) {
+    e.preventDefault()
+    if (!custPhone.trim()) { setCustError('Phone number is required'); return }
+    setCustSaving(true)
+    setCustError('')
+    try {
+      const res = await fetch('/api/admin/customers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: custName, phone: custPhone, job_date: custDate, notes: custNotes }),
+      })
+      const data = await res.json()
+      if (!res.ok) { setCustError(data.error || 'Failed to save'); return }
+      setCustomers((prev) => [data.customer, ...prev])
+      setCustName('')
+      setCustPhone('')
+      setCustDate(todayStr())
+      setCustNotes('')
+    } catch {
+      setCustError('Network error')
+    }
+    setCustSaving(false)
+  }
+
+  async function deleteCustomer(id: number) {
+    if (!confirm('Remove this customer?')) return
+    const previous = customers
+    setCustomers((prev) => prev.filter((c) => c.id !== id))
+    try {
+      const res = await fetch(`/api/admin/customers/${id}`, { method: 'DELETE' })
+      if (!res.ok) setCustomers(previous)
+    } catch {
+      setCustomers(previous)
+    }
+  }
+
+  async function bulkSendReviews(month: string, count: number) {
+    if (!confirm(`Send review requests to ${count} customer${count !== 1 ? 's' : ''} from ${formatMonthLabel(month)} via WhatsApp? This cannot be undone.`)) return
+    setSending(true)
+    setSendResult(null)
+    try {
+      const res = await fetch('/api/admin/send-monthly-reviews', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ month }),
+      })
+      const data = await res.json()
+      if (!res.ok) { alert(data.error || 'Send failed'); return }
+      setSendResult({ sent: data.sent, failed: data.failed, month })
+    } catch {
+      alert('Network error — check your connection and try again.')
+    }
+    setSending(false)
+  }
+
+  function copyNumbers(list: Customer[]) {
+    const text = list.map((c) => c.phone).join('\n')
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2500)
+    })
   }
 
   function sendReviewRequest() {
@@ -268,6 +346,15 @@ export default function AdminDashboard({
           <span className="material-symbols-rounded">star</span>
           Reviews
         </button>
+        <button
+          role="tab"
+          aria-selected={activeTab === 'customers'}
+          onClick={() => setActiveTab('customers')}
+          className={`${styles.tabBtn} ${activeTab === 'customers' ? styles.tabBtnActive : ''}`}
+        >
+          <span className="material-symbols-rounded">contacts</span>
+          Customers
+        </button>
       </div>
 
       {activeTab === 'blog' && (
@@ -339,6 +426,170 @@ export default function AdminDashboard({
           </div>
         </section>
       )}
+
+      {activeTab === 'customers' && (() => {
+        const filtered = customers.filter((c) => c.job_date.slice(0, 7) === filterMonth)
+        const reviewLink = 'https://www.google.com/search?q=SRL+recovery+24%2F7+breakdown+recovery+Glasgow'
+        const broadcastMsg =
+          `Hi, thanks for using SRL Recovery this month! We hope everything went smoothly. If you have a moment, we'd love a quick Google review — it really helps us: ${reviewLink} Thank you!`
+
+        return (
+          <div>
+            {/* Add customer form */}
+            <section className={styles.reviewCard}>
+              <h2 className={styles.sectionTitle}>Log a new customer</h2>
+              <p className={styles.reviewDesc}>
+                Add each job as it comes in. At the end of the month, switch to the <strong>Send Reviews</strong> section below to bulk-message everyone at once.
+              </p>
+              <form onSubmit={addCustomer} className={styles.custForm}>
+                <div className={styles.custRow}>
+                  <div className={styles.field}>
+                    <label className={styles.label} htmlFor="custName">Customer name</label>
+                    <input
+                      id="custName"
+                      type="text"
+                      value={custName}
+                      onChange={(e) => setCustName(e.target.value)}
+                      placeholder="e.g. John Smith"
+                      className={styles.input}
+                    />
+                  </div>
+                  <div className={styles.field}>
+                    <label className={styles.label} htmlFor="custPhone">Mobile number *</label>
+                    <input
+                      id="custPhone"
+                      type="tel"
+                      value={custPhone}
+                      onChange={(e) => setCustPhone(e.target.value)}
+                      placeholder="e.g. 07700 900000"
+                      className={styles.input}
+                      required
+                    />
+                  </div>
+                  <div className={styles.field}>
+                    <label className={styles.label} htmlFor="custDate">Job date *</label>
+                    <input
+                      id="custDate"
+                      type="date"
+                      value={custDate}
+                      onChange={(e) => setCustDate(e.target.value)}
+                      className={styles.input}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className={styles.field} style={{ maxWidth: '480px' }}>
+                  <label className={styles.label} htmlFor="custNotes">Notes (optional)</label>
+                  <input
+                    id="custNotes"
+                    type="text"
+                    value={custNotes}
+                    onChange={(e) => setCustNotes(e.target.value)}
+                    placeholder="e.g. M8 breakdown, Honda Civic"
+                    className={styles.input}
+                  />
+                </div>
+                {custError && <p className={styles.error}>{custError}</p>}
+                <button type="submit" disabled={custSaving} className="btn">
+                  <span className="material-symbols-rounded">person_add</span>
+                  {custSaving ? 'Saving...' : 'Add customer'}
+                </button>
+              </form>
+            </section>
+
+            {/* Monthly bulk send */}
+            <section className={styles.reviewCard}>
+              <h2 className={styles.sectionTitle}>
+                <span className="material-symbols-rounded" style={{ fontSize: '2rem', verticalAlign: 'middle', marginRight: '0.6rem', color: 'var(--pink-light)' }}>send</span>
+                Send monthly review requests
+              </h2>
+              <p className={styles.reviewDesc}>
+                Filter to a month, copy all the phone numbers, then paste them into a <strong>WhatsApp Broadcast List</strong> in your WhatsApp Business App and send the message below — everyone gets it as an individual message in one go.
+              </p>
+
+              <div className={styles.monthRow}>
+                <div className={styles.field}>
+                  <label className={styles.label} htmlFor="filterMonth">Month</label>
+                  <input
+                    id="filterMonth"
+                    type="month"
+                    value={filterMonth}
+                    onChange={(e) => setFilterMonth(e.target.value)}
+                    className={styles.input}
+                    style={{ maxWidth: '200px' }}
+                  />
+                </div>
+                <p className={styles.custCount}>
+                  <strong>{filtered.length}</strong> customer{filtered.length !== 1 ? 's' : ''} this month
+                </p>
+              </div>
+
+              {filtered.length > 0 ? (
+                <>
+                  <div className={styles.custList}>
+                    {filtered.map((c) => (
+                      <div key={c.id} className={styles.custItem}>
+                        <span className="material-symbols-rounded" style={{ color: 'var(--gray-light)', fontSize: '1.8rem' }}>person</span>
+                        <div className={styles.custMeta}>
+                          <span className={styles.custName}>{c.name || 'No name'}</span>
+                          <span className={styles.custPhone}>{c.phone}</span>
+                          {c.notes && <span className={styles.custNotes}>{c.notes}</span>}
+                        </div>
+                        <span className={styles.custDateLabel}>{formatJobDate(c.job_date)}</span>
+                        <button
+                          type="button"
+                          onClick={() => deleteCustomer(c.id)}
+                          className={styles.postDeleteBtn}
+                          aria-label="Remove"
+                        >
+                          <span className="material-symbols-rounded">close</span>
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+
+                  {sendResult && sendResult.month === filterMonth && (
+                    <div className={`${styles.reviewNote} ${styles.sendResultNote}`}>
+                      <span className="material-symbols-rounded" style={{ color: 'hsl(140,70%,60%)' }}>check_circle</span>
+                      <div>
+                        <strong>Sent!</strong> {sendResult.sent} message{sendResult.sent !== 1 ? 's' : ''} delivered
+                        {sendResult.failed > 0 && `, ${sendResult.failed} failed (check phone numbers).`}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className={styles.bulkActions}>
+                    <button
+                      type="button"
+                      onClick={() => bulkSendReviews(filterMonth, filtered.length)}
+                      disabled={sending}
+                      className={`btn ${styles.sendAllBtn}`}
+                    >
+                      <span className="material-symbols-rounded">{sending ? 'hourglass_empty' : 'send'}</span>
+                      {sending ? 'Sending...' : `Send to all ${filtered.length} via WhatsApp API`}
+                    </button>
+                    <button type="button" onClick={() => copyNumbers(filtered)} className={`${styles.linkBtn}`}>
+                      <span className="material-symbols-rounded" style={{ fontSize: '1.6rem', verticalAlign: 'middle' }}>{copied ? 'check' : 'content_copy'}</span>
+                      {copied ? ' Copied' : ' Copy numbers'}
+                    </button>
+                  </div>
+
+                  <div className={styles.reviewNote}>
+                    <span className="material-symbols-rounded">info</span>
+                    <div>
+                      <strong>Automatic timer:</strong> A Vercel cron job runs on the <strong>1st of every month at 10am</strong> and sends automatically to the previous month&apos;s customers — no action needed from you once the WhatsApp API env vars are added in Vercel.
+                      <br /><br />
+                      <strong>Not configured yet?</strong> The button above will show an error until you add <code>WHATSAPP_ACCESS_TOKEN</code>, <code>WHATSAPP_PHONE_NUMBER_ID</code>, and <code>WHATSAPP_REVIEW_LINK</code> to your Vercel environment variables.
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <p className={styles.empty}>No customers logged for this month yet.</p>
+              )}
+            </section>
+          </div>
+        )
+      })()}
 
       {activeTab === 'gallery' && (
       <>
@@ -507,4 +758,28 @@ function formatSize(bytes: number) {
   if (bytes < 1024) return `${bytes} B`
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`
+}
+
+function todayStr() {
+  return new Date().toISOString().slice(0, 10)
+}
+
+function currentMonthStr() {
+  return new Date().toISOString().slice(0, 7)
+}
+
+function formatJobDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  })
+}
+
+function formatMonthLabel(yearMonth: string) {
+  const [year, month] = yearMonth.split('-')
+  return new Date(Number(year), Number(month) - 1).toLocaleDateString('en-GB', {
+    month: 'long',
+    year: 'numeric',
+  })
 }
