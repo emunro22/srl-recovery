@@ -1053,3 +1053,29 @@
   border-color: hsla(140, 70%, 40%, 0.2);
   margin-bottom: 1.6rem;
 }
+
+.badgeWa {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.7rem;
+  border-radius: 10rem;
+  background: hsla(142, 70%, 35%, 0.15);
+  color: hsl(142, 70%, 55%);
+  border: 1px solid hsla(142, 70%, 35%, 0.3);
+  white-space: nowrap;
+}
+
+.badgeManual {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.7rem;
+  border-radius: 10rem;
+  background: hsla(0, 0%, 100%, 0.05);
+  color: var(--gray-light);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  white-space: nowrap;
+}

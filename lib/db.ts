@@ -193,6 +193,7 @@ export type Customer = {
   phone: string
   job_date: string
   notes: string | null
+  source: 'manual' | 'whatsapp'
   created_at: string
 }
 
@@ -208,9 +209,12 @@ async function ensureCustomerTable() {
           phone      TEXT NOT NULL,
           job_date   DATE NOT NULL DEFAULT CURRENT_DATE,
           notes      TEXT,
+          source     TEXT NOT NULL DEFAULT 'manual',
           created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
         )
       `
+      // Add source column to existing tables that predate this field
+      await sql`ALTER TABLE customers ADD COLUMN IF NOT EXISTS source TEXT NOT NULL DEFAULT 'manual'`
     })()
   }
   return _customerTableReady
@@ -219,7 +223,7 @@ async function ensureCustomerTable() {
 export async function getCustomers(): Promise<Customer[]> {
   await ensureCustomerTable()
   const rows = (await sql`
-    SELECT id, name, phone, job_date::TEXT, notes, created_at
+    SELECT id, name, phone, job_date::TEXT, notes, source, created_at
     FROM customers
     ORDER BY job_date DESC, created_at DESC
   `) as Customer[]
@@ -231,21 +235,57 @@ export async function addCustomer(data: {
   phone: string
   job_date: string
   notes?: string
+  source?: 'manual' | 'whatsapp'
 }): Promise<Customer> {
   await ensureCustomerTable()
   const rows = (await sql`
-    INSERT INTO customers (name, phone, job_date, notes)
-    VALUES (${data.name}, ${data.phone}, ${data.job_date}, ${data.notes ?? null})
-    RETURNING id, name, phone, job_date::TEXT, notes, created_at
+    INSERT INTO customers (name, phone, job_date, notes, source)
+    VALUES (${data.name}, ${data.phone}, ${data.job_date}, ${data.notes ?? null}, ${data.source ?? 'manual'})
+    RETURNING id, name, phone, job_date::TEXT, notes, source, created_at
   `) as Customer[]
   return rows[0]
+}
+
+// Called by the WhatsApp webhook — logs a contact once per month per phone number.
+// If they message again the same month, we update the name if we now have one.
+export async function upsertWhatsAppCustomer(data: {
+  phone: string
+  name: string
+  job_date: string
+}): Promise<{ customer: Customer; isNew: boolean }> {
+  await ensureCustomerTable()
+  const month = data.job_date.slice(0, 7)
+
+  const existing = (await sql`
+    SELECT id, name, phone, job_date::TEXT, notes, source, created_at
+    FROM customers
+    WHERE phone = ${data.phone}
+      AND TO_CHAR(job_date, 'YYYY-MM') = ${month}
+    LIMIT 1
+  `) as Customer[]
+
+  if (existing.length > 0) {
+    // Update name if we got one and didn't have one before
+    if (data.name && !existing[0].name) {
+      await sql`UPDATE customers SET name = ${data.name} WHERE id = ${existing[0].id}`
+      existing[0].name = data.name
+    }
+    return { customer: existing[0], isNew: false }
+  }
+
+  const rows = (await sql`
+    INSERT INTO customers (name, phone, job_date, source)
+    VALUES (${data.name}, ${data.phone}, ${data.job_date}, 'whatsapp')
+    RETURNING id, name, phone, job_date::TEXT, notes, source, created_at
+  `) as Customer[]
+  return { customer: rows[0], isNew: true }
 }
 
 export async function getCustomersByMonth(yearMonth: string): Promise<Customer[]> {
   await ensureCustomerTable()
   // yearMonth format: "2025-05"
   const rows = (await sql`
-    SELECT id, name, phone, job_date::TEXT, notes, created_at
+    SELECT id, name, phone, job_date::TEXT, notes, source, created_at
     FROM customers
     WHERE TO_CHAR(job_date, 'YYYY-MM') = ${yearMonth}
     ORDER BY job_date ASC, created_at ASC
@@ -257,7 +297,7 @@ export async function deleteCustomer(id: number): Promise<Customer | null> {
   await ensureCustomerTable()
   const rows = (await sql`
     DELETE FROM customers WHERE id = ${id}
-    RETURNING id, name, phone, job_date::TEXT, notes, created_at
+    RETURNING id, name, phone, job_date::TEXT, notes, source, created_at
   `) as Customer[]
   return rows[0] ?? null
 }

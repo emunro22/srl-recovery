@@ -529,9 +529,14 @@ export default function AdminDashboard({
                   <div className={styles.custList}>
                     {filtered.map((c) => (
                       <div key={c.id} className={styles.custItem}>
-                        <span className="material-symbols-rounded" style={{ color: 'var(--gray-light)', fontSize: '1.8rem' }}>person</span>
                         <div className={styles.custMeta}>
-                          <span className={styles.custName}>{c.name || 'No name'}</span>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', flexWrap: 'wrap' }}>
+                            <span className={styles.custName}>{c.name || 'No name'}</span>
+                            {c.source === 'whatsapp'
+                              ? <span className={styles.badgeWa}>WhatsApp</span>
+                              : <span className={styles.badgeManual}>Manual</span>
+                            }
+                          </div>
                           <span className={styles.custPhone}>{c.phone}</span>
                           {c.notes && <span className={styles.custNotes}>{c.notes}</span>}
                         </div>
