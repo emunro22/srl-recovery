@@ -39,10 +39,6 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     siteName: 'SRL Recovery',
   },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-  },
 }
 
 export default function RootLayout({
