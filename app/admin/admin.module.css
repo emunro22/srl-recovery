@@ -865,3 +865,62 @@
   color: var(--white);
   box-shadow: 0 1px 4px hsla(0, 0%, 0%, 0.4);
 }
+
+/* ============================================================
+   REVIEWS TAB
+   ============================================================ */
+
+.reviewCard {
+  background: var(--black-2);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2.4rem;
+}
+
+@media (min-width: 640px) {
+  .reviewCard { padding: 2.4rem; }
+}
+
+.reviewDesc {
+  font-size: 1.4rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 480px;
+  margin-bottom: 2.4rem;
+}
+
+.reviewSendBtn {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.reviewNote {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  background: hsla(210, 90%, 55%, 0.06);
+  border: 1px solid hsla(210, 90%, 55%, 0.15);
+  border-radius: var(--radius-md);
+  font-size: 1.3rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+.reviewNote .material-symbols-rounded {
+  font-size: 2rem;
+  color: hsl(210, 90%, 65%);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}

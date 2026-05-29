@@ -24,12 +24,14 @@ export default function AdminDashboard({
   initialImages: GalleryImage[]
   initialPosts: BlogPost[]
 }) {
-  const [activeTab, setActiveTab] = useState<'gallery' | 'blog'>('gallery')
+  const [activeTab, setActiveTab] = useState<'gallery' | 'blog' | 'reviews'>('gallery')
   const [images, setImages] = useState<GalleryImage[]>(initialImages)
   const [queue, setQueue] = useState<QueueItem[]>([])
   const [tag, setTag] = useState('Glasgow')
   const [isUploading, setIsUploading] = useState(false)
   const [seeding, setSeeding] = useState(false)
+  const [seedingBlog, setSeedingBlog] = useState(false)
+  const [reviewPhone, setReviewPhone] = useState('')
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   async function logout() {
@@ -59,6 +61,40 @@ export default function AdminDashboard({
       alert('Network error')
     }
     setSeeding(false)
+  }
+
+  async function seedBlogPosts() {
+    if (seedingBlog) return
+    if (!confirm('Add 25 pre-written SEO blog posts? Any posts with the same slug will be skipped — safe to run more than once.')) return
+    setSeedingBlog(true)
+    try {
+      const res = await fetch('/api/admin/seed-blog', { method: 'POST' })
+      const data = await res.json()
+      if (!res.ok) {
+        alert(data.error || 'Seed failed')
+      } else {
+        alert(
+          `Done — added ${data.inserted} post${data.inserted === 1 ? '' : 's'}.` +
+          (data.skipped > 0 ? ` ${data.skipped} already existed.` : '')
+        )
+        window.location.reload()
+      }
+    } catch {
+      alert('Network error')
+    }
+    setSeedingBlog(false)
+  }
+
+  function sendReviewRequest() {
+    const raw = reviewPhone.trim().replace(/\s+/g, '')
+    if (!raw) { alert('Enter a phone number first.'); return }
+    const normalized = raw.startsWith('0') ? '44' + raw.slice(1) : raw.replace(/^\+/, '')
+    // Replace this URL with your direct Google review link from Google Business Profile
+    const reviewLink = 'https://www.google.com/search?q=SRL+recovery+24%2F7+breakdown+recovery+Glasgow'
+    const message = encodeURIComponent(
+      `Hi, thanks for using SRL Recovery! We hope everything went smoothly. If you have a moment, we'd really appreciate a quick Google review — it helps us a lot: ${reviewLink} Thank you!`
+    )
+    window.open(`https://wa.me/${normalized}?text=${message}`, '_blank')
   }
 
   function onFilesChosen(e: React.ChangeEvent<HTMLInputElement>) {
@@ -223,10 +259,85 @@ export default function AdminDashboard({
           <span className="material-symbols-rounded">edit_note</span>
           Blog
         </button>
+        <button
+          role="tab"
+          aria-selected={activeTab === 'reviews'}
+          onClick={() => setActiveTab('reviews')}
+          className={`${styles.tabBtn} ${activeTab === 'reviews' ? styles.tabBtnActive : ''}`}
+        >
+          <span className="material-symbols-rounded">star</span>
+          Reviews
+        </button>
       </div>
 
       {activeTab === 'blog' && (
-        <BlogPostManager initialPosts={initialPosts} />
+        <>
+          <section className={styles.seedCard}>
+            <div>
+              <h3 className={styles.seedTitle}>Add 25 pre-written SEO blog posts</h3>
+              <p className={styles.seedDesc}>
+                Instantly publish 25 Google-optimised recovery articles covering breakdowns, motorway guides,
+                winter tips, prestige recovery, and more. Existing posts are skipped — safe to run more than once.
+              </p>
+            </div>
+            <button
+              onClick={seedBlogPosts}
+              disabled={seedingBlog}
+              className={`${styles.linkBtn} ${styles.seedBtn}`}
+            >
+              {seedingBlog ? 'Adding posts...' : 'Add SEO blog posts'}
+            </button>
+          </section>
+          <BlogPostManager initialPosts={initialPosts} />
+        </>
+      )}
+
+      {activeTab === 'reviews' && (
+        <section className={styles.reviewCard}>
+          <h2 className={styles.sectionTitle}>Send a Review Request via WhatsApp</h2>
+          <p className={styles.reviewDesc}>
+            Enter a customer&apos;s mobile number and click <strong>Send</strong>. WhatsApp will open on
+            your phone or desktop with a pre-filled message containing a direct link to your Google
+            review page. You send it — the customer gets a one-tap link to leave a 5-star review.
+          </p>
+
+          <div className={styles.reviewForm}>
+            <div className={styles.field}>
+              <label className={styles.label} htmlFor="reviewPhone">Customer mobile number</label>
+              <input
+                id="reviewPhone"
+                type="tel"
+                value={reviewPhone}
+                onChange={(e) => setReviewPhone(e.target.value)}
+                placeholder="e.g. 07700 900000"
+                className={styles.input}
+              />
+            </div>
+            <button
+              type="button"
+              onClick={sendReviewRequest}
+              className={`btn ${styles.reviewSendBtn}`}
+            >
+              <span className="material-symbols-rounded">send</span>
+              Open WhatsApp &amp; Send
+            </button>
+          </div>
+
+          <div className={styles.reviewNote}>
+            <span className="material-symbols-rounded">info</span>
+            <div>
+              <strong>How it works:</strong> Clicking the button opens WhatsApp (app or web) with
+              a pre-written message and your Google review link. You confirm and send it manually.
+              <br /><br />
+              <strong>Update your review link:</strong> The message currently uses your Google search page. For a direct one-tap review link, go to <strong>Google Business Profile → Get more reviews → Share review form</strong> and copy that URL, then let us know and we&apos;ll update it in the code.
+              <br /><br />
+              <strong>Want it fully automatic?</strong> Automatic sending to every WhatsApp contact
+              requires the <strong>WhatsApp Business API</strong> (Cloud API via Meta), which needs
+              business verification and approved message templates — this requires action on your side.
+              Let us know and we can help you get set up.
+            </div>
+          </div>
+        </section>
       )}
 
       {activeTab === 'gallery' && (
