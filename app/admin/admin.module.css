@@ -890,21 +890,6 @@
   max-width: 600px;
 }
 
-.reviewForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  max-width: 480px;
-  margin-bottom: 2.4rem;
-}
-
-.reviewSendBtn {
-  align-self: flex-start;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
 .reviewNote {
   display: flex;
   gap: 1.2rem;
