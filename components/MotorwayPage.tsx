@@ -22,12 +22,26 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
     url: `https://srlrecovery.com/motorways/${data.slug}`,
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://srlrecovery.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Motorways', item: 'https://srlrecovery.com/motorways' },
+      { '@type': 'ListItem', position: 3, name: `${data.name} Recovery`, item: `https://srlrecovery.com/motorways/${data.slug}` },
+    ],
+  }
+
   return (
     <>
       <Header />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main className={styles.main}>
         <section className={styles.hero}>

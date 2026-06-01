@@ -16,8 +16,55 @@ export type AreaInfo = {
 }
 
 export default function AreaPage({ area }: { area: AreaInfo }) {
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `24/7 Breakdown Recovery ${area.name}`,
+    description: area.introBlurb,
+    provider: {
+      '@type': 'AutoRepair',
+      '@id': 'https://srlrecovery.com/#business',
+      name: 'SRL Recovery',
+      telephone: '+447776356556',
+      url: 'https://srlrecovery.com',
+    },
+    areaServed: {
+      '@type': 'City',
+      name: area.name,
+      containedInPlace: { '@type': 'AdministrativeArea', name: 'Scotland' },
+    },
+    url: `https://srlrecovery.com/areas/${area.slug}`,
+    offers: {
+      '@type': 'Offer',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        price: '60.00',
+        priceCurrency: 'GBP',
+        description: 'Local recovery call-out from £60 + £1.50/mile',
+      },
+    },
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://srlrecovery.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Areas', item: 'https://srlrecovery.com/areas' },
+      { '@type': 'ListItem', position: 3, name: `${area.name} Recovery`, item: `https://srlrecovery.com/areas/${area.slug}` },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main className={styles.main}>
         <section className={styles.hero}>

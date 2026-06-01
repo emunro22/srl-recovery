@@ -54,7 +54,6 @@ export default function Schema() {
       ],
       sameAs: [
         'https://www.facebook.com/profile.php?id=100091314683575',
-        'https://www.google.com/search?q=SRL+recovery+24%2F7+breakdown+recovery+Glasgow',
       ],
       aggregateRating: {
         '@type': 'AggregateRating',

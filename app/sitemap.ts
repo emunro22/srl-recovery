@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { services } from '@/lib/services-data'
 import { motorways } from '@/lib/motorways-data'
+import { getBlogPosts } from '@/lib/db'
 
 const BASE = 'https://srlrecovery.com'
 
@@ -18,7 +19,7 @@ const areaSlugs = [
   'dumbarton',
 ]
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -27,29 +28,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/motorways`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/work`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
-    { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.5 },
+    { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
   ]
 
   const areaPages: MetadataRoute.Sitemap = areaSlugs.map((slug) => ({
     url: `${BASE}/areas/${slug}`,
     lastModified: now,
-    changeFrequency: 'monthly',
+    changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
 
   const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
     url: `${BASE}/services/${s.slug}`,
     lastModified: now,
-    changeFrequency: 'monthly',
+    changeFrequency: 'monthly' as const,
     priority: 0.85,
   }))
 
   const motorwayPages: MetadataRoute.Sitemap = motorways.map((m) => ({
     url: `${BASE}/motorways/${m.slug}`,
     lastModified: now,
-    changeFrequency: 'monthly',
+    changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
 
-  return [...staticPages, ...areaPages, ...servicePages, ...motorwayPages]
+  let blogPages: MetadataRoute.Sitemap = []
+  try {
+    const posts = await getBlogPosts(true)
+    blogPages = posts.map((p) => ({
+      url: `${BASE}/blog/${p.slug}`,
+      lastModified: new Date(p.updated_at),
+      changeFrequency: 'monthly' as const,
+      priority: 0.65,
+    }))
+  } catch {
+    // DB unavailable at build time — blog posts omitted from sitemap
+  }
+
+  return [...staticPages, ...areaPages, ...servicePages, ...motorwayPages, ...blogPages]
 }

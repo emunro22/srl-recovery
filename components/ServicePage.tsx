@@ -38,6 +38,16 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
     url: `https://srlrecovery.com/services/${data.slug}`,
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://srlrecovery.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://srlrecovery.com/services' },
+      { '@type': 'ListItem', position: 3, name: data.h1, item: `https://srlrecovery.com/services/${data.slug}` },
+    ],
+  }
+
   return (
     <>
       <Header />
@@ -48,6 +58,10 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main className={styles.main}>
         <section className={styles.hero}>

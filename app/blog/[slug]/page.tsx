@@ -36,8 +36,30 @@ export default async function BlogPostPage({ params }: Props) {
     .map((p) => p.trim())
     .filter(Boolean)
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt || undefined,
+    datePublished: post.created_at,
+    dateModified: post.updated_at,
+    url: `https://srlrecovery.com/blog/${post.slug}`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://srlrecovery.com/blog/${post.slug}` },
+    author: { '@type': 'Organization', name: 'SRL Recovery', url: 'https://srlrecovery.com' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'SRL Recovery',
+      logo: { '@type': 'ImageObject', url: 'https://srlrecovery.com/images/logo.png' },
+    },
+    ...(post.cover_image_url ? { image: post.cover_image_url } : {}),
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <Header />
       <main className={styles.main}>
         {post.cover_image_url && (
