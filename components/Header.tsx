@@ -37,6 +37,7 @@ export default function Header() {
     { href: '/#faq', label: 'FAQ' },
     { href: '/blog', label: 'Blog' },
     { href: '/#contact', label: 'Contact' },
+    { href: '/accident-claim', label: 'Free Accident Claim', prominent: true },
   ]
 
   return (
@@ -57,7 +58,7 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={styles.navLink}
+                  className={link.prominent ? styles.navLinkAccident : styles.navLink}
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}

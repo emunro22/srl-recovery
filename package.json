@@ -14,6 +14,7 @@
     "@vercel/blob": "^2.3.3",
     "critters": "^0.0.23",
     "leaflet": "^1.9.4",
+    "marked": "^18.0.4",
     "next": "^16.2.6",
     "react": "^18",
     "react-dom": "^18",

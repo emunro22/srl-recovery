@@ -94,6 +94,90 @@
   margin: 0 0 1.4em;
 }
 
+/* ── Markdown prose styles ── */
+.body h1,
+.body h2,
+.body h3,
+.body h4 {
+  font-family: var(--font-chakra);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
+  margin: 2.4em 0 0.6em;
+}
+
+.body h1 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+.body h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+.body h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+.body h4 { font-size: 1.3rem; color: rgba(255,255,255,0.85); }
+
+.body h1:first-child,
+.body h2:first-child,
+.body h3:first-child {
+  margin-top: 0;
+}
+
+.body hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 2.4em 0;
+}
+
+.body strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.body em {
+  color: rgba(255, 255, 255, 0.65);
+  font-style: italic;
+}
+
+.body a {
+  color: #ff6eb4;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+  display: inline;
+}
+
+.body a:hover {
+  opacity: 0.8;
+}
+
+.body ul,
+.body ol {
+  margin: 0 0 1.4em 1.6em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.body ul { list-style: disc; }
+.body ol { list-style: decimal; }
+
+.body li {
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  list-style: inherit;
+}
+
+.body blockquote {
+  border-left: 3px solid #ff6eb4;
+  margin: 1.6em 0;
+  padding: 0.8em 1.4em;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+.body code {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: monospace;
+}
+
 .noContent {
   color: rgba(255, 255, 255, 0.4);
   font-style: italic;

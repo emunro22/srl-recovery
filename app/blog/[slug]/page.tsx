@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { marked } from 'marked'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { getBlogPostBySlug } from '@/lib/db'
@@ -31,10 +32,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   if (!post || !post.published) notFound()
 
-  const paragraphs = post.content
-    .split(/\n\n+/)
-    .map((p) => p.trim())
-    .filter(Boolean)
+  const htmlContent = marked.parse(post.content) as string
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -92,13 +90,10 @@ export default async function BlogPostPage({ params }: Props) {
             <p className={styles.lead}>{post.excerpt}</p>
           )}
 
-          <div className={styles.body}>
-            {paragraphs.length > 0 ? (
-              paragraphs.map((para, i) => <p key={i}>{para}</p>)
-            ) : (
-              <p className={styles.noContent}>No content yet.</p>
-            )}
-          </div>
+          <div
+            className={styles.body}
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
         </article>
 
         <div className={styles.cta}>

@@ -72,6 +72,27 @@
   transform: scaleX(1);
 }
 
+.navLinkAccident {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--gradient);
+  border-radius: var(--radius-pill);
+  color: var(--white);
+  transition: var(--transition);
+  box-shadow: 0 0 18px hsla(318, 82%, 45%, 0.35);
+  margin-left: 0.4rem;
+}
+
+.navLinkAccident:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px hsla(318, 82%, 45%, 0.6);
+}
+
 .desktopSocials {
   display: flex;
   gap: 0.6rem;
@@ -194,6 +215,13 @@
   .navLink::after {
     display: none;
   }
+  .navLinkAccident {
+    font-size: 2.4rem;
+    padding: 1.4rem 2.8rem;
+    margin-left: 0;
+    box-shadow: 0 0 24px hsla(318, 82%, 45%, 0.4);
+  }
+
   .mobileSocials {
     display: flex;
     gap: 1.6rem;
