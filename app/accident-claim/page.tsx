@@ -118,10 +118,10 @@ export default function AccidentClaimPage() {
               <span className={styles.gradient}>Don&apos;t Call Your Insurance Yet</span>
             </h1>
             <p className={styles.lead}>
-              SRL Recovery handles everything start to finish — recovery from the scene,
-              a like-for-like hire car within 24 hours, and full claim management at{' '}
-              <strong>zero upfront cost</strong> to you. Most people don&apos;t know what
-              they&apos;re entitled to. We do.
+              If the accident wasn&apos;t your fault, SRL Recovery handles everything start
+              to finish — recovery from the scene, a like-for-like hire car within 24 hours,
+              and full claim management at{' '}<strong>zero cost to non-fault customers</strong>.
+              {' '}Most people don&apos;t know what they&apos;re entitled to. We do.
             </p>
             <div className={styles.heroActions}>
               <a href="tel:+447776356556" className="btn">
