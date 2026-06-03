@@ -17,7 +17,7 @@ export default function GlasgowPage() {
         introBlurb:
           'Broken down in Glasgow city centre? SRL Recovery dispatches immediately to all G1–G5 postcodes — from the Merchant City to Finnieston, Charing Cross to the Southside. 24/7 recovery with average arrival of 20–35 minutes.',
         routeBlurb:
-          'Glasgow city centre is one of our busiest recovery zones — we're on the M8, M74, and inner-city arterials every single day. We recover from the Kingston Bridge, the M8 urban section at Charing Cross, the Clydeside Expressway, and every major street from Sauchiehall to Argyle Street. Car parks, multi-storeys, retail parks, roadside — wherever you're stuck in G1 to G5, we'll get to you fast.',
+          'Glasgow city centre is one of our busiest recovery zones — we\'re on the M8, M74, and inner-city arterials every single day. We recover from the Kingston Bridge, the M8 urban section at Charing Cross, the Clydeside Expressway, and every major street from Sauchiehall to Argyle Street. Car parks, multi-storeys, retail parks, roadside — wherever you\'re stuck in G1 to G5, we\'ll get to you fast.',
         responseTime: '20–35 mins',
         nearbyAreas: ['Govan', 'Partick', 'Gorbals', 'Rutherglen', 'Cambuslang'],
       }}
