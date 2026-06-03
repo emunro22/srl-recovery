@@ -35,7 +35,7 @@ export default function AccidentClaimPage() {
         name: 'How quickly can I get a hire car after a non-fault accident?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'In most cases we arrange a like-for-like replacement vehicle within 24 hours of the non-fault claim being lodged. You get a vehicle matching yours in size and specification — not a basic courtesy car.',
+          text: 'We aim to arrange a like-for-like replacement vehicle within 24 hours of the non-fault claim being lodged. You get a vehicle matching yours in size and specification — not a basic courtesy car.',
         },
       },
       {
@@ -119,8 +119,8 @@ export default function AccidentClaimPage() {
             </h1>
             <p className={styles.lead}>
               If the accident wasn&apos;t your fault, SRL Recovery handles everything start
-              to finish — recovery from the scene, a like-for-like hire car within 24 hours,
-              and full claim management at{' '}<strong>zero cost to non-fault customers</strong>.
+              to finish — recovery from the scene, a like-for-like hire car (we aim to arrange
+              within 24 hours), and full claim management at{' '}<strong>zero cost to non-fault customers</strong>.
               {' '}Most people don&apos;t know what they&apos;re entitled to. We do.
             </p>
             <div className={styles.heroActions}>
@@ -148,7 +148,7 @@ export default function AccidentClaimPage() {
               </div>
               <div className={styles.heroStat}>
                 <strong>£3,000</strong>
-                <span>Average non-fault settlement</span>
+                <span>Average per person in the vehicle (non-fault)</span>
               </div>
             </div>
           </div>
@@ -226,11 +226,11 @@ export default function AccidentClaimPage() {
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    Like-for-like hire car within 24 hours
+                    Like-for-like hire car — we aim to arrange within 24 hours
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    Secure vehicle storage — claimed back from the insurer
+                    Secure vehicle storage
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
@@ -248,10 +248,26 @@ export default function AccidentClaimPage() {
                     <span className="material-symbols-rounded">check_circle</span>
                     Your own insurer never contacted
                   </li>
+                  <li>
+                    <span className="material-symbols-rounded">check_circle</span>
+                    Free legal advice included
+                  </li>
+                  <li>
+                    <span className="material-symbols-rounded">check_circle</span>
+                    Stress-free experience — call for free advice
+                  </li>
+                  <li>
+                    <span className="material-symbols-rounded">check_circle</span>
+                    Historic personal injury claims up to 3 years — we can help
+                  </li>
+                  <li>
+                    <span className="material-symbols-rounded">check_circle</span>
+                    Help with your policy excess
+                  </li>
                 </ul>
                 <div className={styles.payoutBadge}>
                   <strong>£3,000 average</strong>
-                  <span>recovered per non-fault customer</span>
+                  <span>per person in the vehicle (non-fault)</span>
                 </div>
               </div>
 
@@ -270,7 +286,7 @@ export default function AccidentClaimPage() {
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    Secure storage arranged and billed to your insurer
+                    Secure storage arranged
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
@@ -278,11 +294,11 @@ export default function AccidentClaimPage() {
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    Repair coordinated through approved repairers
+                    Full claim administration handled on your behalf
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    Full claim administration handled on your behalf
+                    Stress-free experience — call for free advice
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
@@ -290,9 +306,9 @@ export default function AccidentClaimPage() {
                   </li>
                 </ul>
                 <p className={styles.atFaultNote}>
-                  At-fault recovery and storage are billed directly to your insurer.
-                  You pay nothing upfront. Standard policy excess applies as per your
-                  insurance agreement.
+                  Passengers in an at-fault vehicle can still claim personal injury compensation
+                  — average £3,000 per person. The at-fault driver cannot claim personal injury.
+                  Standard policy excess applies as per your insurance agreement.
                 </p>
               </div>
 
@@ -329,8 +345,8 @@ export default function AccidentClaimPage() {
                 <h3>Like-for-Like Hire Car</h3>
                 <p>
                   Non-fault customers get a replacement vehicle matching theirs in size and
-                  specification — within 24 hours. Not a small runabout. A proper, like-for-like
-                  car at no cost to you.
+                  specification — we aim to arrange within 24 hours. Not a small runabout. A proper,
+                  like-for-like car at no cost to you.
                 </p>
               </div>
               <div className={styles.handleCard}>
@@ -396,7 +412,7 @@ export default function AccidentClaimPage() {
                 <div className={styles.stepContent}>
                   <h3>Hire car arranged (non-fault)</h3>
                   <p>
-                    For non-fault claims, we arrange a like-for-like replacement vehicle within
+                    For non-fault claims, we aim to arrange a like-for-like replacement vehicle within
                     24 hours so you&apos;re never stranded. This is provided at zero cost to you —
                     claimed back from the at-fault insurer.
                   </p>
@@ -454,7 +470,7 @@ export default function AccidentClaimPage() {
               <details className={styles.faqItem}>
                 <summary>How quickly can I get a hire car?</summary>
                 <p>
-                  For non-fault claims, we typically arrange a like-for-like replacement vehicle within
+                  For non-fault claims, we aim to arrange a like-for-like replacement vehicle within
                   24 hours. This isn&apos;t a basic courtesy car — you get a vehicle matching yours in
                   type and size. If you drive an SUV, you get an SUV. If you drive a BMW, you get an
                   equivalent BMW.
@@ -472,9 +488,9 @@ export default function AccidentClaimPage() {
               <details className={styles.faqItem}>
                 <summary>What&apos;s the average non-fault settlement?</summary>
                 <p>
-                  SRL Recovery secures an average of £3,000 per non-fault customer through the claims
-                  process. This covers recovery costs, storage, hire car, and any additional losses
-                  incurred as a direct result of the accident.
+                  SRL Recovery secures an average of £3,000 per person in the vehicle for non-fault
+                  customers. This covers recovery costs, storage, hire car, personal injury, and any
+                  additional losses incurred as a direct result of the accident.
                 </p>
               </details>
               <details className={styles.faqItem}>
@@ -499,6 +515,31 @@ export default function AccidentClaimPage() {
                   For non-fault claims handled correctly through us, your no-claims bonus should not be
                   affected at all. Because we deal directly with the at-fault insurer rather than going
                   through your own policy, your insurer has no grounds to adjust your premium.
+                </p>
+              </details>
+              <details className={styles.faqItem}>
+                <summary>Can I claim for personal injury after a non-fault accident?</summary>
+                <p>
+                  Yes. If you were injured in a non-fault accident, you may be entitled to personal
+                  injury compensation — averaging £3,000 per person in the vehicle. We can help you
+                  pursue historic personal injury claims up to 3 years after the accident. Call us for
+                  free advice on what you&apos;re entitled to.
+                </p>
+              </details>
+              <details className={styles.faqItem}>
+                <summary>Can at-fault passengers claim personal injury?</summary>
+                <p>
+                  Yes. Passengers in an at-fault vehicle can still make a personal injury claim —
+                  average £3,000 per person. The at-fault driver cannot claim personal injury
+                  compensation, but passengers are not considered at fault and retain their right
+                  to claim.
+                </p>
+              </details>
+              <details className={styles.faqItem}>
+                <summary>Can you help with my policy excess?</summary>
+                <p>
+                  Yes. We can advise on and help you recover your policy excess as part of the claims
+                  process. Call us for free advice on your specific situation.
                 </p>
               </details>
             </div>
@@ -529,6 +570,18 @@ export default function AccidentClaimPage() {
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ── Disclaimer ── */}
+        <section className={styles.disclaimerSection}>
+          <div className="container">
+            <p className={styles.disclaimer}>
+              Terms and conditions apply. All services are subject to eligibility and the specific
+              circumstances of your claim. Personal injury claims are subject to relevant limitation
+              periods (typically 3 years from the date of the accident). Settlement figures are
+              averages and individual outcomes may vary.
+            </p>
           </div>
         </section>
 
