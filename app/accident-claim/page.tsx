@@ -140,7 +140,7 @@ export default function AccidentClaimPage() {
             <div className={styles.heroStats}>
               <div className={styles.heroStat}>
                 <strong>£0</strong>
-                <span>Upfront cost to you</span>
+                <span>Cost to non-fault customers</span>
               </div>
               <div className={styles.heroStat}>
                 <strong>24 hrs</strong>
