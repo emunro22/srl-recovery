@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Chakra_Petch, Mulish } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import Schema from '@/components/Schema'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import StickyCallBar from '@/components/StickyCallBar'
@@ -65,6 +66,7 @@ export default function RootLayout({
         {children}
         <WhatsAppButton />
         <StickyCallBar />
+        <Analytics />
       </body>
     </html>
   )
