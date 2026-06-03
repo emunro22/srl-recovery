@@ -17,6 +17,21 @@ const areaSlugs = [
   'cambuslang',
   'bellshill',
   'dumbarton',
+  'glasgow',
+  'wishaw',
+  'airdrie',
+  'cumbernauld',
+  'kirkintilloch',
+  'bishopbriggs',
+  'uddingston',
+  'newton-mearns',
+  'barrhead',
+  'renfrew',
+  'johnstone',
+  'blantyre',
+  'larkhall',
+  'carluke',
+  'giffnock',
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

@@ -5,9 +5,9 @@ import { motorways } from '@/lib/motorways-data'
 import styles from './page.module.css'
 
 export const metadata = {
-  title: 'Motorway Recovery Glasgow | M8, M74, M77, M73, M80 | SRL Recovery',
+  title: 'Motorway Recovery Glasgow | M8, M74, M77, M73, M80, M9, M876 | SRL Recovery',
   description:
-    'Motorway breakdown recovery across all major Glasgow motorways. 24/7 dispatch on the M8, M74, M77, M73, and M80. Call 07776 356 556.',
+    'Motorway breakdown recovery across all major Scottish motorways. 24/7 dispatch on the M8, M74, M77, M73, M80, M9, and M876. Call 07776 356 556.',
   alternates: { canonical: '/motorways' },
 }
 
@@ -21,7 +21,7 @@ export default function MotorwaysIndex() {
             <p className="section-subtitle">Motorway Recovery</p>
             <h1 className={styles.title}>Every Glasgow Motorway, 24/7</h1>
             <p className={styles.lead}>
-              SRL Recovery covers the M8, M74, M77, M73, and M80 around the clock. Pick your
+              SRL Recovery covers the M8, M74, M77, M73, M80, M9, and M876 around the clock. Pick your
               motorway below for junction-by-junction coverage info, safety advice, and the
               best way to reach us if you&apos;re broken down right now.
             </p>

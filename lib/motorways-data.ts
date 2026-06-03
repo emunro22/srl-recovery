@@ -255,6 +255,86 @@ export const motorways: MotorwayPageData[] = [
       'Use emergency telephones (orange posts) if you can\'t use a mobile',
     ],
   },
+  {
+    slug: 'm9',
+    name: 'M9',
+    fullName: 'M9 motorway',
+    title: 'M9 Recovery | Breakdown Recovery on the M9 | SRL Recovery',
+    metaDescription:
+      "M9 breakdown? SRL Recovery covers the M9 from Stirling toward Edinburgh 24/7. Fast dispatch, fully insured. Call 07776 356 556.",
+    route: 'Stirling ↔ Edinburgh (via Falkirk/Linlithgow)',
+    length: '~35 miles',
+    junctionsCovered: 'J1 to J10',
+    responseTime: '35–60 mins',
+    introParagraph:
+      "The M9 connects Stirling to Edinburgh, branching off the M80 at Bannockburn and running east through Falkirk and Linlithgow toward the capital. We cover the M9 regularly, particularly the Falkirk and Stirling sections where our response times are strongest. If you're broken down on the M9 and don't have roadside assistance, call us — we'll be honest about arrival time depending on where you are.",
+    keySections: [
+      {
+        junction: 'J1–J3 (Stirling to Bannockburn)',
+        description:
+          "The western entry near Stirling where the M9 branches from the M80. Open road with good visibility. Average arrival from our Motherwell base: 40–55 minutes.",
+      },
+      {
+        junction: 'J4–J6 (Falkirk / Grangemouth)',
+        description:
+          "The busiest M9 section — Falkirk interchanges and the Grangemouth industrial zone carry heavy HGV traffic. Frequent breakdown spots around the complex junctions. Average arrival: 40–50 minutes.",
+      },
+      {
+        junction: 'J7–J10 (Linlithgow to Edinburgh outskirts)',
+        description:
+          "The eastern approach toward Edinburgh — more open, fewer services. The further east you are, the longer our arrival time. Average arrival: 50–70 minutes. For Edinburgh city breakdowns, a local operator may reach you faster.",
+      },
+    ],
+    knownProblemAreas: [
+      'Falkirk interchanges (J4/J5) — complex multi-road junctions',
+      'Grangemouth / Kinneil — heavy HGV traffic causing congestion incidents',
+      'Linlithgow open section — exposed in winter and high winds',
+    ],
+    safetyAdvice: [
+      'Hard shoulder available throughout the M9 — use it if you can',
+      'Pull as far left as possible, hazards on, exit on the passenger side',
+      'Stand well behind the safety barrier, away from traffic',
+      "Live lane breakdown: stay in the car, hazards on, call 999 immediately",
+    ],
+  },
+
+  {
+    slug: 'm876',
+    name: 'M876',
+    fullName: 'M876 motorway',
+    title: 'M876 Recovery | Breakdown Recovery on the M876 | SRL Recovery',
+    metaDescription:
+      "M876 breakdown near Falkirk? SRL Recovery covers the M876 linking the M80 and M9 24/7. Fast dispatch, fully insured. Call 07776 356 556.",
+    route: 'M80 (J5) ↔ M9 (J6) via Falkirk',
+    length: '~5 miles',
+    junctionsCovered: 'J1 to J2',
+    responseTime: '35–50 mins',
+    introParagraph:
+      "The M876 is a short but important bypass motorway linking the M80 to the M9 around Falkirk. Despite its short length, it carries significant freight and commuter traffic between the Glasgow and Edinburgh corridors. We cover the M876 24/7 as part of our wider M80/M9 coverage.",
+    keySections: [
+      {
+        junction: 'J1 (M80 J5 interchange)',
+        description:
+          "The connection point from the M80 coming north from Glasgow and Cumbernauld. Complex interchange with merging traffic. Average arrival: 35–45 minutes.",
+      },
+      {
+        junction: 'J2 (M9 J6 interchange)',
+        description:
+          "Connects to the M9 east of Falkirk. Another busy merge point with Edinburgh-bound and Stirling-bound traffic crossing. Average arrival: 40–50 minutes.",
+      },
+    ],
+    knownProblemAreas: [
+      'M876/M80 interchange — heavy merge traffic at peak hours',
+      'M876/M9 interchange — complex motorway junction',
+      'Full length — high HGV volume at all hours',
+    ],
+    safetyAdvice: [
+      'Short motorway — aim for the nearest junction or interchange if you can keep moving',
+      'Hard shoulder available — pull onto it as far left as possible',
+      'Hazards on, exit on the passenger side, get well behind the barrier',
+      "Live lane: do not exit the vehicle — call 999 immediately",
+    ],
+  },
 ]
 
 export function getMotorwayBySlug(slug: string): MotorwayPageData | undefined {
