@@ -73,24 +73,28 @@
 }
 
 .navLinkAccident {
-  display: inline-block;
-  padding: 0.7rem 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0.7rem 1.3rem;
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   background: var(--gradient);
   border-radius: var(--radius-pill);
   color: var(--white);
   transition: var(--transition);
   box-shadow: 0 0 18px hsla(318, 82%, 45%, 0.35);
-  margin-left: 0.4rem;
+  margin-left: 0.6rem;
+  line-height: 1;
 }
 
 .navLinkAccident:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 28px hsla(318, 82%, 45%, 0.6);
+  opacity: 0.92;
 }
 
 .desktopSocials {
@@ -216,10 +220,11 @@
     display: none;
   }
   .navLinkAccident {
-    font-size: 2.4rem;
-    padding: 1.4rem 2.8rem;
-    margin-left: 0;
-    box-shadow: 0 0 24px hsla(318, 82%, 45%, 0.4);
+    font-size: 2rem;
+    padding: 1.4rem 3.2rem;
+    margin: 0.8rem 0 0;
+    box-shadow: 0 0 30px hsla(318, 82%, 45%, 0.5);
+    animation: pulse-glow 3s ease-in-out infinite;
   }
 
   .mobileSocials {
