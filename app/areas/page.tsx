@@ -168,6 +168,12 @@ const AREAS = [
     postcodes: ['G46'],
     desc: 'South Glasgow suburbs — Giffnock, Thornliebank and Merrylee on the M77 corridor.',
   },
+  {
+    name: 'Abington',
+    slug: 'abington',
+    postcodes: ['ML12'],
+    desc: 'M74 J13 coverage — Abington Services and the remote southbound stretch between Lesmahagow and Beattock.',
+  },
 ]
 
 export default function AreasPage() {
