@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Renfrew | 24/7 Car Recovery | SRL Recovery',
   description:
     'Fast 24/7 breakdown and accident recovery in Renfrew. Covering PA4 postcodes, the M8 Glasgow Airport corridor, and the Clyde waterfront. Call 07776 356 556.',
-  alternates: { canonical: '/areas/renfrew' },
+  alternates: { canonical: 'https://srlrecovery.com/areas/renfrew' },
 }
 
 export default function RenfrewPage() {

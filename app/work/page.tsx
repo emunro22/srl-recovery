@@ -8,7 +8,7 @@ export const metadata = {
   title: 'Our Work – SRL Recovery Glasgow',
   description:
     'Browse our recent breakdown recovery and vehicle transport jobs across Glasgow and surrounding areas.',
-  alternates: { canonical: '/work' },
+  alternates: { canonical: 'https://srlrecovery.com/work' },
 }
 
 export const dynamic = 'force-dynamic'

@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Carluke | 24/7 Car Recovery | SRL Recovery',
   description:
     'Fast 24/7 breakdown and accident recovery in Carluke. Covering ML8 postcodes and the Clyde Valley A73 corridor. Call 07776 356 556.',
-  alternates: { canonical: '/areas/carluke' },
+  alternates: { canonical: 'https://srlrecovery.com/areas/carluke' },
 }
 
 export default function CarlukePage() {

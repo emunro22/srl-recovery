@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Bearsden | 24/7 Car Recovery | SRL Recovery',
   description:
     'Fast 24/7 breakdown and accident recovery in Bearsden. Average arrival 30–45 minutes. From £60. Call 07776 356 556.',
-  alternates: { canonical: '/areas/bearsden' },
+  alternates: { canonical: 'https://srlrecovery.com/areas/bearsden' },
 }
 
 export default function BearsdenPage() {

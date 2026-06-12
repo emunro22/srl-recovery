@@ -11,7 +11,7 @@ export const metadata = {
   title: 'Blog – SRL Recovery Glasgow',
   description:
     "News, advice, and updates from Glasgow's trusted 24/7 breakdown and recovery specialists.",
-  alternates: { canonical: '/blog' },
+  alternates: { canonical: 'https://srlrecovery.com/blog' },
 }
 
 export default async function BlogPage() {

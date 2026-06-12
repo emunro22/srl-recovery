@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Areas We Cover | 24/7 Breakdown Recovery Glasgow & Central Scotland | SRL Recovery',
   description:
     'SRL Recovery covers Glasgow and Central Scotland 24/7 — Motherwell, Hamilton, Paisley, East Kilbride, Wishaw, Airdrie, Cumbernauld, and 20+ more areas. Find your area.',
-  alternates: { canonical: '/areas' },
+  alternates: { canonical: 'https://srlrecovery.com/areas' },
 }
 
 const AREAS = [

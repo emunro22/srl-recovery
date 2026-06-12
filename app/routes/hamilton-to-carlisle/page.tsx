@@ -8,7 +8,7 @@ export const metadata = {
   title: 'Hamilton to Carlisle Recovery | M74/A74(M) Breakdown Recovery | SRL Recovery',
   description:
     'Broken down between Hamilton and Carlisle on the M74 or A74(M)? SRL Recovery covers this remote corridor 24/7. Abington Services, Beattock, and everything in between. Call 07776 356 556.',
-  alternates: { canonical: '/routes/hamilton-to-carlisle' },
+  alternates: { canonical: 'https://srlrecovery.com/routes/hamilton-to-carlisle' },
 }
 
 const serviceSchema = {

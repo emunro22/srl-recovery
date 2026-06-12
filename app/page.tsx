@@ -14,7 +14,7 @@ import CoverageMap from '@/components/CoverageMap'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/' },
+  alternates: { canonical: 'https://srlrecovery.com/' },
 }
 
 export default function Home() {

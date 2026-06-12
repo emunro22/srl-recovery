@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Abington | M74 J13 Services | SRL Recovery',
   description:
     'Broken down at Abington Services or on the M74 near Junction 13? SRL Recovery covers this remote stretch 24/7. Average arrival 45–60 minutes. Call 07776 356 556.',
-  alternates: { canonical: '/areas/abington' },
+  alternates: { canonical: 'https://srlrecovery.com/areas/abington' },
 }
 
 export default function AbingtonPage() {

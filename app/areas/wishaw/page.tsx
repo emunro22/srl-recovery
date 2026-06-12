@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Wishaw | 24/7 Car Recovery | SRL Recovery',
   description:
     'Fast 24/7 breakdown and accident recovery in Wishaw. SRL Recovery is based nearby in Motherwell — average arrival under 30 minutes. Call 07776 356 556.',
-  alternates: { canonical: '/areas/wishaw' },
+  alternates: { canonical: 'https://srlrecovery.com/areas/wishaw' },
 }
 
 export default function WishawPage() {

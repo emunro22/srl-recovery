@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Bishopbriggs | 24/7 Car Recovery | SRL Recovery',
   description:
     'Fast 24/7 breakdown and accident recovery in Bishopbriggs. Covering G64 postcodes, the A803 corridor, and surrounding North Glasgow suburbs. Call 07776 356 556.',
-  alternates: { canonical: '/areas/bishopbriggs' },
+  alternates: { canonical: 'https://srlrecovery.com/areas/bishopbriggs' },
 }
 
 export default function BishopbriggsPage() {

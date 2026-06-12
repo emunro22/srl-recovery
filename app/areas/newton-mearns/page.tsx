@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Newton Mearns | 24/7 Car Recovery | SRL Recovery',
   description:
     'Fast 24/7 breakdown and accident recovery in Newton Mearns. Covering G77 postcodes and the M77 corridor at junctions 4–5. Call 07776 356 556.',
-  alternates: { canonical: '/areas/newton-mearns' },
+  alternates: { canonical: 'https://srlrecovery.com/areas/newton-mearns' },
 }
 
 export default function NewtonMearnsPage() {

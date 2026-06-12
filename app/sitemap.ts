@@ -1,4 +1,6 @@
 import type { MetadataRoute } from 'next'
+
+export const dynamic = 'force-dynamic'
 import { services } from '@/lib/services-data'
 import { motorways } from '@/lib/motorways-data'
 import { getBlogPosts } from '@/lib/db'

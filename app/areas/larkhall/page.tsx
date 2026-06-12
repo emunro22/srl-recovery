@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Larkhall | 24/7 Car Recovery | SRL Recovery',
   description:
     'Fast 24/7 breakdown and accident recovery in Larkhall. Covering ML9 postcodes, the A72, and south Lanarkshire roads. Call 07776 356 556.',
-  alternates: { canonical: '/areas/larkhall' },
+  alternates: { canonical: 'https://srlrecovery.com/areas/larkhall' },
 }
 
 export default function LarkhallPage() {

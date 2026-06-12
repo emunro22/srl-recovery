@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Accident Recovery Glasgow | Non-Fault & At-Fault Claims | SRL Recovery',
   description:
     'Had an accident? SRL Recovery handles everything start to finish at zero upfront cost — free recovery, hire car within 24 hours, full claim management. Average £3,000 non-fault settlement. Call 07776 356 556.',
-  alternates: { canonical: '/accident-claim' },
+  alternates: { canonical: 'https://srlrecovery.com/accident-claim' },
 }
 
 export default function AccidentClaimPage() {

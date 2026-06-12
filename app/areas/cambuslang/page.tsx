@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Cambuslang | 24/7 Car Recovery | SRL Recovery',
   description:
     'Fast 24/7 breakdown and accident recovery in Cambuslang. Average arrival 25–40 minutes. From £60. Call 07776 356 556.',
-  alternates: { canonical: '/areas/cambuslang' },
+  alternates: { canonical: 'https://srlrecovery.com/areas/cambuslang' },
 }
 
 export default function CambuslangPage() {

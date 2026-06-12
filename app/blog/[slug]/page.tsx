@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: post.cover_image_url
       ? { images: [{ url: post.cover_image_url }] }
       : undefined,
-    alternates: { canonical: `/blog/${slug}` },
+    alternates: { canonical: `https://srlrecovery.com/blog/${slug}` },
   }
 }
 

@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Airdrie | 24/7 Car Recovery | SRL Recovery',
   description:
     'Fast 24/7 breakdown and accident recovery in Airdrie. Covering ML6 postcodes, the A73, A89, and surrounding areas. Call 07776 356 556.',
-  alternates: { canonical: '/areas/airdrie' },
+  alternates: { canonical: 'https://srlrecovery.com/areas/airdrie' },
 }
 
 export default function AirdriePage() {

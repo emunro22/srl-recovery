@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Breakdown Recovery Blantyre | 24/7 Car Recovery | SRL Recovery',
   description:
     'Fast 24/7 breakdown and accident recovery in Blantyre. Covering G72 postcodes, the A724, and the M74 junction 5 area. Call 07776 356 556.',
-  alternates: { canonical: '/areas/blantyre' },
+  alternates: { canonical: 'https://srlrecovery.com/areas/blantyre' },
 }
 
 export default function BlantyrePage() {

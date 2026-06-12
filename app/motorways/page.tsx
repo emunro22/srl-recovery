@@ -8,7 +8,7 @@ export const metadata = {
   title: 'Motorway Recovery Glasgow | M8, M74, M77, M73, M80, M9, M876 | SRL Recovery',
   description:
     'Motorway breakdown recovery across all major Scottish motorways. 24/7 dispatch on the M8, M74, M77, M73, M80, M9, and M876. Call 07776 356 556.',
-  alternates: { canonical: '/motorways' },
+  alternates: { canonical: 'https://srlrecovery.com/motorways' },
 }
 
 export default function MotorwaysIndex() {
