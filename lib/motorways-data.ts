@@ -12,6 +12,7 @@ export type MotorwayPageData = {
   knownProblemAreas: string[]
   safetyAdvice: string[]
   responseTime: string
+  routes?: { href: string; title: string; description: string }[]
 }
 
 export const motorways: MotorwayPageData[] = [
@@ -120,6 +121,13 @@ export const motorways: MotorwayPageData[] = [
       'If on a smart section in trouble: aim for an emergency refuge area if visible',
       "Live lane: do not exit the vehicle — call 999 immediately",
       'Hazards on, seatbelts on, stay calm and wait for help',
+    ],
+    routes: [
+      {
+        href: '/routes/hamilton-to-carlisle',
+        title: 'Hamilton to Carlisle',
+        description: 'Full M74/A74(M) southbound corridor — section-by-section coverage, known problem spots, and pricing for this 70-mile route.',
+      },
     ],
   },
 

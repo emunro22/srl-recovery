@@ -187,6 +187,56 @@
     color: var(--pink-light);
   }
   
+  .routeLinks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .routeCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: var(--black-2);
+    border: 1px solid hsla(0, 0%, 100%, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 2.4rem;
+    text-decoration: none;
+    color: var(--white);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .routeCard:hover {
+    border-color: var(--pink-light);
+    transform: translateY(-2px);
+  }
+
+  .routeCard strong {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+  }
+
+  .routeCard span {
+    font-size: 1.4rem;
+    color: var(--gray-light);
+    line-height: 1.6;
+  }
+
+  .routeCta {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--pink-light);
+    margin-top: auto;
+  }
+
+  .routeCta .material-symbols-rounded {
+    font-size: 1.8rem;
+  }
+
   .ctaSection {
     background: var(--gradient-dark);
     padding: 6rem 0;

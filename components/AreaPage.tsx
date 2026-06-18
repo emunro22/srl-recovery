@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Pricing from '@/components/Pricing'
@@ -13,6 +14,7 @@ export type AreaInfo = {
   routeBlurb: string
   responseTime: string
   nearbyAreas: string[]
+  relatedRoutes?: { href: string; title: string; description: string }[]
 }
 
 export default function AreaPage({ area }: { area: AreaInfo }) {
@@ -157,6 +159,25 @@ export default function AreaPage({ area }: { area: AreaInfo }) {
         <Pricing />
         <Testimonials />
         <FAQ />
+
+        {area.relatedRoutes && area.relatedRoutes.length > 0 && (
+          <section className={`section ${styles.info}`}>
+            <div className="container">
+              <h2 className="section-title">Route Guides from {area.name}</h2>
+              <div className={styles.routeLinks}>
+                {area.relatedRoutes.map((r) => (
+                  <Link key={r.href} href={r.href} className={styles.routeCard}>
+                    <strong>{r.title}</strong>
+                    <span>{r.description}</span>
+                    <span className={styles.routeCta}>
+                      View route guide <span className="material-symbols-rounded">arrow_forward</span>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className={styles.ctaSection}>
           <div className="container">

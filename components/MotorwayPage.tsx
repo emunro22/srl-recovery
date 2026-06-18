@@ -177,6 +177,25 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
           </div>
         </section>
 
+        {data.routes && data.routes.length > 0 && (
+          <section className={`section ${styles.routes}`}>
+            <div className="container">
+              <h2 className={`section-title ${styles.othersTitle}`}>Route guides on the {data.name}</h2>
+              <div className={styles.othersGrid}>
+                {data.routes.map((r) => (
+                  <Link key={r.href} href={r.href} className={styles.otherCard}>
+                    <strong>{r.title}</strong>
+                    <span>{r.description}</span>
+                    <span className={styles.otherCta}>
+                      View route guide <span className="material-symbols-rounded">arrow_forward</span>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         <section className={`section ${styles.others}`}>
           <div className="container">
             <h2 className={`section-title ${styles.othersTitle}`}>Other motorways we cover</h2>
