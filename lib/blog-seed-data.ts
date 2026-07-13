@@ -164,7 +164,7 @@ Recovery pricing is based on several factors: the type of service (roadside fix 
 
 At SRL Recovery, we quote a price on the phone before we dispatch. You'll know exactly what you're paying before we arrive. No surprise charges, no additional fees added at the end for access, waiting time, or fuel.
 
-A typical Glasgow breakdown with a roadside fix — a jump-start, tyre change, or fuel delivery — starts from £60. A local tow within Glasgow (up to 15 miles) starts from around £80–£100 depending on the vehicle and time of day. Longer distance tows are priced per mile beyond the base rate.
+A typical Glasgow breakdown with a roadside fix — a jump-start, tyre change, or fuel delivery — starts from £50. A local tow within Glasgow (up to 15 miles) starts from around £80–£100 depending on the vehicle and time of day. Longer distance tows are priced per mile beyond the base rate.
 
 Prestige vehicle recovery, accident recovery, and specialist jobs (low-loaders for damaged vehicles, crane assistance for off-road recoveries) are quoted on a case-by-case basis, but we are always transparent about costs upfront.
 

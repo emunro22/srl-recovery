@@ -3,7 +3,7 @@ import styles from './Pricing.module.css'
 const tiers = [
   {
     title: 'Local Recovery',
-    price: 'From £60',
+    price: 'From £50',
     note: 'Call out',
     detail: '+ £1.50 per mile',
     icon: 'local_shipping',
@@ -15,7 +15,7 @@ const tiers = [
   },
   {
     title: 'Motorway & Live Lane',
-    price: '£120',
+    price: '£100',
     note: 'Flat rate',
     detail: '+ £1.50 per mile',
     icon: 'speed',

@@ -26,7 +26,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'urgency',
     title: 'Car Recovery Near Me Glasgow | 24/7 Local | SRL Recovery',
     metaDescription:
-      'Need car recovery near you in Glasgow? SRL Recovery is your local 24/7 specialist. Average arrival 30–45 minutes. From £60. Call 07776 356 556.',
+      'Need car recovery near you in Glasgow? SRL Recovery is your local 24/7 specialist. Average arrival 30–45 minutes. From £50. Call 07776 356 556.',
     h1: 'Car Recovery Near Me',
     subheading: 'Local Glasgow recovery — typically with you in 30–45 minutes',
     introParagraph:
@@ -35,7 +35,7 @@ export const services: ServicePageData[] = [
       {
         heading: 'Why "near me" matters for recovery',
         paragraphs: [
-          "The recovery industry has a problem: most of the big-name companies you'll find online aren't local. You call a number, you're put through to a call centre, and they sub-contract your job to whoever's nearest. That's how a 30-minute job becomes a 90-minute wait — and how a £60 quote becomes £140 once everyone's taken their cut.",
+          "The recovery industry has a problem: most of the big-name companies you'll find online aren't local. You call a number, you're put through to a call centre, and they sub-contract your job to whoever's nearest. That's how a 30-minute job becomes a 90-minute wait — and how a £50 quote becomes £140 once everyone's taken their cut.",
           "SRL Recovery is the opposite. We're physically based in Cleland near Motherwell with trucks operating across the Glasgow area. When you call, the same person who answers the phone dispatches the driver. No middlemen, no markup, no confusion.",
         ],
       },
@@ -47,7 +47,7 @@ export const services: ServicePageData[] = [
       },
     ],
     pricingNote:
-      'Local recovery starts from £60 call-out + £1.50 per mile. We quote a clear price on the phone before we dispatch — no surprises, no hidden fees.',
+      'Local recovery starts from £50 call-out + £1.50 per mile. We quote a clear price on the phone before we dispatch — no surprises, no hidden fees.',
     features: [
       'Locally-owned and operated (no call centres)',
       '24/7 dispatch, including weekends and holidays',
@@ -66,7 +66,7 @@ export const services: ServicePageData[] = [
       },
       {
         q: 'What does "near me" recovery cost?',
-        a: 'Local recovery starts from £60 call-out plus £1.50 per mile. Most local jobs across Glasgow come in between £70 and £100. We confirm the exact price on the phone before dispatch.',
+        a: 'Local recovery starts from £50 call-out plus £1.50 per mile. Most local jobs across Glasgow come in between £60 and £90. We confirm the exact price on the phone before dispatch.',
       },
     ],
     relatedServices: ['24-hour-recovery-near-me', 'emergency-breakdown-recovery', 'quick-car-recovery'],
@@ -93,7 +93,7 @@ export const services: ServicePageData[] = [
       {
         heading: 'Out of hours pricing',
         paragraphs: [
-          "There are no out-of-hours surcharges with SRL Recovery. Recovery at 3am costs the same as recovery at 3pm — £60 local call-out plus £1.50 per mile, or £120 flat for motorway/live-lane work. Same clear, up-front pricing whatever the hour.",
+          "There are no out-of-hours surcharges with SRL Recovery. Recovery at 3am costs the same as recovery at 3pm — £50 local call-out plus £1.50 per mile, or £100 flat for motorway/live-lane work. Same clear, up-front pricing whatever the hour.",
         ],
       },
     ],
@@ -111,7 +111,7 @@ export const services: ServicePageData[] = [
       },
       {
         q: 'Do you charge more at night?',
-        a: 'No. Our pricing is the same regardless of time — £60 local call-out plus £1.50 per mile, or £120 flat for motorway recovery.',
+        a: 'No. Our pricing is the same regardless of time — £50 local call-out plus £1.50 per mile, or £100 flat for motorway recovery.',
       },
       {
         q: 'What if I break down at 4am?',
@@ -165,7 +165,7 @@ export const services: ServicePageData[] = [
       },
       {
         q: 'Do you charge more for emergency call-outs?',
-        a: 'No — same standard pricing applies. Local emergencies from £60 call-out + £1.50/mile, motorway emergencies £120 flat + £1.50/mile.',
+        a: 'No — same standard pricing applies. Local emergencies from £50 call-out + £1.50/mile, motorway emergencies £100 flat + £1.50/mile.',
       },
     ],
     relatedServices: ['motorway-recovery-glasgow', '24-hour-recovery-near-me', 'accident-recovery-glasgow'],
@@ -176,7 +176,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'urgency',
     title: 'Quick Car Recovery Glasgow | 30–45 Min Average | SRL Recovery',
     metaDescription:
-      'Need quick car recovery in Glasgow? We typically arrive in 30–45 minutes. 24/7 dispatch. From £60. Call SRL Recovery on 07776 356 556.',
+      'Need quick car recovery in Glasgow? We typically arrive in 30–45 minutes. 24/7 dispatch. From £50. Call SRL Recovery on 07776 356 556.',
     h1: 'Quick Car Recovery',
     subheading: 'Speed is what we do — 30–45 minutes is the typical arrival window',
     introParagraph:
@@ -223,13 +223,13 @@ export const services: ServicePageData[] = [
   {
     slug: 'cheap-car-recovery-glasgow',
     serviceCategory: 'pricing',
-    title: 'Cheap Car Recovery Glasgow | From £60 | SRL Recovery',
+    title: 'Cheap Car Recovery Glasgow | From £50 | SRL Recovery',
     metaDescription:
-      'Affordable car recovery in Glasgow from £60 + £1.50/mile. No hidden fees. Clear price quoted on the phone before we dispatch. Call 07776 356 556.',
+      'Affordable car recovery in Glasgow from £50 + £1.50/mile. No hidden fees. Clear price quoted on the phone before we dispatch. Call 07776 356 556.',
     h1: 'Affordable Car Recovery in Glasgow',
-    subheading: 'From £60 — competitive local rates, no hidden surcharges',
+    subheading: 'From £50 — competitive local rates, no hidden surcharges',
     introParagraph:
-      "If you're searching for cheap car recovery in Glasgow, the word you actually want is affordable — and that's exactly what SRL Recovery offers. We're consistently the most competitive option in the area without cutting corners on the service. Local jobs from £60. Clear quote on the phone. No upsells, no surprise fees on arrival.",
+      "If you're searching for cheap car recovery in Glasgow, the word you actually want is affordable — and that's exactly what SRL Recovery offers. We're consistently the most competitive option in the area without cutting corners on the service. Local jobs from £50. Clear quote on the phone. No upsells, no surprise fees on arrival.",
     bodySections: [
       {
         heading: "Why we're cheaper than the national brands",
@@ -241,8 +241,8 @@ export const services: ServicePageData[] = [
       {
         heading: 'Our exact pricing',
         paragraphs: [
-          'Local recovery: £60 call-out + £1.50 per mile.',
-          'Motorway/live-lane: £120 flat + £1.50 per mile.',
+          'Local recovery: £50 call-out + £1.50 per mile.',
+          'Motorway/live-lane: £100 flat + £1.50 per mile.',
           'Winch fee: £40 (only if needed).',
           'Skate fee: £40 (only if needed — for immobilised vehicles).',
           'All prices subject to VAT. We confirm the final price on the phone before dispatching.',
@@ -252,7 +252,7 @@ export const services: ServicePageData[] = [
     pricingNote:
       "What you won't find: out-of-hours surcharges, holiday surcharges, mileage rounding tricks, or fuel levies. The price we quote on the phone is the price you pay.",
     features: [
-      'From £60 local call-out',
+      'From £50 local call-out',
       'Clear price quoted on the phone',
       'No out-of-hours or holiday surcharges',
       'No surprise fees on arrival',
@@ -303,7 +303,7 @@ export const services: ServicePageData[] = [
       },
     ],
     pricingNote:
-      'Van recovery prices are the same as our standard rates — from £60 local + £1.50/mile, or £120 flat for motorway. No weight surcharges for vehicles under 3.5 tonnes.',
+      'Van recovery prices are the same as our standard rates — from £50 local + £1.50/mile, or £100 flat for motorway. No weight surcharges for vehicles under 3.5 tonnes.',
     features: [
       'All light commercial vehicles up to 3.5t',
       'Trade and fleet accounts welcome',
@@ -674,7 +674,7 @@ export const services: ServicePageData[] = [
       },
     ],
     pricingNote:
-      "Motorway and live-lane recovery is £120 flat call-out plus £1.50 per mile. The higher rate reflects the additional risk, equipment, and time involved in working on a live motorway.",
+      "Motorway and live-lane recovery is £100 flat call-out plus £1.50 per mile. The higher rate reflects the additional risk, equipment, and time involved in working on a live motorway.",
     features: [
       'Live-lane recovery experience',
       'Police Scotland / Traffic Scotland coordination',
@@ -693,7 +693,7 @@ export const services: ServicePageData[] = [
       },
       {
         q: 'Why is motorway recovery more expensive?',
-        a: 'Motorway recovery is £120 flat (vs £60 for local) because it requires additional safety equipment, coordination with traffic authorities, and significantly more risk to our staff and equipment.',
+        a: 'Motorway recovery is £100 flat (vs £50 for local) because it requires additional safety equipment, coordination with traffic authorities, and significantly more risk to our staff and equipment.',
       },
       {
         q: 'Do you work with Traffic Scotland?',
@@ -824,7 +824,7 @@ export const services: ServicePageData[] = [
       {
         heading: 'Local vs UK-wide pricing',
         paragraphs: [
-          "Local transport (within Glasgow and surrounding areas) is charged at our standard local rate: £60 + £1.50 per mile. For longer-distance UK transport we'll quote based on the specific route — typically more cost-effective than the per-mile rate for journeys over 100 miles.",
+          "Local transport (within Glasgow and surrounding areas) is charged at our standard local rate: £50 + £1.50 per mile. For longer-distance UK transport we'll quote based on the specific route — typically more cost-effective than the per-mile rate for journeys over 100 miles.",
           "Get in touch for a custom quote for any long-distance move.",
         ],
       },
@@ -880,7 +880,7 @@ export const services: ServicePageData[] = [
       },
     ],
     pricingNote:
-      "Collection costs are charged at our standard local rate — from £60 + £1.50/mile. If your scrap car has resale value at the ATF, this can sometimes offset the collection cost. We'll discuss specifics on the call.",
+      "Collection costs are charged at our standard local rate — from £50 + £1.50/mile. If your scrap car has resale value at the ATF, this can sometimes offset the collection cost. We'll discuss specifics on the call.",
     features: [
       'Collection from anywhere in Glasgow area',
       'No need for the car to be running',
@@ -911,24 +911,24 @@ export const services: ServicePageData[] = [
     serviceCategory: 'pricing',
     title: 'Car Recovery Prices Glasgow | Clear Pricing | SRL Recovery',
     metaDescription:
-      'Exact car recovery prices in Glasgow — local from £60, motorway £120 flat. No hidden fees. Call SRL Recovery on 07776 356 556 for an exact quote.',
+      'Exact car recovery prices in Glasgow — local from £50, motorway £100 flat. No hidden fees. Call SRL Recovery on 07776 356 556 for an exact quote.',
     h1: 'Car Recovery Prices Glasgow',
     subheading: 'Clear up-front pricing — no surprises, no hidden fees',
     introParagraph:
       "One of the biggest frustrations with recovery services is hidden fees. SRL Recovery does things differently: clear prices published on the website, a definitive quote given on the phone before we dispatch, and no surprise charges on arrival. Here's exactly what we charge and how it works.",
     bodySections: [
       {
-        heading: 'Local recovery — £60 call-out + £1.50 per mile',
+        heading: 'Local recovery — £50 call-out + £1.50 per mile',
         paragraphs: [
-          "Local recovery covers any job within Glasgow and surrounding areas (Paisley, East Kilbride, Hamilton, Motherwell, Coatbridge, Bearsden, Rutherglen, Clydebank, Cambuslang, Bellshill, Dumbarton, and beyond). £60 call-out includes the dispatch and arrival to your location. £1.50 per mile is added based on the total distance from your location to the destination.",
-          "Example: car broken down 4 miles from you, garage 6 miles from your house — total mileage ~10 miles. Price: £60 + (10 x £1.50) = £75 + VAT.",
+          "Local recovery covers any job within Glasgow and surrounding areas (Paisley, East Kilbride, Hamilton, Motherwell, Coatbridge, Bearsden, Rutherglen, Clydebank, Cambuslang, Bellshill, Dumbarton, and beyond). £50 call-out includes the dispatch and arrival to your location. £1.50 per mile is added based on the total distance from your location to the destination.",
+          "Example: car broken down 4 miles from you, garage 6 miles from your house — total mileage ~10 miles. Price: £50 + (10 x £1.50) = £65 + VAT.",
         ],
       },
       {
-        heading: 'Motorway / live-lane — £120 flat + £1.50 per mile',
+        heading: 'Motorway / live-lane — £100 flat + £1.50 per mile',
         paragraphs: [
-          "Motorway recovery (M8, M73, M74, M77, M80) and any live-lane recovery is £120 flat plus £1.50 per mile. The higher rate reflects the additional safety equipment, traffic coordination, and risk involved in working on a motorway.",
-          "Example: M8 breakdown 12 miles from your destination — Price: £120 + (12 x £1.50) = £138 + VAT.",
+          "Motorway recovery (M8, M73, M74, M77, M80) and any live-lane recovery is £100 flat plus £1.50 per mile. The higher rate reflects the additional safety equipment, traffic coordination, and risk involved in working on a motorway.",
+          "Example: M8 breakdown 12 miles from your destination — Price: £100 + (12 x £1.50) = £118 + VAT.",
         ],
       },
       {
@@ -947,8 +947,8 @@ export const services: ServicePageData[] = [
       },
     ],
     features: [
-      'Local from £60 + £1.50/mile',
-      'Motorway £120 flat + £1.50/mile',
+      'Local from £50 + £1.50/mile',
+      'Motorway £100 flat + £1.50/mile',
       'Winch/skate only added if needed (£40 each)',
       'No out-of-hours or holiday surcharges',
       'Cash, card, or bank transfer accepted',

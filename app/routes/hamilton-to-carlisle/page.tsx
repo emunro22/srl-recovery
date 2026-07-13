@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import WhatsAppLink from '@/components/WhatsAppLink'
 import CallbackForm from '@/components/CallbackForm'
 import styles from './page.module.css'
 
@@ -186,7 +187,7 @@ export default function HamiltonCarlislePage() {
                 </h2>
                 <p>
                   Recovery on this corridor is charged at our standard motorway rate:{' '}
-                  <strong>£120 flat call-out + £1.50 per mile</strong> (plus VAT). No out-of-hours
+                  <strong>£100 flat call-out + £1.50 per mile</strong> (plus VAT). No out-of-hours
                   surcharges — the rate is the same at 2pm or 2am.
                 </p>
                 <p>
@@ -209,14 +210,9 @@ export default function HamiltonCarlislePage() {
                     <span className="material-symbols-rounded">call</span>
                     Call 07776 356 556
                   </a>
-                  <a
-                    href="https://wa.me/447776356556"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.whatsBtn}
-                  >
+                  <WhatsAppLink source="hamilton-to-carlisle-cta" className={styles.whatsBtn}>
                     WhatsApp Us
-                  </a>
+                  </WhatsAppLink>
                 </div>
               </div>
             </article>

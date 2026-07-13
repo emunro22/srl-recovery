@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import WhatsAppLink from '@/components/WhatsAppLink'
 import styles from './page.module.css'
 
 export const metadata = {
@@ -128,14 +129,9 @@ export default function AccidentClaimPage() {
                 <span className="material-symbols-rounded">call</span>
                 Call 07776 356 556
               </a>
-              <a
-                href="https://wa.me/447776356556"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-outline"
-              >
+              <WhatsAppLink source="accident-claim-hero" className="btn btn-outline">
                 WhatsApp Us
-              </a>
+              </WhatsAppLink>
             </div>
             <div className={styles.heroStats}>
               <div className={styles.heroStat}>
@@ -560,14 +556,9 @@ export default function AccidentClaimPage() {
                   <span className="material-symbols-rounded">call</span>
                   Call 07776 356 556
                 </a>
-                <a
-                  href="https://wa.me/447776356556"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline"
-                >
+                <WhatsAppLink source="accident-claim-cta" className="btn btn-outline">
                   WhatsApp Us
-                </a>
+                </WhatsAppLink>
               </div>
             </div>
           </div>

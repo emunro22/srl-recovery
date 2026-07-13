@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CallbackForm from '@/components/CallbackForm'
 import { motorways, type MotorwayPageData } from '@/lib/motorways-data'
+import WhatsAppLink from '@/components/WhatsAppLink'
 import styles from './MotorwayPage.module.css'
 
 export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
@@ -140,7 +141,7 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
                 <h2>Pricing for {data.name} recovery</h2>
                 <p>
                   Motorway and live-lane recovery is charged at our standard motorway rate:
-                  <strong> £120 flat call-out + £1.50 per mile</strong> (plus VAT). This rate
+                  <strong> £100 flat call-out + £1.50 per mile</strong> (plus VAT). This rate
                   applies regardless of time of day — there are no out-of-hours or holiday
                   surcharges.
                 </p>
@@ -163,14 +164,9 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
                     <span className="material-symbols-rounded">call</span>
                     Call 07776 356 556
                   </a>
-                  <a
-                    href="https://wa.me/447776356556"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.whatsBtn}
-                  >
+                  <WhatsAppLink source={`motorway-cta-${data.slug}`} className={styles.whatsBtn}>
                     WhatsApp Us
-                  </a>
+                  </WhatsAppLink>
                 </div>
               </div>
             </article>

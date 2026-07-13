@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CallbackForm from '@/components/CallbackForm'
 import { services, type ServicePageData } from '@/lib/services-data'
+import WhatsAppLink from '@/components/WhatsAppLink'
 import styles from './ServicePage.module.css'
 
 export default function ServicePage({ data }: { data: ServicePageData }) {
@@ -157,14 +158,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                     <span className="material-symbols-rounded">call</span>
                     07776 356 556
                   </a>
-                  <a
-                    href="https://wa.me/447776356556"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.sideBtn} ${styles.whatsBtn}`}
-                  >
+                  <WhatsAppLink source={`service-sidebar-${data.slug}`} className={`${styles.sideBtn} ${styles.whatsBtn}`}>
                     WhatsApp Us
-                  </a>
+                  </WhatsAppLink>
                 </div>
 
                 {related.length > 0 && (

@@ -3,7 +3,7 @@ import AreaPage from '@/components/AreaPage'
 export const metadata = {
   title: 'Breakdown Recovery East Kilbride | 24/7 Car Recovery | SRL Recovery',
   description:
-    'Fast 24/7 breakdown and accident recovery in East Kilbride. Average arrival 30–45 minutes. From £60 local recovery. Call 07776 356 556.',
+    'Fast 24/7 breakdown and accident recovery in East Kilbride. Average arrival 30–45 minutes. From £50 local recovery. Call 07776 356 556.',
   alternates: { canonical: 'https://srlrecovery.com/areas/east-kilbride' },
 }
 

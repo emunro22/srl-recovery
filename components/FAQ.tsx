@@ -18,11 +18,11 @@ const faqs = [
   },
   {
     q: 'Do you cover motorways?',
-    a: 'Yes — we recover from the M8, M73, M74, M77, M80 and surrounding routes. Motorway and live-lane recoveries are a flat £120 plus £1.50 per mile. If you’ve broken down or had an accident on a motorway, call us straight away and stay in your vehicle with hazards on until we arrive.',
+    a: 'Yes — we recover from the M8, M73, M74, M77, M80 and surrounding routes. Motorway and live-lane recoveries are a flat £100 plus £1.50 per mile. If you’ve broken down or had an accident on a motorway, call us straight away and stay in your vehicle with hazards on until we arrive.',
   },
   {
     q: 'How much does breakdown recovery cost?',
-    a: 'Local jobs start from £60 call-out plus £1.50 per mile. Motorway and live-lane jobs are £120 flat plus £1.50 per mile. A £40 winch fee or £40 skate fee applies only where required. All prices subject to VAT, and we’ll quote a clear final price on the phone before we dispatch.',
+    a: 'Local jobs start from £50 call-out plus £1.50 per mile. Motorway and live-lane jobs are £100 flat plus £1.50 per mile. A £40 winch fee or £40 skate fee applies only where required. All prices subject to VAT, and we’ll quote a clear final price on the phone before we dispatch.',
   },
   {
     q: 'What if I’m in a non-fault accident?',

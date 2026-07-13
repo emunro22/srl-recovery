@@ -42,7 +42,7 @@ export default function AreaPage({ area }: { area: AreaInfo }) {
         '@type': 'PriceSpecification',
         price: '60.00',
         priceCurrency: 'GBP',
-        description: 'Local recovery call-out from £60 + £1.50/mile',
+        description: 'Local recovery call-out from £50 + £1.50/mile',
       },
     },
   }
