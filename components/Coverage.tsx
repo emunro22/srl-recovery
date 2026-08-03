@@ -12,7 +12,7 @@ const areas = [
   { name: 'Motherwell', slug: 'motherwell' },
   { name: 'Coatbridge', slug: 'coatbridge' },
   { name: 'Dumbarton', slug: null },
-  { name: 'Cambuslang', slug: null },
+  { name: 'Cambuslang', slug: 'cambuslang' },
   { name: 'Bellshill', slug: null },
 ]
 
@@ -27,9 +27,9 @@ export default function Coverage() {
               We Cover Glasgow & Surrounding Areas
             </h2>
             <p className="section-text">
-              Based in Motherwell, we provide fast breakdown and recovery services across
-              the greater Glasgow area and beyond. If you&apos;re not sure we cover your
-              location, just call us — we&apos;ll get to you.
+              Based in Motherwell and Cambuslang, we provide fast breakdown and recovery
+              services across the greater Glasgow area and beyond. If you&apos;re not sure
+              we cover your location, just call us — we&apos;ll get to you.
             </p>
             <div className={styles.ctaRow}>
               <Link href="/areas" className={`btn ${styles.btn}`}>

@@ -58,6 +58,28 @@ function initials(name: string) {
   return name.split(' ').map((w) => w[0]).slice(0, 2).join('')
 }
 
+type Testimonial = { quote: string; author: string; stars: number }
+
+function TestimonialCard({ t, hidden }: { t: Testimonial; hidden?: boolean }) {
+  return (
+    <div className={styles.card} aria-hidden={hidden ? 'true' : undefined}>
+      <div className={styles.stars}>
+        {Array.from({ length: t.stars }).map((_, s) => (
+          <span key={s} className="material-symbols-rounded">star</span>
+        ))}
+      </div>
+      <blockquote className={styles.quote}>&ldquo;{t.quote}&rdquo;</blockquote>
+      <div className={styles.author}>
+        <div className={styles.avatar}>{initials(t.author)}</div>
+        <div className={styles.authorMeta}>
+          <strong>{t.author}</strong>
+          <span>Verified Google Review</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default async function Testimonials() {
   const live = await getGoogleReviews()
 
@@ -84,24 +106,15 @@ export default async function Testimonials() {
           </a>
         </div>
 
-        <div className={styles.grid}>
-          {displayTestimonials.map((t, i) => (
-            <div key={i} className={styles.card}>
-              <div className={styles.stars}>
-                {Array.from({ length: t.stars }).map((_, s) => (
-                  <span key={s} className="material-symbols-rounded">star</span>
-                ))}
-              </div>
-              <blockquote className={styles.quote}>&ldquo;{t.quote}&rdquo;</blockquote>
-              <div className={styles.author}>
-                <div className={styles.avatar}>{initials(t.author)}</div>
-                <div className={styles.authorMeta}>
-                  <strong>{t.author}</strong>
-                  <span>Verified Google Review</span>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className={styles.marquee}>
+          <div className={styles.track}>
+            {displayTestimonials.map((t, i) => (
+              <TestimonialCard key={`a-${i}`} t={t} />
+            ))}
+            {displayTestimonials.map((t, i) => (
+              <TestimonialCard key={`b-${i}`} t={t} hidden />
+            ))}
+          </div>
         </div>
       </div>
     </section>

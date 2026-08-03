@@ -58,3 +58,14 @@
   }
   .tooltip { display: none; }
 }
+
+@media (min-width: 900px) {
+  .fab {
+    width: 7.2rem;
+    height: 7.2rem;
+  }
+  .fab svg {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+}

@@ -41,18 +41,33 @@
 
 .googleStars .material-symbols-rounded { font-size: 1.6rem; }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+}
+
+.track {
+  display: flex;
   gap: 2.4rem;
+  width: max-content;
+  animation: marquee 45s linear infinite;
 }
 
-@media (max-width: 900px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
+.track:hover {
+  animation-play-state: paused;
 }
 
-@media (max-width: 600px) {
-  .grid { grid-template-columns: 1fr; }
+@keyframes marquee {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
 }
 
 .card {
@@ -62,7 +77,16 @@
   padding: 2.4rem;
   display: flex;
   flex-direction: column;
+  flex: 0 0 34rem;
+  width: 34rem;
   transition: var(--transition);
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex-basis: 28rem;
+    width: 28rem;
+  }
 }
 
 .card:hover {

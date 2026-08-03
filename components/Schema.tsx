@@ -127,6 +127,57 @@ export default async function Schema() {
       },
     }
   
+    const cambuslangLocation = {
+      '@context': 'https://schema.org',
+      '@type': 'AutoRepair',
+      '@id': 'https://srlrecovery.com/#business-cambuslang',
+      name: 'SRL Recovery — Cambuslang',
+      branchOf: { '@id': 'https://srlrecovery.com/#business' },
+      telephone: '+447776356556',
+      url: 'https://srlrecovery.com',
+      priceRange: '££',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '9 Mitchell Avenue',
+        addressLocality: 'Cambuslang',
+        postalCode: 'G72 7SH',
+        addressRegion: 'Scotland',
+        addressCountry: 'GB',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 55.8217724,
+        longitude: -4.1395602,
+      },
+      areaServed: {
+        '@type': 'GeoCircle',
+        geoMidpoint: {
+          '@type': 'GeoCoordinates',
+          latitude: 55.8217724,
+          longitude: -4.1395602,
+        },
+        geoRadius: '48280',
+      },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: [
+            'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+            'Friday', 'Saturday', 'Sunday',
+          ],
+          opens: '00:00',
+          closes: '23:59',
+        },
+      ],
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: (live?.rating ?? 5.0).toFixed(1),
+        reviewCount: String(live?.totalReviews ?? 58),
+        bestRating: '5',
+        worstRating: '1',
+      },
+    }
+
     const faq = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
@@ -136,7 +187,7 @@ export default async function Schema() {
           name: 'How quickly can you get to me?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Our average arrival time across Glasgow and surrounding areas is 30 to 45 minutes. This can vary depending on where your vehicle is and traffic conditions, but for urgent breakdowns we dispatch immediately.',
+            text: 'From our Cambuslang base (G72 7SH), we guarantee around 30-minute arrival within our core 30-mile service area covering Greater Glasgow and Lanarkshire. Our wider coverage area, served from both our Motherwell and Cambuslang bases, typically sees arrival times of 30 to 45 minutes depending on where your vehicle is and traffic conditions. For urgent breakdowns we dispatch immediately.',
           },
         },
         {
@@ -203,6 +254,10 @@ export default async function Schema() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(cambuslangLocation) }}
         />
         <script
           type="application/ld+json"
