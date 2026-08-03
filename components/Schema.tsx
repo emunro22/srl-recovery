@@ -1,4 +1,8 @@
-export default function Schema() {
+import { getGoogleReviews } from '@/lib/googleReviews'
+
+export default async function Schema() {
+    const live = await getGoogleReviews()
+
     const localBusiness = {
       '@context': 'https://schema.org',
       '@type': 'AutoRepair',
@@ -57,34 +61,24 @@ export default function Schema() {
       ],
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: '5.0',
-        reviewCount: '58',
+        ratingValue: (live?.rating ?? 5.0).toFixed(1),
+        reviewCount: String(live?.totalReviews ?? 58),
         bestRating: '5',
         worstRating: '1',
       },
-      review: [
-        {
-          '@type': 'Review',
-          author: { '@type': 'Person', name: 'Grace Brady' },
-          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-          reviewBody:
-            'So pleased with William at SRL recovery who was so helpful. Provided a quote on the call and was able to recover our vehicle same day. Most competitive price and great service.',
-        },
-        {
-          '@type': 'Review',
-          author: { '@type': 'Person', name: 'Alanna Hagan' },
-          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-          reviewBody:
-            'Excellent service provided. A recovery truck appeared within 20 mins of my call. Good pricing too!',
-        },
-        {
-          '@type': 'Review',
-          author: { '@type': 'Person', name: 'Brian Wilson' },
-          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-          reviewBody:
-            'Van was recovered within 50 mins. William was very helpful and kept communication lines open throughout. Highly recommended!',
-        },
-      ],
+      review: (live && live.reviews.length > 0
+        ? live.reviews
+        : [
+            { author: 'Grace Brady', rating: 5, text: 'So pleased with William at SRL recovery who was so helpful. Provided a quote on the call and was able to recover our vehicle same day. Most competitive price and great service.' },
+            { author: 'Alanna Hagan', rating: 5, text: 'Excellent service provided. A recovery truck appeared within 20 mins of my call. Good pricing too!' },
+            { author: 'Brian Wilson', rating: 5, text: 'Van was recovered within 50 mins. William was very helpful and kept communication lines open throughout. Highly recommended!' },
+          ]
+      ).map((r) => ({
+        '@type': 'Review',
+        author: { '@type': 'Person', name: r.author },
+        reviewRating: { '@type': 'Rating', ratingValue: String(r.rating), bestRating: '5' },
+        reviewBody: r.text,
+      })),
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Recovery Services',

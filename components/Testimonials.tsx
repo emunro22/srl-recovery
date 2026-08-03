@@ -1,6 +1,9 @@
 import styles from './Testimonials.module.css'
+import { getGoogleReviews } from '@/lib/googleReviews'
 
-const testimonials = [
+// Used only until GOOGLE_PLACE_ID is set (see lib/googleReviews.ts) — remove once
+// live reviews are confirmed working.
+const fallbackTestimonials = [
   {
     quote: 'So pleased with William at SRL recovery who was so helpful. Provided a quote on the call and was able to recover our vehicle same day. Most competitive price (I had phoned around a lot of recovery services) and great service.',
     author: 'Grace Brady',
@@ -55,7 +58,15 @@ function initials(name: string) {
   return name.split(' ').map((w) => w[0]).slice(0, 2).join('')
 }
 
-export default function Testimonials() {
+export default async function Testimonials() {
+  const live = await getGoogleReviews()
+
+  const displayTestimonials = live && live.reviews.length > 0
+    ? live.reviews.map((r) => ({ quote: r.text, author: r.author, stars: r.rating }))
+    : fallbackTestimonials
+  const rating = live?.rating ?? 5.0
+  const totalReviews = live?.totalReviews ?? 58
+
   return (
     <section className={`section ${styles.testimonials}`}>
       <div className="container">
@@ -68,13 +79,13 @@ export default function Testimonials() {
                 <span key={i} className="material-symbols-rounded">star</span>
               ))}
             </span>
-            <span><strong>5.0</strong> from <strong>58+ reviews</strong> on Google</span>
+            <span><strong>{rating.toFixed(1)}</strong> from <strong>{totalReviews}+ reviews</strong> on Google</span>
             <span className="material-symbols-rounded">arrow_outward</span>
           </a>
         </div>
 
         <div className={styles.grid}>
-          {testimonials.map((t, i) => (
+          {displayTestimonials.map((t, i) => (
             <div key={i} className={styles.card}>
               <div className={styles.stars}>
                 {Array.from({ length: t.stars }).map((_, s) => (
