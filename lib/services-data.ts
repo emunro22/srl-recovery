@@ -16,7 +16,7 @@ export type ServicePageData = {
   features: string[]
   faqs: { q: string; a: string }[]
   relatedServices: string[] // slugs of related services to cross-link
-  serviceCategory: 'urgency' | 'vehicle' | 'situation' | 'addon' | 'pricing'
+  serviceCategory: 'urgency' | 'vehicle' | 'situation' | 'addon' | 'pricing' | 'trade'
 }
 
 export const services: ServicePageData[] = [
@@ -326,6 +326,110 @@ export const services: ServicePageData[] = [
       },
     ],
     relatedServices: ['vehicle-transport-glasgow', 'car-recovery-near-me', 'accident-recovery-glasgow'],
+  },
+
+  {
+    slug: 'commercial-recovery-glasgow',
+    serviceCategory: 'vehicle',
+    title: 'Commercial Vehicle Recovery Glasgow | Vans, Minibuses, Trucks | SRL',
+    metaDescription:
+      'Commercial vehicle recovery across Glasgow — vans, minibuses, taxis, small trucks and trailers. 24/7 dispatch, trade rates available. Call 07776 356 556.',
+    h1: 'Commercial Vehicle Recovery Glasgow',
+    subheading: 'Keeping your business moving — recovery for vans, minibuses, taxis, trucks and trailers',
+    introParagraph:
+      "A commercial vehicle off the road is lost income, not just an inconvenience. SRL Recovery provides fast, reliable recovery for the full range of business vehicles across Glasgow — from a single sole-trader van to a fleet of minibuses or light trucks. We understand the urgency businesses feel that private motorists don't always have, and we dispatch accordingly.",
+    bodySections: [
+      {
+        heading: 'Commercial vehicles we recover',
+        paragraphs: [
+          "Panel vans, Lutons, and dropsides; minibuses and people-carriers; taxis and private hire vehicles; small flatbed and tipper trucks up to 3.5 tonnes; trailers and box trailers; refrigerated vans; mobile catering units and workshops. If it's used for business, we've likely recovered one like it before.",
+          "For anything over 3.5 tonnes (7.5t+ HGVs, artics) you'll need a dedicated heavy recovery operator — call us anyway and we'll point you in the right direction if we can't help directly.",
+        ],
+      },
+      {
+        heading: 'Built around minimising downtime',
+        paragraphs: [
+          "We know a commercial breakdown often means a missed job, a stranded fare, or a driver sitting idle on the clock. Tell us it's a business vehicle when you call and we'll treat it with the urgency it deserves — clear ETA, direct communication, and delivery to whichever garage, depot, or yard keeps you moving fastest.",
+          "Regular breakdowns with the same vehicle or fleet? Ask about setting up a trade account — see our dedicated page on trade recovery for garages, dealers, and fleet operators.",
+        ],
+      },
+    ],
+    pricingNote:
+      'Commercial recovery is priced the same as our standard rates — from £50 local call-out + £1.50/mile, or £100 flat for motorway work. Trade and fleet accounts can access agreed rates — ask on the call.',
+    features: [
+      'All business vehicle types up to 3.5 tonnes',
+      'Priority handling for time-critical business jobs',
+      'Delivery to your depot, garage, or yard of choice',
+      'Trade account rates available for regular use',
+      '24/7 dispatch including weekends',
+    ],
+    faqs: [
+      {
+        q: 'Do you recover minibuses and taxis?',
+        a: "Yes — minibuses, people-carriers, taxis, and private hire vehicles are all routine recoveries for us, including with passengers' luggage or equipment still loaded.",
+      },
+      {
+        q: "What's the difference between this and van recovery?",
+        a: "Van recovery covers specific van models and their loads. Commercial recovery is the broader service for any business vehicle — vans, minibuses, taxis, small trucks, and trailers — with a focus on getting your business back up and running fast.",
+      },
+      {
+        q: 'Can I set up an account for regular recoveries?',
+        a: "Yes — if you run a fleet or need recovery regularly, a trade account gets you agreed rates and priority dispatch. See our trade recovery page or just call and ask.",
+      },
+    ],
+    relatedServices: ['van-recovery-glasgow', 'trade-recovery-glasgow', 'vehicle-transport-glasgow'],
+  },
+
+  {
+    slug: 'trade-recovery-glasgow',
+    serviceCategory: 'trade',
+    title: 'Trade Recovery Glasgow | Garage & Dealer Accounts | SRL Recovery',
+    metaDescription:
+      'Trade recovery accounts for garages, dealerships, and fleets across Glasgow. Priority dispatch, agreed rates, simple invoicing. Call 07776 356 556.',
+    h1: 'Trade Recovery Accounts',
+    subheading: 'A dedicated recovery partner for garages, dealers, and fleet operators',
+    introParagraph:
+      "If you're calling a recovery service every week rather than every year, you need more than a one-off callout — you need a partner. SRL Recovery sets up trade accounts for garages, dealerships, auction houses, and fleet operators across Glasgow, with agreed rates, priority dispatch, and invoicing that doesn't waste your admin time.",
+    bodySections: [
+      {
+        heading: 'How a trade account works',
+        paragraphs: [
+          "Give us a call and tell us roughly how much volume you expect — a garage needing the odd customer car brought in, or a dealership moving stock weekly, are very different accounts. We'll agree a rate card up front so there's no re-quoting every single job, and set up simple monthly invoicing rather than payment on the day.",
+          "Trade jobs get priority dispatch during the day, and a direct line to call rather than going through the general enquiry process — you tell us the collection and drop-off, we get on with it.",
+        ],
+      },
+      {
+        heading: 'Who uses a trade account',
+        paragraphs: [
+          "Independent garages needing customer vehicles brought in for MOT or repair. Dealerships moving part-exchanges and stock between sites, or collecting from auction. Insurance and claims companies needing a reliable recovery partner. Fleet and van-hire operators covering multiple vehicles. Bodyshops needing accident-damaged cars delivered for repair.",
+          "Whatever the volume, we scale to it — from a handful of jobs a month to a standing daily arrangement.",
+        ],
+      },
+    ],
+    pricingNote:
+      'Trade rates are agreed per account based on volume and typical job type — usually a discount against our standard £50 + £1.50/mile local rate. Get in touch to discuss terms.',
+    features: [
+      'Agreed rate card — no re-quoting every job',
+      'Monthly invoicing available',
+      'Priority dispatch for account holders',
+      'Direct line for trade bookings',
+      'Scales from occasional jobs to daily volume',
+    ],
+    faqs: [
+      {
+        q: 'Is there a minimum volume to set up a trade account?',
+        a: "No — we set up accounts for garages doing one job a month right through to dealerships needing daily collections. Call us and we'll tailor it to what you need.",
+      },
+      {
+        q: 'How does invoicing work for trade customers?',
+        a: "Most trade accounts are billed monthly rather than paid per job, which keeps your admin simple. We'll agree the specifics — invoice frequency, payment terms — when the account is set up.",
+      },
+      {
+        q: 'Can insurance companies and bodyshops set up an account?',
+        a: "Yes — we regularly work with claims handlers and bodyshops needing accident-damaged vehicles collected and delivered. A trade account keeps that process quick and consistent.",
+      },
+    ],
+    relatedServices: ['commercial-recovery-glasgow', 'van-recovery-glasgow', 'insurance-recovery-glasgow'],
   },
 
   {

@@ -16,6 +16,7 @@ const categoryLabels: Record<string, string> = {
   situation: 'By Situation',
   addon: 'Transport & Add-ons',
   pricing: 'Pricing',
+  trade: 'Trade & Fleet Accounts',
 }
 
 export default function ServicesIndex() {

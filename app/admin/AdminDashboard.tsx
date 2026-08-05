@@ -11,6 +11,8 @@ type QueueItem = {
   id: string
   file: File
   title: string
+  description: string
+  mediaType: 'image' | 'video'
   status: 'pending' | 'uploading' | 'success' | 'error'
   progress: number
   error?: string
@@ -169,6 +171,8 @@ export default function AdminDashboard({
       id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
       file: f,
       title: stripExt(f.name), // auto-populate from filename, user can edit
+      description: '',
+      mediaType: f.type.startsWith('video/') ? 'video' : 'image',
       status: 'pending',
       progress: 0,
       preview: URL.createObjectURL(f),
@@ -180,6 +184,12 @@ export default function AdminDashboard({
   function updateTitle(id: string, title: string) {
     setQueue((prev) =>
       prev.map((q) => (q.id === id ? { ...q, title } : q))
+    )
+  }
+
+  function updateDescription(id: string, description: string) {
+    setQueue((prev) =>
+      prev.map((q) => (q.id === id ? { ...q, description } : q))
     )
   }
 
@@ -220,6 +230,8 @@ export default function AdminDashboard({
           pathname: blob.pathname,
           title: item.title.trim() || stripExt(item.file.name),
           tag,
+          mediaType: item.mediaType,
+          description: item.description.trim(),
         }),
       })
 
@@ -551,28 +563,33 @@ export default function AdminDashboard({
           <input
             ref={fileInputRef}
             type="file"
-            accept="image/jpeg,image/png,image/webp"
+            accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,video/webm"
             multiple
             onChange={onFilesChosen}
             className={styles.hiddenInput}
             disabled={isUploading}
           />
           <span className={`material-symbols-rounded ${styles.dropIcon}`}>add_a_photo</span>
-          <span className={styles.dropTitle}>Tap to choose photos</span>
-          <span className={styles.dropHint}>JPEG, PNG, or WebP — up to 25MB each. You can pick multiple.</span>
+          <span className={styles.dropTitle}>Tap to choose photos or videos</span>
+          <span className={styles.dropHint}>JPEG, PNG, WebP, or MP4/MOV video — up to 200MB each. You can pick multiple.</span>
         </label>
 
         {queue.length > 0 && (
           <>
             <p className={styles.queueHint}>
-              Give each image a title before uploading (or leave the auto-filled one).
+              Give each one a title (great place for a keyword, e.g. "M8 Motorway Recovery Glasgow")
+              and an optional description before uploading.
             </p>
             <div className={styles.queueList}>
               {queue.map((q) => (
                 <div key={q.id} className={styles.queueItem}>
                   <div className={styles.queueThumb}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={q.preview} alt="" />
+                    {q.mediaType === 'video' ? (
+                      <video src={q.preview} muted />
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={q.preview} alt="" />
+                    )}
                   </div>
                   <div className={styles.queueBody}>
                     <input
@@ -580,12 +597,21 @@ export default function AdminDashboard({
                       value={q.title}
                       onChange={(e) => updateTitle(q.id, e.target.value)}
                       disabled={q.status === 'uploading' || q.status === 'success'}
-                      placeholder="Image title"
+                      placeholder="Title / headline (keyword-friendly)"
                       maxLength={80}
                       className={styles.queueTitleInput}
                     />
+                    <input
+                      type="text"
+                      value={q.description}
+                      onChange={(e) => updateDescription(q.id, e.target.value)}
+                      disabled={q.status === 'uploading' || q.status === 'success'}
+                      placeholder="Description (optional)"
+                      maxLength={300}
+                      className={styles.queueTitleInput}
+                    />
                     <p className={styles.queueMeta}>
-                      {formatSize(q.file.size)} · <span className={styles[`status_${q.status}`]}>
+                      {formatSize(q.file.size)} · {q.mediaType === 'video' ? 'Video' : 'Photo'} · <span className={styles[`status_${q.status}`]}>
                         {q.status === 'uploading' && `${Math.round(q.progress)}%`}
                         {q.status === 'pending' && 'Ready'}
                         {q.status === 'success' && 'Done ✓'}
@@ -618,7 +644,7 @@ export default function AdminDashboard({
               disabled={isUploading || pendingCount === 0}
               className={`btn ${styles.uploadBtn}`}
             >
-              {isUploading ? 'Uploading...' : `Upload ${pendingCount} ${pendingCount === 1 ? 'image' : 'images'}`}
+              {isUploading ? 'Uploading...' : `Upload ${pendingCount} ${pendingCount === 1 ? 'item' : 'items'}`}
             </button>
           </>
         )}
@@ -655,17 +681,22 @@ export default function AdminDashboard({
             {images.map((img) => (
               <div key={img.id} className={styles.imageCard}>
                 <div className={styles.thumb}>
-                  <Image
-                    src={img.url}
-                    alt={img.title}
-                    fill
-                    sizes="(max-width: 640px) 50vw, 220px"
-                    className={styles.thumbImg}
-                  />
+                  {img.media_type === 'video' ? (
+                    <video src={img.url} muted style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  ) : (
+                    <Image
+                      src={img.url}
+                      alt={img.title}
+                      fill
+                      sizes="(max-width: 640px) 50vw, 220px"
+                      className={styles.thumbImg}
+                    />
+                  )}
                 </div>
                 <div className={styles.imageBody}>
                   <p className={styles.imageTitle}>{img.title}</p>
-                  <p className={styles.imageTag}>{img.tag}</p>
+                  <p className={styles.imageTag}>{img.tag} · {img.media_type === 'video' ? 'Video' : 'Photo'}</p>
+                  {img.description && <p className={styles.imageTag}>{img.description}</p>}
                   <button onClick={() => onDelete(img.id)} className={styles.deleteBtn}>
                     Delete
                   </button>

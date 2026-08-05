@@ -32,11 +32,27 @@ export type GalleryImage = {
   tag: string
   blob_path: string | null
   created_at: string
+  media_type: 'image' | 'video'
+  description: string | null
+}
+
+let _galleryTableReady: Promise<void> | null = null
+
+async function ensureGalleryTable() {
+  if (!_galleryTableReady) {
+    _galleryTableReady = (async () => {
+      // Existing table already predates this file — only add columns it might be missing.
+      await sql`ALTER TABLE gallery_images ADD COLUMN IF NOT EXISTS media_type TEXT NOT NULL DEFAULT 'image'`
+      await sql`ALTER TABLE gallery_images ADD COLUMN IF NOT EXISTS description TEXT`
+    })()
+  }
+  return _galleryTableReady
 }
 
 export async function getGalleryImages(): Promise<GalleryImage[]> {
+  await ensureGalleryTable()
   const rows = (await sql`
-    SELECT id, url, title, tag, blob_path, created_at
+    SELECT id, url, title, tag, blob_path, created_at, media_type, description
     FROM gallery_images
     ORDER BY created_at DESC
   `) as GalleryImage[]
@@ -48,19 +64,23 @@ export async function addGalleryImage(data: {
   title: string
   tag: string
   blob_path?: string
+  media_type?: 'image' | 'video'
+  description?: string
 }) {
+  await ensureGalleryTable()
   const rows = (await sql`
-    INSERT INTO gallery_images (url, title, tag, blob_path)
-    VALUES (${data.url}, ${data.title}, ${data.tag}, ${data.blob_path ?? null})
-    RETURNING id, url, title, tag, blob_path, created_at
+    INSERT INTO gallery_images (url, title, tag, blob_path, media_type, description)
+    VALUES (${data.url}, ${data.title}, ${data.tag}, ${data.blob_path ?? null}, ${data.media_type ?? 'image'}, ${data.description ?? null})
+    RETURNING id, url, title, tag, blob_path, created_at, media_type, description
   `) as GalleryImage[]
   return rows[0]
 }
 
 export async function deleteGalleryImage(id: number): Promise<GalleryImage | null> {
+  await ensureGalleryTable()
   const rows = (await sql`
     DELETE FROM gallery_images WHERE id = ${id}
-    RETURNING id, url, title, tag, blob_path, created_at
+    RETURNING id, url, title, tag, blob_path, created_at, media_type, description
   `) as GalleryImage[]
   return rows[0] ?? null
 }

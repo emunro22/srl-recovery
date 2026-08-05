@@ -5,9 +5,9 @@ import Footer from '@/components/Footer'
 import { getGalleryImages } from '@/lib/db'
 
 export const metadata = {
-  title: 'Our Work – SRL Recovery Glasgow',
+  title: 'Photos & Videos – SRL Recovery Glasgow',
   description:
-    'Browse our recent breakdown recovery and vehicle transport jobs across Glasgow and surrounding areas.',
+    'Browse recent breakdown recovery and vehicle transport photos and videos across Glasgow and surrounding areas.',
   alternates: { canonical: 'https://srlrecovery.com/work' },
 }
 
@@ -28,10 +28,10 @@ export default async function WorkPage() {
         <div className={styles.hero}>
           <div className={`container ${styles.heroInner}`}>
             <p className="section-subtitle">Portfolio</p>
-            <h1 className={styles.title}>All Our Recent Work</h1>
+            <h1 className={styles.title}>Photos &amp; Videos of Our Work</h1>
             <p className={styles.lead}>
-              Every job handled with care and professionalism. Browse our recent
-              recovery and transport jobs across Glasgow and surrounding areas.
+              Every job handled with care and professionalism. Browse recent
+              recovery and transport photos and videos across Glasgow and surrounding areas.
               New jobs added regularly.
             </p>
           </div>
@@ -48,18 +48,32 @@ export default async function WorkPage() {
                 {images.map((img, i) => (
                   <div key={img.id} className={styles.card}>
                     <figure className={styles.figure}>
-                      <Image
-                        src={img.url}
-                        alt={img.title}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className={styles.img}
-                        loading={i < 6 ? 'eager' : 'lazy'}
-                      />
+                      {img.media_type === 'video' ? (
+                        <video
+                          src={img.url}
+                          className={styles.img}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
+                      ) : (
+                        <Image
+                          src={img.url}
+                          alt={img.title}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className={styles.img}
+                          loading={i < 6 ? 'eager' : 'lazy'}
+                        />
+                      )}
                     </figure>
                     <div className={styles.overlay}>
                       <span className={styles.tag}>{img.tag}</span>
-                      <p className={styles.cardTitle}>{img.title}</p>
+                      <div>
+                        <p className={styles.cardTitle}>{img.title}</p>
+                        {img.description && <p className={styles.cardDesc}>{img.description}</p>}
+                      </div>
                     </div>
                   </div>
                 ))}

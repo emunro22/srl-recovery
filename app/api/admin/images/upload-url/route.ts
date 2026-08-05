@@ -19,9 +19,16 @@ export async function POST(request: Request) {
           throw new Error('Unauthorized')
         }
         return {
-          allowedContentTypes: ['image/jpeg', 'image/png', 'image/webp'],
+          allowedContentTypes: [
+            'image/jpeg',
+            'image/png',
+            'image/webp',
+            'video/mp4',
+            'video/quicktime',
+            'video/webm',
+          ],
           addRandomSuffix: true,
-          maximumSizeInBytes: 25 * 1024 * 1024, // 25MB — covers iPhone photos
+          maximumSizeInBytes: 200 * 1024 * 1024, // 200MB — covers phone video clips
         }
       },
       onUploadCompleted: async () => {

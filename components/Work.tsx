@@ -33,14 +33,18 @@ export default async function Work() {
           {projects.map((p, i) => (
             <div key={p.id} className={`${styles.card} ${i === 0 ? styles.featured : ''}`}>
               <figure className={styles.figure}>
-                <Image
-                  src={p.url}
-                  alt={p.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className={styles.img}
-                  loading={i < 3 ? 'eager' : 'lazy'}
-                />
+                {p.media_type === 'video' ? (
+                  <video src={p.url} className={styles.img} autoPlay muted loop playsInline />
+                ) : (
+                  <Image
+                    src={p.url}
+                    alt={p.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className={styles.img}
+                    loading={i < 3 ? 'eager' : 'lazy'}
+                  />
+                )}
               </figure>
               <div className={styles.overlay}>
                 <span className={styles.tag}>{p.tag}</span>

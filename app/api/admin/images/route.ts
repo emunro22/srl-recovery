@@ -19,7 +19,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { url, pathname, title, tag } = await req.json()
+    const { url, pathname, title, tag, mediaType, description } = await req.json()
 
     if (!url || typeof url !== 'string') {
       return NextResponse.json({ error: 'Missing blob URL' }, { status: 400 })
@@ -30,6 +30,8 @@ export async function POST(req: Request) {
       title: (title || 'Recovery Job').toString().trim().slice(0, 80) || 'Recovery Job',
       tag: (tag || 'Glasgow').toString().trim().slice(0, 40) || 'Glasgow',
       blob_path: pathname || null,
+      media_type: mediaType === 'video' ? 'video' : 'image',
+      description: description ? description.toString().trim().slice(0, 300) || undefined : undefined,
     })
 
     revalidatePath('/work')
