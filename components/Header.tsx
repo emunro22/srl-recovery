@@ -28,17 +28,28 @@ export default function Header() {
     }
   }, [menuOpen])
 
-  const navLinks = [
+  const navLinks: {
+    href: string
+    label: string
+    prominent?: boolean
+    dropdown?: { href: string; label: string }[]
+  }[] = [
     { href: '/', label: 'Home' },
     { href: '/#about', label: 'About' },
-    { href: '/#services', label: 'Services' },
-    { href: '/services/commercial-recovery-glasgow', label: 'Commercial Recovery' },
-    { href: '/services/trade-recovery-glasgow', label: 'Trade Recovery' },
+    {
+      href: '/services',
+      label: 'Services',
+      dropdown: [
+        { href: '/services', label: 'All Services' },
+        { href: '/services/commercial-recovery-glasgow', label: 'Commercial Recovery' },
+        { href: '/services/trade-recovery-glasgow', label: 'Trade Recovery' },
+      ],
+    },
     { href: '/#pricing', label: 'Pricing' },
     { href: '/areas', label: 'Areas' },
     { href: '/work', label: 'Gallery' },
-    { href: '/#faq', label: 'FAQ' },
     { href: '/blog', label: 'Blog' },
+    { href: '/#faq', label: 'FAQ' },
     { href: '/#contact', label: 'Contact' },
     { href: '/accident-claim', label: 'Free Accident Claim', prominent: true },
   ]
@@ -57,17 +68,45 @@ export default function Header() {
         </Link>
         <nav className={`${styles.navbar} ${menuOpen ? styles.open : ''}`}>
           <ul className={styles.navList}>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={link.prominent ? styles.navLinkAccident : styles.navLink}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map((link) =>
+              link.dropdown ? (
+                <li key={link.href} className={styles.hasDropdown}>
+                  <Link
+                    href={link.href}
+                    className={styles.navLink}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {link.label}
+                    <span className={`material-symbols-rounded ${styles.dropdownChevron}`}>
+                      expand_more
+                    </span>
+                  </Link>
+                  <ul className={styles.dropdownMenu}>
+                    {link.dropdown.map((sub) => (
+                      <li key={sub.href}>
+                        <Link
+                          href={sub.href}
+                          className={styles.dropdownLink}
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {sub.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={link.prominent ? styles.navLinkAccident : styles.navLink}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
 
           {/* Socials inside the mobile menu */}

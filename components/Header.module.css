@@ -35,18 +35,22 @@
 .navList {
   display: flex;
   align-items: center;
-  gap: 0.1rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  gap: 0.2rem;
+}
+
+.navList > li {
+  position: relative;
 }
 
 .navLink {
-  display: inline-block;
-  padding: 0.8rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.8rem 1.3rem;
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--gray-light);
   transition: color 0.2s ease;
@@ -58,8 +62,8 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: 1rem;
-  right: 1rem;
+  left: 1.3rem;
+  right: 1.3rem;
   height: 2px;
   background: var(--gradient);
   transform: scaleX(0);
@@ -73,6 +77,59 @@
 
 .navLink:hover::after {
   transform: scaleX(1);
+}
+
+.dropdownChevron {
+  font-size: 1.6rem !important;
+  transition: transform 0.2s ease;
+}
+
+.hasDropdown:hover .dropdownChevron {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 6px);
+  min-width: 220px;
+  background: hsla(0, 0%, 6%, 0.98);
+  backdrop-filter: blur(16px);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: var(--radius-md);
+  padding: 0.6rem;
+  box-shadow: 0 20px 40px hsla(0, 0%, 0%, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.hasDropdown:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.dropdownLink {
+  display: block;
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  color: var(--gray-light);
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.dropdownLink:hover {
+  color: var(--white);
+  background: hsla(318, 82%, 45%, 0.12);
 }
 
 .navLinkAccident {
@@ -245,5 +302,30 @@
   .mobileSocials .socialBtn {
     width: 4.8rem;
     height: 4.8rem;
+  }
+
+  /* Dropdown becomes a static, always-visible sub-list under its parent link */
+  .dropdownChevron {
+    display: none;
+  }
+  .dropdownMenu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background: none;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    padding: 0;
+    margin-top: 0.4rem;
+    transition: none;
+  }
+  .dropdownLink {
+    font-size: 1.6rem;
+    padding: 0.9rem 3rem;
+    color: var(--gray);
+    text-align: center;
   }
 }
