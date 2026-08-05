@@ -29,11 +29,11 @@ export default function Hero() {
           24/7 Emergency Response
         </div>
         <h1 className={styles.title}>
-          Glasgow&apos;s
+          24/7
           <br />
-          <span className={styles.gradient}>Fastest Recovery</span>
+          <span className={styles.gradient}>Breakdown &amp; Recovery</span>
           <br />
-          Service
+          Glasgow
         </h1>
         <p className={styles.tagline}>
           Broken down? Accident? Immobilised? We dispatch immediately — day or
