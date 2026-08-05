@@ -62,7 +62,7 @@ export default async function Schema() {
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: (live?.rating ?? 5.0).toFixed(1),
-        reviewCount: String(live?.totalReviews ?? 58),
+        reviewCount: String(live?.totalReviews ?? 102),
         bestRating: '5',
         worstRating: '1',
       },
@@ -172,7 +172,7 @@ export default async function Schema() {
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: (live?.rating ?? 5.0).toFixed(1),
-        reviewCount: String(live?.totalReviews ?? 58),
+        reviewCount: String(live?.totalReviews ?? 102),
         bestRating: '5',
         worstRating: '1',
       },

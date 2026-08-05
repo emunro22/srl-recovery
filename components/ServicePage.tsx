@@ -4,10 +4,14 @@ import Footer from '@/components/Footer'
 import CallbackForm from '@/components/CallbackForm'
 import { services, type ServicePageData } from '@/lib/services-data'
 import WhatsAppLink from '@/components/WhatsAppLink'
+import { getGoogleReviews } from '@/lib/googleReviews'
 import styles from './ServicePage.module.css'
 
-export default function ServicePage({ data }: { data: ServicePageData }) {
+export default async function ServicePage({ data }: { data: ServicePageData }) {
   const related = services.filter((s) => data.relatedServices.includes(s.slug))
+  const live = await getGoogleReviews()
+  const rating = live?.rating ?? 5.0
+  const totalReviews = live?.totalReviews ?? 102
 
   // FAQ schema for this page
   const faqSchema = {
@@ -89,7 +93,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             <div className={styles.trustRow}>
               <div className={styles.trustItem}>
                 <span className="material-symbols-rounded">star</span>
-                <strong>5.0</strong> · 58+ Google reviews
+                <strong>{rating.toFixed(1)}</strong> · {totalReviews}+ Google reviews
               </div>
               <div className={styles.trustItem}>
                 <span className="material-symbols-rounded">schedule</span>

@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import Pricing from '@/components/Pricing'
 import FAQ from '@/components/FAQ'
 import Testimonials from '@/components/Testimonials'
+import { getGoogleReviews } from '@/lib/googleReviews'
 import styles from './AreaPage.module.css'
 
 export type AreaInfo = {
@@ -17,7 +18,11 @@ export type AreaInfo = {
   relatedRoutes?: { href: string; title: string; description: string }[]
 }
 
-export default function AreaPage({ area }: { area: AreaInfo }) {
+export default async function AreaPage({ area }: { area: AreaInfo }) {
+  const live = await getGoogleReviews()
+  const rating = live?.rating ?? 5.0
+  const totalReviews = live?.totalReviews ?? 102
+
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -95,8 +100,8 @@ export default function AreaPage({ area }: { area: AreaInfo }) {
                 <span>Always available</span>
               </div>
               <div className={styles.heroStat}>
-                <strong>5.0★</strong>
-                <span>58+ Google reviews</span>
+                <strong>{rating.toFixed(1)}★</strong>
+                <span>{totalReviews}+ Google reviews</span>
               </div>
             </div>
           </div>

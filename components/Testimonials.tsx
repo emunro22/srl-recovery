@@ -87,7 +87,7 @@ export default async function Testimonials() {
     ? live.reviews.map((r) => ({ quote: r.text, author: r.author, stars: r.rating }))
     : fallbackTestimonials
   const rating = live?.rating ?? 5.0
-  const totalReviews = live?.totalReviews ?? 58
+  const totalReviews = live?.totalReviews ?? 102
 
   return (
     <section className={`section ${styles.testimonials}`}>

@@ -1,7 +1,12 @@
 import Image from 'next/image'
 import styles from './Hero.module.css'
+import { getGoogleReviews } from '@/lib/googleReviews'
 
-export default function Hero() {
+export default async function Hero() {
+  const live = await getGoogleReviews()
+  const rating = live?.rating ?? 5.0
+  const totalReviews = live?.totalReviews ?? 102
+
   return (
     <section className={styles.hero} id="home">
       <div className={styles.truckWrap}>
@@ -65,7 +70,7 @@ export default function Hero() {
             ))}
           </span>
           <span>
-            <strong>5.0</strong> from <strong>58+ reviews</strong> on Google
+            <strong>{rating.toFixed(1)}</strong> from <strong>{totalReviews}+ reviews</strong> on Google
           </span>
           <span className={`material-symbols-rounded ${styles.reviewArrow}`}>arrow_outward</span>
         </a>
