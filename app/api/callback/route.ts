@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const contactEmail = process.env.CONTACT_EMAIL || 'srlautos@icloud.com'
+const contactEmail = process.env.CONTACT_EMAIL || 'enquiries@srlrecovery.com'
 
 function getResend() {
   const key = process.env.RESEND_API_KEY

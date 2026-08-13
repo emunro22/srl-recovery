@@ -119,7 +119,7 @@ export default function Footer() {
               </li>
               <li className={styles.contactItem}>
                 <span className="material-symbols-rounded">mail</span>
-                <a href="mailto:srlautos@icloud.com">srlautos@icloud.com</a>
+                <a href="mailto:enquiries@srlrecovery.com">enquiries@srlrecovery.com</a>
               </li>
               <li className={styles.contactItem}>
                 <span className="material-symbols-rounded">location_on</span>

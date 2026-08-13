@@ -67,10 +67,16 @@ srl-recovery/
 ## Updating Content
 
 - **Phone number**: Search for `447776356556` — appears in Header, Hero, Services, Footer
-- **Email**: `srlautos@icloud.com` in Footer
+- **Email**: `enquiries@srlrecovery.com` in Footer
 - **Work photos**: Replace files in `public/images/` — keep the same filenames
 - **Testimonials**: Edit the array in `components/Testimonials.tsx`
 - **Coverage areas**: Edit the array in `components/Coverage.tsx`
+
+## Automation
+
+- **Google photo sync**: `/api/cron/sync-google-photos` runs daily via Vercel Cron and imports any new photos Google's Place Details API surfaces for the business into the work gallery (deduped by image content hash, so it's safe to run repeatedly). Needs `GOOGLE_PLACES_API_KEY` and `GOOGLE_PLACE_ID` (already used for the live review rating) plus `CRON_SECRET`. Note: Google's Places API returns at most ~10 photos and picks which ones to show — it isn't a full feed of everything uploaded to the Business Profile.
+- **Storage cap**: the same cron checks total Vercel Blob usage and, once it hits 80% of the plan's included storage (5GB on Hobby — override with `BLOB_STORAGE_LIMIT_GB` if your plan differs), deletes the oldest images to bring it back down. Every gallery image that existed before this feature shipped is permanently `protected` and never auto-deleted — only images added afterwards (manual uploads or Google-synced) are eligible, oldest first.
+- **Monthly review requests**: `/api/cron/monthly-reviews` runs on the 1st of each month and WhatsApps a review link to that month's customers.
 
 ## SEO
 

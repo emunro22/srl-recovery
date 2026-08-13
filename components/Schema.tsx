@@ -13,7 +13,7 @@ export default async function Schema() {
         "Glasgow's trusted 24/7 breakdown and accident recovery service. Owner with 17 years in the motor trade, completing 250+ recovery jobs every month.",
       url: 'https://srlrecovery.com',
       telephone: '+447776356556',
-      email: 'srlautos@icloud.com',
+      email: 'enquiries@srlrecovery.com',
       foundingDate: '2023',
       image: 'https://srlrecovery.com/images/logo.png',
       logo: 'https://srlrecovery.com/images/logo.png',

@@ -34,6 +34,9 @@ export type GalleryImage = {
   created_at: string
   media_type: 'image' | 'video'
   description: string | null
+  source: 'manual' | 'google'
+  content_hash: string | null
+  protected: boolean
 }
 
 let _galleryTableReady: Promise<void> | null = null
@@ -44,6 +47,13 @@ async function ensureGalleryTable() {
       // Existing table already predates this file — only add columns it might be missing.
       await sql`ALTER TABLE gallery_images ADD COLUMN IF NOT EXISTS media_type TEXT NOT NULL DEFAULT 'image'`
       await sql`ALTER TABLE gallery_images ADD COLUMN IF NOT EXISTS description TEXT`
+      await sql`ALTER TABLE gallery_images ADD COLUMN IF NOT EXISTS source TEXT NOT NULL DEFAULT 'manual'`
+      await sql`ALTER TABLE gallery_images ADD COLUMN IF NOT EXISTS content_hash TEXT`
+      // Adding this column with DEFAULT true backfills every image that already
+      // exists as protected; switching the default afterwards means every image
+      // added from this point on starts out unprotected (eligible for auto-pruning).
+      await sql`ALTER TABLE gallery_images ADD COLUMN IF NOT EXISTS protected BOOLEAN NOT NULL DEFAULT true`
+      await sql`ALTER TABLE gallery_images ALTER COLUMN protected SET DEFAULT false`
     })()
   }
   return _galleryTableReady
@@ -52,7 +62,7 @@ async function ensureGalleryTable() {
 export async function getGalleryImages(): Promise<GalleryImage[]> {
   await ensureGalleryTable()
   const rows = (await sql`
-    SELECT id, url, title, tag, blob_path, created_at, media_type, description
+    SELECT id, url, title, tag, blob_path, created_at, media_type, description, source, content_hash, protected
     FROM gallery_images
     ORDER BY created_at DESC
   `) as GalleryImage[]
@@ -66,14 +76,40 @@ export async function addGalleryImage(data: {
   blob_path?: string
   media_type?: 'image' | 'video'
   description?: string
+  source?: 'manual' | 'google'
+  content_hash?: string
 }) {
   await ensureGalleryTable()
   const rows = (await sql`
-    INSERT INTO gallery_images (url, title, tag, blob_path, media_type, description)
-    VALUES (${data.url}, ${data.title}, ${data.tag}, ${data.blob_path ?? null}, ${data.media_type ?? 'image'}, ${data.description ?? null})
-    RETURNING id, url, title, tag, blob_path, created_at, media_type, description
+    INSERT INTO gallery_images (url, title, tag, blob_path, media_type, description, source, content_hash)
+    VALUES (${data.url}, ${data.title}, ${data.tag}, ${data.blob_path ?? null}, ${data.media_type ?? 'image'}, ${data.description ?? null}, ${data.source ?? 'manual'}, ${data.content_hash ?? null})
+    RETURNING id, url, title, tag, blob_path, created_at, media_type, description, source, content_hash, protected
   `) as GalleryImage[]
   return rows[0]
+}
+
+// Used by the Google photo sync cron to skip photos it's already imported —
+// Google's photo_reference tokens can rotate, so we dedupe on image content instead.
+export async function galleryImageHashExists(hash: string): Promise<boolean> {
+  await ensureGalleryTable()
+  const rows = (await sql`
+    SELECT 1 FROM gallery_images WHERE content_hash = ${hash} LIMIT 1
+  `) as unknown[]
+  return rows.length > 0
+}
+
+// Images already in the gallery when auto-pruning shipped are `protected` forever.
+// Everything added after that — manual uploads included — is fair game here,
+// oldest first, for the storage-cap cron to remove when Blob usage runs high.
+export async function getUnprotectedGalleryImagesOldestFirst(): Promise<GalleryImage[]> {
+  await ensureGalleryTable()
+  const rows = (await sql`
+    SELECT id, url, title, tag, blob_path, created_at, media_type, description, source, content_hash, protected
+    FROM gallery_images
+    WHERE protected = false
+    ORDER BY created_at ASC
+  `) as GalleryImage[]
+  return rows
 }
 
 export async function deleteGalleryImage(id: number): Promise<GalleryImage | null> {
