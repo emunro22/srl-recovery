@@ -6,6 +6,7 @@ import styles from './CallbackForm.module.css'
 export default function CallbackForm() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
   const [vehicle, setVehicle] = useState('')
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -19,7 +20,7 @@ export default function CallbackForm() {
       const res = await fetch('/api/callback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, vehicle, message }),
+        body: JSON.stringify({ name, phone, email, vehicle, message }),
       })
       if (!res.ok) {
         const { error: msg } = await res.json().catch(() => ({ error: 'Failed to send' }))
@@ -28,7 +29,7 @@ export default function CallbackForm() {
         return
       }
       setStatus('success')
-      setName(''); setPhone(''); setVehicle(''); setMessage('')
+      setName(''); setPhone(''); setEmail(''); setVehicle(''); setMessage('')
     } catch {
       setError('Network error. Please call us directly on 07776 356 556.')
       setStatus('error')
@@ -91,6 +92,14 @@ export default function CallbackForm() {
                   <input id="cb-phone" type="tel" value={phone}
                     onChange={(e) => setPhone(e.target.value)} required maxLength={30}
                     placeholder="07XXX XXXXXX" className={styles.input} />
+                </div>
+                <div className={styles.field}>
+                  <label htmlFor="cb-email" className={styles.label}>
+                    Email <span className={styles.optional}>(optional)</span>
+                  </label>
+                  <input id="cb-email" type="email" value={email}
+                    onChange={(e) => setEmail(e.target.value)} maxLength={200}
+                    placeholder="you@example.com" className={styles.input} />
                 </div>
                 <div className={styles.field}>
                   <label htmlFor="cb-vehicle" className={styles.label}>

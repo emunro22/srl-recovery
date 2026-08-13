@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { buildCallbackNotificationEmail, buildCustomerThankYouEmail } from '@/lib/emailTemplates'
 
 const contactEmail = process.env.CONTACT_EMAIL || 'enquiries@srlrecovery.com'
+const FROM = 'SRL Recovery <noreply@srlrecovery.com>'
 
 function getResend() {
   const key = process.env.RESEND_API_KEY
@@ -9,14 +11,7 @@ function getResend() {
   return new Resend(key)
 }
 
-function escapeHtml(str: string) {
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;')
-}
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(req: Request) {
   try {
@@ -25,42 +20,45 @@ export async function POST(req: Request) {
     const phone = String(data.phone ?? '').trim()
     const vehicle = String(data.vehicle ?? '').trim()
     const message = String(data.message ?? '').trim()
+    const email = String(data.email ?? '').trim()
 
     if (!name || !phone) {
       return NextResponse.json({ error: 'Name and phone are required' }, { status: 400 })
     }
-    if (name.length > 100 || phone.length > 30 || vehicle.length > 120 || message.length > 1000) {
+    if (name.length > 100 || phone.length > 30 || vehicle.length > 120 || message.length > 1000 || email.length > 200) {
       return NextResponse.json({ error: 'Input too long' }, { status: 400 })
     }
-
-    const html = `
-      <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#fff;color:#111;border:1px solid #eee;border-radius:8px;overflow:hidden;">
-        <div style="background:linear-gradient(135deg,#cc1493,#1f93f0);padding:24px;color:#fff;">
-          <h1 style="margin:0;font-size:22px;">New Callback Request</h1>
-          <p style="margin:8px 0 0;opacity:0.9;font-size:14px;">SRL Recovery website</p>
-        </div>
-        <div style="padding:24px;line-height:1.6;">
-          <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-          <p><strong>Phone:</strong> <a href="tel:${escapeHtml(phone)}">${escapeHtml(phone)}</a></p>
-          ${vehicle ? `<p><strong>Vehicle:</strong> ${escapeHtml(vehicle)}</p>` : ''}
-          ${message ? `<p><strong>Details:</strong><br>${escapeHtml(message).replace(/\n/g, '<br>')}</p>` : ''}
-          <hr style="border:0;border-top:1px solid #eee;margin:24px 0;">
-          <p style="font-size:12px;color:#666;">Submitted from the SRL Recovery callback form.</p>
-        </div>
-      </div>
-    `
+    if (email && !EMAIL_RE.test(email)) {
+      return NextResponse.json({ error: 'Invalid email address' }, { status: 400 })
+    }
 
     const resend = getResend()
+
     const { error } = await resend.emails.send({
-      from: 'SRL Recovery Website <noreply@srlrecovery.com>',
+      from: FROM,
       to: [contactEmail],
+      replyTo: email || undefined,
       subject: `Callback request: ${name} (${phone})`,
-      html,
+      html: buildCallbackNotificationEmail({ name, phone, vehicle, message, email }),
     })
 
     if (error) {
       console.error('Resend error', error)
       return NextResponse.json({ error: 'Email failed' }, { status: 500 })
+    }
+
+    if (email) {
+      try {
+        await resend.emails.send({
+          from: FROM,
+          to: [email],
+          subject: 'Thanks for choosing SRL Recovery',
+          html: buildCustomerThankYouEmail({ name }),
+        })
+      } catch (err) {
+        // Non-fatal — the business notification above is the important one
+        console.warn('Customer thank-you email failed', err)
+      }
     }
 
     return NextResponse.json({ ok: true })
