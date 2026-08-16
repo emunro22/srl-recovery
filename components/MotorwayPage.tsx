@@ -17,7 +17,7 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
     provider: {
       '@type': 'AutoRepair',
       name: 'SRL Recovery',
-      telephone: '+447776356556',
+      telephone: '+441698700970',
     },
     areaServed: { '@type': 'Place', name: data.fullName },
     url: `https://srlrecovery.com/motorways/${data.slug}`,
@@ -87,8 +87,8 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
                 <strong>Broken down on the {data.name} right now?</strong>
                 <p>Call 999 first if you&apos;re in a live lane. Then call us.</p>
               </div>
-              <a href="tel:+447776356556" className={`btn ${styles.urgentBtn}`}>
-                Call 07776 356 556
+              <a href="tel:+441698700970" className={`btn ${styles.urgentBtn}`}>
+                Call 01698 700970
               </a>
             </div>
           </div>
@@ -160,9 +160,9 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
                   off the {data.name} and on your way.
                 </p>
                 <div className={styles.ctaActions}>
-                  <a href="tel:+447776356556" className="btn">
+                  <a href="tel:+441698700970" className="btn">
                     <span className="material-symbols-rounded">call</span>
-                    Call 07776 356 556
+                    Call 01698 700970
                   </a>
                   <WhatsAppLink source={`motorway-cta-${data.slug}`} className={styles.whatsBtn}>
                     WhatsApp Us

@@ -23,7 +23,7 @@ Once stopped, turn on your hazard lights. If it's dark or visibility is poor, ke
 
 Do not attempt repairs on the motorway hard shoulder. This is one of the most dangerous places in the UK and even changing a tyre on the M8 hard shoulder puts you at serious risk from passing HGVs.
 
-Call SRL Recovery on 07776 356 556. Tell us your exact location — the nearest motorway marker post number is the most helpful detail. These orange posts are spaced every 100 metres along the M8 and show your exact kilometre position. We'll dispatch immediately and give you an accurate ETA.
+Call SRL Recovery on 01698 700970. Tell us your exact location — the nearest motorway marker post number is the most helpful detail. These orange posts are spaced every 100 metres along the M8 and show your exact kilometre position. We'll dispatch immediately and give you an accurate ETA.
 
 While you wait, stay behind the barrier. If you must remain in the car (e.g. due to disability or extreme weather), stay buckled in and keep well to the left.
 
@@ -67,7 +67,7 @@ We carry specialist equipment on every truck including wheel skates for vehicles
 
 Many Glasgow recovery calls are non-towing jobs. Dead batteries, locked wheels, wrong fuel, and flat tyres make up a large proportion of call-outs. Our drivers are trained to diagnose and fix at the roadside wherever possible.
 
-If you break down anywhere in the Glasgow area, call us on 07776 356 556. We'll tell you exactly what to expect, confirm a price before we move, and get to you as fast as possible.`,
+If you break down anywhere in the Glasgow area, call us on 01698 700970. We'll tell you exactly what to expect, confirm a price before we move, and get to you as fast as possible.`,
   },
   {
     title: 'Accident Recovery vs Breakdown Recovery: Key Differences',
@@ -84,7 +84,7 @@ Accident recovery is more complex. If your vehicle has been in a road traffic ac
 
 At SRL Recovery, we handle both. For accident recovery, we work closely with insurance companies and can often recover a vehicle without any upfront cost to the driver if the claim is against a third party's insurance. We're experienced in loading damaged vehicles safely — cars with damaged suspension, broken steering, or deployed airbags require specific loading techniques.
 
-If your vehicle is undriveable after an accident, do not attempt to drive it. Damaged brake lines, bent steering components, or misaligned wheels can make an already serious situation worse. Call us on 07776 356 556 and we'll assess and recover safely.
+If your vehicle is undriveable after an accident, do not attempt to drive it. Damaged brake lines, bent steering components, or misaligned wheels can make an already serious situation worse. Call us on 01698 700970 and we'll assess and recover safely.
 
 One important note: if there are injuries at an accident scene, call 999 first. Recovery comes once emergency services have attended and declared the scene safe.
 
@@ -109,7 +109,7 @@ Pack a winter kit: an ice scraper, a travel blanket, a torch, a small shovel, an
 
 Drive to conditions. Ice means reduced grip even at low speeds. On an icy Glasgow road at 20mph, your stopping distance is around four times what it would be on a dry road. Leave significantly more space in front.
 
-If you do break down in winter, stay with your vehicle, keep your hazards on, and call SRL Recovery on 07776 356 556. We operate 24/7 through all weather conditions.`,
+If you do break down in winter, stay with your vehicle, keep your hazards on, and call SRL Recovery on 01698 700970. We operate 24/7 through all weather conditions.`,
   },
   {
     title: 'Motorway Breakdown Safety: What You Must Know',
@@ -130,7 +130,7 @@ In Smart Motorway sections — which now exist on parts of the M8 and M74 — th
 
 Leave your sidelights on in dark conditions. Do not attempt repairs on a motorway. Do not re-enter your vehicle if you are standing safely outside — wait for recovery.
 
-SRL Recovery covers all motorways through Glasgow: M8, M73, M74, M77, M80. Call 07776 356 556 for immediate dispatch.`,
+SRL Recovery covers all motorways through Glasgow: M8, M73, M74, M77, M80. Call 01698 700970 for immediate dispatch.`,
   },
   {
     title: 'Prestige Car Recovery: Why Standard Recovery Won\'t Do',
@@ -149,7 +149,7 @@ For air-suspension vehicles like the Range Rover Sport or Mercedes S-Class, we k
 
 We also carry wheel skates, which allow vehicles with locked steering or non-rolling damaged wheels to be moved laterally without twisting anything.
 
-SRL Recovery handles prestige vehicles across Glasgow, East Kilbride, Bearsden, Newton Mearns, and the surrounding areas. If you have a prestige car, call 07776 356 556 — we'll handle it with the care it deserves.`,
+SRL Recovery handles prestige vehicles across Glasgow, East Kilbride, Bearsden, Newton Mearns, and the surrounding areas. If you have a prestige car, call 01698 700970 — we'll handle it with the care it deserves.`,
   },
   {
     title: 'Understanding Recovery Costs in Scotland',
@@ -172,7 +172,7 @@ Out-of-hours surcharges apply for calls between midnight and 6am, but we keep th
 
 If you're insured with a policy that includes breakdown cover, we can often bill your insurer directly. Alternatively, many accident recoveries are covered by third-party insurance with no upfront cost to you.
 
-For a fast, no-obligation quote for your specific situation, call 07776 356 556.`,
+For a fast, no-obligation quote for your specific situation, call 01698 700970.`,
   },
   {
     title: 'Van and Commercial Vehicle Recovery in Glasgow',
@@ -191,7 +191,7 @@ Our recovery trucks are equipped to handle the extra weight and dimensions of co
 
 We understand that tradespeople often need to minimise downtime. We can tow your vehicle to your regular garage, a chosen dealership, or a specific address. If you have a tool chest or materials in the vehicle, they travel with the van — we won't ask you to unload at the roadside.
 
-SRL Recovery is available for commercial vehicle breakdowns 24 hours a day, 7 days a week across Greater Glasgow. Call 07776 356 556 for immediate dispatch.`,
+SRL Recovery is available for commercial vehicle breakdowns 24 hours a day, 7 days a week across Greater Glasgow. Call 01698 700970 for immediate dispatch.`,
   },
   {
     title: 'Electric Vehicle Breakdown Recovery: What EV Owners Need to Know',
@@ -210,7 +210,7 @@ Many modern EVs have a "transport mode" that needs to be engaged before loading.
 
 For EVs that have suffered a mechanical breakdown rather than a battery issue — failed brakes, suspension, steering — the recovery process is largely the same as for any other vehicle. One thing to note: after a severe accident, EV batteries can be damaged and present a fire risk. If you've been in an accident with an EV, tell us and we'll take appropriate precautions.
 
-SRL Recovery serves the full Glasgow area including all EV charging corridor routes. Call 07776 356 556 for EV recovery any time, day or night.`,
+SRL Recovery serves the full Glasgow area including all EV charging corridor routes. Call 01698 700970 for EV recovery any time, day or night.`,
   },
   {
     title: 'Recovery After a Road Traffic Accident: A Step-by-Step Guide',
@@ -231,7 +231,7 @@ Exchange details: name, address, vehicle registration, and insurance details. If
 
 Photograph the scene: damage to all vehicles, road position, skid marks, road signs, and any other relevant detail. Your camera roll is crucial evidence for your insurance claim.
 
-Once the scene is safe, call SRL Recovery on 07776 356 556. We handle accident recovery across Glasgow and Central Scotland and can work directly with your insurance company. In many cases, if the accident isn't your fault, there's no upfront cost to you — we work with your insurer directly.
+Once the scene is safe, call SRL Recovery on 01698 700970. We handle accident recovery across Glasgow and Central Scotland and can work directly with your insurance company. In many cases, if the accident isn't your fault, there's no upfront cost to you — we work with your insurer directly.
 
 Do not drive a vehicle that may be unsafe after an accident. Damaged steering, brakes, or suspension could cause a further incident.`,
   },
@@ -248,7 +248,7 @@ The moment you realise you need to stop, switch on your hazard lights. This is e
 
 Once stopped, keep your hazard lights running. If you have warning triangles, place one approximately 45 metres behind your car (never on a motorway — warning triangles must not be placed on motorways as they require you to be in a live lane). A high-visibility vest makes you far more visible to approaching drivers if you need to leave the vehicle.
 
-Call for recovery immediately. At SRL Recovery, we dispatch the moment you call — we don't ask you to wait for a "second-phase assessment". Call 07776 356 556 and we'll confirm an ETA.
+Call for recovery immediately. At SRL Recovery, we dispatch the moment you call — we don't ask you to wait for a "second-phase assessment". Call 01698 700970 and we'll confirm an ETA.
 
 Stay in your vehicle if you're on a busy road unless instructed otherwise. A stationary car with hazards on is visible. A person standing in or near a live lane at night is not. If you must exit, do so from the passenger side and move well away from the road.
 
@@ -273,7 +273,7 @@ Many classic cars also have non-standard brake systems — cable brakes, drum br
 
 Paint protection matters. We use soft straps and blankets to prevent any metal-to-metal contact during loading and transport. Hard hooks near bodywork are unacceptable for a vehicle that may have had a £10,000 paint restoration.
 
-SRL Recovery handles classic and vintage car recovery across Glasgow, East Renfrewshire, and the surrounding area. If you own a classic and want to know we're right for the job, call 07776 356 556 and we'll walk you through our approach.`,
+SRL Recovery handles classic and vintage car recovery across Glasgow, East Renfrewshire, and the surrounding area. If you own a classic and want to know we're right for the job, call 01698 700970 and we'll walk you through our approach.`,
   },
   {
     title: 'Tyre Blowout Recovery: What to Do When Your Tyre Fails at Speed',
@@ -290,7 +290,7 @@ Then gently ease off the accelerator and let the car decelerate gradually. Only 
 
 Once safely stopped, switch on your hazard lights and follow standard motorway safety procedure: exit from the passenger side, move away from traffic, and call for recovery.
 
-Do not attempt to change a tyre on the motorway hard shoulder. The danger from passing traffic is too high. Call SRL Recovery on 07776 356 556 — we'll come to you and either fit your spare at the roadside (off motorways where safe) or transport the vehicle.
+Do not attempt to change a tyre on the motorway hard shoulder. The danger from passing traffic is too high. Call SRL Recovery on 01698 700970 — we'll come to you and either fit your spare at the roadside (off motorways where safe) or transport the vehicle.
 
 A spare tyre is worth checking regularly. Many modern cars come with space-saver spares rated to only 50mph and 50 miles — if your spare is one of these, plan your route to your destination accordingly.
 
@@ -313,7 +313,7 @@ Diesel in a petrol engine is usually less serious in the short term. The engine 
 
 Do not attempt to drive to a garage. Even a short journey on the wrong fuel can turn a simple drain-and-flush (often recoverable for a few hundred pounds) into a full fuel system replacement.
 
-SRL Recovery provides mobile fuel drain services across Glasgow for situations where the car hasn't been driven. For cars that have been driven on wrong fuel, we'll transport to a specialist. Call 07776 356 556 and describe exactly what happened — we'll advise on the best approach.`,
+SRL Recovery provides mobile fuel drain services across Glasgow for situations where the car hasn't been driven. For cars that have been driven on wrong fuel, we'll transport to a specialist. Call 01698 700970 and describe exactly what happened — we'll advise on the best approach.`,
   },
   {
     title: 'What Happens During a Vehicle Recovery? A Step-by-Step Walkthrough',
@@ -324,7 +324,7 @@ SRL Recovery provides mobile fuel drain services across Glasgow for situations w
       'If you\'ve never been recovered before, here\'s a first-person walkthrough of exactly what to expect from call to drop-off.',
     content: `If you've never experienced a breakdown recovery, not knowing what to expect can make the experience more stressful than it needs to be. Here's a complete walkthrough of what happens with SRL Recovery from the moment you call.
 
-You call us on 07776 356 556. We pick up quickly — we don't operate with hold queues. You'll give us your location, vehicle details, and the nature of the problem. We'll tell you our estimated arrival time and confirm a price before we dispatch. You'll have a clear number to call if anything changes.
+You call us on 01698 700970. We pick up quickly — we don't operate with hold queues. You'll give us your location, vehicle details, and the nature of the problem. We'll tell you our estimated arrival time and confirm a price before we dispatch. You'll have a clear number to call if anything changes.
 
 Our driver arrives in a marked SRL Recovery vehicle. They'll introduce themselves and assess the situation. If there's a quick fix possible — a jump-start, a spare tyre, a fuel delivery — they'll attempt that first. Roadside resolution is always the quickest and most cost-effective outcome.
 
@@ -334,7 +334,7 @@ You'll travel in the passenger seat of the recovery cab. It's warm, dry, and pri
 
 At your chosen destination, the driver will lower and unload your vehicle. They'll confirm the condition and placement, complete the payment, and give you a receipt. The whole process, from call to drop-off, is typically 1–3 hours.
 
-SRL Recovery serves all areas of Glasgow and Central Scotland. Call 07776 356 556 any time.`,
+SRL Recovery serves all areas of Glasgow and Central Scotland. Call 01698 700970 any time.`,
   },
   {
     title: 'Recovery in Bad Scottish Weather: Floods, Snow, and Ice',
@@ -353,7 +353,7 @@ In severe weather, response times can be longer. Road closures, police diversion
 
 One thing that does not change in adverse weather: we will come. SRL Recovery operates through all weather conditions. We won't cancel or tell you to wait until morning — if you've broken down in a Scottish winter, we'll get to you.
 
-Preparation is always better than recovery. Keep your vehicle regularly serviced, check tyres and battery before winter, and carry a basic emergency kit. But if the worst happens, call 07776 356 556.`,
+Preparation is always better than recovery. Keep your vehicle regularly serviced, check tyres and battery before winter, and carry a basic emergency kit. But if the worst happens, call 01698 700970.`,
   },
   {
     title: 'M77 Motorway Breakdown Guide: What to Do and Who to Call',
@@ -364,7 +364,7 @@ Preparation is always better than recovery. Keep your vehicle regularly serviced
       'The M77 connects Glasgow to East Kilbride and Ayrshire. Here\'s the complete guide to breaking down on this busy commuter route.',
     content: `The M77 is one of Glasgow's key commuter arteries, running from the Kingston Bridge interchange in the city centre southward to Kilmarnock and Ayrshire. It serves East Kilbride, Newton Mearns, Fenwick, and the Ayrshire towns, carrying significant volumes of traffic particularly during morning and evening rush hours.
 
-If you break down on the M77, the process is the same as any Scottish motorway. Signal left immediately, move to the hard shoulder, switch on hazards, exit from the passenger side, and stay behind the barrier. Call SRL Recovery on 07776 356 556.
+If you break down on the M77, the process is the same as any Scottish motorway. Signal left immediately, move to the hard shoulder, switch on hazards, exit from the passenger side, and stay behind the barrier. Call SRL Recovery on 01698 700970.
 
 The M77 runs through some areas of low ambient light south of the M8/M77 junction, and the road surface conditions can deteriorate quickly in autumn and winter when leaves accumulate. Be especially cautious at junctions near Malletsheugh and Fenwick where merge and diverge speeds change rapidly.
 
@@ -372,7 +372,7 @@ SRL Recovery covers the full M77 corridor from the Kingston Bridge to junction 8
 
 For breakdowns on the A77 south of the M77 terminus — the dual carriageway through Ayrshire — we cover this route too. Response times are typically 45–60 minutes for the Kilmarnock area and up to 75–90 minutes for the Ayr corridor, depending on our base position and traffic conditions.
 
-If you're stranded on the M77 or A77, call 07776 356 556 for immediate dispatch.`,
+If you're stranded on the M77 or A77, call 01698 700970 for immediate dispatch.`,
   },
   {
     title: 'M74 Motorway Breakdown Guide: Central Scotland\'s Main Artery',
@@ -391,7 +391,7 @@ The M74 is notable for its high HGV traffic density. If you break down in the HG
 
 At the M74/M8/M73 interchange at Baillieston — one of the most complex motorway junctions in Scotland — breakdowns can create rapid traffic build-up. Police Scotland takes these incidents seriously and response is typically fast. If you call us, we'll coordinate with any Traffic Scotland diversion in effect.
 
-SRL Recovery covers all M74 junctions from the Glasgow city end through Hamilton, Motherwell, and into Lanarkshire. Call 07776 356 556.`,
+SRL Recovery covers all M74 junctions from the Glasgow city end through Hamilton, Motherwell, and into Lanarkshire. Call 01698 700970.`,
   },
   {
     title: 'How to Choose a Recovery Company in Glasgow',
@@ -412,7 +412,7 @@ Reviews and reputation count. Local Google reviews from real Glasgow drivers giv
 
 Availability is critical. A recovery company that operates 9am–5pm is useful for very few breakdowns. You need a company that genuinely operates 24 hours a day, 365 days a year.
 
-SRL Recovery meets all of these criteria. We're local, transparent, fully equipped, and available around the clock. Call us on 07776 356 556.`,
+SRL Recovery meets all of these criteria. We're local, transparent, fully equipped, and available around the clock. Call us on 01698 700970.`,
   },
   {
     title: 'Flood-Damaged Vehicle Recovery: What to Do When Water Strikes',
@@ -429,7 +429,7 @@ If your engine stops in floodwater, do not attempt to restart it. Water in the e
 
 Move yourself to safety first. Floodwater can rise rapidly and vehicles can be swept away. If water is rising, exit the vehicle immediately and move to higher ground.
 
-Once you and your passengers are safe, call SRL Recovery on 07776 356 556. We carry winch equipment for extracting vehicles from flood zones and have experience loading flood-damaged vehicles onto flatbeds without attempting to start them. We'll transport directly to a specialist workshop that can assess the full extent of the water damage.
+Once you and your passengers are safe, call SRL Recovery on 01698 700970. We carry winch equipment for extracting vehicles from flood zones and have experience loading flood-damaged vehicles onto flatbeds without attempting to start them. We'll transport directly to a specialist workshop that can assess the full extent of the water damage.
 
 When dealing with your insurer, document everything. Photographs of the flood depth, the vehicle position, and any visible interior water ingress are essential for your claim.`,
   },
@@ -450,7 +450,7 @@ Common causes of motorcycle breakdown include battery failure (particularly comm
 
 If your bike has been in an accident, additional care is needed during loading. Bent frames or handlebars can change the steering geometry and affect loading safety. We assess each bike individually before loading.
 
-SRL Recovery covers Glasgow, Ayrshire, Lanarkshire, and Renfrewshire for motorcycle recovery. Whether you ride a daily commuter or a weekend sports bike, call 07776 356 556 for fast, specialist recovery.`,
+SRL Recovery covers Glasgow, Ayrshire, Lanarkshire, and Renfrewshire for motorcycle recovery. Whether you ride a daily commuter or a weekend sports bike, call 01698 700970 for fast, specialist recovery.`,
   },
   {
     title: '10 Signs Your Car Is About to Break Down',
@@ -481,7 +481,7 @@ Nine: the car is hard to start. Slow cranking or multiple attempts to fire sugge
 
 Ten: you notice unusual vibrations. Vibrations through the steering wheel or bodywork can indicate wheel balancing issues, worn tyres, or suspension problems.
 
-If you experience any of these signs, get your car looked at before your next long journey. SRL Recovery is available 24/7 on 07776 356 556 if the worst happens.`,
+If you experience any of these signs, get your car looked at before your next long journey. SRL Recovery is available 24/7 on 01698 700970 if the worst happens.`,
   },
   {
     title: 'Why 24/7 Breakdown Recovery Matters in Scotland',
@@ -500,7 +500,7 @@ Night-time breakdowns also carry a higher safety risk than daytime ones. Reduced
 
 We don't inflate our prices at night. Yes, there's an out-of-hours supplement for calls between midnight and 6am, but it's a fixed, disclosed charge — not an opportunity to take advantage of your situation.
 
-If you break down at any hour, across Glasgow or the surrounding areas, call SRL Recovery on 07776 356 556. We'll be there.`,
+If you break down at any hour, across Glasgow or the surrounding areas, call SRL Recovery on 01698 700970. We'll be there.`,
   },
   {
     title: 'Recovery After a Vehicle Fire: What You Need to Know',
@@ -515,7 +515,7 @@ The moment you see smoke or flames from your vehicle, pull over immediately. Don
 
 Call 999 immediately. The fire brigade will extinguish the fire and make the scene safe. Do not attempt to fight a vehicle fire with a handheld extinguisher unless it is a very small, contained fire and you have a clear escape route. If you cannot extinguish it in 30 seconds, move back and wait for the fire brigade.
 
-Once the fire is out and the scene is declared safe by the fire crew, call SRL Recovery on 07776 356 556. A fire-damaged vehicle requires specialist recovery. Wheels may have seized due to brake heat. Tyres may have melted to the road surface. The vehicle structure may be compromised, requiring careful winching rather than standard loading.
+Once the fire is out and the scene is declared safe by the fire crew, call SRL Recovery on 01698 700970. A fire-damaged vehicle requires specialist recovery. Wheels may have seized due to brake heat. Tyres may have melted to the road surface. The vehicle structure may be compromised, requiring careful winching rather than standard loading.
 
 Do not attempt to start or drive a fire-damaged vehicle. Even if the fire was small and localised, the heat damage to wiring, fuel lines, and brake components can make the vehicle extremely dangerous. It needs a full mechanical assessment before any further use.
 
@@ -538,7 +538,7 @@ Response times on rural roads are longer than in the city. A journey to the uppe
 
 For breakdowns that require specialist recovery — vehicles off-road, in ditches, or on narrow single-track roads — a recovery truck needs appropriate access. On some very narrow lanes, our driver may need to assess access before dispatching the correct vehicle.
 
-SRL Recovery covers rural areas around Glasgow including South Ayrshire routes, Dumfriesshire approaches, East Renfrewshire, and East Dunbartonshire. If you're unsure whether we cover your area, call 07776 356 556 and we'll let you know honestly.
+SRL Recovery covers rural areas around Glasgow including South Ayrshire routes, Dumfriesshire approaches, East Renfrewshire, and East Dunbartonshire. If you're unsure whether we cover your area, call 01698 700970 and we'll let you know honestly.
 
 Always check your car before a long rural journey: tyres, coolant, oil, and battery. The nearest garage on a rural Scottish road can be a very long walk away.`,
   },

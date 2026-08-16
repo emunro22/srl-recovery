@@ -22,7 +22,7 @@ export const motorways: MotorwayPageData[] = [
     fullName: 'M8 motorway',
     title: 'M8 Recovery | Breakdown & Accident Recovery on the M8 | SRL',
     metaDescription:
-      "M8 breakdown? SRL Recovery covers the full M8 from junction 1 to 31 — 24/7, fast dispatch, fully insured. Call 07776 356 556 right now.",
+      "M8 breakdown? SRL Recovery covers the full M8 from junction 1 to 31 — 24/7, fast dispatch, fully insured. Call 01698 700970 right now.",
     route: 'Edinburgh ↔ Glasgow ↔ Greenock',
     length: '~60 miles total',
     junctionsCovered: 'J1 to J31',
@@ -76,7 +76,7 @@ export const motorways: MotorwayPageData[] = [
     fullName: 'M74 motorway',
     title: 'M74 Recovery | Breakdown Recovery on the M74 | SRL Recovery',
     metaDescription:
-      "M74 breakdown? SRL Recovery covers the M74 from Glasgow to the M6 border 24/7. Fast dispatch, fully insured. Call 07776 356 556.",
+      "M74 breakdown? SRL Recovery covers the M74 from Glasgow to the M6 border 24/7. Fast dispatch, fully insured. Call 01698 700970.",
     route: 'Glasgow ↔ Carlisle (continues as A74(M))',
     length: '~40 miles in Scotland',
     junctionsCovered: 'J1 to J22 (Scotland)',
@@ -137,7 +137,7 @@ export const motorways: MotorwayPageData[] = [
     fullName: 'M77 motorway',
     title: 'M77 Recovery | Breakdown Recovery on the M77 | SRL Recovery',
     metaDescription:
-      "M77 breakdown? SRL Recovery covers the M77 from Glasgow to Kilmarnock 24/7. Fast dispatch, fully insured. Call 07776 356 556.",
+      "M77 breakdown? SRL Recovery covers the M77 from Glasgow to Kilmarnock 24/7. Fast dispatch, fully insured. Call 01698 700970.",
     route: 'Glasgow ↔ Kilmarnock',
     length: '~15 miles',
     junctionsCovered: 'J1 to J8',
@@ -185,7 +185,7 @@ export const motorways: MotorwayPageData[] = [
     fullName: 'M73 motorway',
     title: 'M73 Recovery | Breakdown Recovery on the M73 | SRL Recovery',
     metaDescription:
-      "M73 breakdown? SRL Recovery covers the full M73 between the M8 and M74 24/7. Fast dispatch. Call 07776 356 556.",
+      "M73 breakdown? SRL Recovery covers the full M73 between the M8 and M74 24/7. Fast dispatch. Call 01698 700970.",
     route: 'M8 (J8) ↔ M74 (J4) — Glasgow eastern bypass',
     length: '~5 miles',
     junctionsCovered: 'J1 to J3',
@@ -227,7 +227,7 @@ export const motorways: MotorwayPageData[] = [
     fullName: 'M80 motorway',
     title: 'M80 Recovery | Breakdown Recovery on the M80 | SRL Recovery',
     metaDescription:
-      "M80 breakdown? SRL Recovery covers the M80 from the M73 toward Stirling 24/7. Fast dispatch, fully insured. Call 07776 356 556.",
+      "M80 breakdown? SRL Recovery covers the M80 from the M73 toward Stirling 24/7. Fast dispatch, fully insured. Call 01698 700970.",
     route: 'M73 ↔ Stirling (joins M9)',
     length: '~17 miles',
     junctionsCovered: 'J1 to J9',
@@ -269,7 +269,7 @@ export const motorways: MotorwayPageData[] = [
     fullName: 'M9 motorway',
     title: 'M9 Recovery | Breakdown Recovery on the M9 | SRL Recovery',
     metaDescription:
-      "M9 breakdown? SRL Recovery covers the M9 from Stirling toward Edinburgh 24/7. Fast dispatch, fully insured. Call 07776 356 556.",
+      "M9 breakdown? SRL Recovery covers the M9 from Stirling toward Edinburgh 24/7. Fast dispatch, fully insured. Call 01698 700970.",
     route: 'Stirling ↔ Edinburgh (via Falkirk/Linlithgow)',
     length: '~35 miles',
     junctionsCovered: 'J1 to J10',
@@ -312,7 +312,7 @@ export const motorways: MotorwayPageData[] = [
     fullName: 'M876 motorway',
     title: 'M876 Recovery | Breakdown Recovery on the M876 | SRL Recovery',
     metaDescription:
-      "M876 breakdown near Falkirk? SRL Recovery covers the M876 linking the M80 and M9 24/7. Fast dispatch, fully insured. Call 07776 356 556.",
+      "M876 breakdown near Falkirk? SRL Recovery covers the M876 linking the M80 and M9 24/7. Fast dispatch, fully insured. Call 01698 700970.",
     route: 'M80 (J5) ↔ M9 (J6) via Falkirk',
     length: '~5 miles',
     junctionsCovered: 'J1 to J2',

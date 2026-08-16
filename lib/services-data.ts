@@ -26,11 +26,11 @@ export const services: ServicePageData[] = [
     serviceCategory: 'urgency',
     title: 'Car Recovery Near Me Glasgow | 24/7 Local | SRL Recovery',
     metaDescription:
-      'Need car recovery near you in Glasgow? SRL Recovery is your local 24/7 specialist. Average arrival 30–45 minutes. From £50. Call 07776 356 556.',
+      'Need car recovery near you in Glasgow? SRL Recovery is your local 24/7 specialist. Average arrival 30–45 minutes. From £50. Call 01698 700970.',
     h1: 'Car Recovery Near Me',
     subheading: 'Local Glasgow recovery — typically with you in 30–45 minutes',
     introParagraph:
-      "If you've just searched for car recovery near you in Glasgow, you're already in the right place. SRL Recovery is a Motherwell-based, locally-owned recovery service operating 24 hours a day across Glasgow and surrounding areas. We don't outsource calls to a national dispatcher — when you ring 07776 356 556, you speak directly to William or one of the team, and a truck gets dispatched immediately.",
+      "If you've just searched for car recovery near you in Glasgow, you're already in the right place. SRL Recovery is a Motherwell-based, locally-owned recovery service operating 24 hours a day across Glasgow and surrounding areas. We don't outsource calls to a national dispatcher — when you ring 01698 700970, you speak directly to William or one of the team, and a truck gets dispatched immediately.",
     bodySections: [
       {
         heading: 'Why "near me" matters for recovery',
@@ -58,7 +58,7 @@ export const services: ServicePageData[] = [
     faqs: [
       {
         q: 'How do I find a recovery service near me right now?',
-        a: 'Call SRL Recovery on 07776 356 556. We dispatch immediately across Glasgow and surrounding areas, 24 hours a day. Average arrival time is 30–45 minutes.',
+        a: 'Call SRL Recovery on 01698 700970. We dispatch immediately across Glasgow and surrounding areas, 24 hours a day. Average arrival time is 30–45 minutes.',
       },
       {
         q: 'Are you actually local or a call centre?',
@@ -77,7 +77,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'urgency',
     title: '24 Hour Car Recovery Near Me | SRL Recovery Glasgow',
     metaDescription:
-      '24/7 car recovery near you in Glasgow. Operating round the clock — nights, weekends, holidays. Average arrival 30–45 minutes. Call 07776 356 556.',
+      '24/7 car recovery near you in Glasgow. Operating round the clock — nights, weekends, holidays. Average arrival 30–45 minutes. Call 01698 700970.',
     h1: '24 Hour Recovery Near You',
     subheading: 'Truly 24/7 — nights, weekends, bank holidays, Christmas Day',
     introParagraph:
@@ -86,7 +86,7 @@ export const services: ServicePageData[] = [
       {
         heading: 'What "24 hour" actually means here',
         paragraphs: [
-          'Plenty of recovery services claim 24-hour cover and then bounce you to voicemail outside 9-5. We don\'t. The same number — 07776 356 556 — is answered around the clock by William or a member of the team, every day of the year.',
+          'Plenty of recovery services claim 24-hour cover and then bounce you to voicemail outside 9-5. We don\'t. The same number — 01698 700970 — is answered around the clock by William or a member of the team, every day of the year.',
           "Late-night call-outs are common for us. Friday and Saturday nights are particularly busy with accident recoveries from the M8 and A724, and we handle a lot of early-morning M77 and M74 breakdowns from people heading to work or the airport. Whatever time you're stuck, we've been there before.",
         ],
       },
@@ -107,7 +107,7 @@ export const services: ServicePageData[] = [
     faqs: [
       {
         q: 'Are you really open 24 hours?',
-        a: "Yes. The number 07776 356 556 is answered 24 hours a day, 7 days a week, every day of the year — including Christmas Day. There's no voicemail and no out-of-hours menu.",
+        a: "Yes. The number 01698 700970 is answered 24 hours a day, 7 days a week, every day of the year — including Christmas Day. There's no voicemail and no out-of-hours menu.",
       },
       {
         q: 'Do you charge more at night?',
@@ -126,7 +126,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'urgency',
     title: 'Emergency Breakdown Recovery Glasgow | Immediate Dispatch',
     metaDescription:
-      'Emergency breakdown? SRL Recovery dispatches immediately across Glasgow. Average arrival 30–45 minutes. 24/7 cover. Call 07776 356 556.',
+      'Emergency breakdown? SRL Recovery dispatches immediately across Glasgow. Average arrival 30–45 minutes. 24/7 cover. Call 01698 700970.',
     h1: 'Emergency Breakdown Recovery',
     subheading: 'Immediate dispatch when you need it most',
     introParagraph:
@@ -161,7 +161,7 @@ export const services: ServicePageData[] = [
       },
       {
         q: "I'm in a live lane on the M8 — what do I do?",
-        a: "First, call 999 — Police Scotland will close the lane if necessary. Then call us on 07776 356 556 and we'll head to you immediately. Don't get out of the vehicle if it's not safe to do so.",
+        a: "First, call 999 — Police Scotland will close the lane if necessary. Then call us on 01698 700970 and we'll head to you immediately. Don't get out of the vehicle if it's not safe to do so.",
       },
       {
         q: 'Do you charge more for emergency call-outs?',
@@ -176,7 +176,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'urgency',
     title: 'Quick Car Recovery Glasgow | 30–45 Min Average | SRL Recovery',
     metaDescription:
-      'Need quick car recovery in Glasgow? We typically arrive in 30–45 minutes. 24/7 dispatch. From £50. Call SRL Recovery on 07776 356 556.',
+      'Need quick car recovery in Glasgow? We typically arrive in 30–45 minutes. 24/7 dispatch. From £50. Call SRL Recovery on 01698 700970.',
     h1: 'Quick Car Recovery',
     subheading: 'Speed is what we do — 30–45 minutes is the typical arrival window',
     introParagraph:
@@ -225,7 +225,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'pricing',
     title: 'Cheap Car Recovery Glasgow | From £50 | SRL Recovery',
     metaDescription:
-      'Affordable car recovery in Glasgow from £50 + £1.50/mile. No hidden fees. Clear price quoted on the phone before we dispatch. Call 07776 356 556.',
+      'Affordable car recovery in Glasgow from £50 + £1.50/mile. No hidden fees. Clear price quoted on the phone before we dispatch. Call 01698 700970.',
     h1: 'Affordable Car Recovery in Glasgow',
     subheading: 'From £50 — competitive local rates, no hidden surcharges',
     introParagraph:
@@ -281,7 +281,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'vehicle',
     title: 'Van Recovery Glasgow | 24/7 Commercial | SRL Recovery',
     metaDescription:
-      'Van recovery across Glasgow — Transits, Sprinters, Crafters, Lutons. 24/7 dispatch. Trade-friendly. Call SRL Recovery on 07776 356 556.',
+      'Van recovery across Glasgow — Transits, Sprinters, Crafters, Lutons. 24/7 dispatch. Trade-friendly. Call SRL Recovery on 01698 700970.',
     h1: 'Van Recovery Glasgow',
     subheading: 'Commercial vehicle recovery — Transits, Sprinters, Crafters, Lutons',
     introParagraph:
@@ -333,7 +333,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'vehicle',
     title: 'Commercial Vehicle Recovery Glasgow | Vans, Minibuses, Trucks | SRL',
     metaDescription:
-      'Commercial vehicle recovery across Glasgow — vans, minibuses, taxis, small trucks and trailers. 24/7 dispatch, trade rates available. Call 07776 356 556.',
+      'Commercial vehicle recovery across Glasgow — vans, minibuses, taxis, small trucks and trailers. 24/7 dispatch, trade rates available. Call 01698 700970.',
     h1: 'Commercial Vehicle Recovery Glasgow',
     subheading: 'Keeping your business moving — recovery for vans, minibuses, taxis, trucks and trailers',
     introParagraph:
@@ -385,7 +385,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'trade',
     title: 'Trade Recovery Glasgow | Garage & Dealer Accounts | SRL Recovery',
     metaDescription:
-      'Trade recovery accounts for garages, dealerships, and fleets across Glasgow. Priority dispatch, agreed rates, simple invoicing. Call 07776 356 556.',
+      'Trade recovery accounts for garages, dealerships, and fleets across Glasgow. Priority dispatch, agreed rates, simple invoicing. Call 01698 700970.',
     h1: 'Trade Recovery Accounts',
     subheading: 'A dedicated recovery partner for garages, dealers, and fleet operators',
     introParagraph:
@@ -437,7 +437,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'vehicle',
     title: 'Motorbike Recovery Glasgow | 24/7 Bike Transport | SRL Recovery',
     metaDescription:
-      'Motorbike recovery across Glasgow — all bike sizes, careful loading, full insurance. 24/7 dispatch. Call SRL Recovery on 07776 356 556.',
+      'Motorbike recovery across Glasgow — all bike sizes, careful loading, full insurance. 24/7 dispatch. Call SRL Recovery on 01698 700970.',
     h1: 'Motorbike Recovery Glasgow',
     subheading: 'Careful, specialist recovery for bikes of all sizes',
     introParagraph:
@@ -486,7 +486,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'vehicle',
     title: '4x4 & SUV Recovery Glasgow | Land Rover, Range Rover | SRL Recovery',
     metaDescription:
-      '4x4 and SUV recovery across Glasgow — Land Rovers, Range Rovers, Jeeps, Defenders. Heavy-duty equipment. 24/7. Call 07776 356 556.',
+      '4x4 and SUV recovery across Glasgow — Land Rovers, Range Rovers, Jeeps, Defenders. Heavy-duty equipment. 24/7. Call 01698 700970.',
     h1: '4x4 & SUV Recovery Glasgow',
     subheading: 'Heavy-duty recovery for Land Rovers, Range Rovers, Jeeps and big SUVs',
     introParagraph:
@@ -535,7 +535,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'vehicle',
     title: 'Classic Car Recovery Glasgow | Specialist Transport | SRL Recovery',
     metaDescription:
-      'Classic and vintage car recovery across Glasgow. Specialist handling, flatbed transport, full insurance. Call SRL Recovery on 07776 356 556.',
+      'Classic and vintage car recovery across Glasgow. Specialist handling, flatbed transport, full insurance. Call SRL Recovery on 01698 700970.',
     h1: 'Classic Car Recovery Glasgow',
     subheading: 'Specialist recovery and transport for classic, vintage, and collector cars',
     introParagraph:
@@ -585,7 +585,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'vehicle',
     title: 'Prestige Car Recovery Glasgow | Porsche, Ferrari, Aston | SRL',
     metaDescription:
-      'Prestige and supercar recovery in Glasgow — Porsche, Ferrari, Aston Martin, Lamborghini, McLaren. Specialist handling. Call 07776 356 556.',
+      'Prestige and supercar recovery in Glasgow — Porsche, Ferrari, Aston Martin, Lamborghini, McLaren. Specialist handling. Call 01698 700970.',
     h1: 'Prestige Car Recovery Glasgow',
     subheading: 'Specialist recovery for Porsche, Ferrari, Aston Martin, Lamborghini, McLaren',
     introParagraph:
@@ -636,7 +636,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'situation',
     title: 'Accident Recovery Glasgow | Fault & Non-Fault | SRL Recovery',
     metaDescription:
-      'Accident recovery in Glasgow — fault and non-fault claims handled. 24/7 dispatch, insurance coordination, replacement vehicle support. Call 07776 356 556.',
+      'Accident recovery in Glasgow — fault and non-fault claims handled. 24/7 dispatch, insurance coordination, replacement vehicle support. Call 01698 700970.',
     h1: 'Accident Recovery Glasgow',
     subheading: 'Fast, careful recovery after a road traffic accident',
     introParagraph:
@@ -685,7 +685,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'situation',
     title: 'Non-Fault Accident Recovery Glasgow | No Upfront Cost | SRL',
     metaDescription:
-      'Non-fault accident? SRL Recovery handles your claim from start to finish at zero upfront cost. Recovery, claim, replacement vehicle. Call 07776 356 556.',
+      'Non-fault accident? SRL Recovery handles your claim from start to finish at zero upfront cost. Recovery, claim, replacement vehicle. Call 01698 700970.',
     h1: 'Non-Fault Accident Recovery',
     subheading: 'Hit by someone else? We handle everything at no cost to you',
     introParagraph:
@@ -739,7 +739,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'situation',
     title: 'Motorway Recovery Glasgow | M8 M74 M77 M73 M80 | SRL Recovery',
     metaDescription:
-      'Motorway breakdown? SRL Recovery covers M8, M74, M77, M73, M80 24/7. Live-lane experience, fast dispatch. Call 07776 356 556.',
+      'Motorway breakdown? SRL Recovery covers M8, M74, M77, M73, M80 24/7. Live-lane experience, fast dispatch. Call 01698 700970.',
     h1: 'Motorway Recovery Glasgow',
     subheading: 'Covering the M8, M74, M77, M73, and M80 around the clock',
     introParagraph:
@@ -748,7 +748,7 @@ export const services: ServicePageData[] = [
       {
         heading: 'What to do RIGHT NOW if you\'re broken down on a motorway',
         paragraphs: [
-          "1. If the car is moving, get it onto the hard shoulder or off at the next exit. 2. Put hazards on immediately. 3. Get yourself and any passengers out of the vehicle on the passenger side and over the barrier onto the verge. 4. Call 999 first — Police Scotland or Traffic Scotland will close the lane if needed. 5. Then call us on 07776 356 556 and we'll dispatch immediately.",
+          "1. If the car is moving, get it onto the hard shoulder or off at the next exit. 2. Put hazards on immediately. 3. Get yourself and any passengers out of the vehicle on the passenger side and over the barrier onto the verge. 4. Call 999 first — Police Scotland or Traffic Scotland will close the lane if needed. 5. Then call us on 01698 700970 and we'll dispatch immediately.",
           "Smart motorways without a hard shoulder are particularly dangerous. If you can't make it off the motorway and end up in a live lane, stay in the car with seatbelts on, hazards on, and call 999 immediately — do not get out unless directed to.",
         ],
       },
@@ -812,7 +812,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'situation',
     title: 'Roadside Assistance Glasgow | 24/7 Quick Fix | SRL Recovery',
     metaDescription:
-      'Roadside assistance across Glasgow — quick fixes where possible, full recovery where needed. 24/7. Call SRL Recovery on 07776 356 556.',
+      'Roadside assistance across Glasgow — quick fixes where possible, full recovery where needed. 24/7. Call SRL Recovery on 01698 700970.',
     h1: 'Roadside Assistance Glasgow',
     subheading: 'Quick fixes where possible, full recovery where needed',
     introParagraph:
@@ -861,7 +861,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'situation',
     title: 'Insurance Recovery Glasgow | All UK Insurers | SRL Recovery',
     metaDescription:
-      'Insurance-funded vehicle recovery in Glasgow. We work with all major UK insurers and handle the paperwork. Call SRL Recovery on 07776 356 556.',
+      'Insurance-funded vehicle recovery in Glasgow. We work with all major UK insurers and handle the paperwork. Call SRL Recovery on 01698 700970.',
     h1: 'Insurance Recovery Glasgow',
     subheading: 'Working with all major UK insurers — we handle the paperwork',
     introParagraph:
@@ -912,7 +912,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'addon',
     title: 'Vehicle Transport Glasgow | UK-Wide Delivery | SRL Recovery',
     metaDescription:
-      'Vehicle transport from Glasgow — local and UK-wide. Cars, vans, classics, prestige. Fully insured flatbed transport. Call 07776 356 556.',
+      'Vehicle transport from Glasgow — local and UK-wide. Cars, vans, classics, prestige. Fully insured flatbed transport. Call 01698 700970.',
     h1: 'Vehicle Transport Glasgow',
     subheading: 'Local moves and UK-wide deliveries — fully insured flatbed transport',
     introParagraph:
@@ -962,7 +962,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'addon',
     title: 'Scrap Car Collection Glasgow | Free Pickup | SRL Recovery',
     metaDescription:
-      'Scrap car collection across Glasgow. We collect end-of-life vehicles and deliver to authorised treatment facilities. Call SRL Recovery 07776 356 556.',
+      'Scrap car collection across Glasgow. We collect end-of-life vehicles and deliver to authorised treatment facilities. Call SRL Recovery 01698 700970.',
     h1: 'Scrap Car Collection Glasgow',
     subheading: 'Got a car past its useful life? We collect and deliver to an ATF',
     introParagraph:
@@ -1015,7 +1015,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'pricing',
     title: 'Car Recovery Prices Glasgow | Clear Pricing | SRL Recovery',
     metaDescription:
-      'Exact car recovery prices in Glasgow — local from £50, motorway £100 flat. No hidden fees. Call SRL Recovery on 07776 356 556 for an exact quote.',
+      'Exact car recovery prices in Glasgow — local from £50, motorway £100 flat. No hidden fees. Call SRL Recovery on 01698 700970 for an exact quote.',
     h1: 'Car Recovery Prices Glasgow',
     subheading: 'Clear up-front pricing — no surprises, no hidden fees',
     introParagraph:
@@ -1060,7 +1060,7 @@ export const services: ServicePageData[] = [
     faqs: [
       {
         q: 'How do I get an exact price?',
-        a: "Call 07776 356 556 with your location and destination — we'll give you the exact total on the phone before dispatching. No 'estimates' that change later.",
+        a: "Call 01698 700970 with your location and destination — we'll give you the exact total on the phone before dispatching. No 'estimates' that change later.",
       },
       {
         q: 'Are your prices including VAT?',

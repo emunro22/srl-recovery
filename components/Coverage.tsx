@@ -36,7 +36,7 @@ export default function Coverage() {
                 <span className="material-symbols-rounded">map</span>
                 View All Areas
               </Link>
-              <a href="tel:+447776356556" className={`btn btn-outline ${styles.btn}`}>
+              <a href="tel:+441698700970" className={`btn btn-outline ${styles.btn}`}>
                 <span className="material-symbols-rounded">call</span>
                 Call for Info
               </a>

@@ -3,7 +3,7 @@ import AreaPage from '@/components/AreaPage'
 export const metadata = {
   title: 'Breakdown Recovery Barrhead | 24/7 Car Recovery | SRL Recovery',
   description:
-    'Fast 24/7 breakdown and accident recovery in Barrhead and Neilston. Covering G78 postcodes and the A736 corridor. Call 07776 356 556.',
+    'Fast 24/7 breakdown and accident recovery in Barrhead and Neilston. Covering G78 postcodes and the A736 corridor. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/areas/barrhead' },
 }
 

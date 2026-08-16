@@ -31,7 +31,7 @@ export default function CallbackForm() {
       setStatus('success')
       setName(''); setPhone(''); setEmail(''); setVehicle(''); setMessage('')
     } catch {
-      setError('Network error. Please call us directly on 07776 356 556.')
+      setError('Network error. Please call us directly on 01698 700970.')
       setStatus('error')
     }
   }
@@ -46,7 +46,7 @@ export default function CallbackForm() {
             <p className="section-text">
               Leave your details and we&apos;ll call you straight back. For
               urgent breakdowns please phone us directly on{' '}
-              <a href="tel:+447776356556" className={styles.phoneLink}>07776 356 556</a>{' '}
+              <a href="tel:+441698700970" className={styles.phoneLink}>01698 700970</a>{' '}
               — but a callback works great for quotes, accident claim questions,
               or non-urgent jobs.
             </p>
@@ -73,7 +73,7 @@ export default function CallbackForm() {
                 <h3>Request received</h3>
                 <p>
                   Thanks — we&apos;ve got your callback request and will be in touch shortly.
-                  For urgent breakdowns please call us directly on 07776 356 556.
+                  For urgent breakdowns please call us directly on 01698 700970.
                 </p>
                 <button type="button" className={styles.againBtn} onClick={() => setStatus('idle')}>
                   Send another
@@ -123,7 +123,7 @@ export default function CallbackForm() {
                   {status === 'loading' ? 'Sending...' : 'Request Callback'}
                 </button>
                 <p className={styles.urgent}>
-                  Broken down right now? <a href="tel:+447776356556">Call 07776 356 556</a> instead.
+                  Broken down right now? <a href="tel:+441698700970">Call 01698 700970</a> instead.
                 </p>
               </form>
             )}

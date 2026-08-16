@@ -3,7 +3,7 @@ import AreaPage from '@/components/AreaPage'
 export const metadata = {
   title: 'Breakdown Recovery Cumbernauld | 24/7 Car Recovery | SRL Recovery',
   description:
-    'Fast 24/7 breakdown and accident recovery in Cumbernauld. Covering G67/G68 postcodes and the M80 corridor. Call 07776 356 556.',
+    'Fast 24/7 breakdown and accident recovery in Cumbernauld. Covering G67/G68 postcodes and the M80 corridor. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/areas/cumbernauld' },
 }
 

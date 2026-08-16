@@ -33,7 +33,7 @@ export default async function ServicePage({ data }: { data: ServicePageData }) {
     provider: {
       '@type': 'AutoRepair',
       name: 'SRL Recovery',
-      telephone: '+447776356556',
+      telephone: '+441698700970',
       url: 'https://srlrecovery.com',
     },
     areaServed: {
@@ -82,9 +82,9 @@ export default async function ServicePage({ data }: { data: ServicePageData }) {
             <h1 className={styles.title}>{data.h1}</h1>
             <p className={styles.lead}>{data.subheading}</p>
             <div className={styles.heroActions}>
-              <a href="tel:+447776356556" className="btn">
+              <a href="tel:+441698700970" className="btn">
                 <span className="material-symbols-rounded">call</span>
-                Call 07776 356 556
+                Call 01698 700970
               </a>
               <a href="#enquire" className="btn btn-outline">
                 Request Callback
@@ -158,9 +158,9 @@ export default async function ServicePage({ data }: { data: ServicePageData }) {
                 <div className={styles.sideCard}>
                   <h3>Need help right now?</h3>
                   <p>We dispatch immediately — 24/7 across Glasgow and surrounding areas.</p>
-                  <a href="tel:+447776356556" className={`btn ${styles.sideBtn}`}>
+                  <a href="tel:+441698700970" className={`btn ${styles.sideBtn}`}>
                     <span className="material-symbols-rounded">call</span>
-                    07776 356 556
+                    01698 700970
                   </a>
                   <WhatsAppLink source={`service-sidebar-${data.slug}`} className={`${styles.sideBtn} ${styles.whatsBtn}`}>
                     WhatsApp Us

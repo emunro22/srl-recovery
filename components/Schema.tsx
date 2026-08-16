@@ -12,7 +12,7 @@ export default async function Schema() {
       description:
         "Glasgow's trusted 24/7 breakdown and accident recovery service. Owner with 17 years in the motor trade, completing 250+ recovery jobs every month.",
       url: 'https://srlrecovery.com',
-      telephone: '+447776356556',
+      telephone: '+441698700970',
       email: 'enquiries@srlrecovery.com',
       foundingDate: '2023',
       image: 'https://srlrecovery.com/images/logo.png',
@@ -133,7 +133,7 @@ export default async function Schema() {
       '@id': 'https://srlrecovery.com/#business-cambuslang',
       name: 'SRL Recovery — Cambuslang',
       branchOf: { '@id': 'https://srlrecovery.com/#business' },
-      telephone: '+447776356556',
+      telephone: '+441698700970',
       url: 'https://srlrecovery.com',
       priceRange: '££',
       address: {

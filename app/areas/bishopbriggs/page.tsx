@@ -3,7 +3,7 @@ import AreaPage from '@/components/AreaPage'
 export const metadata = {
   title: 'Breakdown Recovery Bishopbriggs | 24/7 Car Recovery | SRL Recovery',
   description:
-    'Fast 24/7 breakdown and accident recovery in Bishopbriggs. Covering G64 postcodes, the A803 corridor, and surrounding North Glasgow suburbs. Call 07776 356 556.',
+    'Fast 24/7 breakdown and accident recovery in Bishopbriggs. Covering G64 postcodes, the A803 corridor, and surrounding North Glasgow suburbs. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/areas/bishopbriggs' },
 }
 

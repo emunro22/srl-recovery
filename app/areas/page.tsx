@@ -190,8 +190,8 @@ export default function AreasPage() {
               and the surrounding Central Scotland area. Select your location below
               for local response times, postcodes and more. Can&apos;t find your
               area?{' '}
-              <a href="tel:+447776356556" className={styles.phoneLink}>
-                Call us on 07776 356 556
+              <a href="tel:+441698700970" className={styles.phoneLink}>
+                Call us on 01698 700970
               </a>{' '}
               — we likely cover you.
             </p>

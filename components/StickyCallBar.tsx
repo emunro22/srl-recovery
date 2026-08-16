@@ -4,11 +4,11 @@ import WhatsAppLink from './WhatsAppLink'
 export default function StickyCallBar() {
   return (
     <div className={styles.bar} aria-label="Quick contact bar">
-      <a href="tel:+447776356556" className={styles.call}>
+      <a href="tel:+441698700970" className={styles.call}>
         <span className="material-symbols-rounded">call</span>
         <div>
           <span className={styles.label}>Call now</span>
-          <strong>07776 356 556</strong>
+          <strong>01698 700970</strong>
         </div>
       </a>
       <WhatsAppLink

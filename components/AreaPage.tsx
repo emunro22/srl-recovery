@@ -32,7 +32,7 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
       '@type': 'AutoRepair',
       '@id': 'https://srlrecovery.com/#business',
       name: 'SRL Recovery',
-      telephone: '+447776356556',
+      telephone: '+441698700970',
       url: 'https://srlrecovery.com',
     },
     areaServed: {
@@ -82,9 +82,9 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
             </h1>
             <p className={styles.lead}>{area.introBlurb}</p>
             <div className={styles.heroActions}>
-              <a href="tel:+447776356556" className="btn">
+              <a href="tel:+441698700970" className="btn">
                 <span className="material-symbols-rounded">call</span>
-                Call 07776 356 556
+                Call 01698 700970
               </a>
               <a href="#pricing" className="btn btn-outline">
                 See Pricing
@@ -189,9 +189,9 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
             <div className={styles.ctaInner}>
               <h2>Need Recovery in {area.name} Right Now?</h2>
               <p>Available 24/7 — we&apos;ll dispatch immediately.</p>
-              <a href="tel:+447776356556" className="btn">
+              <a href="tel:+441698700970" className="btn">
                 <span className="material-symbols-rounded">call</span>
-                Call 07776 356 556
+                Call 01698 700970
               </a>
             </div>
           </div>

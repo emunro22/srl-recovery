@@ -89,9 +89,9 @@ export default function Pricing() {
         </div>
 
         <div className={styles.cta}>
-          <a href="tel:+447776356556" className="btn">
+          <a href="tel:+441698700970" className="btn">
             <span className="material-symbols-rounded">call</span>
-            Get a Quote — 07776 356 556
+            Get a Quote — 01698 700970
           </a>
         </div>
       </div>

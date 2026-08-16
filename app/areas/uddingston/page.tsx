@@ -3,7 +3,7 @@ import AreaPage from '@/components/AreaPage'
 export const metadata = {
   title: 'Breakdown Recovery Uddingston | 24/7 Car Recovery | SRL Recovery',
   description:
-    'Fast 24/7 breakdown and accident recovery in Uddingston and Bothwell. Covering G71 postcodes and the M74 corridor. Call 07776 356 556.',
+    'Fast 24/7 breakdown and accident recovery in Uddingston and Bothwell. Covering G71 postcodes and the M74 corridor. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/areas/uddingston' },
 }
 

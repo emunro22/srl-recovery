@@ -47,7 +47,7 @@ export default async function Hero() {
         </p>
 
         <div className={styles.actions}>
-          <a href="tel:+447776356556" className="btn">
+          <a href="tel:+441698700970" className="btn">
             <span className="material-symbols-rounded">call</span>
             Call Now – Immediate Dispatch
           </a>

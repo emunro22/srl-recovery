@@ -166,9 +166,9 @@ export default function Header() {
           </a>
         </div>
 
-        <a href="tel:+447776356556" className={`btn ${styles.ctaBtn}`}>
+        <a href="tel:+441698700970" className={`btn ${styles.ctaBtn}`}>
           <span className="material-symbols-rounded">call</span>
-          <span>07776 356 556</span>
+          <span>01698 700970</span>
         </a>
         <button
           className={`${styles.menuBtn} ${menuOpen ? styles.menuOpen : ''}`}

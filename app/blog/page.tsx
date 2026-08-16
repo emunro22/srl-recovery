@@ -75,9 +75,9 @@ export default async function BlogPage() {
                 <h2>Need Recovery Right Now?</h2>
                 <p>Available 24/7 across Glasgow and surrounding areas</p>
               </div>
-              <a href="tel:+447776356556" className="btn">
+              <a href="tel:+441698700970" className="btn">
                 <span className="material-symbols-rounded">call</span>
-                Call 07776 356 556
+                Call 01698 700970
               </a>
             </div>
           </div>

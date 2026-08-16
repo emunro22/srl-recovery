@@ -17,9 +17,9 @@ export default function Footer() {
               <p>Call us for immediate dispatch — we respond 24/7</p>
             </div>
           </div>
-          <a href="tel:+447776356556" className={`btn ${styles.emergencyBtn}`}>
+          <a href="tel:+441698700970" className={`btn ${styles.emergencyBtn}`}>
             <span className="material-symbols-rounded">call</span>
-            07776 356 556
+            01698 700970
           </a>
         </div>
       </div>
@@ -115,7 +115,10 @@ export default function Footer() {
             <ul className={styles.contactList}>
               <li className={styles.contactItem}>
                 <span className="material-symbols-rounded">call</span>
-                <a href="tel:+447776356556">07776 356 556</a>
+                <div className={styles.phoneNumbers}>
+                  <a href="tel:+441698700970">01698 700970</a>
+                  <a href="tel:+447776356556" className={styles.mobileNumber}>Mobile: 07776 356 556</a>
+                </div>
               </li>
               <li className={styles.contactItem}>
                 <span className="material-symbols-rounded">mail</span>

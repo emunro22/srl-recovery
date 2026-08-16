@@ -7,7 +7,7 @@ import styles from './page.module.css'
 export const metadata = {
   title: 'Motorway Recovery Glasgow | M8, M74, M77, M73, M80, M9, M876 | SRL Recovery',
   description:
-    'Motorway breakdown recovery across all major Scottish motorways. 24/7 dispatch on the M8, M74, M77, M73, M80, M9, and M876. Call 07776 356 556.',
+    'Motorway breakdown recovery across all major Scottish motorways. 24/7 dispatch on the M8, M74, M77, M73, M80, M9, and M876. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/motorways' },
 }
 
@@ -25,9 +25,9 @@ export default function MotorwaysIndex() {
               motorway below for junction-by-junction coverage info, safety advice, and the
               best way to reach us if you&apos;re broken down right now.
             </p>
-            <a href="tel:+447776356556" className={`btn ${styles.btn}`}>
+            <a href="tel:+441698700970" className={`btn ${styles.btn}`}>
               <span className="material-symbols-rounded">call</span>
-              Call 07776 356 556
+              Call 01698 700970
             </a>
           </div>
         </section>

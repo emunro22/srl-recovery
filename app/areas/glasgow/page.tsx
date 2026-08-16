@@ -3,7 +3,7 @@ import AreaPage from '@/components/AreaPage'
 export const metadata = {
   title: 'Breakdown Recovery Glasgow City Centre | 24/7 Car Recovery | SRL Recovery',
   description:
-    'Fast 24/7 breakdown and accident recovery in Glasgow city centre. Covering G1–G5, the M8, Kingston Bridge and all inner-city roads. Call 07776 356 556.',
+    'Fast 24/7 breakdown and accident recovery in Glasgow city centre. Covering G1–G5, the M8, Kingston Bridge and all inner-city roads. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/areas/glasgow' },
 }
 

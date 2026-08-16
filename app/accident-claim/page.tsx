@@ -6,7 +6,7 @@ import styles from './page.module.css'
 export const metadata = {
   title: 'Accident Recovery Glasgow | Non-Fault & At-Fault Claims | SRL Recovery',
   description:
-    'Had an accident? SRL Recovery handles everything start to finish at zero upfront cost — free recovery, hire car within 24 hours, full claim management. Average £3,000 non-fault settlement. Call 07776 356 556.',
+    'Had an accident? SRL Recovery handles everything start to finish at zero upfront cost — free recovery, hire car within 24 hours, full claim management. Average £3,000 non-fault settlement. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/accident-claim' },
 }
 
@@ -68,7 +68,7 @@ export default function AccidentClaimPage() {
       '@type': 'AutoRepair',
       '@id': 'https://srlrecovery.com/#business',
       name: 'SRL Recovery',
-      telephone: '+447776356556',
+      telephone: '+441698700970',
       url: 'https://srlrecovery.com',
     },
     areaServed: { '@type': 'City', name: 'Glasgow' },
@@ -125,9 +125,9 @@ export default function AccidentClaimPage() {
               {' '}Most people don&apos;t know what they&apos;re entitled to. We do.
             </p>
             <div className={styles.heroActions}>
-              <a href="tel:+447776356556" className="btn">
+              <a href="tel:+441698700970" className="btn">
                 <span className="material-symbols-rounded">call</span>
-                Call 07776 356 556
+                Call 01698 700970
               </a>
               <WhatsAppLink source="accident-claim-hero" className="btn btn-outline">
                 WhatsApp Us
@@ -187,7 +187,7 @@ export default function AccidentClaimPage() {
               </ul>
               <div className={styles.warningResolution}>
                 <strong>What to do instead</strong>
-                Call SRL Recovery on 07776 356 556 — before anyone else. We deal directly with the
+                Call SRL Recovery on 01698 700970 — before anyone else. We deal directly with the
                 at-fault driver&apos;s insurance company on your behalf, protecting your own policy
                 completely. You get a proper like-for-like replacement car, immediate recovery,
                 and the full claim handled from start to finish.
@@ -387,7 +387,7 @@ export default function AccidentClaimPage() {
                 <div className={styles.stepContent}>
                   <h3>Call SRL Recovery</h3>
                   <p>
-                    Call 07776 356 556 from the accident scene. Tell us where you are, what happened,
+                    Call 01698 700970 from the accident scene. Tell us where you are, what happened,
                     and whether you were at fault. We&apos;ll take it from there — no need to call
                     anyone else first.
                   </p>
@@ -552,9 +552,9 @@ export default function AccidentClaimPage() {
                 entitled to and get everything moving — at zero cost to you, 24 hours a day.
               </p>
               <div className={styles.ctaActions}>
-                <a href="tel:+447776356556" className="btn">
+                <a href="tel:+441698700970" className="btn">
                   <span className="material-symbols-rounded">call</span>
-                  Call 07776 356 556
+                  Call 01698 700970
                 </a>
                 <WhatsAppLink source="accident-claim-cta" className="btn btn-outline">
                   WhatsApp Us

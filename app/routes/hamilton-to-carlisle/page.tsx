@@ -8,7 +8,7 @@ import styles from './page.module.css'
 export const metadata = {
   title: 'Hamilton to Carlisle Recovery | M74/A74(M) Breakdown Recovery | SRL Recovery',
   description:
-    'Broken down between Hamilton and Carlisle on the M74 or A74(M)? SRL Recovery covers this remote corridor 24/7. Abington Services, Beattock, and everything in between. Call 07776 356 556.',
+    'Broken down between Hamilton and Carlisle on the M74 or A74(M)? SRL Recovery covers this remote corridor 24/7. Abington Services, Beattock, and everything in between. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/routes/hamilton-to-carlisle' },
 }
 
@@ -21,7 +21,7 @@ const serviceSchema = {
   provider: {
     '@type': 'AutoRepair',
     name: 'SRL Recovery',
-    telephone: '+447776356556',
+    telephone: '+441698700970',
   },
   areaServed: { '@type': 'Place', name: 'M74/A74(M) Hamilton to Carlisle' },
   url: 'https://srlrecovery.com/routes/hamilton-to-carlisle',
@@ -92,8 +92,8 @@ export default function HamiltonCarlislePage() {
                 <strong>Broken down on the M74 or A74(M) right now?</strong>
                 <p>Call 999 first if you&apos;re in a live lane, then call us immediately.</p>
               </div>
-              <a href="tel:+447776356556" className={`btn ${styles.urgentBtn}`}>
-                Call 07776 356 556
+              <a href="tel:+441698700970" className={`btn ${styles.urgentBtn}`}>
+                Call 01698 700970
               </a>
             </div>
           </div>
@@ -206,9 +206,9 @@ export default function HamiltonCarlislePage() {
                   The sooner you call, the sooner we can get someone heading your way on this long corridor.
                 </p>
                 <div className={styles.ctaActions}>
-                  <a href="tel:+447776356556" className="btn">
+                  <a href="tel:+441698700970" className="btn">
                     <span className="material-symbols-rounded">call</span>
-                    Call 07776 356 556
+                    Call 01698 700970
                   </a>
                   <WhatsAppLink source="hamilton-to-carlisle-cta" className={styles.whatsBtn}>
                     WhatsApp Us

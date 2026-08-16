@@ -93,7 +93,7 @@ export function buildCustomerThankYouEmail(data: { name: string }) {
       directly any time, day or night.
     </p>
     <div style="text-align:center;">
-      <a href="tel:+447776356556" style="display:inline-block;background:linear-gradient(135deg,#cc1493,#1f93f0);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:12px 28px;border-radius:8px;">Call 07776 356 556</a>
+      <a href="tel:+441698700970" style="display:inline-block;background:linear-gradient(135deg,#cc1493,#1f93f0);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:12px 28px;border-radius:8px;">Call 01698 700970</a>
     </div>
   `
 

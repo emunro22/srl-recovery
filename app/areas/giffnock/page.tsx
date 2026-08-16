@@ -3,7 +3,7 @@ import AreaPage from '@/components/AreaPage'
 export const metadata = {
   title: 'Breakdown Recovery Giffnock | 24/7 Car Recovery | SRL Recovery',
   description:
-    'Fast 24/7 breakdown and accident recovery in Giffnock and Thornliebank. Covering G46 postcodes and the south Glasgow M77 corridor. Call 07776 356 556.',
+    'Fast 24/7 breakdown and accident recovery in Giffnock and Thornliebank. Covering G46 postcodes and the south Glasgow M77 corridor. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/areas/giffnock' },
 }
 

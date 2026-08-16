@@ -86,9 +86,9 @@ export default function FAQ() {
 
         <div className={styles.cta}>
           <p>Still have questions?</p>
-          <a href="tel:+447776356556" className="btn">
+          <a href="tel:+441698700970" className="btn">
             <span className="material-symbols-rounded">call</span>
-            Call 07776 356 556
+            Call 01698 700970
           </a>
         </div>
       </div>

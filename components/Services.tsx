@@ -73,9 +73,9 @@ export default function Services() {
               <h3>Need Help Right Now?</h3>
               <p>We dispatch immediately across Glasgow — 24 hours a day.</p>
             </div>
-            <a href="tel:+447776356556" className="btn">
+            <a href="tel:+441698700970" className="btn">
               <span className="material-symbols-rounded">call</span>
-              Call 07776 356 556
+              Call 01698 700970
             </a>
           </div>
         </div>
