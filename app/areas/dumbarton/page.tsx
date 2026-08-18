@@ -3,7 +3,7 @@ import AreaPage from '@/components/AreaPage'
 export const metadata = {
   title: 'Breakdown Recovery Dumbarton | 24/7 Car Recovery | SRL Recovery',
   description:
-    'Fast 24/7 breakdown and accident recovery in Dumbarton. Average arrival 35–50 minutes. From £50. Call 01698 700970.',
+    'Fast 24/7 breakdown and accident recovery in Dumbarton. Average arrival 35–50 minutes. From £60. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/areas/dumbarton' },
 }
 

@@ -141,7 +141,7 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
                 <h2>Pricing for {data.name} recovery</h2>
                 <p>
                   Motorway and live-lane recovery is charged at our standard motorway rate:
-                  <strong> £100 flat call-out + £1.50 per mile</strong> (plus VAT). This rate
+                  <strong> £120 flat call-out + £1.50 per mile</strong> (plus VAT). This rate
                   applies regardless of time of day — there are no out-of-hours or holiday
                   surcharges.
                 </p>

@@ -88,7 +88,7 @@ export default async function Schema() {
             itemOffered: {
               '@type': 'Service',
               name: '24/7 Breakdown Recovery',
-              description: 'Round-the-clock vehicle recovery across Glasgow and surrounding areas. From £50 call-out plus £1.50 per mile.',
+              description: 'Round-the-clock vehicle recovery across Glasgow and surrounding areas. From £60 call-out plus £1.50 per mile.',
             },
           },
           {
@@ -96,7 +96,7 @@ export default async function Schema() {
             itemOffered: {
               '@type': 'Service',
               name: 'Motorway Recovery',
-              description: 'Motorway and live-lane recovery on the M8, M73, M74, M77, M80. £100 flat rate plus £1.50 per mile.',
+              description: 'Motorway and live-lane recovery on the M8, M73, M74, M77, M80. £120 flat rate plus £1.50 per mile.',
             },
           },
           {
@@ -211,7 +211,7 @@ export default async function Schema() {
           name: 'How much does breakdown recovery cost?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Local jobs start from £50 call-out plus £1.50 per mile. Motorway and live-lane jobs are £100 flat plus £1.50 per mile. A £40 winch fee or £40 skate fee may apply where required. All prices subject to VAT.',
+            text: 'Local jobs start from £60 call-out plus £1.50 per mile. Motorway and live-lane jobs are £120 flat plus £1.50 per mile. A £40 winch fee or £40 skate fee may apply where required. All prices subject to VAT.',
           },
         },
         {

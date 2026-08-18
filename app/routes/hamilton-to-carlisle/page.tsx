@@ -187,7 +187,7 @@ export default function HamiltonCarlislePage() {
                 </h2>
                 <p>
                   Recovery on this corridor is charged at our standard motorway rate:{' '}
-                  <strong>£100 flat call-out + £1.50 per mile</strong> (plus VAT). No out-of-hours
+                  <strong>£120 flat call-out + £1.50 per mile</strong> (plus VAT). No out-of-hours
                   surcharges — the rate is the same at 2pm or 2am.
                 </p>
                 <p>

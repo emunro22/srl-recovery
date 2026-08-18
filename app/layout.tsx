@@ -22,18 +22,18 @@ const mulish = Mulish({
 export const metadata: Metadata = {
   metadataBase: new URL('https://srlrecovery.com'),
   title: {
-    default: 'Breakdown Recovery Glasgow | 24/7 | From £50 | SRL Recovery',
+    default: 'Breakdown Recovery Glasgow | 24/7 | From £60 | SRL Recovery',
     template: '%s | SRL Recovery',
   },
   description:
-    'Fast 24/7 breakdown and accident recovery across Glasgow. From £50 local, £100 motorway. Average arrival 30–45 minutes. Call SRL Recovery now for immediate dispatch.',
+    'Fast 24/7 breakdown and accident recovery across Glasgow. From £60 local, £120 motorway. Average arrival 30–45 minutes. Call SRL Recovery now for immediate dispatch.',
   keywords:
     'breakdown recovery Glasgow, car recovery near me Glasgow, 24 hour vehicle recovery Glasgow, accident recovery Glasgow, recovery Paisley, recovery East Kilbride, recovery Motherwell, M8 recovery, M74 recovery, motorway recovery Glasgow',
   verification: {
     google: 'BdNKAou_zVux61Mzr0CnJl1CTB2MQ5VCLFubW6Xyar8',
   },
   openGraph: {
-    title: 'Breakdown Recovery Glasgow | 24/7 | From £50 | SRL Recovery',
+    title: 'Breakdown Recovery Glasgow | 24/7 | From £60 | SRL Recovery',
     description:
       'Rapid-response breakdown and accident recovery in Glasgow. Available 24/7 for cars, vans, and commercial vehicles. Average arrival 30–45 minutes.',
     type: 'website',
