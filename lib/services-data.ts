@@ -192,7 +192,7 @@ export const services: ServicePageData[] = [
       {
         heading: 'Why we\'re faster than the big names',
         paragraphs: [
-          "Two reasons. First, no middleman: when you ring us, the call doesn't get bounced to a regional dispatcher who then bounces it to a sub-contractor — we ARE the dispatcher and the recovery service. Second, our trucks are based locally in Cleland, not three counties away. We're already in your area.",
+          "Two reasons. First, no middleman: when you ring us, the call doesn't get bounced to a regional dispatcher who then bounces it to a sub-contractor — we ARE the dispatcher and the recovery service. Second, our trucks are based locally, not three counties away. We're already in your area.",
         ],
       },
     ],
@@ -200,7 +200,7 @@ export const services: ServicePageData[] = [
       '30–45 minute average arrival across Glasgow',
       '20–30 minutes typical for Motherwell/ML postcodes',
       'No call-centre delay — direct dispatch',
-      'Trucks based locally in Cleland',
+      'Trucks based locally',
       'Real-time ETA given on the call',
     ],
     faqs: [
