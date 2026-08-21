@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import CoverageMap from '@/components/CoverageMap'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -174,6 +175,24 @@ const AREAS = [
     postcodes: ['ML12'],
     desc: 'M74 J13 coverage — Abington Services and the remote southbound stretch between Lesmahagow and Beattock.',
   },
+  {
+    name: 'Loch Lomond',
+    slug: 'loch-lomond',
+    postcodes: ['G83'],
+    desc: 'Balloch, Luss, Tarbet and Arrochar covered on the A82 loch-side road. Average arrival 45–65 minutes.',
+  },
+  {
+    name: 'Argyll and Bute',
+    slug: 'argyll-and-bute',
+    postcodes: ['G84', 'PA23', 'PA24', 'PA25', 'PA26'],
+    desc: 'Helensburgh, Arrochar, Cairndow, Dunoon and further into Argyll — covered on request, call for a quote.',
+  },
+  {
+    name: 'Scotland',
+    slug: 'scotland',
+    postcodes: ['Nationwide'],
+    desc: 'Can\'t see your area listed? We cover anywhere in Scotland — just call and we\'ll quote you an honest price and ETA.',
+  },
 ]
 
 export default function AreasPage() {
@@ -222,6 +241,8 @@ export default function AreasPage() {
             </div>
           </div>
         </section>
+
+        <CoverageMap />
       </main>
       <Footer />
     </>

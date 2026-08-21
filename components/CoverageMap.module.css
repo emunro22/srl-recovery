@@ -82,6 +82,13 @@
   flex-shrink: 0;
 }
 
+.beyondNote {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: var(--gray-light);
+}
+
 /* Pin styles for Leaflet div icons */
 .pinWrap { background: transparent !important; border: none !important; }
 

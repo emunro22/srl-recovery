@@ -35,6 +35,9 @@ const areaSlugs = [
   'carluke',
   'giffnock',
   'abington',
+  'loch-lomond',
+  'argyll-and-bute',
+  'scotland',
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

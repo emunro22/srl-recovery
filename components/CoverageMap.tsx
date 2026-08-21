@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from './CoverageMap.module.css'
 
-// 12 town markers across the SRL Recovery service area
+// Town markers across the SRL Recovery service area
 const TOWNS: { name: string; slug: string | null; lat: number; lng: number; primary?: boolean }[] = [
   { name: 'Motherwell (HQ)', slug: 'motherwell', lat: 55.7916, lng: -3.9852, primary: true },
   { name: 'Cambuslang (2nd Base)', slug: 'cambuslang', lat: 55.8217724, lng: -4.1395602, primary: true },
@@ -17,6 +17,8 @@ const TOWNS: { name: string; slug: string | null; lat: number; lng: number; prim
   { name: 'Rutherglen', slug: 'rutherglen', lat: 55.8266, lng: -4.2128 },
   { name: 'Bellshill', slug: 'bellshill', lat: 55.8146, lng: -4.0214 },
   { name: 'Dumbarton', slug: 'dumbarton', lat: 55.9456, lng: -4.5662 },
+  { name: 'Luss', slug: 'loch-lomond', lat: 56.1009, lng: -4.6394 },
+  { name: 'Arrochar', slug: 'argyll-and-bute', lat: 56.1998, lng: -4.7317 },
 ]
 
 export default function CoverageMap() {
@@ -50,9 +52,9 @@ export default function CoverageMap() {
         maxZoom: 18,
       }).addTo(map)
 
-      // Outer ring — nationwide coverage, centred on G72 7SH (Cambuslang)
+      // Outer ring — extended coverage zone, centred on G72 7SH (Cambuslang)
       L.circle([55.8217724, -4.1395602], {
-        radius: 241401, // 150 miles in metres
+        radius: 96561, // 60 miles in metres
         color: '#cc1493',
         fillColor: '#cc1493',
         fillOpacity: 0.03,
@@ -111,9 +113,9 @@ export default function CoverageMap() {
           <h2 className={`section-title ${styles.title}`}>Where We Operate</h2>
           <p className={`section-text ${styles.lead}`}>
             With bases in Motherwell and Cambuslang (G72 7SH), our core 30-mile service area
-            around Cambuslang covers Greater Glasgow and Lanarkshire with a 30-minute arrival
-            guarantee. We also operate nationwide — wherever you need us across the UK, just
-            give us a call.
+            covers Greater Glasgow and Lanarkshire with a fast, guaranteed arrival time. We
+            also run a 60-mile extended zone reaching Loch Lomond and Argyll &amp; Bute. Beyond
+            that, we cover anywhere in Scotland — just call for a quote.
           </p>
         </div>
 
@@ -130,10 +132,13 @@ export default function CoverageMap() {
               <span className={styles.legendCircle} /> 30-mile core area
             </div>
             <div className={styles.legendRow}>
-              <span className={styles.legendCircleOuter} /> Nationwide coverage
+              <span className={styles.legendCircleOuter} /> 60-mile extended zone
             </div>
           </div>
         </div>
+        <p className={styles.beyondNote}>
+          Outside the 60-mile zone? We cover anywhere in Scotland — just call for a quote.
+        </p>
       </div>
     </section>
   )
