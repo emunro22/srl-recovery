@@ -4,8 +4,24 @@ import { useState, useRef } from 'react'
 import Image from 'next/image'
 import { upload } from '@vercel/blob/client'
 import styles from './admin.module.css'
-import type { GalleryImage, BlogPost, Customer } from '@/lib/db'
+import type { GalleryImage, BlogPost, Customer, SeoIdea } from '@/lib/db'
 import BlogPostManager from './BlogPostManager'
+
+const IMAGE_TAGS = ['Glasgow', '24/7', 'Prestige', 'Commercial', 'Roadside', 'Transport', 'Accident']
+
+type IdeaFormState = {
+  title: string
+  description: string
+  priority: 'High' | 'Medium' | 'Low'
+  tag: string
+}
+
+const emptyIdeaForm = (): IdeaFormState => ({
+  title: '',
+  description: '',
+  priority: 'Medium',
+  tag: '',
+})
 
 type QueueItem = {
   id: string
@@ -23,18 +39,37 @@ export default function AdminDashboard({
   initialImages,
   initialPosts,
   initialCustomers,
+  initialIdeas,
 }: {
   initialImages: GalleryImage[]
   initialPosts: BlogPost[]
   initialCustomers: Customer[]
+  initialIdeas: SeoIdea[]
 }) {
-  const [activeTab, setActiveTab] = useState<'gallery' | 'blog' | 'customers'>('gallery')
+  const [activeTab, setActiveTab] = useState<'gallery' | 'blog' | 'customers' | 'ideas'>('gallery')
   const [images, setImages] = useState<GalleryImage[]>(initialImages)
   const [queue, setQueue] = useState<QueueItem[]>([])
   const [tag, setTag] = useState('Glasgow')
   const [isUploading, setIsUploading] = useState(false)
   const [seeding, setSeeding] = useState(false)
   const [seedingBlog, setSeedingBlog] = useState(false)
+
+  // Gallery image editing — applies to every image regardless of tag or source
+  // (manual upload or the Google photo sync)
+  const [editingImageId, setEditingImageId] = useState<number | null>(null)
+  const [editForm, setEditForm] = useState<{ title: string; tag: string; description: string }>({
+    title: '',
+    tag: '',
+    description: '',
+  })
+  const [editSaving, setEditSaving] = useState(false)
+
+  // SEO / GEO ideas tab state
+  const [ideas, setIdeas] = useState<SeoIdea[]>(initialIdeas)
+  const [showIdeaForm, setShowIdeaForm] = useState(false)
+  const [ideaForm, setIdeaForm] = useState<IdeaFormState>(emptyIdeaForm())
+  const [ideaSaving, setIdeaSaving] = useState(false)
+  const [ideaError, setIdeaError] = useState('')
 
   // Customers tab state
   const [customers, setCustomers] = useState<Customer[]>(initialCustomers)
@@ -302,6 +337,103 @@ export default function AdminDashboard({
     }
   }
 
+  function startEditImage(img: GalleryImage) {
+    setEditingImageId(img.id)
+    setEditForm({ title: img.title, tag: img.tag, description: img.description || '' })
+  }
+
+  function cancelEditImage() {
+    setEditingImageId(null)
+  }
+
+  async function saveEditImage(id: number) {
+    if (!editForm.title.trim()) return
+    setEditSaving(true)
+    try {
+      const res = await fetch(`/api/admin/images/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: editForm.title.trim(),
+          tag: editForm.tag.trim(),
+          description: editForm.description.trim(),
+        }),
+      })
+      if (!res.ok) {
+        alert('Failed to update image')
+        return
+      }
+      const { image } = await res.json()
+      setImages((prev) => prev.map((img) => (img.id === id ? image : img)))
+      setEditingImageId(null)
+    } catch {
+      alert('Network error')
+    }
+    setEditSaving(false)
+  }
+
+  function updateIdeaForm(key: keyof IdeaFormState, value: string) {
+    setIdeaForm((prev) => ({ ...prev, [key]: value }))
+  }
+
+  async function addIdea(e: React.FormEvent) {
+    e.preventDefault()
+    if (!ideaForm.title.trim()) { setIdeaError('Title is required'); return }
+    setIdeaSaving(true)
+    setIdeaError('')
+    try {
+      const res = await fetch('/api/admin/seo-ideas', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(ideaForm),
+      })
+      const data = await res.json()
+      if (!res.ok) { setIdeaError(data.error || 'Failed to save'); return }
+      setIdeas((prev) => [data.idea, ...prev])
+      setIdeaForm(emptyIdeaForm())
+      setShowIdeaForm(false)
+    } catch {
+      setIdeaError('Network error')
+    }
+    setIdeaSaving(false)
+  }
+
+  async function markIdeaDone(idea: SeoIdea) {
+    const previous = ideas
+    const next = !idea.done
+    setIdeas((prev) => prev.map((i) => (i.id === idea.id ? { ...i, done: next } : i)))
+    try {
+      const res = await fetch(`/api/admin/seo-ideas/${idea.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ done: next }),
+      })
+      if (!res.ok) {
+        setIdeas(previous)
+        alert('Failed to update idea')
+      }
+    } catch {
+      setIdeas(previous)
+      alert('Network error')
+    }
+  }
+
+  async function deleteIdea(idea: SeoIdea) {
+    if (!confirm(`Remove "${idea.title}"?`)) return
+    const previous = ideas
+    setIdeas((prev) => prev.filter((i) => i.id !== idea.id))
+    try {
+      const res = await fetch(`/api/admin/seo-ideas/${idea.id}`, { method: 'DELETE' })
+      if (!res.ok) {
+        setIdeas(previous)
+        alert('Failed to delete idea')
+      }
+    } catch {
+      setIdeas(previous)
+      alert('Network error')
+    }
+  }
+
   const pendingCount = queue.filter((q) => q.status === 'pending' || q.status === 'error').length
 
   return (
@@ -344,6 +476,15 @@ export default function AdminDashboard({
         >
           <span className="material-symbols-rounded">contacts</span>
           Customers
+        </button>
+        <button
+          role="tab"
+          aria-selected={activeTab === 'ideas'}
+          onClick={() => setActiveTab('ideas')}
+          className={`${styles.tabBtn} ${activeTab === 'ideas' ? styles.tabBtnActive : ''}`}
+        >
+          <span className="material-symbols-rounded">lightbulb</span>
+          SEO Ideas
         </button>
       </div>
 
@@ -535,6 +676,140 @@ export default function AdminDashboard({
         )
       })()}
 
+      {activeTab === 'ideas' && (() => {
+        const open = ideas.filter((i) => !i.done)
+        const done = ideas.filter((i) => i.done)
+
+        return (
+          <div>
+            <section className={styles.reviewCard}>
+              <div className={styles.blogHeader} style={{ marginBottom: showIdeaForm ? '2rem' : 0 }}>
+                <div>
+                  <h2 className={styles.sectionTitle} style={{ marginBottom: '0.4rem' }}>
+                    SEO / GEO Ideas <span className={styles.count}>({open.length} open)</span>
+                  </h2>
+                  <p className={styles.topSub}>Pitches and improvements worth chasing — track them here, mark done when shipped.</p>
+                </div>
+                {!showIdeaForm && (
+                  <button type="button" onClick={() => setShowIdeaForm(true)} className="btn">
+                    <span className="material-symbols-rounded">add</span>
+                    Add idea
+                  </button>
+                )}
+              </div>
+
+              {showIdeaForm && (
+                <form onSubmit={addIdea} className={styles.custForm}>
+                  <div className={styles.field}>
+                    <label className={styles.label} htmlFor="ideaTitle">Title *</label>
+                    <input
+                      id="ideaTitle"
+                      type="text"
+                      value={ideaForm.title}
+                      onChange={(e) => updateIdeaForm('title', e.target.value)}
+                      placeholder="e.g. 12+ service areas in nav, no location pages"
+                      maxLength={140}
+                      className={styles.input}
+                      disabled={ideaSaving}
+                    />
+                  </div>
+                  <div className={styles.custRow}>
+                    <div className={styles.field}>
+                      <label className={styles.label} htmlFor="ideaPriority">Priority</label>
+                      <select
+                        id="ideaPriority"
+                        value={ideaForm.priority}
+                        onChange={(e) => updateIdeaForm('priority', e.target.value)}
+                        className={styles.input}
+                        disabled={ideaSaving}
+                      >
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                      </select>
+                    </div>
+                    <div className={styles.field}>
+                      <label className={styles.label} htmlFor="ideaTag">Tag</label>
+                      <input
+                        id="ideaTag"
+                        type="text"
+                        value={ideaForm.tag}
+                        onChange={(e) => updateIdeaForm('tag', e.target.value)}
+                        placeholder="e.g. upsell"
+                        maxLength={40}
+                        className={styles.input}
+                        disabled={ideaSaving}
+                      />
+                    </div>
+                  </div>
+                  <div className={styles.field}>
+                    <label className={styles.label} htmlFor="ideaDescription">Description</label>
+                    <textarea
+                      id="ideaDescription"
+                      value={ideaForm.description}
+                      onChange={(e) => updateIdeaForm('description', e.target.value)}
+                      placeholder="Why this matters, what to pitch, supporting evidence…"
+                      maxLength={1000}
+                      rows={4}
+                      className={styles.textarea}
+                      disabled={ideaSaving}
+                    />
+                  </div>
+                  {ideaError && <p className={styles.error}>{ideaError}</p>}
+                  <div className={styles.formActions}>
+                    <button
+                      type="button"
+                      onClick={() => { setShowIdeaForm(false); setIdeaForm(emptyIdeaForm()); setIdeaError('') }}
+                      className={styles.cancelBtn}
+                      disabled={ideaSaving}
+                    >
+                      Cancel
+                    </button>
+                    <button type="submit" className="btn" disabled={ideaSaving}>
+                      {ideaSaving ? 'Saving…' : 'Save idea'}
+                    </button>
+                  </div>
+                </form>
+              )}
+            </section>
+
+            {ideas.length === 0 ? (
+              <p className={styles.empty}>
+                No ideas logged yet. Click <strong>&quot;Add idea&quot;</strong> to note your first one.
+              </p>
+            ) : (
+              <div className={styles.ideaList}>
+                {[...open, ...done].map((idea) => (
+                  <div key={idea.id} className={`${styles.ideaCard} ${idea.done ? styles.ideaCardDone : ''}`}>
+                    <div className={styles.ideaCardTop}>
+                      <span className={
+                        idea.priority === 'High' ? styles.badgeHigh
+                          : idea.priority === 'Medium' ? styles.badgeMedium
+                          : styles.badgeLow
+                      }>
+                        {idea.priority}
+                      </span>
+                      {idea.tag && <span className={styles.badgeManual}>{idea.tag}</span>}
+                      {idea.done && <span className={styles.badgePublished}>Done</span>}
+                    </div>
+                    <p className={styles.ideaTitle}>{idea.title}</p>
+                    {idea.description && <p className={styles.ideaDesc}>{idea.description}</p>}
+                    <div className={styles.ideaActions}>
+                      <button type="button" onClick={() => markIdeaDone(idea)} className={styles.toggleBtn} title={idea.done ? 'Mark open' : 'Mark done'}>
+                        <span className="material-symbols-rounded">{idea.done ? 'undo' : 'check'}</span>
+                      </button>
+                      <button type="button" onClick={() => deleteIdea(idea)} className={styles.postDeleteBtn} title="Delete">
+                        <span className="material-symbols-rounded">delete</span>
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )
+      })()}
+
       {activeTab === 'gallery' && (
       <>
 
@@ -694,12 +969,73 @@ export default function AdminDashboard({
                   )}
                 </div>
                 <div className={styles.imageBody}>
-                  <p className={styles.imageTitle}>{img.title}</p>
-                  <p className={styles.imageTag}>{img.tag} · {img.media_type === 'video' ? 'Video' : 'Photo'}</p>
-                  {img.description && <p className={styles.imageTag}>{img.description}</p>}
-                  <button onClick={() => onDelete(img.id)} className={styles.deleteBtn}>
-                    Delete
-                  </button>
+                  {editingImageId === img.id ? (
+                    <div className={styles.imageEditForm}>
+                      <input
+                        type="text"
+                        value={editForm.title}
+                        onChange={(e) => setEditForm((prev) => ({ ...prev, title: e.target.value }))}
+                        placeholder="Title"
+                        maxLength={80}
+                        disabled={editSaving}
+                        className={styles.queueTitleInput}
+                      />
+                      <select
+                        value={editForm.tag}
+                        onChange={(e) => setEditForm((prev) => ({ ...prev, tag: e.target.value }))}
+                        disabled={editSaving}
+                        className={styles.queueTitleInput}
+                      >
+                        {IMAGE_TAGS.map((t) => (
+                          <option key={t} value={t}>{t}</option>
+                        ))}
+                      </select>
+                      <input
+                        type="text"
+                        value={editForm.description}
+                        onChange={(e) => setEditForm((prev) => ({ ...prev, description: e.target.value }))}
+                        placeholder="Description (optional)"
+                        maxLength={300}
+                        disabled={editSaving}
+                        className={styles.queueTitleInput}
+                      />
+                      <div className={styles.imageEditActions}>
+                        <button
+                          type="button"
+                          onClick={cancelEditImage}
+                          disabled={editSaving}
+                          className={styles.cancelBtn}
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => saveEditImage(img.id)}
+                          disabled={editSaving || !editForm.title.trim()}
+                          className="btn"
+                        >
+                          {editSaving ? 'Saving…' : 'Save'}
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <p className={styles.imageTitle}>{img.title}</p>
+                      <p className={styles.imageTag}>
+                        {img.tag} · {img.media_type === 'video' ? 'Video' : 'Photo'}
+                        {img.source === 'google' && ' · Google'}
+                      </p>
+                      {img.description && <p className={styles.imageTag}>{img.description}</p>}
+                      <div className={styles.imageCardActions}>
+                        <button onClick={() => startEditImage(img)} className={styles.editBtn}>
+                          Edit
+                        </button>
+                        <button onClick={() => onDelete(img.id)} className={styles.deleteBtn}>
+                          Delete
+                        </button>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             ))}

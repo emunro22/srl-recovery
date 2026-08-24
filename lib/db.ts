@@ -121,6 +121,25 @@ export async function deleteGalleryImage(id: number): Promise<GalleryImage | nul
   return rows[0] ?? null
 }
 
+// Every gallery image is editable here regardless of tag or source (manual upload
+// or the Google photo sync cron) — there's no per-tag or per-source restriction.
+export async function updateGalleryImage(id: number, data: {
+  title?: string
+  tag?: string
+  description?: string | null
+}): Promise<GalleryImage | null> {
+  await ensureGalleryTable()
+  const rows = (await sql`
+    UPDATE gallery_images SET
+      title       = COALESCE(${data.title ?? null}, title),
+      tag         = COALESCE(${data.tag ?? null}, tag),
+      description = CASE WHEN ${data.description !== undefined} THEN ${data.description ?? null} ELSE description END
+    WHERE id = ${id}
+    RETURNING id, url, title, tag, blob_path, created_at, media_type, description, source, content_hash, protected
+  `) as GalleryImage[]
+  return rows[0] ?? null
+}
+
 // ─── Blog Posts ───────────────────────────────────────────────────────────────
 
 export type BlogPost = {
@@ -355,5 +374,108 @@ export async function deleteCustomer(id: number): Promise<Customer | null> {
     DELETE FROM customers WHERE id = ${id}
     RETURNING id, name, phone, job_date::TEXT, notes, source, created_at
   `) as Customer[]
+  return rows[0] ?? null
+}
+
+// ─── SEO / GEO Ideas ────────────────────────────────────────────────────────
+
+export type SeoIdea = {
+  id: number
+  title: string
+  description: string
+  priority: 'High' | 'Medium' | 'Low'
+  tag: string
+  done: boolean
+  created_at: string
+}
+
+let _seoIdeasTableReady: Promise<void> | null = null
+
+async function ensureSeoIdeasTable() {
+  if (!_seoIdeasTableReady) {
+    _seoIdeasTableReady = (async () => {
+      await sql`
+        CREATE TABLE IF NOT EXISTS seo_ideas (
+          id          SERIAL PRIMARY KEY,
+          title       TEXT NOT NULL,
+          description TEXT NOT NULL DEFAULT '',
+          priority    TEXT NOT NULL DEFAULT 'Medium',
+          tag         TEXT NOT NULL DEFAULT '',
+          done        BOOLEAN NOT NULL DEFAULT false,
+          created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+        )
+      `
+      // Bootstraps the first pitch idea on first run only — keyed on title so
+      // this stays safe to run every time the table is ensured.
+      await sql`
+        INSERT INTO seo_ideas (title, description, priority, tag)
+        SELECT
+          '12+ service areas in nav, no location pages',
+          'Title tag is already well-optimized and the site clearly has investment (FAQ section, pricing table) — but 111+ reviews and 12+ areas aren''t backed by dedicated location pages or schema. Strong candidate to pitch a content/local-SEO retainer.',
+          'High',
+          'upsell'
+        WHERE NOT EXISTS (
+          SELECT 1 FROM seo_ideas WHERE title = '12+ service areas in nav, no location pages'
+        )
+      `
+    })()
+  }
+  return _seoIdeasTableReady
+}
+
+export async function getSeoIdeas(): Promise<SeoIdea[]> {
+  await ensureSeoIdeasTable()
+  const rows = (await sql`
+    SELECT id, title, description, priority, tag, done, created_at
+    FROM seo_ideas
+    ORDER BY done ASC,
+      CASE priority WHEN 'High' THEN 0 WHEN 'Medium' THEN 1 ELSE 2 END ASC,
+      created_at DESC
+  `) as SeoIdea[]
+  return rows
+}
+
+export async function addSeoIdea(data: {
+  title: string
+  description?: string
+  priority?: 'High' | 'Medium' | 'Low'
+  tag?: string
+}): Promise<SeoIdea> {
+  await ensureSeoIdeasTable()
+  const rows = (await sql`
+    INSERT INTO seo_ideas (title, description, priority, tag)
+    VALUES (${data.title}, ${data.description ?? ''}, ${data.priority ?? 'Medium'}, ${data.tag ?? ''})
+    RETURNING id, title, description, priority, tag, done, created_at
+  `) as SeoIdea[]
+  return rows[0]
+}
+
+export async function updateSeoIdea(id: number, data: {
+  title?: string
+  description?: string
+  priority?: 'High' | 'Medium' | 'Low'
+  tag?: string
+  done?: boolean
+}): Promise<SeoIdea | null> {
+  await ensureSeoIdeasTable()
+  const rows = (await sql`
+    UPDATE seo_ideas SET
+      title       = COALESCE(${data.title ?? null}, title),
+      description = COALESCE(${data.description ?? null}, description),
+      priority    = COALESCE(${data.priority ?? null}, priority),
+      tag         = COALESCE(${data.tag ?? null}, tag),
+      done        = COALESCE(${data.done ?? null}, done)
+    WHERE id = ${id}
+    RETURNING id, title, description, priority, tag, done, created_at
+  `) as SeoIdea[]
+  return rows[0] ?? null
+}
+
+export async function deleteSeoIdea(id: number): Promise<SeoIdea | null> {
+  await ensureSeoIdeasTable()
+  const rows = (await sql`
+    DELETE FROM seo_ideas WHERE id = ${id}
+    RETURNING id, title, description, priority, tag, done, created_at
+  `) as SeoIdea[]
   return rows[0] ?? null
 }

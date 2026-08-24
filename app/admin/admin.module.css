@@ -1065,3 +1065,151 @@
   border: 1px solid hsla(0, 0%, 100%, 0.1);
   white-space: nowrap;
 }
+
+/* ============================================================
+   GALLERY IMAGE EDITING
+   ============================================================ */
+
+.imageCardActions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.editBtn {
+  flex: 1;
+  background: hsla(0, 0%, 100%, 0.05);
+  border: 1px solid hsla(0, 0%, 100%, 0.15);
+  color: var(--white);
+  padding: 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.editBtn:hover {
+  border-color: var(--pink);
+  color: var(--pink-light);
+}
+
+.deleteBtn { flex: 1; }
+
+.imageEditForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.imageEditActions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.imageEditActions .cancelBtn,
+.imageEditActions .btn {
+  flex: 1;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  justify-content: center;
+}
+
+/* ============================================================
+   SEO / GEO IDEAS TAB
+   ============================================================ */
+
+.ideaList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ideaCard {
+  background: var(--black-2);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.8rem;
+  transition: var(--transition);
+}
+
+.ideaCard:hover {
+  border-color: hsla(318, 82%, 45%, 0.2);
+}
+
+.ideaCardDone {
+  opacity: 0.6;
+}
+
+.ideaCardTop {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.ideaTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.ideaCardDone .ideaTitle {
+  text-decoration: line-through;
+}
+
+.ideaDesc {
+  font-size: 1.3rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  max-width: 720px;
+}
+
+.ideaActions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.badgeHigh {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.7rem;
+  border-radius: 10rem;
+  background: hsla(0, 80%, 55%, 0.15);
+  color: hsl(0, 80%, 72%);
+  border: 1px solid hsla(0, 80%, 55%, 0.3);
+  white-space: nowrap;
+}
+
+.badgeMedium {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.7rem;
+  border-radius: 10rem;
+  background: hsla(40, 90%, 55%, 0.15);
+  color: hsl(40, 90%, 65%);
+  border: 1px solid hsla(40, 90%, 55%, 0.3);
+  white-space: nowrap;
+}
+
+.badgeLow {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.7rem;
+  border-radius: 10rem;
+  background: hsla(0, 0%, 100%, 0.05);
+  color: var(--gray-light);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  white-space: nowrap;
+}

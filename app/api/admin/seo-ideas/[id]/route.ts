@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server'
-import { revalidatePath } from 'next/cache'
-import { del } from '@vercel/blob'
-import { deleteGalleryImage, updateGalleryImage } from '@/lib/db'
+import { deleteSeoIdea, updateSeoIdea } from '@/lib/db'
 import { isAdminAuthenticated } from '@/lib/auth'
 
 export async function PATCH(
@@ -20,24 +18,21 @@ export async function PATCH(
 
   try {
     const body = await req.json()
-    const updated = await updateGalleryImage(id, {
-      title: body.title !== undefined ? (body.title || '').toString().trim().slice(0, 80) || undefined : undefined,
-      tag: body.tag !== undefined ? (body.tag || '').toString().trim().slice(0, 40) || undefined : undefined,
-      description: body.description !== undefined
-        ? ((body.description || '').toString().trim().slice(0, 300) || null)
-        : undefined,
+    const updated = await updateSeoIdea(id, {
+      done: body.done !== undefined ? Boolean(body.done) : undefined,
+      title: body.title,
+      description: body.description,
+      priority: body.priority,
+      tag: body.tag,
     })
 
     if (!updated) {
       return NextResponse.json({ error: 'Not found' }, { status: 404 })
     }
 
-    revalidatePath('/work')
-    revalidatePath('/')
-
-    return NextResponse.json({ image: updated })
+    return NextResponse.json({ idea: updated })
   } catch (err) {
-    console.error('PATCH image error', err)
+    console.error('PATCH seo-idea error', err)
     return NextResponse.json({ error: 'Update failed' }, { status: 500 })
   }
 }
@@ -57,24 +52,13 @@ export async function DELETE(
   }
 
   try {
-    const deleted = await deleteGalleryImage(id)
+    const deleted = await deleteSeoIdea(id)
     if (!deleted) {
       return NextResponse.json({ error: 'Not found' }, { status: 404 })
     }
-    if (deleted.blob_path) {
-      try {
-        await del(deleted.url)
-      } catch (e) {
-        console.warn('Blob delete failed (non-fatal)', e)
-      }
-    }
-
-    revalidatePath('/work')
-    revalidatePath('/')
-
     return NextResponse.json({ ok: true })
   } catch (err) {
-    console.error('DELETE image error', err)
+    console.error('DELETE seo-idea error', err)
     return NextResponse.json({ error: 'Delete failed' }, { status: 500 })
   }
 }
