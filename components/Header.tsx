@@ -35,21 +35,28 @@ export default function Header() {
     dropdown?: { href: string; label: string }[]
   }[] = [
     { href: '/', label: 'Home' },
-    { href: '/#about', label: 'About' },
     {
       href: '/services',
       label: 'Services',
       dropdown: [
         { href: '/services', label: 'All Services' },
         { href: '/services/commercial-recovery-glasgow', label: 'Commercial Recovery' },
+        { href: '/services/hgv-recovery-glasgow', label: 'HGV Recovery' },
         { href: '/services/trade-recovery-glasgow', label: 'Trade Recovery' },
       ],
     },
-    { href: '/#pricing', label: 'Pricing' },
     { href: '/areas', label: 'Areas' },
-    { href: '/work', label: 'Gallery' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/#faq', label: 'FAQ' },
+    { href: '/#pricing', label: 'Pricing' },
+    {
+      href: '/#about',
+      label: 'More',
+      dropdown: [
+        { href: '/#about', label: 'About' },
+        { href: '/work', label: 'Gallery' },
+        { href: '/blog', label: 'Blog' },
+        { href: '/#faq', label: 'FAQ' },
+      ],
+    },
     { href: '/#contact', label: 'Contact' },
     { href: '/accident-claim', label: 'Free Accident Claim', prominent: true },
   ]

@@ -318,14 +318,14 @@ export const services: ServicePageData[] = [
       },
       {
         q: 'Can you recover vans bigger than 3.5 tonnes?',
-        a: "Standard 3.5t Lutons, Sprinters, Crafters etc — yes, no problem. For 7.5-tonne+ HGVs you'll need a specialist heavy recovery service.",
+        a: "Standard 3.5t Lutons, Sprinters, Crafters etc — yes, no problem. For 7.5-tonne+ HGVs and articulated lorries, see our dedicated HGV recovery service — we run our own low-loader and heavy recovery equipment for those too.",
       },
       {
         q: 'Do you offer trade accounts?',
         a: 'Yes — if you run multiple vehicles or a garage/dealership that needs regular recovery, give us a call and we\'ll set up an account with trade rates and priority dispatch.',
       },
     ],
-    relatedServices: ['vehicle-transport-glasgow', 'car-recovery-near-me', 'accident-recovery-glasgow'],
+    relatedServices: ['vehicle-transport-glasgow', 'car-recovery-near-me', 'hgv-recovery-glasgow'],
   },
 
   {
@@ -343,7 +343,7 @@ export const services: ServicePageData[] = [
         heading: 'Commercial vehicles we recover',
         paragraphs: [
           "Panel vans, Lutons, and dropsides; minibuses and people-carriers; taxis and private hire vehicles; small flatbed and tipper trucks up to 3.5 tonnes; trailers and box trailers; refrigerated vans; mobile catering units and workshops. If it's used for business, we've likely recovered one like it before.",
-          "For anything over 3.5 tonnes (7.5t+ HGVs, artics) you'll need a dedicated heavy recovery operator — call us anyway and we'll point you in the right direction if we can't help directly.",
+          "For anything over 3.5 tonnes — 7.5t+ HGVs and articulated lorries — see our dedicated HGV recovery service. We run our own low-loader and heavy recovery equipment, so it's handled by the same team, not passed to a third party.",
         ],
       },
       {
@@ -377,7 +377,7 @@ export const services: ServicePageData[] = [
         a: "Yes — if you run a fleet or need recovery regularly, a trade account gets you agreed rates and priority dispatch. See our trade recovery page or just call and ask.",
       },
     ],
-    relatedServices: ['van-recovery-glasgow', 'trade-recovery-glasgow', 'vehicle-transport-glasgow'],
+    relatedServices: ['van-recovery-glasgow', 'hgv-recovery-glasgow', 'trade-recovery-glasgow'],
   },
 
   {
@@ -429,7 +429,7 @@ export const services: ServicePageData[] = [
         a: "Yes — we regularly work with claims handlers and bodyshops needing accident-damaged vehicles collected and delivered. A trade account keeps that process quick and consistent.",
       },
     ],
-    relatedServices: ['commercial-recovery-glasgow', 'van-recovery-glasgow', 'insurance-recovery-glasgow'],
+    relatedServices: ['commercial-recovery-glasgow', 'van-recovery-glasgow', 'hgv-recovery-glasgow'],
   },
 
   {
@@ -628,6 +628,66 @@ export const services: ServicePageData[] = [
       },
     ],
     relatedServices: ['classic-car-recovery-glasgow', 'vehicle-transport-glasgow', '4x4-recovery-glasgow'],
+  },
+
+  {
+    slug: 'hgv-recovery-glasgow',
+    serviceCategory: 'vehicle',
+    title: 'HGV Recovery Glasgow | Artics & Rigids | SRL Recovery',
+    metaDescription:
+      'HGV and articulated lorry recovery across Glasgow. Own low-loader equipment, rigids and artics, 24/7 dispatch. Call SRL Recovery on 01698 700970 for a quote.',
+    h1: 'HGV Recovery Glasgow',
+    subheading: 'Heavy recovery for rigid HGVs and articulated lorries — our own equipment, no sub-contracting',
+    introParagraph:
+      "A broken-down HGV is a different job entirely from a car or van — different weight, different loading equipment, different risk if it's blocking a live lane. SRL Recovery runs its own low-loader and heavy recovery equipment, so when you call about an HGV you're not being passed to a third-party heavy operator — the same team that answers the phone handles the job.",
+    bodySections: [
+      {
+        heading: 'What we recover',
+        paragraphs: [
+          "Rigid HGVs (box trucks, tippers, curtain-siders) and full articulated lorries — tractor units, trailers, and combinations up to and including artic weight. Breakdowns, accidents, jack-knifes, and vehicles that need lifting or winching clear of a live lane are all routine work for us.",
+          "If you operate a fleet and want a standing arrangement for HGV recovery, see our trade recovery page — we set up accounts with agreed terms for haulage firms and logistics operators.",
+        ],
+      },
+      {
+        heading: 'Why we don\'t quote a flat price',
+        paragraphs: [
+          "Every other service on this site has a published flat rate, because a car or van job is broadly predictable. HGV recovery isn't — the weight of the vehicle, whether it's loaded, the recovery method needed (straight lift vs winch vs full low-loader transport), the distance, and whether it's blocking a live lane all change the job significantly. Rather than publish a number that won't hold up for most jobs, we give you an exact price on the phone once we know the details.",
+          "Call 01698 700970 with the vehicle type, roughly what's happened, and your location, and we'll give you a clear quote before dispatching — same principle as every other job we do, just without a one-size-fits-all headline figure.",
+        ],
+      },
+      {
+        heading: 'Motorway and live-lane HGV recovery',
+        paragraphs: [
+          "HGV breakdowns on the M8, M74, M77, M73, and M80 get the same urgency as any live-lane job — coordination with Police Scotland and Traffic Scotland where a lane closure is needed, and a truck dispatched immediately. If your HGV is in a live lane, call 999 first, then call us.",
+        ],
+      },
+    ],
+    features: [
+      'Own low-loader and heavy recovery equipment',
+      'Rigid HGVs and full articulated lorries',
+      'No sub-contracting to a third-party heavy operator',
+      'Live-lane and motorway HGV recovery',
+      'Trade accounts available for haulage and logistics fleets',
+    ],
+    faqs: [
+      {
+        q: 'Can you recover a full articulated lorry, not just a rigid?',
+        a: "Yes — we handle both rigid HGVs and full articulated combinations (tractor unit and trailer) using our own low-loader and heavy recovery equipment.",
+      },
+      {
+        q: 'How much does HGV recovery cost?',
+        a: "It depends on the vehicle's weight, whether it's loaded, the recovery method needed, and distance — too many variables for a flat published rate. Call 01698 700970 with the details and we'll give you an exact price before we dispatch.",
+      },
+      {
+        q: 'Do you cover HGV breakdowns on the motorway?',
+        a: "Yes — M8, M74, M77, M73, and M80 are all covered, including live-lane and jack-knife recoveries in coordination with Police Scotland / Traffic Scotland where needed.",
+      },
+      {
+        q: 'Can hauliers set up a trade account for HGV recovery?',
+        a: "Yes — if you run a fleet and want agreed terms and priority dispatch, see our trade recovery page or call and ask.",
+      },
+    ],
+    relatedServices: ['van-recovery-glasgow', 'commercial-recovery-glasgow', 'trade-recovery-glasgow'],
   },
 
   // === CLUSTER 3: SITUATION ===

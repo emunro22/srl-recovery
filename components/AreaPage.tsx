@@ -5,6 +5,7 @@ import Pricing from '@/components/Pricing'
 import FAQ from '@/components/FAQ'
 import Testimonials from '@/components/Testimonials'
 import { getGoogleReviews } from '@/lib/googleReviews'
+import { nearMeAngles } from '@/lib/near-me-data'
 import styles from './AreaPage.module.css'
 
 export type AreaInfo = {
@@ -160,6 +161,29 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
             </div>
           </div>
         </section>
+
+        {area.slug !== 'scotland' && (
+          <section className={`section ${styles.info}`}>
+            <div className="container">
+              <h2 className="section-title">Popular Searches for {area.name}</h2>
+              <div className={styles.routeLinks}>
+                {nearMeAngles.map((angle) => (
+                  <Link
+                    key={angle.slug}
+                    href={`/areas/${area.slug}/${angle.slug}`}
+                    className={styles.routeCard}
+                  >
+                    <strong>{angle.navLabel} — {area.name}</strong>
+                    <span>See local pricing, response times, and FAQs for this search.</span>
+                    <span className={styles.routeCta}>
+                      View page <span className="material-symbols-rounded">arrow_forward</span>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <Pricing />
         <Testimonials />

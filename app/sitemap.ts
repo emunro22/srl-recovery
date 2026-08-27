@@ -3,6 +3,7 @@ import type { MetadataRoute } from 'next'
 export const dynamic = 'force-dynamic'
 import { services } from '@/lib/services-data'
 import { motorways } from '@/lib/motorways-data'
+import { nearMeAngles } from '@/lib/near-me-data'
 import { getBlogPosts } from '@/lib/db'
 
 const BASE = 'https://srlrecovery.com'
@@ -75,6 +76,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }))
 
+  // "Near me" intent pages nested under each area hub (excludes the
+  // nationwide 'scotland' catch-all, which has no [angle] sub-pages).
+  const nearMePages: MetadataRoute.Sitemap = areaSlugs
+    .filter((slug) => slug !== 'scotland')
+    .flatMap((areaSlug) =>
+      nearMeAngles.map((angle) => ({
+        url: `${BASE}/areas/${areaSlug}/${angle.slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+      }))
+    )
+
   let blogPages: MetadataRoute.Sitemap = []
   try {
     const posts = await getBlogPosts(true)
@@ -88,5 +102,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // DB unavailable at build time — blog posts omitted from sitemap
   }
 
-  return [...staticPages, ...areaPages, ...servicePages, ...motorwayPages, ...blogPages]
+  return [...staticPages, ...areaPages, ...servicePages, ...motorwayPages, ...nearMePages, ...blogPages]
 }

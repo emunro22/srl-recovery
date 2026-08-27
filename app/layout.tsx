@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://srlrecovery.com'),
   title: {
     default: 'Breakdown Recovery Glasgow | 24/7 | From £60 | SRL Recovery',
-    template: '%s | SRL Recovery',
+    template: '%s',
   },
   description:
     'Fast 24/7 breakdown and accident recovery across Glasgow. From £60 local, £120 motorway. Average arrival 30–45 minutes. Call SRL Recovery now for immediate dispatch.',
