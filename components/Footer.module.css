@@ -246,6 +246,22 @@
   color: var(--gray) !important;
 }
 
+.legalLinks {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.legalLink {
+  display: inline;
+  font-size: 1.3rem;
+  color: var(--gray) !important;
+  text-decoration: underline;
+}
+
+.legalLink:hover {
+  color: var(--white) !important;
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr 1fr;

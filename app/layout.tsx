@@ -4,6 +4,8 @@ import { Analytics } from '@vercel/analytics/next'
 import Schema from '@/components/Schema'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import StickyCallBar from '@/components/StickyCallBar'
+import CookieConsent from '@/components/CookieConsent'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 import './globals.css'
 
 const chakraPetch = Chakra_Petch({
@@ -66,7 +68,9 @@ export default function RootLayout({
         {children}
         <WhatsAppButton />
         <StickyCallBar />
+        <CookieConsent />
         <Analytics />
+        <GoogleAnalytics />
       </body>
     </html>
   )

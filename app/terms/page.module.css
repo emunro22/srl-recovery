@@ -1,0 +1,89 @@
+.main {
+  background: var(--black);
+  color: var(--white);
+}
+
+.hero {
+  padding: 14rem 0 5rem;
+  background:
+    radial-gradient(circle at 20% 30%, hsla(318, 82%, 45%, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 70%, hsla(210, 90%, 55%, 0.12), transparent 50%),
+    var(--black);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 5vw, 5.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+
+.updated {
+  color: var(--gray-light);
+  font-size: 1.4rem;
+}
+
+.body {
+  padding-block: 0 8rem;
+}
+
+.content {
+  max-width: 800px;
+}
+
+.content h2 {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-top: 4rem;
+  margin-bottom: 1.6rem;
+}
+
+.content h2:first-child {
+  margin-top: 0;
+}
+
+.content p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: var(--gray-light);
+  margin-bottom: 1.6rem;
+}
+
+.content ul {
+  margin-bottom: 1.6rem;
+  padding-left: 0;
+}
+
+.content li {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: var(--gray-light);
+  margin-bottom: 0.8rem;
+}
+
+.content li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.1rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gradient);
+}
+
+.content a {
+  display: inline;
+  color: var(--pink-light);
+  text-decoration: underline;
+}
+
+.content strong {
+  color: var(--white);
+}

@@ -150,6 +150,10 @@ export default function Footer() {
           <p className={styles.legal}>
             Fully insured &amp; compliant service · Glasgow, Scotland
           </p>
+          <p className={styles.legalLinks}>
+            <Link href="/privacy" className={styles.legalLink}>Privacy Policy</Link>
+            <Link href="/terms" className={styles.legalLink}>Terms &amp; Conditions</Link>
+          </p>
         </div>
       </div>
     </footer>

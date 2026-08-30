@@ -53,6 +53,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/work`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE}/routes/hamilton-to-carlisle`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ]
 
   const areaPages: MetadataRoute.Sitemap = areaSlugs.map((slug) => ({
