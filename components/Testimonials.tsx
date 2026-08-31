@@ -60,9 +60,9 @@ function initials(name: string) {
 
 type Testimonial = { quote: string; author: string; stars: number }
 
-function TestimonialCard({ t, hidden }: { t: Testimonial; hidden?: boolean }) {
+function TestimonialCard({ t }: { t: Testimonial }) {
   return (
-    <div className={styles.card} aria-hidden={hidden ? 'true' : undefined}>
+    <div className={styles.card}>
       <div className={styles.stars}>
         {Array.from({ length: t.stars }).map((_, s) => (
           <span key={s} className="material-symbols-rounded">star</span>
@@ -104,15 +104,13 @@ export default async function Testimonials() {
             <span><strong>{rating.toFixed(1)}</strong> from <strong>{totalReviews}+ reviews</strong> on Google</span>
             <span className="material-symbols-rounded">arrow_outward</span>
           </a>
+          <a href="/reviews" className={styles.seeAll}>See all reviews →</a>
         </div>
 
         <div className={styles.marquee}>
           <div className={styles.track}>
             {displayTestimonials.map((t, i) => (
-              <TestimonialCard key={`a-${i}`} t={t} />
-            ))}
-            {displayTestimonials.map((t, i) => (
-              <TestimonialCard key={`b-${i}`} t={t} hidden />
+              <TestimonialCard key={i} t={t} />
             ))}
           </div>
         </div>

@@ -53,6 +53,7 @@ export default function Header() {
       dropdown: [
         { href: '/#about', label: 'About' },
         { href: '/work', label: 'Gallery' },
+        { href: '/reviews', label: 'Reviews' },
         { href: '/blog', label: 'Blog' },
         { href: '/#faq', label: 'FAQ' },
       ],

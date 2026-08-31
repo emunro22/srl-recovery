@@ -67,7 +67,7 @@
 .fadeOverall {
   position: absolute;
   inset: 0;
-  background: hsla(0, 0%, 0%, 0.25);
+  background: hsla(0, 0%, 0%, 0.1);
 }
 
 .orb {

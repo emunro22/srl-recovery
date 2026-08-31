@@ -21,9 +21,9 @@ export async function getGoogleReviews(): Promise<GoogleReviewsData | null> {
   try {
     const res = await fetch(
       `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total,reviews&reviews_sort=newest&key=${apiKey}`,
-      // Short window so new reviews show up quickly — cheap because Next.js
-      // caches this across all visitors, not per page view.
-      { next: { revalidate: 900 } }
+      // Refetched roughly once a month — Google's "most relevant" reviews don't
+      // churn fast enough to justify polling more often than that.
+      { next: { revalidate: 2592000 } }
     )
     const data = await res.json()
     if (data.status !== 'OK' || !data.result) return null
