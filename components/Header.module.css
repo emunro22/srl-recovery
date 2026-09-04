@@ -157,7 +157,7 @@
   opacity: 0.92;
 }
 
-.desktopSocials {
+.barSocials {
   display: flex;
   gap: 0.6rem;
   align-items: center;
@@ -230,9 +230,10 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Hide desktop socials a bit before the mobile breakpoint to avoid crowding */
+/* Between these two widths the full nav is still showing and there is no room
+   for the icons as well. */
 @media (max-width: 1180px) {
-  .desktopSocials {
+  .barSocials {
     display: none;
   }
 }
@@ -241,9 +242,20 @@
   .ctaBtn {
     display: none;
   }
-  .menuBtn {
+  /* Back on once the nav collapses, sitting just left of the burger. The gap
+     is closed up by moving the auto margin off the burger and onto these. */
+  .barSocials {
     display: flex;
     margin-left: auto;
+    gap: 0.8rem;
+  }
+  .barSocials .socialBtn {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  .menuBtn {
+    display: flex;
+    margin-left: 0;
   }
   .navbar {
     position: fixed;
