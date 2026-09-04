@@ -49,7 +49,7 @@ export default function Pricing() {
           <h2 className={`section-title ${styles.title}`}>Transparent, Up-Front Pricing</h2>
           <p className={`section-text ${styles.lead}`}>
             No hidden fees, no surprises. Every job is quoted clearly on the phone before we
-            dispatch — you’ll know exactly what you’re paying before we set off.
+            dispatch. You’ll know exactly what you’re paying before we set off.
           </p>
         </div>
 
@@ -84,14 +84,14 @@ export default function Pricing() {
           <span className="material-symbols-rounded">info</span>
           <p>
             All prices subject to VAT. Final quote depends on location, distance, and vehicle
-            type — call us for an exact price before we dispatch.
+            type. Call us for an exact price before we dispatch.
           </p>
         </div>
 
         <div className={styles.cta}>
           <a href="tel:+441698700970" className="btn">
             <span className="material-symbols-rounded">call</span>
-            Get a Quote — 01698 700970
+            Get a Quote: 01698 700970
           </a>
         </div>
       </div>

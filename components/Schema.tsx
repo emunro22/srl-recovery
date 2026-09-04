@@ -8,7 +8,7 @@ export default async function Schema() {
       '@type': 'AutoRepair',
       '@id': 'https://srlrecovery.com/#business',
       name: 'SRL Recovery',
-      alternateName: 'SRL Recovery — 24/7 Breakdown Recovery Glasgow',
+      alternateName: 'SRL Recovery: 24/7 Breakdown Recovery Glasgow',
       description:
         "Glasgow's trusted 24/7 breakdown and accident recovery service. Owner with 17 years in the motor trade, completing 250+ recovery jobs every month.",
       url: 'https://srlrecovery.com',
@@ -131,7 +131,7 @@ export default async function Schema() {
       '@context': 'https://schema.org',
       '@type': 'AutoRepair',
       '@id': 'https://srlrecovery.com/#business-cambuslang',
-      name: 'SRL Recovery — Cambuslang',
+      name: 'SRL Recovery, Cambuslang',
       branchOf: { '@id': 'https://srlrecovery.com/#business' },
       telephone: '+441698700970',
       url: 'https://srlrecovery.com',

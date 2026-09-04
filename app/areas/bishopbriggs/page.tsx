@@ -15,9 +15,9 @@ export default function BishopbriggsPage() {
         slug: 'bishopbriggs',
         postcodes: ['G64'],
         introBlurb:
-          'Fast breakdown recovery across Bishopbriggs and G64 postcodes 24/7. SRL Recovery covers Bishopbriggs, Auchinairn, Cadder, and Torrance — dispatching any time, day or night.',
+          'Fast breakdown recovery across Bishopbriggs and G64 postcodes 24/7. SRL Recovery covers Bishopbriggs, Auchinairn, Cadder, and Torrance, dispatching any time, day or night.',
         routeBlurb:
-          'Bishopbriggs is just north of Glasgow, easily reached via the A803 and A8011 corridor. We regularly recover from the A803 Bishopbriggs Road, Springburn Road, and residential streets across Auchinairn, Cadder, Bishopbriggs town centre, and Torrance. Well-known area for our team — average arrival 30–45 minutes.',
+          'Bishopbriggs is just north of Glasgow, easily reached via the A803 and A8011 corridor. We regularly recover from the A803 Bishopbriggs Road, Springburn Road, and residential streets across Auchinairn, Cadder, Bishopbriggs town centre, and Torrance. Well-known area for our team, average arrival 30–45 minutes.',
         responseTime: '30–45 mins',
         nearbyAreas: ['Glasgow', 'Kirkintilloch', 'Bearsden', 'Milngavie', 'Stepps'],
       }}

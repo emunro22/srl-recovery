@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import styles from './Hero.module.css'
+import HeroSlideshow from './HeroSlideshow'
 import { getGoogleReviews } from '@/lib/googleReviews'
 
 export default async function Hero() {
@@ -9,21 +9,7 @@ export default async function Hero() {
 
   return (
     <section className={styles.hero} id="home">
-      <div className={styles.truckWrap}>
-        <Image
-          src="/images/hero-truck.png"
-          alt="SRL Recovery truck in Glasgow"
-          fill
-          sizes="100vw"
-          className={styles.truckImg}
-          priority
-        />
-        <div className={styles.fadeLeft} />
-        <div className={styles.fadeBottom} />
-        <div className={styles.fadeTop} />
-        <div className={styles.fadeRight} />
-        <div className={styles.fadeOverall} />
-      </div>
+      <HeroSlideshow />
 
       <div className={`${styles.orb} ${styles.orb1}`} aria-hidden />
       <div className={`${styles.orb} ${styles.orb2}`} aria-hidden />
@@ -41,8 +27,8 @@ export default async function Hero() {
           Glasgow
         </h1>
         <p className={styles.tagline}>
-          Broken down? Accident? Immobilised? We dispatch immediately — day or
-          night — with an average arrival time of 30–45 minutes across Glasgow
+          Broken down? Accident? Immobilised? We dispatch immediately, day or
+          night, with an average arrival time of 30–45 minutes across Glasgow
           and surrounding areas.
         </p>
 
@@ -57,7 +43,7 @@ export default async function Hero() {
           </a>
         </div>
 
-        {/* Reviews badge moved up next to the CTA — biggest trust signal at the point of decision */}
+        {/* Reviews badge moved up next to the CTA, biggest trust signal at the point of decision */}
         <a
           href="https://www.google.com/search?q=SRL+recovery+24%2F7+breakdown+recovery+Glasgow"
           target="_blank"

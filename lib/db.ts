@@ -44,7 +44,7 @@ let _galleryTableReady: Promise<void> | null = null
 async function ensureGalleryTable() {
   if (!_galleryTableReady) {
     _galleryTableReady = (async () => {
-      // Existing table already predates this file — only add columns it might be missing.
+      // Existing table already predates this file, only add columns it might be missing.
       await sql`ALTER TABLE gallery_images ADD COLUMN IF NOT EXISTS media_type TEXT NOT NULL DEFAULT 'image'`
       await sql`ALTER TABLE gallery_images ADD COLUMN IF NOT EXISTS description TEXT`
       await sql`ALTER TABLE gallery_images ADD COLUMN IF NOT EXISTS source TEXT NOT NULL DEFAULT 'manual'`
@@ -88,7 +88,7 @@ export async function addGalleryImage(data: {
   return rows[0]
 }
 
-// Used by the Google photo sync cron to skip photos it's already imported —
+// Used by the Google photo sync cron to skip photos it's already imported:
 // Google's photo_reference tokens can rotate, so we dedupe on image content instead.
 export async function galleryImageHashExists(hash: string): Promise<boolean> {
   await ensureGalleryTable()
@@ -99,7 +99,7 @@ export async function galleryImageHashExists(hash: string): Promise<boolean> {
 }
 
 // Images already in the gallery when auto-pruning shipped are `protected` forever.
-// Everything added after that — manual uploads included — is fair game here,
+// Everything added after that, manual uploads included, is fair game here,
 // oldest first, for the storage-cap cron to remove when Blob usage runs high.
 export async function getUnprotectedGalleryImagesOldestFirst(): Promise<GalleryImage[]> {
   await ensureGalleryTable()
@@ -122,7 +122,7 @@ export async function deleteGalleryImage(id: number): Promise<GalleryImage | nul
 }
 
 // Every gallery image is editable here regardless of tag or source (manual upload
-// or the Google photo sync cron) — there's no per-tag or per-source restriction.
+// or the Google photo sync cron). There's no per-tag or per-source restriction.
 export async function updateGalleryImage(id: number, data: {
   title?: string
   tag?: string
@@ -321,7 +321,7 @@ export async function addCustomer(data: {
   return rows[0]
 }
 
-// Called by the WhatsApp webhook — logs a contact once per month per phone number.
+// Called by the WhatsApp webhook, logs a contact once per month per phone number.
 // If they message again the same month, we update the name if we now have one.
 export async function upsertWhatsAppCustomer(data: {
   phone: string
@@ -405,13 +405,13 @@ async function ensureSeoIdeasTable() {
           created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
         )
       `
-      // Bootstraps the first pitch idea on first run only — keyed on title so
+      // Bootstraps the first pitch idea on first run only, keyed on title so
       // this stays safe to run every time the table is ensured.
       await sql`
         INSERT INTO seo_ideas (title, description, priority, tag)
         SELECT
           '12+ service areas in nav, no location pages',
-          'Title tag is already well-optimized and the site clearly has investment (FAQ section, pricing table) — but 111+ reviews and 12+ areas aren''t backed by dedicated location pages or schema. Strong candidate to pitch a content/local-SEO retainer.',
+          'Title tag is already well-optimized and the site clearly has investment (FAQ section, pricing table), but 111+ reviews and 12+ areas aren''t backed by dedicated location pages or schema. Strong candidate to pitch a content/local-SEO retainer.',
           'High',
           'upsell'
         WHERE NOT EXISTS (

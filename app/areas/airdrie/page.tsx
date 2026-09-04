@@ -15,7 +15,7 @@ export default function AirdriePage() {
         slug: 'airdrie',
         postcodes: ['ML6'],
         introBlurb:
-          '24/7 breakdown recovery across Airdrie and ML6 postcodes. SRL Recovery dispatches fast from our Motherwell base — covering Airdrie town, Caldercruix, Plains, and the surrounding area with average arrival of 25–40 minutes.',
+          '24/7 breakdown recovery across Airdrie and ML6 postcodes. SRL Recovery dispatches fast from our Motherwell base, covering Airdrie town, Caldercruix, Plains, and the surrounding area with average arrival of 25–40 minutes.',
         routeBlurb:
           'Airdrie is well within our regular coverage. We respond to breakdowns on the A73, A89, and local roads throughout Airdrie town centre, New Monkland, Chapelhall, Greengairs, Caldercruix, and Plains. The A89 Airdrie-Coatbridge corridor is one we attend regularly. Average arrival 25–40 minutes from our Motherwell base.',
         responseTime: '25–40 mins',

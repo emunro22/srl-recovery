@@ -11,7 +11,7 @@ export type GoogleReviewsData = {
   reviews: GoogleReview[]
 }
 
-// Google's Place Details API caps this at 5 "most relevant" reviews — there's no
+// Google's Place Details API caps this at 5 "most relevant" reviews. There's no
 // way to fetch the full review history through this endpoint.
 export async function getGoogleReviews(): Promise<GoogleReviewsData | null> {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY
@@ -21,7 +21,7 @@ export async function getGoogleReviews(): Promise<GoogleReviewsData | null> {
   try {
     const res = await fetch(
       `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total,reviews&reviews_sort=newest&key=${apiKey}`,
-      // Refetched roughly once a month — Google's "most relevant" reviews don't
+      // Refetched roughly once a month, Google's "most relevant" reviews don't
       // churn fast enough to justify polling more often than that.
       { next: { revalidate: 2592000 } }
     )

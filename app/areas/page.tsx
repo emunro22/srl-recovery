@@ -8,7 +8,7 @@ import styles from './page.module.css'
 export const metadata: Metadata = {
   title: 'Areas We Cover | 24/7 Breakdown Recovery Glasgow & Central Scotland | SRL Recovery',
   description:
-    'SRL Recovery covers Glasgow and Central Scotland 24/7 — Motherwell, Hamilton, Paisley, East Kilbride, Wishaw, Airdrie, Cumbernauld, and 20+ more areas. Find your area.',
+    'SRL Recovery covers Glasgow and Central Scotland 24/7, Motherwell, Hamilton, Paisley, East Kilbride, Wishaw, Airdrie, Cumbernauld, and 20+ more areas. Find your area.',
   alternates: { canonical: 'https://srlrecovery.com/areas' },
 }
 
@@ -41,7 +41,7 @@ const AREAS = [
     name: 'Coatbridge',
     slug: 'coatbridge',
     postcodes: ['ML5'],
-    desc: 'M8 and A89 corridor — fast dispatch to Coatbridge, Whifflet and Blairhill.',
+    desc: 'M8 and A89 corridor. Fast dispatch to Coatbridge, Whifflet and Blairhill.',
   },
   {
     name: 'Dumbarton',
@@ -59,7 +59,7 @@ const AREAS = [
     name: 'Hamilton',
     slug: 'hamilton',
     postcodes: ['ML3'],
-    desc: 'Central Scotland coverage — Hamilton, Blantyre, Larkhall and the M74 J5-J6 corridor.',
+    desc: 'Central Scotland coverage. Hamilton, Blantyre, Larkhall and the M74 J5-J6 corridor.',
   },
   {
     name: 'Motherwell',
@@ -77,19 +77,19 @@ const AREAS = [
     name: 'Rutherglen',
     slug: 'rutherglen',
     postcodes: ['G73'],
-    desc: 'Close to Glasgow city centre — Rutherglen main street, Fernhill and Cambuslang Road covered.',
+    desc: 'Close to Glasgow city centre. Rutherglen main street, Fernhill and Cambuslang Road covered.',
   },
   {
     name: 'Glasgow City Centre',
     slug: 'glasgow',
     postcodes: ['G1', 'G2', 'G3', 'G4', 'G5'],
-    desc: 'Full inner-city coverage — M8 urban section, Kingston Bridge, Charing Cross and all city-centre roads.',
+    desc: 'Full inner-city coverage. M8 urban section, Kingston Bridge, Charing Cross and all city-centre roads.',
   },
   {
     name: 'Wishaw',
     slug: 'wishaw',
     postcodes: ['ML2'],
-    desc: 'Right next to our Motherwell base — one of our fastest response areas across the ML2 postcode.',
+    desc: 'Right next to our Motherwell base. One of our fastest response areas across the ML2 postcode.',
   },
   {
     name: 'Airdrie',
@@ -101,79 +101,79 @@ const AREAS = [
     name: 'Cumbernauld',
     slug: 'cumbernauld',
     postcodes: ['G67', 'G68'],
-    desc: 'M80 junctions 4–6 and full town coverage — Kildrum, Abronhill, Condorrat and more.',
+    desc: 'M80 junctions 4–6 and full town coverage. Kildrum, Abronhill, Condorrat and more.',
   },
   {
     name: 'Kirkintilloch',
     slug: 'kirkintilloch',
     postcodes: ['G66'],
-    desc: 'East Dunbartonshire coverage — Kirkintilloch, Lenzie, Lennoxtown and the A803 corridor.',
+    desc: 'East Dunbartonshire coverage. Kirkintilloch, Lenzie, Lennoxtown and the A803 corridor.',
   },
   {
     name: 'Bishopbriggs',
     slug: 'bishopbriggs',
     postcodes: ['G64'],
-    desc: 'North Glasgow suburbs — Bishopbriggs, Auchinairn, Cadder and Torrance covered.',
+    desc: 'North Glasgow suburbs. Bishopbriggs, Auchinairn, Cadder and Torrance covered.',
   },
   {
     name: 'Uddingston',
     slug: 'uddingston',
     postcodes: ['G71'],
-    desc: 'M74 corridor town — fast response to Uddingston, Bothwell, Tannochside and Viewpark.',
+    desc: 'M74 corridor town. Fast response to Uddingston, Bothwell, Tannochside and Viewpark.',
   },
   {
     name: 'Newton Mearns',
     slug: 'newton-mearns',
     postcodes: ['G77'],
-    desc: 'Busy M77 commuter corridor — Newton Mearns, Crookfur, Waterfoot and Eaglesham.',
+    desc: 'Busy M77 commuter corridor. Newton Mearns, Crookfur, Waterfoot and Eaglesham.',
   },
   {
     name: 'Barrhead',
     slug: 'barrhead',
     postcodes: ['G78'],
-    desc: 'South Renfrewshire coverage — Barrhead, Neilston and surrounding villages on the A736.',
+    desc: 'South Renfrewshire coverage. Barrhead, Neilston and surrounding villages on the A736.',
   },
   {
     name: 'Renfrew',
     slug: 'renfrew',
     postcodes: ['PA4'],
-    desc: 'Glasgow Airport corridor — Renfrew, Braehead and Clydeside on the M8 J26/27.',
+    desc: 'Glasgow Airport corridor. Renfrew, Braehead and Clydeside on the M8 J26/27.',
   },
   {
     name: 'Johnstone',
     slug: 'johnstone',
     postcodes: ['PA5', 'PA10'],
-    desc: 'Western Renfrewshire — Johnstone, Linwood, Elderslie and Bridge of Weir on the A737.',
+    desc: 'Western Renfrewshire. Johnstone, Linwood, Elderslie and Bridge of Weir on the A737.',
   },
   {
     name: 'Blantyre',
     slug: 'blantyre',
     postcodes: ['G72'],
-    desc: 'M74 J5 corridor — fast access to Blantyre, Stonefield and High Blantyre from our Motherwell base.',
+    desc: 'M74 J5 corridor. Fast access to Blantyre, Stonefield and High Blantyre from our Motherwell base.',
   },
   {
     name: 'Larkhall',
     slug: 'larkhall',
     postcodes: ['ML9'],
-    desc: 'South Lanarkshire coverage — Larkhall, Stonehouse and surrounding villages via the A72.',
+    desc: 'South Lanarkshire coverage. Larkhall, Stonehouse and surrounding villages via the A72.',
   },
   {
     name: 'Carluke',
     slug: 'carluke',
     postcodes: ['ML8'],
-    desc: 'Clyde Valley coverage — Carluke, Law and Braidwood on the A73 and M74 J9 corridor.',
+    desc: 'Clyde Valley coverage. Carluke, Law and Braidwood on the A73 and M74 J9 corridor.',
   },
   {
     name: 'Giffnock',
     slug: 'giffnock',
     postcodes: ['G46'],
-    desc: 'South Glasgow suburbs — Giffnock, Thornliebank and Merrylee on the M77 corridor.',
+    desc: 'South Glasgow suburbs. Giffnock, Thornliebank and Merrylee on the M77 corridor.',
   },
   {
     name: 'Abington',
     slug: 'abington',
     postcodes: ['ML12'],
-    desc: 'M74 J13 coverage — Abington Services and the remote southbound stretch between Lesmahagow and Beattock.',
+    desc: 'M74 J13 coverage. Abington Services and the remote southbound stretch between Lesmahagow and Beattock.',
   },
   {
     name: 'Loch Lomond',
@@ -185,13 +185,13 @@ const AREAS = [
     name: 'Argyll and Bute',
     slug: 'argyll-and-bute',
     postcodes: ['G84', 'PA23', 'PA24', 'PA25', 'PA26'],
-    desc: 'Helensburgh, Arrochar, Cairndow, Dunoon and further into Argyll — covered on request, call for a quote.',
+    desc: 'Helensburgh, Arrochar, Cairndow, Dunoon and further into Argyll covered on request. Call for a quote.',
   },
   {
     name: 'Scotland',
     slug: 'scotland',
     postcodes: ['Nationwide'],
-    desc: 'Can\'t see your area listed? We cover anywhere in Scotland — just call and we\'ll quote you an honest price and ETA.',
+    desc: 'Can\'t see your area listed? We cover anywhere in Scotland. Just call and we\'ll quote you an honest price and ETA.',
   },
 ]
 
@@ -212,7 +212,7 @@ export default function AreasPage() {
               <a href="tel:+441698700970" className={styles.phoneLink}>
                 Call us on 01698 700970
               </a>{' '}
-              — we likely cover you.
+              and we likely cover you.
             </p>
           </div>
         </section>

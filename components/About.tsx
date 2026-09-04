@@ -4,7 +4,7 @@ import styles from './About.module.css'
 const features = [
   { icon: 'speed', label: 'Avg 30–45 Mins', desc: 'Average arrival time across our coverage area' },
   { icon: 'verified', label: 'Fully Insured', desc: 'Compliant, insured recovery you can trust' },
-  { icon: 'support_agent', label: '24/7 Available', desc: 'Round-the-clock cover — nights, weekends, holidays' },
+  { icon: 'support_agent', label: '24/7 Available', desc: 'Round-the-clock cover: nights, weekends, holidays' },
   { icon: 'price_check', label: 'Transparent Pricing', desc: 'Clear quote on the phone, no hidden fees' },
 ]
 
@@ -45,7 +45,7 @@ export default function About() {
             SRL Recovery was founded in 2023 by William, who brings <strong>17 years of motor
             trade experience</strong> to every job. Since then we&apos;ve grown rapidly,
             completing <strong>250+ recovery jobs every month</strong> across Glasgow and
-            surrounding areas — with thousands of happy customers who&apos;ve trusted us during
+            surrounding areas, with thousands of happy customers who&apos;ve trusted us during
             stressful situations. We&apos;re available 24 hours a day, 7 days a week, 365 days a
             year.
           </p>

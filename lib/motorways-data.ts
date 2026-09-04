@@ -22,18 +22,18 @@ export const motorways: MotorwayPageData[] = [
     fullName: 'M8 motorway',
     title: 'M8 Recovery | Breakdown & Accident Recovery on the M8 | SRL',
     metaDescription:
-      "M8 breakdown? SRL Recovery covers the full M8 from junction 1 to 31 — 24/7, fast dispatch, fully insured. Call 01698 700970 right now.",
+      "M8 breakdown? SRL Recovery covers the full M8 from junction 1 to 31, 24/7, fast dispatch, fully insured. Call 01698 700970 right now.",
     route: 'Edinburgh ↔ Glasgow ↔ Greenock',
     length: '~60 miles total',
     junctionsCovered: 'J1 to J31',
     responseTime: '25–45 mins',
     introParagraph:
-      "The M8 is our busiest motorway — running through the heart of Glasgow from Edinburgh in the east to Greenock in the west. We cover the entire length 24 hours a day, with particular focus on the urban Glasgow stretch where most M8 breakdowns happen. If you're stuck on the M8, you're already in our wheelhouse.",
+      "The M8 is our busiest motorway, running through the heart of Glasgow from Edinburgh in the east to Greenock in the west. We cover the entire length 24 hours a day, with particular focus on the urban Glasgow stretch where most M8 breakdowns happen. If you're stuck on the M8, you're already in our wheelhouse.",
     keySections: [
       {
         junction: 'J1–J6 (Edinburgh to Newbridge)',
         description:
-          "The eastern approach. Less congested but a long way from rescue — average arrival 40–50 minutes from a Glasgow base. Common breakdown spots: the climb up to Harthill services, and the merge with the M9.",
+          "The eastern approach. Less congested but a long way from rescue, average arrival 40–50 minutes from a Glasgow base. Common breakdown spots: the climb up to Harthill services, and the merge with the M9.",
       },
       {
         junction: 'J7–J14 (Bathgate to Glasgow City)',
@@ -43,7 +43,7 @@ export const motorways: MotorwayPageData[] = [
       {
         junction: 'J15–J20 (Central Glasgow)',
         description:
-          "The urban M8 through Glasgow city — Charing Cross, the Kingston Bridge, Anderston. Highest density of breakdowns due to traffic load. Live-lane work is common here. Average arrival: 20–35 minutes from our Motherwell base.",
+          "The urban M8 through Glasgow city, Charing Cross, the Kingston Bridge, Anderston. Highest density of breakdowns due to traffic load. Live-lane work is common here. Average arrival: 20–35 minutes from our Motherwell base.",
       },
       {
         junction: 'J21–J28 (Glasgow West to Paisley)',
@@ -57,16 +57,16 @@ export const motorways: MotorwayPageData[] = [
       },
     ],
     knownProblemAreas: [
-      'The Kingston Bridge in heavy rain — visibility-related accidents',
-      'The merge at J15 (Townhead) eastbound — congestion-related breakdowns',
-      'The climb out of Charing Cross westbound — overheating in summer traffic',
-      'Glasgow Airport spur (J28A) — high-volume drop-off zone breakdowns',
+      'The Kingston Bridge in heavy rain: visibility-related accidents',
+      'The merge at J15 (Townhead) eastbound: congestion-related breakdowns',
+      'The climb out of Charing Cross westbound: overheating in summer traffic',
+      'Glasgow Airport spur (J28A): high-volume drop-off zone breakdowns',
     ],
     safetyAdvice: [
-      'Get off at the next exit if you can — even crawling to the hard shoulder is better than a live lane',
+      'Get off at the next exit if you can. Even crawling to the hard shoulder is better than a live lane',
       'Hard shoulder breakdown: hazards on, exit on the passenger side, get behind the barrier',
       "Live lane: stay in the car, seatbelts on, hazards on, call 999 immediately",
-      'Smart motorway sections: same as live lane — do not exit the vehicle unless directed',
+      'Smart motorway sections: same as live lane. Do not exit the vehicle unless directed',
     ],
   },
 
@@ -82,17 +82,17 @@ export const motorways: MotorwayPageData[] = [
     junctionsCovered: 'J1 to J22 (Scotland)',
     responseTime: '30–45 mins',
     introParagraph:
-      "The M74 (and its A74(M) continuation toward the M6) is the main southbound artery from Glasgow toward England. We cover the full length from junction 1 in Glasgow down to the M6 border. The M74 extension into Glasgow — opened in 2011 — runs through Rutherglen and Cambuslang where we operate daily.",
+      "The M74 (and its A74(M) continuation toward the M6) is the main southbound artery from Glasgow toward England. We cover the full length from junction 1 in Glasgow down to the M6 border. The M74 extension into Glasgow, opened in 2011, runs through Rutherglen and Cambuslang where we operate daily.",
     keySections: [
       {
         junction: 'J1–J4 (Glasgow Extension)',
         description:
-          "The newer M74 extension through Rutherglen, Cambuslang, and Polmadie. Heavy commuter traffic, lots of merging — common stretch for breakdowns and minor accidents. Average arrival: 20–30 minutes from our Motherwell base.",
+          "The newer M74 extension through Rutherglen, Cambuslang, and Polmadie. Heavy commuter traffic, lots of merging, common stretch for breakdowns and minor accidents. Average arrival: 20–30 minutes from our Motherwell base.",
       },
       {
         junction: 'J4–J6 (Maryville to Hamilton)',
         description:
-          "Passes Bothwell, Uddingston, Hamilton services. Hamilton services is a frequent breakdown spot — cars that limp in but can't make it back out. Average arrival: 20–30 minutes.",
+          "Passes Bothwell, Uddingston, Hamilton services. Hamilton services is a frequent breakdown spot, cars that limp in but can't make it back out. Average arrival: 20–30 minutes.",
       },
       {
         junction: 'J6–J9 (Hamilton to Larkhall)',
@@ -102,31 +102,31 @@ export const motorways: MotorwayPageData[] = [
       {
         junction: 'J10–J13 (Lesmahagow to Abington)',
         description:
-          "Less developed area, fewer services. If you break down here you're a bit more isolated — get well clear of the carriageway. Average arrival: 35–50 minutes.",
+          "Less developed area, fewer services. If you break down here you're a bit more isolated. Get well clear of the carriageway. Average arrival: 35–50 minutes.",
       },
       {
         junction: 'J14–J22 (Beattock and beyond)',
         description:
-          "The long climb at Beattock summit catches a lot of older cars and overloaded vans — overheating and transmission issues are common. The further south you are, the longer our arrival time. Beyond Beattock you're closer to a Cumbria-based service.",
+          "The long climb at Beattock summit catches a lot of older cars and overloaded vans, overheating and transmission issues are common. The further south you are, the longer our arrival time. Beyond Beattock you're closer to a Cumbria-based service.",
       },
     ],
     knownProblemAreas: [
-      'Hamilton services southbound — vehicles that limp in and won\'t restart',
-      'The Beattock climb southbound — overheating in summer',
-      'J5 (Raith) interchange — high-traffic merge point',
-      'M74 / M73 interchange — busy junction with frequent minor incidents',
+      'Hamilton services southbound: vehicles that limp in and won\'t restart',
+      'The Beattock climb southbound: overheating in summer',
+      'J5 (Raith) interchange: high-traffic merge point',
+      'M74 / M73 interchange: busy junction with frequent minor incidents',
     ],
     safetyAdvice: [
-      'Sections of the M74 are smart motorway — no continuous hard shoulder',
+      'Sections of the M74 are smart motorway: no continuous hard shoulder',
       'If on a smart section in trouble: aim for an emergency refuge area if visible',
-      "Live lane: do not exit the vehicle — call 999 immediately",
+      "Live lane: do not exit the vehicle. Call 999 immediately",
       'Hazards on, seatbelts on, stay calm and wait for help',
     ],
     routes: [
       {
         href: '/routes/hamilton-to-carlisle',
         title: 'Hamilton to Carlisle',
-        description: 'Full M74/A74(M) southbound corridor — section-by-section coverage, known problem spots, and pricing for this 70-mile route.',
+        description: 'Full M74/A74(M) southbound corridor, section-by-section coverage, known problem spots, and pricing for this 70-mile route.',
       },
     ],
   },
@@ -143,17 +143,17 @@ export const motorways: MotorwayPageData[] = [
     junctionsCovered: 'J1 to J8',
     responseTime: '25–40 mins',
     introParagraph:
-      "The M77 runs from Glasgow city south-west toward Kilmarnock — relatively short but heavily used by commuters from East Renfrewshire. We cover the full length 24 hours a day, with particular focus on the busy junctions 4 to 6 through Newton Mearns and the urban interchange at junction 1.",
+      "The M77 runs from Glasgow city south-west toward Kilmarnock, relatively short but heavily used by commuters from East Renfrewshire. We cover the full length 24 hours a day, with particular focus on the busy junctions 4 to 6 through Newton Mearns and the urban interchange at junction 1.",
     keySections: [
       {
         junction: 'J1 (M8 interchange / Dumbreck)',
         description:
-          "The northern end where the M77 meets the M8. Busy interchange with merging traffic — minor incidents and breakdowns from congestion are common. Average arrival: 20–30 minutes.",
+          "The northern end where the M77 meets the M8. Busy interchange with merging traffic, minor incidents and breakdowns from congestion are common. Average arrival: 20–30 minutes.",
       },
       {
         junction: 'J2–J3 (Pollok / Nitshill)',
         description:
-          "Through southern Glasgow — built-up area, plenty of nearby roads if recovery is needed. Average arrival: 25–35 minutes.",
+          "Through southern Glasgow, built-up area, plenty of nearby roads if recovery is needed. Average arrival: 25–35 minutes.",
       },
       {
         junction: 'J4–J5 (Newton Mearns)',
@@ -167,12 +167,12 @@ export const motorways: MotorwayPageData[] = [
       },
     ],
     knownProblemAreas: [
-      "J1 interchange with M8 — high-merge complexity",
-      "J5 Newton Mearns — peak-hour tailbacks",
-      "Open stretch between J6 and J8 — exposed to weather",
+      "J1 interchange with M8: high-merge complexity",
+      "J5 Newton Mearns: peak-hour tailbacks",
+      "Open stretch between J6 and J8: exposed to weather",
     ],
     safetyAdvice: [
-      'Hard shoulder available throughout — use it',
+      'Hard shoulder available throughout. Use it',
       'Pull as far left as possible, hazards on, exit passenger side',
       "Stand well behind the safety barrier, not next to the car",
       'Call 999 first if you\'re in a live lane',
@@ -186,22 +186,22 @@ export const motorways: MotorwayPageData[] = [
     title: 'M73 Recovery | Breakdown Recovery on the M73 | SRL Recovery',
     metaDescription:
       "M73 breakdown? SRL Recovery covers the full M73 between the M8 and M74 24/7. Fast dispatch. Call 01698 700970.",
-    route: 'M8 (J8) ↔ M74 (J4) — Glasgow eastern bypass',
+    route: 'M8 (J8) ↔ M74 (J4): Glasgow eastern bypass',
     length: '~5 miles',
     junctionsCovered: 'J1 to J3',
     responseTime: '20–35 mins',
     introParagraph:
-      "The M73 is short but vital — it connects the M8 to the M74 along Glasgow's eastern edge, carrying traffic heading between Edinburgh and the south of Scotland or England. We cover the full length 24/7 and respond quickly thanks to its proximity to our Motherwell base.",
+      "The M73 is short but vital. It connects the M8 to the M74 along Glasgow's eastern edge, carrying traffic heading between Edinburgh and the south of Scotland or England. We cover the full length 24/7 and respond quickly thanks to its proximity to our Motherwell base.",
     keySections: [
       {
         junction: 'J1 (M74 interchange)',
         description:
-          "The southern end where the M73 joins the M74. Busy merge point with frequent congestion incidents. Average arrival: 15–25 minutes — we're close.",
+          "The southern end where the M73 joins the M74. Busy merge point with frequent congestion incidents. Average arrival: 15–25 minutes. We're close.",
       },
       {
         junction: 'J2 (Coatbridge / A752)',
         description:
-          "The middle junction. Useful access point for recovery — easy to exit onto local roads. Average arrival: 20–30 minutes.",
+          "The middle junction. Useful access point for recovery, easy to exit onto local roads. Average arrival: 20–30 minutes.",
       },
       {
         junction: 'J3 (M8 interchange / Mollinsburn)',
@@ -210,13 +210,13 @@ export const motorways: MotorwayPageData[] = [
       },
     ],
     knownProblemAreas: [
-      'M73/M74 interchange (J1) — merge complexity',
-      'M73/M8 interchange (J3) — heavy crossover traffic',
-      'Mid-section in heavy rain — visibility-related incidents',
+      'M73/M74 interchange (J1): merge complexity',
+      'M73/M8 interchange (J3): heavy crossover traffic',
+      'Mid-section in heavy rain: visibility-related incidents',
     ],
     safetyAdvice: [
-      'Short motorway means you\'re never far from an exit — use it if you can',
-      'Hard shoulder available — pull onto it as far left as possible',
+      'Short motorway means you\'re never far from an exit. Use it if you can',
+      'Hard shoulder available. Pull onto it as far left as possible',
       'Exit on passenger side, get behind the barrier',
     ],
   },
@@ -243,18 +243,18 @@ export const motorways: MotorwayPageData[] = [
       {
         junction: 'J4–J6 (Cumbernauld)',
         description:
-          "The Cumbernauld stretch — busiest part of the M80 with multiple exits into the town. Frequent breakdown calls from commuter traffic. Average arrival: 25–35 minutes.",
+          "The Cumbernauld stretch, busiest part of the M80 with multiple exits into the town. Frequent breakdown calls from commuter traffic. Average arrival: 25–35 minutes.",
       },
       {
         junction: 'J7–J9 (Cumbernauld to Stirling)',
         description:
-          "The northern section approaching Stirling and the M9 junction. More open road, less traffic. Average arrival: 35–50 minutes — further north you are, longer we take.",
+          "The northern section approaching Stirling and the M9 junction. More open road, less traffic. Average arrival: 35–50 minutes, further north you are, longer we take.",
       },
     ],
     knownProblemAreas: [
-      'Cumbernauld interchanges — high commuter volume at peak times',
-      'Northern open section in winter — ice and weather-related incidents',
-      'M80 / M73 interchange — merging complexity',
+      'Cumbernauld interchanges: high commuter volume at peak times',
+      'Northern open section in winter: ice and weather-related incidents',
+      'M80 / M73 interchange: merging complexity',
     ],
     safetyAdvice: [
       'Hard shoulder available throughout the M80',
@@ -275,7 +275,7 @@ export const motorways: MotorwayPageData[] = [
     junctionsCovered: 'J1 to J10',
     responseTime: '35–60 mins',
     introParagraph:
-      "The M9 connects Stirling to Edinburgh, branching off the M80 at Bannockburn and running east through Falkirk and Linlithgow toward the capital. We cover the M9 regularly, particularly the Falkirk and Stirling sections where our response times are strongest. If you're broken down on the M9 and don't have roadside assistance, call us — we'll be honest about arrival time depending on where you are.",
+      "The M9 connects Stirling to Edinburgh, branching off the M80 at Bannockburn and running east through Falkirk and Linlithgow toward the capital. We cover the M9 regularly, particularly the Falkirk and Stirling sections where our response times are strongest. If you're broken down on the M9 and don't have roadside assistance, call us. We'll be honest about arrival time depending on where you are.",
     keySections: [
       {
         junction: 'J1–J3 (Stirling to Bannockburn)',
@@ -285,21 +285,21 @@ export const motorways: MotorwayPageData[] = [
       {
         junction: 'J4–J6 (Falkirk / Grangemouth)',
         description:
-          "The busiest M9 section — Falkirk interchanges and the Grangemouth industrial zone carry heavy HGV traffic. Frequent breakdown spots around the complex junctions. Average arrival: 40–50 minutes.",
+          "The busiest M9 section, Falkirk interchanges and the Grangemouth industrial zone carry heavy HGV traffic. Frequent breakdown spots around the complex junctions. Average arrival: 40–50 minutes.",
       },
       {
         junction: 'J7–J10 (Linlithgow to Edinburgh outskirts)',
         description:
-          "The eastern approach toward Edinburgh — more open, fewer services. The further east you are, the longer our arrival time. Average arrival: 50–70 minutes. For Edinburgh city breakdowns, a local operator may reach you faster.",
+          "The eastern approach toward Edinburgh, more open, fewer services. The further east you are, the longer our arrival time. Average arrival: 50–70 minutes. For Edinburgh city breakdowns, a local operator may reach you faster.",
       },
     ],
     knownProblemAreas: [
-      'Falkirk interchanges (J4/J5) — complex multi-road junctions',
-      'Grangemouth / Kinneil — heavy HGV traffic causing congestion incidents',
-      'Linlithgow open section — exposed in winter and high winds',
+      'Falkirk interchanges (J4/J5): complex multi-road junctions',
+      'Grangemouth / Kinneil: heavy HGV traffic causing congestion incidents',
+      'Linlithgow open section: exposed in winter and high winds',
     ],
     safetyAdvice: [
-      'Hard shoulder available throughout the M9 — use it if you can',
+      'Hard shoulder available throughout the M9. Use it if you can',
       'Pull as far left as possible, hazards on, exit on the passenger side',
       'Stand well behind the safety barrier, away from traffic',
       "Live lane breakdown: stay in the car, hazards on, call 999 immediately",
@@ -332,15 +332,15 @@ export const motorways: MotorwayPageData[] = [
       },
     ],
     knownProblemAreas: [
-      'M876/M80 interchange — heavy merge traffic at peak hours',
-      'M876/M9 interchange — complex motorway junction',
-      'Full length — high HGV volume at all hours',
+      'M876/M80 interchange: heavy merge traffic at peak hours',
+      'M876/M9 interchange: complex motorway junction',
+      'Full length: high HGV volume at all hours',
     ],
     safetyAdvice: [
-      'Short motorway — aim for the nearest junction or interchange if you can keep moving',
-      'Hard shoulder available — pull onto it as far left as possible',
+      'Short motorway: aim for the nearest junction or interchange if you can keep moving',
+      'Hard shoulder available. Pull onto it as far left as possible',
       'Hazards on, exit on the passenger side, get well behind the barrier',
-      "Live lane: do not exit the vehicle — call 999 immediately",
+      "Live lane: do not exit the vehicle. Call 999 immediately",
     ],
   },
 ]

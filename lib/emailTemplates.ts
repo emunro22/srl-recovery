@@ -89,7 +89,7 @@ export function buildCustomerThankYouEmail(data: { name: string }) {
       one of the team will be in touch <strong>shortly</strong>.
     </p>
     <p style="margin:0 0 24px;color:#333;font-size:15px;line-height:1.6;">
-      If your situation is urgent, don't wait for our call — you can reach us
+      If your situation is urgent, don't wait for our call. You can reach us
       directly any time, day or night.
     </p>
     <div style="text-align:center;">

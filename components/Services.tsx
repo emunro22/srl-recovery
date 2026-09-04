@@ -20,7 +20,7 @@ const services = [
   {
     icon: 'build',
     title: 'Roadside Assistance',
-    desc: 'Quick fixes to get you moving without needing full recovery where possible — saving you time and money.',
+    desc: 'Quick fixes to get you moving without needing full recovery where possible, saving you time and money.',
   },
   {
     icon: 'gavel',
@@ -44,7 +44,7 @@ export default function Services() {
             Complete Recovery & <br />Accident Services
           </h2>
           <p className={`section-text ${styles.lead}`}>
-            From emergency breakdowns to full accident claim management — SRL
+            From emergency breakdowns to full accident claim management, SRL
             Recovery handles it all so you don&apos;t have to.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function Services() {
           <div className={styles.ctaInner}>
             <div>
               <h3>Need Help Right Now?</h3>
-              <p>We dispatch immediately across Glasgow — 24 hours a day.</p>
+              <p>We dispatch immediately across Glasgow, 24 hours a day.</p>
             </div>
             <a href="tel:+441698700970" className="btn">
               <span className="material-symbols-rounded">call</span>

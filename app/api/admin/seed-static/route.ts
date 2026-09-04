@@ -4,7 +4,7 @@ import { sql } from '@/lib/db'
 import { isAdminAuthenticated } from '@/lib/auth'
 
 // The original 19 hand-curated static images.
-// Titles updated — fixed "Tranist" -> "Transit" and made each title slightly more SEO-friendly.
+// Titles updated, fixed "Tranist" -> "Transit" and made each title slightly more SEO-friendly.
 const STATIC_IMAGES = [
   { url: '/images/work-1.jpg', title: 'Classic Car Recovery', tag: 'Prestige' },
   { url: '/images/work-2.jpg', title: 'Ford Transit Van Recovery', tag: '24/7' },

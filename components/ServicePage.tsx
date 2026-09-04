@@ -157,7 +157,7 @@ export default async function ServicePage({ data }: { data: ServicePageData }) {
               <aside className={styles.sidebar}>
                 <div className={styles.sideCard}>
                   <h3>Need help right now?</h3>
-                  <p>We dispatch immediately — 24/7 across Glasgow and surrounding areas.</p>
+                  <p>We dispatch immediately, 24/7 across Glasgow and surrounding areas.</p>
                   <a href="tel:+441698700970" className={`btn ${styles.sideBtn}`}>
                     <span className="material-symbols-rounded">call</span>
                     01698 700970

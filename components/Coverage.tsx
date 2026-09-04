@@ -29,7 +29,7 @@ export default function Coverage() {
             <p className="section-text">
               Based in Motherwell and Cambuslang, we provide fast breakdown and recovery
               services across the greater Glasgow area and beyond. If you&apos;re not sure
-              we cover your location, just call us — we&apos;ll get to you.
+              we cover your location, just call us. We&apos;ll get to you.
             </p>
             <div className={styles.ctaRow}>
               <Link href="/areas" className={`btn ${styles.btn}`}>

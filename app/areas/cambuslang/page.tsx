@@ -15,7 +15,7 @@ export default function CambuslangPage() {
         slug: 'cambuslang',
         postcodes: ['G72'],
         introBlurb:
-          "Need recovery in Cambuslang? SRL Recovery covers G72 24/7 — breakdowns, accidents, transport. Average arrival 25–40 minutes from your call, and we know the area inside-out.",
+          "Need recovery in Cambuslang? SRL Recovery covers G72 24/7, breakdowns, accidents, transport. Average arrival 25–40 minutes from your call, and we know the area inside-out.",
         routeBlurb:
           'Cambuslang is one of our most-served areas. We work the M74 extension junctions, the A724, and the A749 daily. Coverage includes Cambuslang Main Street, Halfway, Whitlawburn, Hallside, and Newton, plus the industrial estates along Westburn Road and Cambuslang Investment Park.',
         responseTime: '25–40 mins',

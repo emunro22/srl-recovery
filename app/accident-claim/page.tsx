@@ -6,7 +6,7 @@ import styles from './page.module.css'
 export const metadata = {
   title: 'Accident Recovery Glasgow | Non-Fault & At-Fault Claims | SRL Recovery',
   description:
-    'Had an accident? SRL Recovery handles everything start to finish at zero upfront cost — free recovery, hire car within 24 hours, full claim management. Average £3,000 non-fault settlement. Call 01698 700970.',
+    'Had an accident? SRL Recovery handles everything start to finish at zero upfront cost, free recovery, hire car within 24 hours, full claim management. Average £3,000 non-fault settlement. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/accident-claim' },
 }
 
@@ -20,7 +20,7 @@ export default function AccidentClaimPage() {
         name: 'Should I call my insurance company after a non-fault accident?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: "If the accident was not your fault, call SRL Recovery before you call your own insurer. Calling your insurer first can trigger your own policy, affect your no-claims bonus, and reduce your compensation. We deal with the at-fault driver's insurer directly — protecting your policy completely.",
+          text: "If the accident was not your fault, call SRL Recovery before you call your own insurer. Calling your insurer first can trigger your own policy, affect your no-claims bonus, and reduce your compensation. We deal with the at-fault driver's insurer directly, protecting your policy completely.",
         },
       },
       {
@@ -36,7 +36,7 @@ export default function AccidentClaimPage() {
         name: 'How quickly can I get a hire car after a non-fault accident?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We aim to arrange a like-for-like replacement vehicle within 24 hours of the non-fault claim being lodged. You get a vehicle matching yours in size and specification — not a basic courtesy car.',
+          text: 'We aim to arrange a like-for-like replacement vehicle within 24 hours of the non-fault claim being lodged. You get a vehicle matching yours in size and specification, not a basic courtesy car.',
         },
       },
       {
@@ -112,7 +112,7 @@ export default function AccidentClaimPage() {
           <div className={`container ${styles.heroInner}`}>
             <div className={styles.warningBanner}>
               <span className="material-symbols-rounded">warning</span>
-              Important — read before calling your insurer
+              Important: read before calling your insurer
             </div>
             <h1 className={styles.title}>
               Had an Accident?<br />
@@ -120,7 +120,7 @@ export default function AccidentClaimPage() {
             </h1>
             <p className={styles.lead}>
               If the accident wasn&apos;t your fault, SRL Recovery handles everything start
-              to finish — recovery from the scene, a like-for-like hire car (we aim to arrange
+              to finish, recovery from the scene, a like-for-like hire car (we aim to arrange
               within 24 hours), and full claim management at{' '}<strong>zero cost to non-fault customers</strong>.
               {' '}Most people don&apos;t know what they&apos;re entitled to. We do.
             </p>
@@ -160,13 +160,13 @@ export default function AccidentClaimPage() {
               </h2>
               <p className={styles.warningText}>
                 Most people&apos;s instinct after an accident is to call their own insurance company.
-                If the accident was not your fault, this is one of the most common — and costly —
+                If the accident was not your fault, this is one of the most common, and costly,
                 mistakes we see people make every single day.
               </p>
               <ul className={styles.warningList}>
                 <li>
                   <span className="material-symbols-rounded">close</span>
-                  Calling your own insurer can trigger your own policy — even if the other driver was
+                  Calling your own insurer can trigger your own policy, even if the other driver was
                   at fault. This can affect your no-claims bonus and increase your premium at renewal.
                 </li>
                 <li>
@@ -176,7 +176,7 @@ export default function AccidentClaimPage() {
                 </li>
                 <li>
                   <span className="material-symbols-rounded">close</span>
-                  They will direct your car to their preferred repairer — which may not deliver the
+                  They will direct your car to their preferred repairer, which may not deliver the
                   best repair quality or timescale for you.
                 </li>
                 <li>
@@ -187,7 +187,7 @@ export default function AccidentClaimPage() {
               </ul>
               <div className={styles.warningResolution}>
                 <strong>What to do instead</strong>
-                Call SRL Recovery on 01698 700970 — before anyone else. We deal directly with the
+                Call SRL Recovery on 01698 700970, before anyone else. We deal directly with the
                 at-fault driver&apos;s insurance company on your behalf, protecting your own policy
                 completely. You get a proper like-for-like replacement car, immediate recovery,
                 and the full claim handled from start to finish.
@@ -202,16 +202,16 @@ export default function AccidentClaimPage() {
             <div className={styles.claimsHeading}>
               <p className="section-subtitle">Full coverage</p>
               <h2 className="section-title">
-                Non-Fault or At-Fault —<br />We Handle Both
+                Non-Fault or At-Fault:<br />We Handle Both
               </h2>
             </div>
             <div className={styles.claimsGrid}>
 
               <div className={`${styles.claimCard} ${styles.featured}`}>
-                <span className={styles.claimBadge}>Non-Fault — Not Your Fault</span>
+                <span className={styles.claimBadge}>Non-Fault: Not Your Fault</span>
                 <h2>Zero Cost. Full Entitlement.</h2>
                 <p>
-                  The other driver caused the accident — their insurer pays for everything. Most
+                  The other driver caused the accident. Their insurer pays for everything. Most
                   people don&apos;t realise the full extent of what they&apos;re entitled to recover.
                   We make sure you get every penny.
                 </p>
@@ -222,7 +222,7 @@ export default function AccidentClaimPage() {
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    Like-for-like hire car — we aim to arrange within 24 hours
+                    Like-for-like hire car. We aim to arrange within 24 hours
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
@@ -250,11 +250,11 @@ export default function AccidentClaimPage() {
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    Stress-free experience — call for free advice
+                    Stress-free experience. Call for free advice
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    Historic personal injury claims up to 3 years — we can help
+                    Historic personal injury claims up to 3 years. We can help
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
@@ -268,11 +268,11 @@ export default function AccidentClaimPage() {
               </div>
 
               <div className={styles.claimCard}>
-                <span className={styles.claimBadge}>At-Fault — Your Fault</span>
+                <span className={styles.claimBadge}>At-Fault: Your Fault</span>
                 <h2>No Upfront Cost. No Hassle.</h2>
                 <p>
                   Even when the accident was your fault, you shouldn&apos;t have to spend hours on
-                  hold with your insurer. We handle everything directly — from recovery to repair —
+                  hold with your insurer. We handle everything directly, from recovery to repair,
                   so you don&apos;t have to.
                 </p>
                 <ul className={styles.claimIncludes}>
@@ -294,16 +294,16 @@ export default function AccidentClaimPage() {
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    Stress-free experience — call for free advice
+                    Stress-free experience. Call for free advice
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    No hours on the phone — we do it all
+                    No hours on the phone. We do it all
                   </li>
                 </ul>
                 <p className={styles.atFaultNote}>
-                  Passengers in an at-fault vehicle can still claim personal injury compensation
-                  — average £3,000 per person. The at-fault driver cannot claim personal injury.
+                  Passengers in an at-fault vehicle can still claim personal injury compensation,
+                  averaging £3,000 per person. The at-fault driver cannot claim personal injury.
                   Standard policy excess applies as per your insurance agreement.
                 </p>
               </div>
@@ -316,14 +316,14 @@ export default function AccidentClaimPage() {
         <section className={styles.handleSection}>
           <div className="container">
             <p className="section-subtitle">Every stage covered</p>
-            <h2 className="section-title">We Handle It All — Start to Finish</h2>
+            <h2 className="section-title">We Handle It All, Start to Finish</h2>
             <div className={styles.handleGrid}>
               <div className={styles.handleCard}>
                 <span className="material-symbols-rounded">local_shipping</span>
                 <h3>Scene Recovery</h3>
                 <p>
                   We recover your vehicle from the accident scene immediately, 24/7. Day or night,
-                  anywhere in Glasgow — we dispatch straight away and handle Police Scotland
+                  anywhere in Glasgow. We dispatch straight away and handle Police Scotland
                   coordination if needed.
                 </p>
               </div>
@@ -332,7 +332,7 @@ export default function AccidentClaimPage() {
                 <h3>Secure Storage</h3>
                 <p>
                   Your vehicle goes into secure, covered storage while the claim is processed.
-                  Storage costs are claimed back from the relevant insurer — you pay nothing
+                  Storage costs are claimed back from the relevant insurer. You pay nothing
                   upfront.
                 </p>
               </div>
@@ -341,7 +341,7 @@ export default function AccidentClaimPage() {
                 <h3>Like-for-Like Hire Car</h3>
                 <p>
                   Non-fault customers get a replacement vehicle matching theirs in size and
-                  specification — we aim to arrange within 24 hours. Not a small runabout. A proper,
+                  specification. We aim to arrange within 24 hours. Not a small runabout. A proper,
                   like-for-like car at no cost to you.
                 </p>
               </div>
@@ -358,7 +358,7 @@ export default function AccidentClaimPage() {
                 <span className="material-symbols-rounded">description</span>
                 <h3>Full Claim Management</h3>
                 <p>
-                  The paperwork, chasing, calls, and admin — all handled by our team. You&apos;ll
+                  The paperwork, chasing, calls, and admin, all handled by our team. You&apos;ll
                   be kept informed at every step without having to deal with insurers yourself.
                 </p>
               </div>
@@ -388,7 +388,7 @@ export default function AccidentClaimPage() {
                   <h3>Call SRL Recovery</h3>
                   <p>
                     Call 01698 700970 from the accident scene. Tell us where you are, what happened,
-                    and whether you were at fault. We&apos;ll take it from there — no need to call
+                    and whether you were at fault. We&apos;ll take it from there, with no need to call
                     anyone else first.
                   </p>
                 </div>
@@ -409,7 +409,7 @@ export default function AccidentClaimPage() {
                   <h3>Hire car arranged (non-fault)</h3>
                   <p>
                     For non-fault claims, we aim to arrange a like-for-like replacement vehicle within
-                    24 hours so you&apos;re never stranded. This is provided at zero cost to you —
+                    24 hours so you&apos;re never stranded. This is provided at zero cost to you and is
                     claimed back from the at-fault insurer.
                   </p>
                 </div>
@@ -419,7 +419,7 @@ export default function AccidentClaimPage() {
                 <div className={styles.stepContent}>
                   <h3>We manage the claim</h3>
                   <p>
-                    We deal directly with the relevant insurer on your behalf — the at-fault
+                    We deal directly with the relevant insurer on your behalf, the at-fault
                     driver&apos;s insurer for non-fault claims, your own insurer for at-fault.
                     You don&apos;t spend hours on hold.
                   </p>
@@ -444,7 +444,7 @@ export default function AccidentClaimPage() {
         <section className={styles.faqSection}>
           <div className="container">
             <p className="section-subtitle">Questions answered</p>
-            <h2 className="section-title">Accident Claims — What You Need to Know</h2>
+            <h2 className="section-title">Accident Claims: What You Need to Know</h2>
             <div className={styles.faqList}>
               <details className={styles.faqItem}>
                 <summary>Should I call my insurance company after a non-fault accident?</summary>
@@ -452,7 +452,7 @@ export default function AccidentClaimPage() {
                   If the accident was not your fault, call SRL Recovery <em>before</em> you call your
                   own insurer. Calling your insurer first can trigger your own policy, affect your
                   no-claims bonus, and reduce your total compensation. We deal directly with the
-                  at-fault driver&apos;s insurer — your own policy stays completely untouched.
+                  at-fault driver&apos;s insurer. Your own policy stays completely untouched.
                 </p>
               </details>
               <details className={styles.faqItem}>
@@ -467,7 +467,7 @@ export default function AccidentClaimPage() {
                 <summary>How quickly can I get a hire car?</summary>
                 <p>
                   For non-fault claims, we aim to arrange a like-for-like replacement vehicle within
-                  24 hours. This isn&apos;t a basic courtesy car — you get a vehicle matching yours in
+                  24 hours. This isn&apos;t a basic courtesy car. You get a vehicle matching yours in
                   type and size. If you drive an SUV, you get an SUV. If you drive a BMW, you get an
                   equivalent BMW.
                 </p>
@@ -477,7 +477,7 @@ export default function AccidentClaimPage() {
                 <p>
                   It means your replacement vehicle matches what you normally drive. Your insurer would
                   give you a small courtesy car regardless of what you own. We get you a proper
-                  equivalent — the same class and size — so you&apos;re not inconvenienced any more
+                  equivalent, the same class and size, so you&apos;re not inconvenienced any more
                   than necessary.
                 </p>
               </details>
@@ -502,7 +502,7 @@ export default function AccidentClaimPage() {
                 <p>
                   Your vehicle goes into secure, covered storage immediately after recovery. We
                   coordinate with the relevant insurer to ensure all storage costs are covered as part
-                  of the claim — you pay nothing upfront for this.
+                  of the claim. You pay nothing upfront for this.
                 </p>
               </details>
               <details className={styles.faqItem}>
@@ -517,7 +517,7 @@ export default function AccidentClaimPage() {
                 <summary>Can I claim for personal injury after a non-fault accident?</summary>
                 <p>
                   Yes. If you were injured in a non-fault accident, you may be entitled to personal
-                  injury compensation — averaging £3,000 per person in the vehicle. We can help you
+                  injury compensation, averaging £3,000 per person in the vehicle. We can help you
                   pursue historic personal injury claims up to 3 years after the accident. Call us for
                   free advice on what you&apos;re entitled to.
                 </p>
@@ -525,8 +525,8 @@ export default function AccidentClaimPage() {
               <details className={styles.faqItem}>
                 <summary>Can at-fault passengers claim personal injury?</summary>
                 <p>
-                  Yes. Passengers in an at-fault vehicle can still make a personal injury claim —
-                  average £3,000 per person. The at-fault driver cannot claim personal injury
+                  Yes. Passengers in an at-fault vehicle can still make a personal injury claim,
+                  averaging £3,000 per person. The at-fault driver cannot claim personal injury
                   compensation, but passengers are not considered at fault and retain their right
                   to claim.
                 </p>
@@ -549,7 +549,7 @@ export default function AccidentClaimPage() {
               <h2>Been in an Accident in Glasgow?</h2>
               <p>
                 Call us before you call anyone else. We&apos;ll tell you exactly what you&apos;re
-                entitled to and get everything moving — at zero cost to you, 24 hours a day.
+                entitled to and get everything moving, at zero cost to you, 24 hours a day.
               </p>
               <div className={styles.ctaActions}>
                 <a href="tel:+441698700970" className="btn">

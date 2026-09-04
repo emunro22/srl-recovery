@@ -101,7 +101,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.65,
     }))
   } catch {
-    // DB unavailable at build time — blog posts omitted from sitemap
+    // DB unavailable at build time, blog posts omitted from sitemap
   }
 
   return [...staticPages, ...areaPages, ...servicePages, ...motorwayPages, ...nearMePages, ...blogPages]

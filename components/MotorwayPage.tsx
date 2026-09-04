@@ -59,7 +59,7 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
               {data.name} <span className={styles.gradient}>Breakdown Recovery</span>
             </h1>
             <p className={styles.lead}>
-              24/7 recovery on the {data.fullName} — {data.route}
+              24/7 recovery on the {data.fullName}, {data.route}
             </p>
 
             <div className={styles.factGrid}>
@@ -126,7 +126,7 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
               <div className={`${styles.section} ${styles.safetyBox}`}>
                 <h2>
                   <span className="material-symbols-rounded">health_and_safety</span>
-                  If you&apos;ve just broken down — do this first
+                  If you&apos;ve just broken down, do this first
                 </h2>
                 <ol className={styles.safetyList}>
                   {data.safetyAdvice.map((a, i) => (
@@ -142,19 +142,19 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
                 <p>
                   Motorway and live-lane recovery is charged at our standard motorway rate:
                   <strong> £120 flat call-out + £1.50 per mile</strong> (plus VAT). This rate
-                  applies regardless of time of day — there are no out-of-hours or holiday
+                  applies regardless of time of day. There are no out-of-hours or holiday
                   surcharges.
                 </p>
                 <p>
                   Why the flat rate vs local? Motorway work requires extra safety equipment,
                   coordination with Traffic Scotland or Police Scotland, and significantly higher
                   risk to our staff. The flat rate also means you know exactly what you&apos;re
-                  paying before we set off — no &quot;motorway surcharge&quot; surprises.
+                  paying before we set off, no &quot;motorway surcharge&quot; surprises.
                 </p>
               </div>
 
               <div className={styles.ctaBox}>
-                <h2>Call now — we&apos;re on the way</h2>
+                <h2>Call now. We&apos;re on the way</h2>
                 <p>
                   Phone {data.responseTime.split('–')[0].trim()} minutes from now, you could be
                   off the {data.name} and on your way.

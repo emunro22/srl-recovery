@@ -41,15 +41,15 @@ export default function PrivacyPage() {
               <h2>What data we collect</h2>
               <ul>
                 <li>
-                  <strong>Contact and callback requests</strong> — your name, phone number, email address
+                  <strong>Contact and callback requests</strong>: your name, phone number, email address
                   (if provided), vehicle details, and any message you send us through the website or WhatsApp.
                 </li>
                 <li>
-                  <strong>Booking and job details</strong> — if you become a customer, we keep a record of your
+                  <strong>Booking and job details</strong>: if you become a customer, we keep a record of your
                   name, phone number, job date, and any notes needed to carry out and follow up on the recovery.
                 </li>
                 <li>
-                  <strong>Website usage data</strong> — we use privacy-friendly, cookieless analytics to see
+                  <strong>Website usage data</strong>: we use privacy-friendly, cookieless analytics to see
                   which pages are visited and how the site performs. This does not identify you personally.
                 </li>
               </ul>

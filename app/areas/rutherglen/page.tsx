@@ -15,7 +15,7 @@ export default function RutherglenPage() {
         slug: 'rutherglen',
         postcodes: ['G73'],
         introBlurb:
-          'Rutherglen is well within our core coverage. SRL Recovery handles breakdowns, accidents, and transport across G73 around the clock — average arrival 25–40 minutes from your call.',
+          'Rutherglen is well within our core coverage. SRL Recovery handles breakdowns, accidents, and transport across G73 around the clock, average arrival 25–40 minutes from your call.',
         routeBlurb:
           'The M74 extension and the A724 run right through Rutherglen, and we work both daily. We cover the town centre, Burnside, Cathkin, Fernhill, and High Crosshill, plus the busy A749 corridor toward Cambuslang. Recovery from the M74 extension junctions 2A and 2B is one of our most common call types.',
         responseTime: '25–40 mins',

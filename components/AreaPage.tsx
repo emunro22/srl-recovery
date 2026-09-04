@@ -116,7 +116,7 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
                 <p className="section-text">{area.routeBlurb}</p>
                 <p className="section-text" style={{ marginTop: '1.6rem' }}>
                   Whether you&apos;ve broken down at home, on a commute, or after an
-                  accident, our team gets to {area.name} fast — typically within{' '}
+                  accident, our team gets to {area.name} fast, typically within{' '}
                   {area.responseTime} of your call. We cover cars, vans, light
                   commercial vehicles, and prestige cars with the right equipment
                   for each job.
@@ -124,11 +124,11 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
                 <ul className={styles.checks}>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    24/7 emergency dispatch — nights, weekends, holidays
+                    24/7 emergency dispatch: nights, weekends, holidays
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
-                    Clear price quoted on the phone — no hidden fees
+                    Clear price quoted on the phone, no hidden fees
                   </li>
                   <li>
                     <span className="material-symbols-rounded">check_circle</span>
@@ -173,7 +173,7 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
                     href={`/areas/${area.slug}/${angle.slug}`}
                     className={styles.routeCard}
                   >
-                    <strong>{angle.navLabel} — {area.name}</strong>
+                    <strong>{angle.navLabel}, {area.name}</strong>
                     <span>See local pricing, response times, and FAQs for this search.</span>
                     <span className={styles.routeCta}>
                       View page <span className="material-symbols-rounded">arrow_forward</span>
@@ -212,7 +212,7 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
           <div className="container">
             <div className={styles.ctaInner}>
               <h2>Need Recovery in {area.name} Right Now?</h2>
-              <p>Available 24/7 — we&apos;ll dispatch immediately.</p>
+              <p>Available 24/7. We&apos;ll dispatch immediately.</p>
               <a href="tel:+441698700970" className="btn">
                 <span className="material-symbols-rounded">call</span>
                 Call 01698 700970

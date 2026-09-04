@@ -10,15 +10,15 @@ const faqs = [
   },
   {
     q: 'What areas do you cover?',
-    a: 'We cover Glasgow, Paisley, East Kilbride, Motherwell, Hamilton, Coatbridge, Bearsden, Rutherglen, Clydebank, Cambuslang, Bellshill, Dumbarton, and surrounding areas. If you’re not sure we cover your location, just call us — we usually do.',
+    a: 'We cover Glasgow, Paisley, East Kilbride, Motherwell, Hamilton, Coatbridge, Bearsden, Rutherglen, Clydebank, Cambuslang, Bellshill, Dumbarton, and surrounding areas. If you’re not sure we cover your location, just call us. We usually do.',
   },
   {
     q: 'Do you operate 24 hours a day?',
-    a: 'Yes — 24 hours a day, 7 days a week, 365 days a year. Nights, weekends, bank holidays, Christmas Day — we’re always available.',
+    a: 'Yes, 24 hours a day, 7 days a week, 365 days a year. Nights, weekends, bank holidays, Christmas Day. We’re always available.',
   },
   {
     q: 'Do you cover motorways?',
-    a: 'Yes — we recover from the M8, M73, M74, M77, M80 and surrounding routes. Motorway and live-lane recoveries are a flat £120 plus £1.50 per mile. If you’ve broken down or had an accident on a motorway, call us straight away and stay in your vehicle with hazards on until we arrive.',
+    a: 'Yes. We recover from the M8, M73, M74, M77, M80 and surrounding routes. Motorway and live-lane recoveries are a flat £120 plus £1.50 per mile. If you’ve broken down or had an accident on a motorway, call us straight away and stay in your vehicle with hazards on until we arrive.',
   },
   {
     q: 'How much does breakdown recovery cost?',
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: 'Do I need to be a member or have breakdown cover?',
-    a: 'No — you don’t need a membership or subscription. We’re a pay-as-you-go service available to anyone, anytime.',
+    a: 'No. You don’t need a membership or subscription. We’re a pay-as-you-go service available to anyone, anytime.',
   },
   {
     q: 'What types of vehicles can you recover?',
@@ -56,7 +56,7 @@ export default function FAQ() {
           <p className="section-subtitle">FAQ</p>
           <h2 className={`section-title ${styles.title}`}>Common Questions</h2>
           <p className={`section-text ${styles.lead}`}>
-            The things people most often ask before calling. Don’t see your question? Just call us — we’re happy to help.
+            The things people most often ask before calling. Don’t see your question? Just call us. We’re happy to help.
           </p>
         </div>
 

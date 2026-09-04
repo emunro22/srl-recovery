@@ -52,7 +52,7 @@ export default function CoverageMap() {
         maxZoom: 18,
       }).addTo(map)
 
-      // Outer ring — extended coverage zone, centred on G72 7SH (Cambuslang)
+      // Outer ring, extended coverage zone, centred on G72 7SH (Cambuslang)
       L.circle([55.8217724, -4.1395602], {
         radius: 96561, // 60 miles in metres
         color: '#cc1493',
@@ -62,7 +62,7 @@ export default function CoverageMap() {
         dashArray: '10 8',
       }).addTo(map)
 
-      // Inner ring — 30 mile local core area, centred on G72 7SH (Cambuslang)
+      // Inner ring, 30 mile local core area, centred on G72 7SH (Cambuslang)
       L.circle([55.8217724, -4.1395602], {
         radius: 48280, // 30 miles in metres
         color: '#cc1493',
@@ -115,7 +115,7 @@ export default function CoverageMap() {
             With bases in Motherwell and Cambuslang (G72 7SH), our core 30-mile service area
             covers Greater Glasgow and Lanarkshire with a fast, guaranteed arrival time. We
             also run a 60-mile extended zone reaching Loch Lomond and Argyll &amp; Bute. Beyond
-            that, we cover anywhere in Scotland — just call for a quote.
+            that, we cover anywhere in Scotland, just call for a quote.
           </p>
         </div>
 
@@ -137,7 +137,7 @@ export default function CoverageMap() {
           </div>
         </div>
         <p className={styles.beyondNote}>
-          Outside the 60-mile zone? We cover anywhere in Scotland — just call for a quote.
+          Outside the 60-mile zone? We cover anywhere in Scotland, just call for a quote.
         </p>
       </div>
     </section>

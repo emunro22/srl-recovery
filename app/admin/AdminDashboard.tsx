@@ -54,7 +54,7 @@ export default function AdminDashboard({
   const [seeding, setSeeding] = useState(false)
   const [seedingBlog, setSeedingBlog] = useState(false)
 
-  // Gallery image editing — applies to every image regardless of tag or source
+  // Gallery image editing, applies to every image regardless of tag or source
   // (manual upload or the Google photo sync)
   const [editingImageId, setEditingImageId] = useState<number | null>(null)
   const [editForm, setEditForm] = useState<{ title: string; tag: string; description: string }>({
@@ -92,7 +92,7 @@ export default function AdminDashboard({
 
   async function seedStaticImages() {
     if (seeding) return
-    if (!confirm('Add the original 19 gallery images to your database so you can manage them here? Existing ones will be skipped — this is safe to run more than once.')) {
+    if (!confirm('Add the original 19 gallery images to your database so you can manage them here? Existing ones will be skipped. This is safe to run more than once.')) {
       return
     }
     setSeeding(true)
@@ -103,7 +103,7 @@ export default function AdminDashboard({
         alert(data.error || 'Seed failed')
       } else {
         alert(
-          `Done — added ${data.inserted} image${data.inserted === 1 ? '' : 's'}.` +
+          `Done: added ${data.inserted} image${data.inserted === 1 ? '' : 's'}.` +
           (data.skipped > 0 ? ` ${data.skipped} already in database.` : '')
         )
         window.location.reload()
@@ -116,7 +116,7 @@ export default function AdminDashboard({
 
   async function seedBlogPosts() {
     if (seedingBlog) return
-    if (!confirm('Add 25 pre-written SEO blog posts? Any posts with the same slug will be skipped — safe to run more than once.')) return
+    if (!confirm('Add 25 pre-written SEO blog posts? Any posts with the same slug will be skipped, safe to run more than once.')) return
     setSeedingBlog(true)
     try {
       const res = await fetch('/api/admin/seed-blog', { method: 'POST' })
@@ -125,7 +125,7 @@ export default function AdminDashboard({
         alert(data.error || 'Seed failed')
       } else {
         alert(
-          `Done — added ${data.inserted} post${data.inserted === 1 ? '' : 's'}.` +
+          `Done: added ${data.inserted} post${data.inserted === 1 ? '' : 's'}.` +
           (data.skipped > 0 ? ` ${data.skipped} already existed.` : '')
         )
         window.location.reload()
@@ -186,7 +186,7 @@ export default function AdminDashboard({
       if (!res.ok) { alert(data.error || 'Send failed'); return }
       setSendResult({ sent: data.sent, failed: data.failed, month })
     } catch {
-      alert('Network error — check your connection and try again.')
+      alert('Network error. Check your connection and try again.')
     }
     setSending(false)
   }
@@ -495,7 +495,7 @@ export default function AdminDashboard({
               <h3 className={styles.seedTitle}>Add 25 pre-written SEO blog posts</h3>
               <p className={styles.seedDesc}>
                 Instantly publish 25 Google-optimised recovery articles covering breakdowns, motorway guides,
-                winter tips, prestige recovery, and more. Existing posts are skipped — safe to run more than once.
+                winter tips, prestige recovery, and more. Existing posts are skipped, safe to run more than once.
               </p>
             </div>
             <button
@@ -584,7 +584,7 @@ export default function AdminDashboard({
                 Send monthly review requests
               </h2>
               <p className={styles.reviewDesc}>
-                Filter to a month, copy all the phone numbers, then paste them into a <strong>WhatsApp Broadcast List</strong> in your WhatsApp Business App and send the message below — everyone gets it as an individual message in one go.
+                Filter to a month, copy all the phone numbers, then paste them into a <strong>WhatsApp Broadcast List</strong> in your WhatsApp Business App and send the message below, everyone gets it as an individual message in one go.
               </p>
 
               <div className={styles.monthRow}>
@@ -662,7 +662,7 @@ export default function AdminDashboard({
                   <div className={styles.reviewNote}>
                     <span className="material-symbols-rounded">info</span>
                     <div>
-                      <strong>Automatic timer:</strong> A Vercel cron job runs on the <strong>1st of every month at 10am</strong> and sends automatically to the previous month&apos;s customers — no action needed from you once the WhatsApp API env vars are added in Vercel.
+                      <strong>Automatic timer:</strong> A Vercel cron job runs on the <strong>1st of every month at 10am</strong> and sends automatically to the previous month&apos;s customers, no action needed from you once the WhatsApp API env vars are added in Vercel.
                       <br /><br />
                       <strong>Not configured yet?</strong> The button above will show an error until you add <code>WHATSAPP_ACCESS_TOKEN</code>, <code>WHATSAPP_PHONE_NUMBER_ID</code>, and <code>WHATSAPP_REVIEW_LINK</code> to your Vercel environment variables.
                     </div>
@@ -688,7 +688,7 @@ export default function AdminDashboard({
                   <h2 className={styles.sectionTitle} style={{ marginBottom: '0.4rem' }}>
                     SEO / GEO Ideas <span className={styles.count}>({open.length} open)</span>
                   </h2>
-                  <p className={styles.topSub}>Pitches and improvements worth chasing — track them here, mark done when shipped.</p>
+                  <p className={styles.topSub}>Pitches and improvements worth chasing, track them here, mark done when shipped.</p>
                 </div>
                 {!showIdeaForm && (
                   <button type="button" onClick={() => setShowIdeaForm(true)} className="btn">
@@ -846,7 +846,7 @@ export default function AdminDashboard({
           />
           <span className={`material-symbols-rounded ${styles.dropIcon}`}>add_a_photo</span>
           <span className={styles.dropTitle}>Tap to choose photos or videos</span>
-          <span className={styles.dropHint}>JPEG, PNG, WebP, or MP4/MOV video — up to 200MB each. You can pick multiple.</span>
+          <span className={styles.dropHint}>JPEG, PNG, WebP, or MP4/MOV video, up to 200MB each. You can pick multiple.</span>
         </label>
 
         {queue.length > 0 && (
@@ -930,7 +930,7 @@ export default function AdminDashboard({
           <h3 className={styles.seedTitle}>Import the original 19 gallery images</h3>
           <p className={styles.seedDesc}>
             Add the existing static images (work-1 to work-19) to your database so you can delete or
-            re-order them from here. Safe to run multiple times — duplicates are skipped automatically.
+            re-order them from here. Safe to run multiple times, duplicates are skipped automatically.
           </p>
         </div>
         <button

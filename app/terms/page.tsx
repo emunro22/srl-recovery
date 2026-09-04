@@ -35,7 +35,7 @@ export default function TermsPage() {
               <p>
                 We provide 24/7 breakdown recovery, accident recovery, vehicle transport, and roadside
                 assistance across Glasgow and the surrounding areas we list on this site. Quoted prices are
-                based on the information you give us when you call or message — vehicle type, location, and
+                based on the information you give us when you call or message, vehicle type, location, and
                 job details. The final price may change if the job turns out to be different once our driver
                 arrives (for example, a different vehicle size, access issues, or extra distance).
               </p>
@@ -43,7 +43,7 @@ export default function TermsPage() {
               <h2>Booking and cancellation</h2>
               <p>
                 A job is confirmed once we&apos;ve agreed dispatch with you by phone, WhatsApp, or our website
-                callback form. If you need to cancel, tell us as soon as possible — if our vehicle is already
+                callback form. If you need to cancel, tell us as soon as possible, if our vehicle is already
                 en route or on scene, a call-out charge may still apply.
               </p>
 
@@ -58,7 +58,7 @@ export default function TermsPage() {
               <p>
                 We take reasonable care when recovering, transporting, and storing your vehicle. We&apos;re
                 fully insured for our recovery operations. We&apos;re not responsible for pre-existing damage,
-                mechanical faults, or loss of personal items left in the vehicle — please remove valuables
+                mechanical faults, or loss of personal items left in the vehicle. Please remove valuables
                 before recovery where it&apos;s safe to do so. Nothing in these terms limits liability that
                 cannot be limited by law, such as liability for death or personal injury caused by negligence.
               </p>
@@ -73,7 +73,7 @@ export default function TermsPage() {
               <h2>Website use</h2>
               <p>
                 Content on this website is provided for general information about our services and is not a
-                guarantee of exact pricing or response time — actual arrival times depend on traffic, weather,
+                guarantee of exact pricing or response time, actual arrival times depend on traffic, weather,
                 and vehicle location. You may not copy or reuse content from this site without our permission.
               </p>
 
@@ -85,7 +85,7 @@ export default function TermsPage() {
 
               <h2>Contact</h2>
               <p>
-                Questions about these terms — email{' '}
+                Questions about these terms? Email{' '}
                 <a href="mailto:enquiries@srlrecovery.com">enquiries@srlrecovery.com</a> or call{' '}
                 <a href="tel:+441698700970">01698 700970</a>. See also our{' '}
                 <a href="/privacy">Privacy Policy</a>.

@@ -56,7 +56,7 @@ export async function POST(req: Request) {
           html: buildCustomerThankYouEmail({ name }),
         })
       } catch (err) {
-        // Non-fatal — the business notification above is the important one
+        // Non-fatal: the business notification above is the important one
         console.warn('Customer thank-you email failed', err)
       }
     }

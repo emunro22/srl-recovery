@@ -1,7 +1,7 @@
 import styles from './Testimonials.module.css'
 import { getGoogleReviews } from '@/lib/googleReviews'
 
-// Used only until GOOGLE_PLACE_ID is set (see lib/googleReviews.ts) — remove once
+// Used only until GOOGLE_PLACE_ID is set (see lib/googleReviews.ts), remove once
 // live reviews are confirmed working.
 const fallbackTestimonials = [
   {
@@ -25,7 +25,7 @@ const fallbackTestimonials = [
     stars: 5,
   },
   {
-    quote: 'Collected my keys from me at home, recovered my car and dropped it at the garage. Fast, friendly and efficient service. Thank you William, much appreciated — made a stressful situation much easier.',
+    quote: 'Collected my keys from me at home, recovered my car and dropped it at the garage. Fast, friendly and efficient service. Thank you William, much appreciated, made a stressful situation much easier.',
     author: 'Emily Harding',
     stars: 5,
   },
@@ -45,7 +45,7 @@ const fallbackTestimonials = [
     stars: 5,
   },
   {
-    quote: 'Brilliant service — to the rescue within minutes and very careful and professional putting my Chevy Astro van on the truck. All round brilliant fast service.',
+    quote: 'Brilliant service, to the rescue within minutes and very careful and professional putting my Chevy Astro van on the truck. All round brilliant fast service.',
     author: 'Jason Burgess',
     stars: 5,
   },

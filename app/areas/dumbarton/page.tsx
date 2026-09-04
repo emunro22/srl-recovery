@@ -15,7 +15,7 @@ export default function DumbartonPage() {
         slug: 'dumbarton',
         postcodes: ['G82'],
         introBlurb:
-          'Need recovery in Dumbarton? SRL Recovery covers G82 around the clock — breakdowns, accidents, and transport. Average arrival 35–50 minutes from your call.',
+          'Need recovery in Dumbarton? SRL Recovery covers G82 around the clock, breakdowns, accidents, and transport. Average arrival 35–50 minutes from your call.',
         routeBlurb:
           'Dumbarton sits at the western edge of our core coverage area, along the A82 corridor toward Loch Lomond. We cover the town centre, Bellsmyre, Brucehill, Castlehill, and Westcliff, plus the A82 northbound toward Balloch and southbound to Erskine. The A814 toward Helensburgh is also within our reach.',
         responseTime: '35–50 mins',

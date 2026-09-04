@@ -1,7 +1,7 @@
 // Facts for the 30 existing /areas/{slug} hub pages, extracted for reuse by the
 // /areas/{slug}/{angle} "near me" sub-pages. The hub pages themselves
 // (app/areas/*/page.tsx) are untouched and remain the source of truth for their
-// own hero copy — this file only carries the structured facts needed to build
+// own hero copy. This file only carries the structured facts needed to build
 // fresh, area-specific copy for the angle pages.
 
 export type AreaFacts = {
@@ -223,7 +223,7 @@ export function getAreaBySlug(slug: string): AreaFacts | undefined {
 }
 
 // Only nearby-area names that resolve to a real /areas/{slug} hub page are
-// useful as cross-links — many nearbyAreas entries are neighbourhoods/villages
+// useful as cross-links: many nearbyAreas entries are neighbourhoods/villages
 // without their own page.
 export function getLinkableNearbyAreas(area: AreaFacts, max = 3): AreaFacts[] {
   const matches = area.nearbyAreas

@@ -47,13 +47,13 @@ export default function CallbackForm() {
               Leave your details and we&apos;ll call you straight back. For
               urgent breakdowns please phone us directly on{' '}
               <a href="tel:+441698700970" className={styles.phoneLink}>01698 700970</a>{' '}
-              — but a callback works great for quotes, accident claim questions,
+              but a callback works great for quotes, accident claim questions,
               or non-urgent jobs.
             </p>
             <ul className={styles.list}>
               <li>
                 <span className="material-symbols-rounded">schedule</span>
-                We call back fast — usually within minutes during the day
+                We call back fast, usually within minutes during the day
               </li>
               <li>
                 <span className="material-symbols-rounded">verified</span>
@@ -72,7 +72,7 @@ export default function CallbackForm() {
                 <span className={`material-symbols-rounded ${styles.successIcon}`}>check_circle</span>
                 <h3>Request received</h3>
                 <p>
-                  Thanks — we&apos;ve got your callback request and will be in touch shortly.
+                  Thanks. We&apos;ve got your callback request and will be in touch shortly.
                   For urgent breakdowns please call us directly on 01698 700970.
                 </p>
                 <button type="button" className={styles.againBtn} onClick={() => setStatus('idle')}>

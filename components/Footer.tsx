@@ -14,7 +14,7 @@ export default function Footer() {
             <span className="material-symbols-rounded">emergency</span>
             <div>
               <strong>Broken Down Right Now?</strong>
-              <p>Call us for immediate dispatch — we respond 24/7</p>
+              <p>Call us for immediate dispatch. We respond 24/7</p>
             </div>
           </div>
           <a href="tel:+441698700970" className={`btn ${styles.emergencyBtn}`}>

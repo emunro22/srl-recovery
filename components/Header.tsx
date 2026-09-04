@@ -146,7 +146,7 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* Desktop socials — sit between nav and the call button */}
+        {/* Desktop socials, sit between nav and the call button */}
         <div className={styles.desktopSocials}>
           <a
             href={FACEBOOK_URL}

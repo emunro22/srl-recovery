@@ -22,7 +22,7 @@ export async function getBlobUsage(): Promise<BlobUsage> {
   return { totalBytes, sizeByUrl }
 }
 
-// Vercel Blob's included storage on the Hobby plan is 5GB — override with
+// Vercel Blob's included storage on the Hobby plan is 5GB, override with
 // BLOB_STORAGE_LIMIT_GB if your plan or budget differs.
 const DEFAULT_LIMIT_BYTES = 5 * 1024 * 1024 * 1024
 

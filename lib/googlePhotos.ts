@@ -5,7 +5,7 @@ export type GooglePlacePhoto = {
 }
 
 // Places API (Legacy) Place Details caps this at 10 photos and picks which
-// ones to surface — there's no way to fetch the full Business Profile photo
+// ones to surface. There's no way to fetch the full Business Profile photo
 // library through this endpoint (that requires the separate, OAuth-gated
 // Business Profile API).
 export async function getGooglePlacePhotos(): Promise<GooglePlacePhoto[]> {

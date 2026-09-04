@@ -36,7 +36,7 @@ export default async function BlogPage() {
           <div className="container">
             {posts.length === 0 ? (
               <p className={styles.empty}>
-                No posts published yet — check back soon.
+                No posts published yet. Check back soon.
               </p>
             ) : (
               <div className={styles.grid}>

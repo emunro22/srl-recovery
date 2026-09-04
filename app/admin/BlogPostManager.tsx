@@ -285,7 +285,7 @@ export default function BlogPostManager({ initialPosts }: { initialPosts: BlogPo
                     disabled={saving}
                   />
                 </label>
-                <span className={styles.dropHint}>JPEG, PNG or WebP — up to 25 MB</span>
+                <span className={styles.dropHint}>JPEG, PNG or WebP, up to 25 MB</span>
               </div>
             )}
           </div>

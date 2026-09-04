@@ -1,0 +1,96 @@
+.stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.img {
+  object-fit: cover;
+  object-position: center;
+  /* Held back just enough that the white overlay type stays readable without
+     washing the photo out. */
+  filter: saturate(1.05) brightness(0.58);
+}
+
+/* One flat wash across the whole frame. No left/right edge gradients, so the
+   truck is just as visible at the sides as it is in the middle. */
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: hsla(0, 0%, 3%, 0.46);
+}
+
+/* Only the very bottom is graded, so the hero meets the black page below it
+   without a hard seam. */
+.blendBottom {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--black) 0%,
+    hsla(0, 0%, 4%, 0.55) 9%,
+    transparent 26%
+  );
+}
+
+.dots {
+  position: absolute;
+  /* Held clear of the floating WhatsApp button in the bottom-right corner. */
+  right: 12rem;
+  /* Anchored to the bottom of the first screen rather than the bottom of the
+     hero, which runs past the fold once the copy stack is at full height. */
+  top: calc(100vh - 5.4rem);
+  top: calc(100svh - 5.4rem);
+  z-index: 3;
+  display: flex;
+  gap: 0.9rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  background: hsla(0, 0%, 100%, 0.32);
+  transition: var(--transition);
+}
+
+.dot:hover {
+  background: hsla(0, 0%, 100%, 0.65);
+}
+
+.dotOn {
+  background: var(--pink);
+  box-shadow: 0 0 10px hsla(318, 82%, 45%, 0.8);
+  transform: scale(1.25);
+}
+
+@media (max-width: 900px) {
+  .img {
+    filter: saturate(1.05) brightness(0.55);
+  }
+  .scrim {
+    background: hsla(0, 0%, 3%, 0.5);
+  }
+  .dots {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    transition: none;
+  }
+}

@@ -59,8 +59,8 @@ export async function GET(request: Request) {
   }
 
   // Storage cap: images already in the gallery before this shipped are
-  // `protected` and never touched. Anything added since — manual uploads
-  // included — is eligible to be pruned, oldest first, once Blob usage
+  // `protected` and never touched. Anything added since, manual uploads
+  // included, is eligible to be pruned, oldest first, once Blob usage
   // crosses 80% of the plan's included storage.
   let removed = 0
   try {
@@ -89,7 +89,7 @@ export async function GET(request: Request) {
         console.warn('[sync-google-photos] storage over 80% but no unprotected images left to prune')
       }
       console.log(
-        `[sync-google-photos] storage ${(totalBytes / 1e9).toFixed(2)}GB >= 80% of ${(limitBytes / 1e9).toFixed(2)}GB — removed ${removed}`
+        `[sync-google-photos] storage ${(totalBytes / 1e9).toFixed(2)}GB >= 80% of ${(limitBytes / 1e9).toFixed(2)}GB, removed ${removed}`
       )
     }
   } catch (err) {

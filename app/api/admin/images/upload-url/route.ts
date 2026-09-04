@@ -28,7 +28,7 @@ export async function POST(request: Request) {
             'video/webm',
           ],
           addRandomSuffix: true,
-          maximumSizeInBytes: 200 * 1024 * 1024, // 200MB — covers phone video clips
+          maximumSizeInBytes: 200 * 1024 * 1024, // 200MB, covers phone video clips
         }
       },
       onUploadCompleted: async () => {

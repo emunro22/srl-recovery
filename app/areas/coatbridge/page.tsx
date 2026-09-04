@@ -17,7 +17,7 @@ export default function CoatbridgePage() {
         introBlurb:
           'Broken down in Coatbridge? SRL Recovery covers ML5 24 hours a day for breakdowns, accidents, and transport. Average arrival 30–45 minutes from your call.',
         routeBlurb:
-          'Coatbridge is well-covered by our team — particularly the M8 junctions 7 to 9, the A89, A752, and A725 routes that run through the area. We handle regular jobs across the town centre, Townhead, Old Monkland, Whifflet, and the surrounding industrial estates. Wherever you are in ML5 we’ll be with you fast.',
+          'Coatbridge is well-covered by our team, particularly the M8 junctions 7 to 9, the A89, A752, and A725 routes that run through the area. We handle regular jobs across the town centre, Townhead, Old Monkland, Whifflet, and the surrounding industrial estates. Wherever you are in ML5 we’ll be with you fast.',
         responseTime: '20–40 mins',
         nearbyAreas: ['Airdrie', 'Motherwell', 'Bellshill', 'Glasgow', 'Bargeddie'],
       }}

@@ -41,7 +41,7 @@ export default async function WorkPage() {
           <div className="container">
             {images.length === 0 ? (
               <p className={styles.empty}>
-                Gallery coming soon — check back shortly.
+                Gallery coming soon. Check back shortly.
               </p>
             ) : (
               <div className={styles.grid}>

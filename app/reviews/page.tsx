@@ -7,7 +7,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'Customer Reviews | SRL Recovery',
-  description: `Read all of SRL Recovery's ${reviews.length}+ verified customer reviews from Google — 24/7 breakdown and accident recovery across Glasgow.`,
+  description: `Read all of SRL Recovery's ${reviews.length}+ verified customer reviews from Google, 24/7 breakdown and accident recovery across Glasgow.`,
   alternates: { canonical: 'https://srlrecovery.com/reviews' },
   robots: { index: true, follow: true },
 }
@@ -32,7 +32,7 @@ export default async function ReviewsPage() {
           <div className="container">
             <h1 className={styles.title}>Customer Reviews</h1>
             <p className={styles.subtitle}>
-              Every review counts — here&apos;s what our customers have said after we&apos;ve
+              Every review counts. Here&apos;s what our customers have said after we&apos;ve
               recovered their vehicle.
             </p>
             <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className={styles.googleBadge}>
