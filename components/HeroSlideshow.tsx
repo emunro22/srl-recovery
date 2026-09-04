@@ -50,21 +50,35 @@ const INTERVAL = 5500
 
 export default function HeroSlideshow() {
   const [index, setIndex] = useState(0)
-  // Only the frames we've actually reached get an <Image>, so the first paint
-  // fetches one photo rather than all eight.
-  const [reached, setReached] = useState(1)
+  // Only the frames we've reached get an <Image>, so the first paint fetches
+  // two photos rather than all eight. It has to stay one ahead of the one on
+  // screen: a slide created in the same commit that makes it active has no
+  // previous opacity to animate from, so it pops in instead of fading.
+  const [reached, setReached] = useState(2)
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const id = setInterval(() => {
       setIndex((i) => {
         const next = (i + 1) % SLIDES.length
-        setReached((r) => Math.max(r, next + 1))
+        setReached((r) => Math.min(SLIDES.length, Math.max(r, next + 2)))
         return next
       })
     }, INTERVAL)
     return () => clearInterval(id)
   }, [])
+
+  // Jumping to a frame that isn't mounted yet needs the same treatment: paint it
+  // at zero first, then make it active on a later frame so the fade has somewhere
+  // to start from.
+  function show(i: number) {
+    if (i < reached) {
+      setIndex(i)
+      return
+    }
+    setReached(Math.min(SLIDES.length, i + 2))
+    requestAnimationFrame(() => requestAnimationFrame(() => setIndex(i)))
+  }
 
   return (
     <div className={styles.stage} aria-hidden={false}>
@@ -97,10 +111,7 @@ export default function HeroSlideshow() {
             key={slide.src}
             type="button"
             className={`${styles.dot} ${i === index ? styles.dotOn : ''}`}
-            onClick={() => {
-              setIndex(i)
-              setReached((r) => Math.max(r, i + 1))
-            }}
+            onClick={() => show(i)}
             aria-label={`Show recovery photo ${i + 1} of ${SLIDES.length}`}
           />
         ))}
