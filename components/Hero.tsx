@@ -15,10 +15,6 @@ export default async function Hero() {
       <div className={`${styles.orb} ${styles.orb2}`} aria-hidden />
 
       <div className={`container ${styles.inner}`}>
-        <div className={styles.badge}>
-          <span className="material-symbols-rounded">emergency</span>
-          24/7 Emergency Response
-        </div>
         <h1 className={styles.title}>
           24/7
           <br />

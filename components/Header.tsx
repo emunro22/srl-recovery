@@ -69,7 +69,7 @@ export default function Header() {
           <Image
             src="/images/logo.png"
             width={120}
-            height={59}
+            height={92}
             alt="SRL Recovery Glasgow"
             priority
           />
