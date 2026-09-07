@@ -240,11 +240,75 @@ const cheapRecovery: NearMeAngle = {
   },
 }
 
+// Targets the "commercial vehicle recovery in {town}" search pattern, which is
+// the largest single query cluster the site gets impressions for and had no
+// matching page until now: the traffic was landing on the generic area hubs.
+const commercialVehicleRecovery: NearMeAngle = {
+  slug: 'commercial-vehicle-recovery',
+  navLabel: 'Commercial Vehicle Recovery',
+  build: (area) => {
+    const near = nearby(area)
+    const v = variant(area.slug, 3)
+    const intros = [
+      `A van off the road in ${area.name} is not an inconvenience, it is a day of work not happening. SRL Recovery covers commercial vehicle recovery across ${pc(area)} around the clock, with an average arrival of ${area.responseTime} and the deck length to take a long wheelbase or Luton body without a second truck.`,
+      `Commercial vehicle recovery in ${area.name} is daily work for us. Vans, tippers, dropsides, Lutons and light commercials up to 3.5 tonnes, recovered from ${pc(area)} in an average of ${area.responseTime}, with your tools and stock staying in the vehicle where they belong.`,
+      `When a working vehicle stops in ${area.name}, the clock that matters is downtime, not arrival time. SRL Recovery dispatches directly to ${pc(area)}, averaging ${area.responseTime}, and takes the vehicle to your workshop rather than ours.`,
+    ]
+    return {
+      slug: 'commercial-vehicle-recovery',
+      navLabel: 'Commercial Vehicle Recovery',
+      title: `Commercial Vehicle Recovery in ${area.name} | SRL Recovery`,
+      metaDescription: `Commercial vehicle recovery in ${area.name}. Vans, Lutons, tippers and light commercials up to 3.5t, average arrival ${area.responseTime}. 24/7. Call 01698 700970.`,
+      h1: `Commercial Vehicle Recovery in ${area.name}`,
+      subheading: `Vans, Lutons and light commercials across ${area.name} and ${pc(area)}, typically ${area.responseTime}`,
+      intro: intros[v],
+      paragraphs: [
+        `We recover the full light commercial range in ${area.name}: Transit, Sprinter, Crafter, Vivaro, Transporter, Ducato, Boxer, Relay and Movano, in short, long and extra long wheelbase, plus Luton and box bodies, tippers, dropsides, caged vehicles, pickups and welfare units. Anything above 3.5 tonnes moves onto our heavy units, so tell us the plated weight when you call and the right truck comes out first time.`,
+        `Two things we do differently from car work. Your load stays with the vehicle, because nobody is unloading a van full of tools onto a pavement in ${area.name}. And the destination is usually a fleet workshop, dealer commercial centre or tyre depot rather than a house, so give us the site and its cut off time and we will work to it. We also cover ${near.slice(0, 2).join(' and ')} on the same dispatch.`,
+        `Vans fail differently from cars because they work harder. Tyres are the single biggest cause, run close to their load limits and kerbed on sites. Batteries and alternators go early under inverters, tail lifts and tool charging on short urban runs. Add blocked diesel particulate filters, AdBlue faults that refuse a restart, and clutches worn out on delivery mileage, and that is most of what we attend in ${area.name}.`,
+      ],
+      features: [
+        `Vans and light commercials up to 3.5t across ${pc(area)}`,
+        `Average arrival ${area.responseTime}`,
+        'Tools and stock stay in the vehicle',
+        'Delivered to your workshop, not ours',
+        'Heavier vehicles on our HGV units',
+        'Fleet and trade accounts available',
+      ],
+      faqs: [
+        {
+          q: `Do you recover vans and commercial vehicles in ${area.name}?`,
+          a: `Yes, every day. Vans and light commercials up to 3.5 tonnes are routine work across ${area.name} and the ${pc(area)} postcodes, with an average arrival of ${area.responseTime}. Anything heavier goes on our HGV units.`,
+        },
+        {
+          q: 'Will my tools and stock have to come out of the van?',
+          a: 'No. The load travels with the vehicle. We will not ask you to unload at the roadside, and if the van has to be left somewhere we will tell you honestly how secure that place is.',
+        },
+        {
+          q: 'Can you take the van straight to our own workshop?',
+          a: `Yes, anywhere you nominate. Give us the site and any access restriction or closing time when you call and we will route the ${area.name} job to fit it.`,
+        },
+        {
+          q: 'What does commercial vehicle recovery cost?',
+          a: 'Local recovery is £60 call out plus £1.50 per mile, and motorway or live lane work is £120 flat plus £1.50 per mile. Winch and skate fees are £40 each and only apply if the vehicle needs them. There is no out of hours or holiday surcharge.',
+        },
+        {
+          q: 'Do you offer accounts for businesses running several vehicles?',
+          a: 'Yes. A trade account holds your vehicle list, preferred workshops and authorisation limits in advance, so a driver ringing at 5am does not have to get approval first. It also gives priority dispatch and consolidated monthly invoicing.',
+        },
+      ],
+      relatedServiceSlug: 'commercial-recovery-glasgow',
+      relatedServiceLabel: 'Commercial Vehicle Recovery',
+    }
+  },
+}
+
 export const nearMeAngles: NearMeAngle[] = [
   carRecoveryNearMe,
   quickRecovery,
   hour24Recovery,
   cheapRecovery,
+  commercialVehicleRecovery,
 ]
 
 export function getAngleBySlug(slug: string): NearMeAngle | undefined {

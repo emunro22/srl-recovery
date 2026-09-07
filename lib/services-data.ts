@@ -26,9 +26,9 @@ export const services: ServicePageData[] = [
     serviceCategory: 'urgency',
     title: 'Car Recovery Near Me Glasgow | 24/7 Local | SRL Recovery',
     metaDescription:
-      'Need car recovery near you in Glasgow? SRL Recovery is your local 24/7 specialist. Average arrival 30–45 minutes. From £60. Call 01698 700970.',
+      'Need car recovery near you in Glasgow? SRL Recovery is your local 24/7 specialist. Average arrival 30 to 45 minutes. From £60. Call 01698 700970.',
     h1: 'Car Recovery Near Me',
-    subheading: 'Local Glasgow recovery, typically with you in 30–45 minutes',
+    subheading: 'Local Glasgow recovery, typically with you in 30 to 45 minutes',
     introParagraph:
       "If you've just searched for car recovery near you in Glasgow, you're already in the right place. SRL Recovery is a Motherwell-based, locally-owned recovery service operating 24 hours a day across Glasgow and surrounding areas. We don't outsource calls to a national dispatcher, when you ring 01698 700970, you speak directly to William or one of the team, and a truck gets dispatched immediately.",
     bodySections: [
@@ -42,7 +42,7 @@ export const services: ServicePageData[] = [
       {
         heading: 'How fast can we get to you?',
         paragraphs: [
-          "Average arrival time across Glasgow and surrounding areas is 30–45 minutes. Closer to Motherwell (ML postcodes) it's often quicker, typically 20–30 minutes. The exact ETA depends on where you are, the time of day, and what trucks are free, but we'll give you a realistic estimate on the phone the moment you call.",
+          "Average arrival time across Glasgow and surrounding areas is 30 to 45 minutes. Closer to Motherwell (ML postcodes) it's often quicker, typically 20 to 30 minutes. The exact ETA depends on where you are, the time of day, and what trucks are free, but we'll give you a realistic estimate on the phone the moment you call.",
         ],
       },
     ],
@@ -51,14 +51,14 @@ export const services: ServicePageData[] = [
     features: [
       'Locally-owned and operated (no call centres)',
       '24/7 dispatch, including weekends and holidays',
-      'Average arrival 30–45 minutes',
+      'Average arrival 30 to 45 minutes',
       'Clear quote on the phone before we set off',
       'Fully insured and compliant',
     ],
     faqs: [
       {
         q: 'How do I find a recovery service near me right now?',
-        a: 'Call SRL Recovery on 01698 700970. We dispatch immediately across Glasgow and surrounding areas, 24 hours a day. Average arrival time is 30–45 minutes.',
+        a: 'Call SRL Recovery on 01698 700970. We dispatch immediately across Glasgow and surrounding areas, 24 hours a day. Average arrival time is 30 to 45 minutes.',
       },
       {
         q: 'Are you actually local or a call centre?',
@@ -77,7 +77,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'urgency',
     title: '24 Hour Car Recovery Near Me | SRL Recovery Glasgow',
     metaDescription:
-      '24/7 car recovery near you in Glasgow. Operating round the clock, nights, weekends, holidays. Average arrival 30–45 minutes. Call 01698 700970.',
+      '24/7 car recovery near you in Glasgow. Operating round the clock, nights, weekends, holidays. Average arrival 30 to 45 minutes. Call 01698 700970.',
     h1: '24 Hour Recovery Near You',
     subheading: 'Truly 24/7, nights, weekends, bank holidays, Christmas Day',
     introParagraph:
@@ -100,7 +100,7 @@ export const services: ServicePageData[] = [
     features: [
       'Genuinely 24/7, no voicemail, no out-of-hours rates',
       'Direct line to William or the team, every time',
-      'Average arrival 30–45 minutes any time of day',
+      'Average arrival 30 to 45 minutes any time of day',
       'Common late-night routes: M8, M74, M77, A724',
       'Same pricing day or night',
     ],
@@ -126,7 +126,7 @@ export const services: ServicePageData[] = [
     serviceCategory: 'urgency',
     title: 'Emergency Breakdown Recovery Glasgow | Immediate Dispatch',
     metaDescription:
-      'Emergency breakdown? SRL Recovery dispatches immediately across Glasgow. Average arrival 30–45 minutes. 24/7 cover. Call 01698 700970.',
+      'Emergency breakdown? SRL Recovery dispatches immediately across Glasgow. Average arrival 30 to 45 minutes. 24/7 cover. Call 01698 700970.',
     h1: 'Emergency Breakdown Recovery',
     subheading: 'Immediate dispatch when you need it most',
     introParagraph:
@@ -149,7 +149,7 @@ export const services: ServicePageData[] = [
     ],
     features: [
       'Immediate dispatch on emergency calls',
-      'Average arrival 30–45 minutes',
+      'Average arrival 30 to 45 minutes',
       'Coordination with Police Scotland / Traffic Scotland where needed',
       'Trained for live-lane and accident recovery',
       'Fully insured, fully compliant',
@@ -157,7 +157,7 @@ export const services: ServicePageData[] = [
     faqs: [
       {
         q: 'How quickly can you actually arrive in an emergency?',
-        a: 'For genuine emergencies (live-lane breakdowns, accidents, dangerous locations) we drop everything and head straight to you. Typical arrival is 20–40 minutes depending on location.',
+        a: 'For genuine emergencies (live-lane breakdowns, accidents, dangerous locations) we drop everything and head straight to you. Typical arrival is 20 to 40 minutes depending on location.',
       },
       {
         q: "I'm in a live lane on the M8, what do I do?",
@@ -174,18 +174,18 @@ export const services: ServicePageData[] = [
   {
     slug: 'quick-car-recovery',
     serviceCategory: 'urgency',
-    title: 'Quick Car Recovery Glasgow | 30–45 Min Average | SRL Recovery',
+    title: 'Quick Car Recovery Glasgow | 30 to 45 Min Average | SRL Recovery',
     metaDescription:
-      'Need quick car recovery in Glasgow? We typically arrive in 30–45 minutes. 24/7 dispatch. From £60. Call SRL Recovery on 01698 700970.',
+      'Need quick car recovery in Glasgow? We typically arrive in 30 to 45 minutes. 24/7 dispatch. From £60. Call SRL Recovery on 01698 700970.',
     h1: 'Quick Car Recovery',
-    subheading: 'Speed is what we do, 30–45 minutes is the typical arrival window',
+    subheading: 'Speed is what we do, 30 to 45 minutes is the typical arrival window',
     introParagraph:
       "Some recovery services drag their heels. We don't. Speed is the single biggest reason people leave us 5-star reviews, repeatedly mentioning 20-minute arrivals when competitors quoted 2 hours. If you need quick car recovery in Glasgow, SRL is who you call.",
     bodySections: [
       {
         heading: 'What "quick" actually looks like with us',
         paragraphs: [
-          "Average arrival time across Glasgow and surrounding areas is 30–45 minutes. In the Motherwell area specifically, we routinely arrive in 20–30 minutes. Customers regularly mention beating our quoted ETA, because we'd rather under-promise than leave you waiting.",
+          "Average arrival time across Glasgow and surrounding areas is 30 to 45 minutes. In the Motherwell area specifically, we routinely arrive in 20 to 30 minutes. Customers regularly mention beating our quoted ETA, because we'd rather under-promise than leave you waiting.",
           'Here\'s what people actually say in our Google reviews: "A recovery truck appeared within 20 mins of my call. The previous company I had called had quoted a wait time of 2 hours." That\'s the difference between a local operator and a national call centre.',
         ],
       },
@@ -197,8 +197,8 @@ export const services: ServicePageData[] = [
       },
     ],
     features: [
-      '30–45 minute average arrival across Glasgow',
-      '20–30 minutes typical for Motherwell/ML postcodes',
+      '30 to 45 minute average arrival across Glasgow',
+      '20 to 30 minutes typical for Motherwell/ML postcodes',
       'No call-centre delay, direct dispatch',
       'Trucks based locally',
       'Real-time ETA given on the call',
@@ -265,7 +265,7 @@ export const services: ServicePageData[] = [
       },
       {
         q: 'Why is the AA/RAC more expensive for non-members?',
-        a: "Non-member call-outs from the national brands typically start around £150–£200 because you're paying for their infrastructure and the urgency markup. Local operators like us can offer the same service for less because we don't carry that overhead.",
+        a: "Non-member call-outs from the national brands typically start around £150 to £200 because you're paying for their infrastructure and the urgency markup. Local operators like us can offer the same service for less because we don't carry that overhead.",
       },
       {
         q: 'Do you offer discounts for repeat customers or trade?',
@@ -775,7 +775,7 @@ export const services: ServicePageData[] = [
       'Like-for-like replacement vehicle',
       "No effect on your no-claims bonus",
       'Claim handled end-to-end',
-      'Most cases resolved within 7–14 days',
+      'Most cases resolved within 7 to 14 days',
     ],
     faqs: [
       {
@@ -788,7 +788,7 @@ export const services: ServicePageData[] = [
       },
       {
         q: 'How quickly can I get a replacement vehicle?',
-        a: "Usually within 24–48 hours of the claim being lodged. The replacement is provided by a credit hire company we work with, and you'll get a like-for-like vehicle in terms of size and specification.",
+        a: "Usually within 24 to 48 hours of the claim being lodged. The replacement is provided by a credit hire company we work with, and you'll get a like-for-like vehicle in terms of size and specification.",
       },
       {
         q: 'What if the other driver disputes liability?',
@@ -819,13 +819,13 @@ export const services: ServicePageData[] = [
       {
         heading: 'M8 recovery',
         paragraphs: [
-          "The M8 is our busiest motorway, runs the full width of the central belt from Edinburgh to Greenock through Glasgow city centre. We regularly recover from junctions 1 through 31, including the tricky urban stretches around Charing Cross, the Kingston Bridge, and the Edinburgh-bound climb out of Glasgow. Average arrival on the M8 within Glasgow city limits: 25–40 minutes.",
+          "The M8 is our busiest motorway, runs the full width of the central belt from Edinburgh to Greenock through Glasgow city centre. We regularly recover from junctions 1 through 31, including the tricky urban stretches around Charing Cross, the Kingston Bridge, and the Edinburgh-bound climb out of Glasgow. Average arrival on the M8 within Glasgow city limits: 25 to 40 minutes.",
         ],
       },
       {
         heading: 'M74 / A74(M) recovery',
         paragraphs: [
-          "The M74 runs south from Glasgow toward Carlisle and the M6. We cover from junction 1 (Glasgow) all the way to the M6 border. Particularly common stretches for breakdowns: the M74 extension through Rutherglen/Cambuslang, junctions 5-10 around Hamilton and Larkhall, and the long climb at Beattock. Average arrival on M74 within 30 miles of Glasgow: 30–45 minutes.",
+          "The M74 runs south from Glasgow toward Carlisle and the M6. We cover from junction 1 (Glasgow) all the way to the M6 border. Particularly common stretches for breakdowns: the M74 extension through Rutherglen/Cambuslang, junctions 5-10 around Hamilton and Larkhall, and the long climb at Beattock. Average arrival on M74 within 30 miles of Glasgow: 30 to 45 minutes.",
         ],
       },
       {
@@ -857,7 +857,7 @@ export const services: ServicePageData[] = [
       },
       {
         q: 'How quickly can you reach a motorway breakdown?',
-        a: 'Typical arrival on the major Glasgow motorways is 25–45 minutes depending on which junction and current traffic. Live-lane and high-priority calls always go to the front of the queue.',
+        a: 'Typical arrival on the major Glasgow motorways is 25 to 45 minutes depending on which junction and current traffic. Live-lane and high-priority calls always go to the front of the queue.',
       },
       {
         q: 'Why is motorway recovery more expensive?',
@@ -1140,6 +1140,128 @@ export const services: ServicePageData[] = [
       },
     ],
     relatedServices: ['cheap-car-recovery-glasgow', 'car-recovery-near-me', 'motorway-recovery-glasgow'],
+  },
+  {
+    slug: 'vehicle-recovery-glasgow',
+    serviceCategory: 'urgency',
+    title: 'Vehicle Recovery Glasgow | 24/7 Any Vehicle | SRL Recovery',
+    metaDescription:
+      'Vehicle recovery in Glasgow, 24/7. Cars, vans, 4x4s, bikes, EVs and non-runners on flatbeds. £60 call-out + £1.50/mile. Call 01698 700970.',
+    h1: 'Vehicle Recovery Glasgow',
+    subheading: 'Any vehicle, any hour, anywhere in Glasgow and Central Scotland',
+    introParagraph:
+      "Vehicle recovery covers a lot more than a car that will not start. We move cars, vans, light commercials, 4x4s, motorbikes, electric vehicles, prestige and classic cars, accident-damaged vehicles and non-runners that have not turned a wheel in years. All of it goes on a flatbed, all of it is priced the same way, and all of it is available 24 hours a day across Glasgow. Call 01698 700970 and tell us what you have got.",
+    bodySections: [
+      {
+        heading: 'What we recover',
+        paragraphs: [
+          "Cars of every kind, including all-wheel-drive, automatic and lowered vehicles that must not be dragged on their driven wheels. Vans and light commercials up to 3.5 tonnes, in short, long and extra-long wheelbase, plus Luton and box bodies. Motorbikes, using a proper front wheel chock and soft straps rather than improvised ratchet straps. Electric vehicles, which are always carried and never towed.",
+          "Then the awkward ones. Non-runners that will not roll, automatics locked in park with a flat battery, cars with a seized handbrake or a locked steering column, vehicles with no keys at all, and accident-damaged cars that need winching off a verge. Wheel skates and winch capacity are on the truck as standard, so none of that is an obstacle.",
+        ],
+      },
+      {
+        heading: 'Why flatbed rather than towing',
+        paragraphs: [
+          "Almost nothing modern should be towed on its own wheels. All-wheel-drive systems can damage their transfer case and differentials when dragged with the engine off. Automatic gearboxes lose their oil pump the moment the engine stops. Electric vehicles generate current through their motors when the driven wheels turn, which can damage the inverter and voids most manufacturer warranties.",
+          "So the vehicle is carried, not pulled. It goes up onto a level deck on all four wheels, secured with rated straps over the tyres to anchor points, with nothing hooked to bodywork, subframes or suspension. Aluminium extension ramps flatten the approach angle for lowered cars and deep front splitters.",
+        ],
+      },
+      {
+        heading: 'Where we cover',
+        paragraphs: [
+          "Glasgow city and suburbs at 30 to 45 minutes, the Lanarkshire corridor at 20 to 40, Renfrewshire at 30 to 45, and the motorway network on the M8, M73, M74, M77 and M80 at 30 to 45 minutes on the Glasgow sections. Beyond that we run the whole of Scotland and long-distance moves into England.",
+        ],
+      },
+    ],
+    pricingNote:
+      'Local vehicle recovery is £60 call-out + £1.50 per mile. Motorway and live-lane work is £120 flat + £1.50 per mile. Winch and skate fees are £40 each and only apply if the vehicle needs them. No out-of-hours or holiday surcharge.',
+    features: [
+      'Cars, vans, bikes, EVs, prestige, classics and non-runners',
+      'Flatbed as standard, never dragged on driven wheels',
+      'Wheel skates on board for vehicles that will not roll',
+      'Average arrival 30 to 45 minutes across Glasgow',
+      '24/7 with no out-of-hours surcharge',
+    ],
+    faqs: [
+      {
+        q: 'What kinds of vehicle can you recover?',
+        a: 'Cars, vans and light commercials up to 3.5 tonnes, 4x4s, motorbikes, electric vehicles, prestige and classic cars, accident-damaged vehicles and non-runners. Anything heavier goes on our HGV units.',
+      },
+      {
+        q: 'Can you move a vehicle that will not roll or has no keys?',
+        a: 'Yes. Wheel skates slide under wheels that will not turn, so an automatic locked in park, a seized handbrake or a locked steering column is routine work rather than a problem.',
+      },
+      {
+        q: 'How much does vehicle recovery cost in Glasgow?',
+        a: 'Local recovery is £60 call-out plus £1.50 per mile, so a typical 10-mile job is £75 before VAT. Motorway work is £120 flat plus £1.50 per mile. The exact total is confirmed on the phone before dispatch.',
+      },
+      {
+        q: 'Are you available at night and at weekends?',
+        a: 'Yes, 24 hours a day, every day of the year, and there is no out-of-hours or holiday surcharge. A 3am call costs the same as a 3pm one.',
+      },
+    ],
+    relatedServices: ['car-recovery-near-me', 'commercial-recovery-glasgow', 'car-recovery-prices'],
+  },
+  {
+    slug: 'car-towing-glasgow',
+    serviceCategory: 'urgency',
+    title: 'Car Towing Glasgow | Tow Truck 24/7 | SRL Recovery',
+    metaDescription:
+      'Need a tow truck in Glasgow? Flatbed car towing 24/7, average arrival 30 to 45 minutes. £60 call-out + £1.50/mile. Call SRL Recovery on 01698 700970.',
+    h1: 'Car Towing Glasgow',
+    subheading: 'Tow truck dispatch across Glasgow, typically 30 to 45 minutes',
+    introParagraph:
+      "If you need a car towed in Glasgow, what you actually want is a flatbed recovery truck rather than a tow. The distinction matters: modern cars should be carried, not pulled along on their own wheels. SRL Recovery dispatches flatbed trucks across Glasgow 24 hours a day, with a price confirmed on the phone before anything moves. Call 01698 700970.",
+    bodySections: [
+      {
+        heading: 'Towing and recovery are not the same thing',
+        paragraphs: [
+          "Traditional towing means one vehicle pulling another on a rope or bar, or lifting one end so two wheels roll on the road. It is still used for some older vehicles and short repositioning, and it is the wrong answer for almost everything built in the last twenty years.",
+          "A rope tow needs the towed car to have working brakes and steering, which is frequently the reason it needs moving in the first place, and it needs a competent driver sitting in it. A partial lift turns the wheels that are still on the road, which damages all-wheel-drive systems, automatic gearboxes and electric drivetrains. So what turns up when you call for a tow truck is a flatbed, and your car travels on the deck.",
+        ],
+      },
+      {
+        heading: 'What to tell us when you call',
+        paragraphs: [
+          "Four things get you a firm price and a real arrival time in about ninety seconds: where you are, what you are driving, what has happened, and where it needs to go. Street name and nearest number is enough in town. On a motorway, read the driver location sign at the roadside.",
+          "Mention it up front if the car will not roll, is very low, is electric, is in a multi-storey with a height restriction, or has been in a collision. Each of those changes the equipment we send, and getting it right first time saves an hour.",
+        ],
+      },
+      {
+        heading: 'Where the car goes',
+        paragraphs: [
+          "Wherever you nominate. Your home, your usual garage, a main dealer, a bodyshop or a friend's driveway. We are not a garage trying to capture your repair work, so there is no pressure to bring it to us. If you have not decided yet, say so and we can store it securely while you get quotes.",
+        ],
+      },
+    ],
+    pricingNote:
+      'Local car towing is £60 call-out + £1.50 per mile, so a 10-mile job is £75 before VAT. Motorway and live-lane recovery is £120 flat + £1.50 per mile. No call-out fee on top, no waiting time, no out-of-hours surcharge.',
+    features: [
+      'Flatbed trucks, not rope or partial-lift towing',
+      'Average arrival 30 to 45 minutes across Glasgow',
+      'Taken to your garage, not ours',
+      'Price confirmed on the phone before dispatch',
+      '24/7 with no out-of-hours surcharge',
+    ],
+    faqs: [
+      {
+        q: 'How much does it cost to tow a car in Glasgow?',
+        a: 'Local towing is £60 call-out plus £1.50 per mile, so a typical 10-mile job comes to £75 before VAT. Motorway work is £120 flat plus £1.50 per mile. The full price is confirmed before the truck moves.',
+      },
+      {
+        q: 'How quickly can a tow truck reach me?',
+        a: 'Typically 30 to 45 minutes across Glasgow, and 20 to 40 minutes across the Lanarkshire towns. You get the real figure for your job when you call, based on where a truck is at that moment.',
+      },
+      {
+        q: 'Will my car be towed on a rope?',
+        a: 'No. It is carried on a flatbed with all four wheels on the deck, which is the only appropriate method for all-wheel-drive, automatic and electric vehicles.',
+      },
+      {
+        q: 'Can you tow a car out of an underground car park?',
+        a: 'The car has to be brought out to the truck first because of height restrictions. Tell us when you call and we will plan for it.',
+      },
+    ],
+    relatedServices: ['vehicle-recovery-glasgow', 'car-recovery-near-me', 'car-recovery-prices'],
   },
 ]
 

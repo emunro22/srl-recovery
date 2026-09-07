@@ -39,6 +39,13 @@ const areaSlugs = [
   'loch-lomond',
   'argyll-and-bute',
   'scotland',
+  'greenock',
+  'port-glasgow',
+  'stirling',
+  'falkirk',
+  'alloa',
+  'lanark',
+  'lanarkshire',
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

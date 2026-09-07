@@ -8,7 +8,7 @@ import styles from './page.module.css'
 export const metadata: Metadata = {
   title: 'Areas We Cover | 24/7 Breakdown Recovery Glasgow & Central Scotland | SRL Recovery',
   description:
-    'SRL Recovery covers Glasgow and Central Scotland 24/7, Motherwell, Hamilton, Paisley, East Kilbride, Wishaw, Airdrie, Cumbernauld, and 20+ more areas. Find your area.',
+    'SRL Recovery covers Glasgow, Lanarkshire and Central Scotland 24/7. Motherwell, Hamilton, Paisley, East Kilbride, Stirling, Falkirk, Greenock and 30+ more areas. Find yours.',
   alternates: { canonical: 'https://srlrecovery.com/areas' },
 }
 
@@ -17,7 +17,7 @@ const AREAS = [
     name: 'Bearsden',
     slug: 'bearsden',
     postcodes: ['G61'],
-    desc: '30–45 min average response. Coverage across Bearsden Cross, Westerton, Killermont and the A809/A810 corridor.',
+    desc: '30 to 45 min average response. Coverage across Bearsden Cross, Westerton, Killermont and the A809/A810 corridor.',
   },
   {
     name: 'Bellshill',
@@ -101,7 +101,7 @@ const AREAS = [
     name: 'Cumbernauld',
     slug: 'cumbernauld',
     postcodes: ['G67', 'G68'],
-    desc: 'M80 junctions 4–6 and full town coverage. Kildrum, Abronhill, Condorrat and more.',
+    desc: 'M80 junctions 4 to 6 and full town coverage. Kildrum, Abronhill, Condorrat and more.',
   },
   {
     name: 'Kirkintilloch',
@@ -179,13 +179,55 @@ const AREAS = [
     name: 'Loch Lomond',
     slug: 'loch-lomond',
     postcodes: ['G83'],
-    desc: 'Balloch, Luss, Tarbet and Arrochar covered on the A82 loch-side road. Average arrival 45–65 minutes.',
+    desc: 'Balloch, Luss, Tarbet and Arrochar covered on the A82 loch-side road. Average arrival 45 to 65 minutes.',
   },
   {
     name: 'Argyll and Bute',
     slug: 'argyll-and-bute',
     postcodes: ['G84', 'PA23', 'PA24', 'PA25', 'PA26'],
     desc: 'Helensburgh, Arrochar, Cairndow, Dunoon and further into Argyll covered on request. Call for a quote.',
+  },
+  {
+    name: 'Lanarkshire',
+    slug: 'lanarkshire',
+    postcodes: ['ML1', 'ML3', 'ML5', 'ML6'],
+    desc: 'Our home patch and our fastest response, 20 to 40 minutes. Motherwell, Hamilton, Coatbridge, Airdrie, Wishaw and the full M74 corridor.',
+  },
+  {
+    name: 'Lanark',
+    slug: 'lanark',
+    postcodes: ['ML11'],
+    desc: 'Clyde Valley coverage. Lanark, Carstairs and Forth on the A73, A72 and M74 J9 to J11.',
+  },
+  {
+    name: 'Falkirk',
+    slug: 'falkirk',
+    postcodes: ['FK1', 'FK2'],
+    desc: 'M9 J5 to J7 and M876 coverage. Falkirk, Camelon, Larbert and the Grangemouth industrial estates.',
+  },
+  {
+    name: 'Stirling',
+    slug: 'stirling',
+    postcodes: ['FK7', 'FK8', 'FK9'],
+    desc: '24 hour cover on the M9 and A9. Stirling, Bannockburn, Bridge of Allan and Springkerse. Average arrival 45 to 70 minutes.',
+  },
+  {
+    name: 'Alloa',
+    slug: 'alloa',
+    postcodes: ['FK10'],
+    desc: 'Clackmannanshire coverage. Alloa, Sauchie, Tullibody and Tillicoultry on the A907. Average arrival 50 to 75 minutes.',
+  },
+  {
+    name: 'Greenock',
+    slug: 'greenock',
+    postcodes: ['PA15', 'PA16'],
+    desc: 'Inverclyde coverage on the A8 and A78. Greenock, Gourock and the waterfront industrial units. Average arrival 50 to 75 minutes.',
+  },
+  {
+    name: 'Port Glasgow',
+    slug: 'port-glasgow',
+    postcodes: ['PA14'],
+    desc: 'A8 corridor coverage between Greenock and the Erskine Bridge, including Kilmacolm and Langbank.',
   },
   {
     name: 'Scotland',
