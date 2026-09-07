@@ -5,9 +5,9 @@ import Footer from '@/components/Footer'
 import { getGalleryImages } from '@/lib/db'
 
 export const metadata = {
-  title: 'Photos & Videos – SRL Recovery Glasgow',
+  title: 'Our Recovery Trucks & Recent Jobs | SRL Recovery Glasgow',
   description:
-    'Browse recent breakdown recovery and vehicle transport photos and videos across Glasgow and surrounding areas.',
+    'See our recovery trucks and real jobs from across Glasgow and Lanarkshire. Flatbeds, skates and winch work, 24/7. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/work' },
 }
 

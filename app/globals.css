@@ -163,6 +163,18 @@ address { font-style: normal; }
   font-feature-settings: 'liga';
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+
+  /* Reserve the icon box before the font arrives.
+     Material Symbols glyphs have a 1em advance, but the fallback font lays the
+     ligature text out at its own width ("expand_more" is 11 characters wide),
+     so without this the header and hero reflowed when the font loaded, which
+     was the whole of the site's 0.135 desktop CLS. Pinning the box to 1em and
+     clipping means the swap changes nothing about layout. */
+  width: 1em;
+  overflow: hidden;
+  /* Icons sit inside flex rows all over the site; without this a tight row
+     shrinks the box below 1em and the clip above would cut the glyph. */
+  flex-shrink: 0;
 }
 
 /* Noise texture overlay */
