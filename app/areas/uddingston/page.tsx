@@ -17,8 +17,8 @@ export default function UddingstonPage() {
         introBlurb:
           '24/7 breakdown recovery in Uddingston, Bothwell, and across G71 postcodes. SRL Recovery is a short drive away via the M74, fast response from our Motherwell base.',
         routeBlurb:
-          'Uddingston and Bothwell sit right on the M74 corridor, one of our busiest recovery routes. We reach G71 quickly from Motherwell, covering M74 junctions 4–5, the A725, Bothwell Road, and residential streets across Uddingston, Bothwell, Tannochside, and Viewpark. The area is very familiar to our team. Average arrival 20–35 minutes.',
-        responseTime: '20–35 mins',
+          'Uddingston and Bothwell sit right on the M74 corridor, one of our busiest recovery routes. We reach G71 quickly from Motherwell, covering M74 junctions 4 to 5, the A725, Bothwell Road, and residential streets across Uddingston, Bothwell, Tannochside, and Viewpark. The area is very familiar to our team. Average arrival 20 to 35 minutes.',
+        responseTime: '20 to 35 mins',
         nearbyAreas: ['Motherwell', 'Hamilton', 'Bellshill', 'Cambuslang', 'Blantyre'],
       }}
     />

@@ -97,7 +97,7 @@ export default async function ServicePage({ data }: { data: ServicePageData }) {
               </div>
               <div className={styles.trustItem}>
                 <span className="material-symbols-rounded">schedule</span>
-                30–45 min avg arrival
+                30 to 45 min avg arrival
               </div>
               <div className={styles.trustItem}>
                 <span className="material-symbols-rounded">verified</span>

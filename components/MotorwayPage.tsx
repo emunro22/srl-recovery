@@ -156,7 +156,7 @@ export default function MotorwayPage({ data }: { data: MotorwayPageData }) {
               <div className={styles.ctaBox}>
                 <h2>Call now. We&apos;re on the way</h2>
                 <p>
-                  Phone {data.responseTime.split('–')[0].trim()} minutes from now, you could be
+                  Phone {data.responseTime.split(' to ')[0].trim()} minutes from now, you could be
                   off the {data.name} and on your way.
                 </p>
                 <div className={styles.ctaActions}>

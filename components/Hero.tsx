@@ -24,14 +24,14 @@ export default async function Hero() {
         </h1>
         <p className={styles.tagline}>
           Broken down? Accident? Immobilised? We dispatch immediately, day or
-          night, with an average arrival time of 30–45 minutes across Glasgow
+          night, with an average arrival time of 30 to 45 minutes across Glasgow
           and surrounding areas.
         </p>
 
         <div className={styles.actions}>
           <a href="tel:+441698700970" className="btn">
             <span className="material-symbols-rounded">call</span>
-            Call Now – Immediate Dispatch
+            Call Now, Immediate Dispatch
           </a>
           <a href="#pricing" className="btn btn-outline">
             See Pricing
@@ -59,7 +59,7 @@ export default async function Hero() {
 
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <strong>30–45</strong>
+            <strong>30 to 45</strong>
             <span>Min Avg Arrival</span>
           </div>
           <div className={styles.divider} />

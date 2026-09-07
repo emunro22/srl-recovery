@@ -131,7 +131,7 @@ export default function Footer() {
             </ul>
             <div className={styles.hours}>
               <div className={styles.hoursRow}>
-                <span>Monday – Sunday</span>
+                <span>Monday to Sunday</span>
                 <strong>24 Hours</strong>
               </div>
               <div className={`${styles.hoursRow} ${styles.highlight}`}>

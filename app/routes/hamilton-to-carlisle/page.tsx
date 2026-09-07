@@ -78,7 +78,7 @@ export default function HamiltonCarlislePage() {
               </div>
               <div className={styles.fact}>
                 <span className={styles.factLabel}>Avg arrival</span>
-                <strong>45–70 mins</strong>
+                <strong>45 to 70 mins</strong>
               </div>
               <div className={styles.fact}>
                 <span className={styles.factLabel}>Availability</span>
@@ -114,27 +114,27 @@ export default function HamiltonCarlislePage() {
                 <div className={styles.stopList}>
                   <div className={styles.stopItem}>
                     <h3>Hamilton: M74 J5/J6</h3>
-                    <p>The northern end of this corridor. Hamilton, Bothwell, and the M73 interchange are all within easy reach. This is our strongest part of the route. Average arrival: 25–40 minutes from our Motherwell base.</p>
+                    <p>The northern end of this corridor. Hamilton, Bothwell, and the M73 interchange are all within easy reach. This is our strongest part of the route. Average arrival: 25 to 40 minutes from our Motherwell base.</p>
                   </div>
                   <div className={styles.stopItem}>
-                    <h3>Larkhall / Lesmahagow: M74 J8–J10</h3>
-                    <p>Through Larkhall and approaching Lesmahagow, still manageable response times but the road becomes more open and isolated. Average arrival: 35–50 minutes.</p>
+                    <h3>Larkhall / Lesmahagow: M74 J8 to J10</h3>
+                    <p>Through Larkhall and approaching Lesmahagow, still manageable response times but the road becomes more open and isolated. Average arrival: 35 to 50 minutes.</p>
                   </div>
                   <div className={styles.stopItem}>
                     <h3>Abington Services: M74 J13</h3>
-                    <p>Roughly the halfway point between Hamilton and Carlisle. Abington Services is often the only realistic safe haven for vehicles in trouble on this stretch. We attend breakdowns here regularly, both at the services themselves and on the carriageway between J10 and J15. Average arrival: 45–60 minutes.</p>
+                    <p>Roughly the halfway point between Hamilton and Carlisle. Abington Services is often the only realistic safe haven for vehicles in trouble on this stretch. We attend breakdowns here regularly, both at the services themselves and on the carriageway between J10 and J15. Average arrival: 45 to 60 minutes.</p>
                   </div>
                   <div className={styles.stopItem}>
                     <h3>Beattock Summit: M74 J15/J16</h3>
-                    <p>The long climb at Beattock catches overloaded vehicles, older cars, and anything running hot in summer. Overheating and transmission failures are common here. This is an exposed, rural stretch with limited shelter. Average arrival: 50–70 minutes.</p>
+                    <p>The long climb at Beattock catches overloaded vehicles, older cars, and anything running hot in summer. Overheating and transmission failures are common here. This is an exposed, rural stretch with limited shelter. Average arrival: 50 to 70 minutes.</p>
                   </div>
                   <div className={styles.stopItem}>
-                    <h3>Lockerbie / Moffat: A74(M) J17–J19</h3>
-                    <p>Crossing into Dumfries and Galloway, response times lengthen significantly from here. Average arrival: 65–85 minutes. If you&apos;re closer to Lockerbie than Hamilton, call us and we&apos;ll be honest about timing.</p>
+                    <h3>Lockerbie / Moffat: A74(M) J17 to J19</h3>
+                    <p>Crossing into Dumfries and Galloway, response times lengthen significantly from here. Average arrival: 65 to 85 minutes. If you&apos;re closer to Lockerbie than Hamilton, call us and we&apos;ll be honest about timing.</p>
                   </div>
                   <div className={styles.stopItem}>
                     <h3>Gretna / English Border: A74(M) J22+</h3>
-                    <p>At the Scottish border and beyond into Carlisle, response times from our Motherwell base are 80–100+ minutes. For Carlisle breakdowns, a local Cumbrian operator may reach you faster. We&apos;ll tell you honestly when to use one. But if you can&apos;t get anyone else, we&apos;ll come.</p>
+                    <p>At the Scottish border and beyond into Carlisle, response times from our Motherwell base are 80 to 100+ minutes. For Carlisle breakdowns, a local Cumbrian operator may reach you faster. We&apos;ll tell you honestly when to use one. But if you can&apos;t get anyone else, we&apos;ll come.</p>
                   </div>
                 </div>
               </div>

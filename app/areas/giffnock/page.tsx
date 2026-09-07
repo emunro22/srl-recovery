@@ -17,8 +17,8 @@ export default function GiffnockPage() {
         introBlurb:
           '24/7 breakdown recovery in Giffnock, Thornliebank, and G46 postcodes. SRL Recovery covers the south Glasgow suburbs on the M77 corridor fast. Call any time, we dispatch immediately.',
         routeBlurb:
-          'Giffnock is on the M77 corridor, south of Glasgow city. We respond daily to the A727 Clarkston Road, Ayr Road, Kilmarnock Road, and residential streets across Giffnock, Thornliebank, Merrylee, and Arden. Good M77 access from our Motherwell base keeps arrival times competitive. Average arrival 30–45 minutes.',
-        responseTime: '30–45 mins',
+          'Giffnock is on the M77 corridor, south of Glasgow city. We respond daily to the A727 Clarkston Road, Ayr Road, Kilmarnock Road, and residential streets across Giffnock, Thornliebank, Merrylee, and Arden. Good M77 access from our Motherwell base keeps arrival times competitive. Average arrival 30 to 45 minutes.',
+        responseTime: '30 to 45 mins',
         nearbyAreas: ['Newton Mearns', 'Glasgow', 'Barrhead', 'Clarkston', 'East Kilbride'],
       }}
     />

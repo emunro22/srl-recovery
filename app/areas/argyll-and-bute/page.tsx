@@ -18,7 +18,7 @@ export default function ArgyllAndButePage() {
           'Broken down in Argyll & Bute? SRL Recovery covers this area on request, Helensburgh, Arrochar, Cairndow and Dunoon are all within reach, with the rest of Argyll covered further out. Call us and we\'ll give you a straight quote and an honest ETA.',
         routeBlurb:
           'Argyll & Bute stretches well beyond our core 30-mile area, so jobs here are quoted individually based on exactly where you are. We\'ve recovered vehicles at Arrochar and the "Rest and Be Thankful" on the A83, through Cairndow and Inveraray, and out towards Helensburgh and Dunoon. The more remote parts of Argyll, Oban, Campbeltown, the Cowal peninsula, and the islands, are still within reach; it just takes a call to confirm timing and price. Wherever you\'ve broken down, ring us and we\'ll tell you straight away whether we can get to you and how long it\'ll take.',
-        responseTime: '60–120 mins',
+        responseTime: '60 to 120 mins',
         nearbyAreas: ['Loch Lomond', 'Dumbarton', 'Helensburgh', 'Dunoon', 'Inveraray'],
       }}
     />

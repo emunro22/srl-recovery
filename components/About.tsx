@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styles from './About.module.css'
 
 const features = [
-  { icon: 'speed', label: 'Avg 30–45 Mins', desc: 'Average arrival time across our coverage area' },
+  { icon: 'speed', label: 'Avg 30 to 45 Mins', desc: 'Average arrival time across our coverage area' },
   { icon: 'verified', label: 'Fully Insured', desc: 'Compliant, insured recovery you can trust' },
   { icon: 'support_agent', label: '24/7 Available', desc: 'Round-the-clock cover: nights, weekends, holidays' },
   { icon: 'price_check', label: 'Transparent Pricing', desc: 'Clear quote on the phone, no hidden fees' },

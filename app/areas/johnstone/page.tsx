@@ -17,8 +17,8 @@ export default function JohnstonePage() {
         introBlurb:
           '24/7 breakdown recovery across Johnstone, Linwood, and PA5/PA10 postcodes. SRL Recovery covers Renfrewshire fast, dispatching any time for roadside, motorway, and local road recovery.',
         routeBlurb:
-          'Johnstone is at the far end of the M8/A737 corridor into Renfrewshire. We respond to breakdowns on the A737, the A761, and throughout Johnstone town centre, Linwood, Elderslie, Bridge of Weir, and Kilbarchan. Further from our Motherwell base than some areas, but still well within our regular coverage. Average arrival 30–50 minutes depending on traffic.',
-        responseTime: '30–50 mins',
+          'Johnstone is at the far end of the M8/A737 corridor into Renfrewshire. We respond to breakdowns on the A737, the A761, and throughout Johnstone town centre, Linwood, Elderslie, Bridge of Weir, and Kilbarchan. Further from our Motherwell base than some areas, but still well within our regular coverage. Average arrival 30 to 50 minutes depending on traffic.',
+        responseTime: '30 to 50 mins',
         nearbyAreas: ['Paisley', 'Renfrew', 'Linwood', 'Bridge of Weir', 'Kilbarchan'],
       }}
     />
