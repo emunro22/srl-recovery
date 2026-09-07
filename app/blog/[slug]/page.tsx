@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getBlogPostBySlug(slug)
   if (!post || !post.published) return {}
   return {
-    title: `${post.title} – SRL Recovery Blog`,
+    title: `${post.title} | SRL Recovery`,
     description: post.excerpt || undefined,
     openGraph: post.cover_image_url
       ? { images: [{ url: post.cover_image_url }] }

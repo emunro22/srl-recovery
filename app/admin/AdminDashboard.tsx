@@ -114,18 +114,22 @@ export default function AdminDashboard({
     setSeeding(false)
   }
 
-  async function seedBlogPosts() {
+  async function seedBlogPosts(sync = false) {
     if (seedingBlog) return
-    if (!confirm('Add 25 pre-written SEO blog posts? Any posts with the same slug will be skipped, safe to run more than once.')) return
+    const prompt = sync
+      ? 'Rewrite every blog post from the master copy? This overwrites the title, excerpt and text of all posts with a matching slug. Cover images and published status are left alone.'
+      : 'Add the pre-written SEO blog posts? Any posts with the same slug will be skipped, safe to run more than once.'
+    if (!confirm(prompt)) return
     setSeedingBlog(true)
     try {
-      const res = await fetch('/api/admin/seed-blog', { method: 'POST' })
+      const res = await fetch(`/api/admin/seed-blog${sync ? '?mode=sync' : ''}`, { method: 'POST' })
       const data = await res.json()
       if (!res.ok) {
         alert(data.error || 'Seed failed')
       } else {
         alert(
           `Done: added ${data.inserted} post${data.inserted === 1 ? '' : 's'}.` +
+          (data.updated > 0 ? ` Rewrote ${data.updated}.` : '') +
           (data.skipped > 0 ? ` ${data.skipped} already existed.` : '')
         )
         window.location.reload()
@@ -492,18 +496,27 @@ export default function AdminDashboard({
         <>
           <section className={styles.seedCard}>
             <div>
-              <h3 className={styles.seedTitle}>Add 25 pre-written SEO blog posts</h3>
+              <h3 className={styles.seedTitle}>Pre-written SEO blog posts</h3>
               <p className={styles.seedDesc}>
-                Instantly publish 25 Google-optimised recovery articles covering breakdowns, motorway guides,
-                winter tips, prestige recovery, and more. Existing posts are skipped, safe to run more than once.
+                Publish the full set of Google-optimised recovery articles covering breakdowns, motorway guides,
+                winter tips, prestige recovery, and more. &quot;Add missing&quot; only inserts posts that are not
+                there yet. &quot;Rewrite all&quot; also refreshes the text of existing posts from the master copy,
+                leaving cover images and published status alone.
               </p>
             </div>
             <button
-              onClick={seedBlogPosts}
+              onClick={() => seedBlogPosts(false)}
               disabled={seedingBlog}
               className={`${styles.linkBtn} ${styles.seedBtn}`}
             >
-              {seedingBlog ? 'Adding posts...' : 'Add SEO blog posts'}
+              {seedingBlog ? 'Working...' : 'Add missing posts'}
+            </button>
+            <button
+              onClick={() => seedBlogPosts(true)}
+              disabled={seedingBlog}
+              className={`${styles.linkBtn} ${styles.seedBtn}`}
+            >
+              {seedingBlog ? 'Working...' : 'Rewrite all posts'}
             </button>
           </section>
           <BlogPostManager initialPosts={initialPosts} />

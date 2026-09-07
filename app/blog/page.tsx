@@ -8,7 +8,7 @@ import styles from './page.module.css'
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
-  title: 'Blog – SRL Recovery Glasgow',
+  title: 'Blog | SRL Recovery Glasgow',
   description:
     "News, advice, and updates from Glasgow's trusted 24/7 breakdown and recovery specialists.",
   alternates: { canonical: 'https://srlrecovery.com/blog' },
