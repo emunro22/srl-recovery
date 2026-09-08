@@ -98,6 +98,8 @@ export default function Footer() {
                 { name: 'Hamilton', slug: 'hamilton' },
                 { name: 'Clydebank', slug: 'clydebank' },
                 { name: 'Coatbridge', slug: 'coatbridge' },
+                { name: 'Edinburgh', slug: 'edinburgh' },
+                { name: 'Livingston', slug: 'livingston' },
                 { name: 'View all areas', slug: '' },
               ].map((a) => (
                 <li key={a.name}>

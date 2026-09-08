@@ -19,6 +19,16 @@ const TOWNS: { name: string; slug: string | null; lat: number; lng: number; prim
   { name: 'Dumbarton', slug: 'dumbarton', lat: 55.9456, lng: -4.5662 },
   { name: 'Luss', slug: 'loch-lomond', lat: 56.1009, lng: -4.6394 },
   { name: 'Arrochar', slug: 'argyll-and-bute', lat: 56.1998, lng: -4.7317 },
+  { name: 'Shotts', slug: 'shotts', lat: 55.8199, lng: -3.7996 },
+  { name: 'Bathgate', slug: 'bathgate', lat: 55.9020, lng: -3.6417 },
+  { name: 'Livingston', slug: 'livingston', lat: 55.8862, lng: -3.5169 },
+  { name: 'Edinburgh', slug: 'edinburgh', lat: 55.9533, lng: -3.1883 },
+  { name: 'Stirling', slug: 'stirling', lat: 56.1165, lng: -3.9369 },
+  { name: 'Falkirk', slug: 'falkirk', lat: 56.0019, lng: -3.7839 },
+  { name: 'Perth', slug: 'perth', lat: 56.3950, lng: -3.4308 },
+  { name: 'Moffat', slug: 'moffat', lat: 55.3325, lng: -3.4400 },
+  { name: 'Carlisle', slug: 'carlisle', lat: 54.8925, lng: -2.9329 },
+  { name: 'Stranraer', slug: 'stranraer', lat: 54.9046, lng: -5.0270 },
 ]
 
 export default function CoverageMap() {

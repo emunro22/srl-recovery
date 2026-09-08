@@ -265,6 +265,62 @@ export const areasData: AreaFacts[] = [
     responseTime: '20 to 40 mins',
     nearbyAreas: ['Motherwell', 'Hamilton', 'Coatbridge', 'Airdrie', 'Wishaw'],
   },
+  {
+    slug: 'shotts',
+    name: 'Shotts',
+    postcodes: ['ML7'],
+    responseTime: '25 to 40 mins',
+    nearbyAreas: ['Wishaw', 'Motherwell', 'Airdrie', 'Bathgate', 'Harthill'],
+  },
+  {
+    slug: 'bathgate',
+    name: 'Bathgate',
+    postcodes: ['EH48'],
+    responseTime: '40 to 60 mins',
+    nearbyAreas: ['Livingston', 'Shotts', 'Falkirk', 'Airdrie', 'Armadale'],
+  },
+  {
+    slug: 'livingston',
+    name: 'Livingston',
+    postcodes: ['EH54'],
+    responseTime: '45 to 65 mins',
+    nearbyAreas: ['Bathgate', 'Edinburgh', 'Shotts', 'Falkirk', 'Broxburn'],
+  },
+  {
+    slug: 'edinburgh',
+    name: 'Edinburgh',
+    postcodes: ['EH1', 'EH2', 'EH3', 'EH4', 'EH6', 'EH7', 'EH8', 'EH11', 'EH12'],
+    responseTime: '55 to 80 mins',
+    nearbyAreas: ['Livingston', 'Bathgate', 'Falkirk', 'Musselburgh', 'Leith'],
+  },
+  {
+    slug: 'perth',
+    name: 'Perth',
+    postcodes: ['PH1', 'PH2'],
+    responseTime: '75 to 110 mins',
+    nearbyAreas: ['Stirling', 'Alloa', 'Dunblane', 'Auchterarder', 'Dundee'],
+  },
+  {
+    slug: 'moffat',
+    name: 'Moffat',
+    postcodes: ['DG10'],
+    responseTime: '60 to 85 mins',
+    nearbyAreas: ['Abington', 'Carlisle', 'Lockerbie', 'Beattock', 'Dumfries'],
+  },
+  {
+    slug: 'carlisle',
+    name: 'Carlisle',
+    postcodes: ['CA1', 'CA2', 'CA3', 'CA4', 'CA5', 'CA6'],
+    responseTime: '90 to 130 mins',
+    nearbyAreas: ['Moffat', 'Abington', 'Gretna', 'Lockerbie', 'Penrith'],
+  },
+  {
+    slug: 'stranraer',
+    name: 'Stranraer',
+    postcodes: ['DG9'],
+    responseTime: '150 to 210 mins',
+    nearbyAreas: ['Cairnryan', 'Newton Stewart', 'Girvan', 'Ayr', 'Dumfries'],
+  },
 ]
 
 export function getAreaBySlug(slug: string): AreaFacts | undefined {

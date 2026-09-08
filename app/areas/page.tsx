@@ -8,11 +8,20 @@ import styles from './page.module.css'
 export const metadata: Metadata = {
   title: 'Areas We Cover | 24/7 Breakdown Recovery Glasgow & Central Scotland | SRL Recovery',
   description:
-    'SRL Recovery covers Glasgow, Lanarkshire and Central Scotland 24/7. Motherwell, Hamilton, Paisley, East Kilbride, Stirling, Falkirk, Greenock and 30+ more areas. Find yours.',
+    'SRL Recovery covers Glasgow, Lanarkshire, Central Scotland and beyond 24/7. Motherwell, Hamilton, Paisley, Edinburgh, Livingston, Stirling, Perth, Carlisle and 40+ more areas. Find yours.',
   alternates: { canonical: 'https://srlrecovery.com/areas' },
 }
 
-const AREAS = [
+type AreaCard = {
+  name: string
+  slug: string
+  postcodes: string[]
+  desc: string
+  /** Set only when the page lives outside /areas, e.g. the nationwide landing page. */
+  href?: string
+}
+
+const AREAS: AreaCard[] = [
   {
     name: 'Bearsden',
     slug: 'bearsden',
@@ -230,10 +239,65 @@ const AREAS = [
     desc: 'A8 corridor coverage between Greenock and the Erskine Bridge, including Kilmacolm and Langbank.',
   },
   {
+    name: 'Shotts',
+    slug: 'shotts',
+    postcodes: ['ML7'],
+    desc: 'Right on our home patch. Shotts, Salsburgh, Harthill and junction 5 of the M8. One of our fastest areas at 25 to 40 minutes.',
+  },
+  {
+    name: 'Bathgate',
+    slug: 'bathgate',
+    postcodes: ['EH48'],
+    desc: 'West Lothian coverage on the M8 J3A to J4. Bathgate, Armadale, Blackburn and Whitburn on the A89 and A801.',
+  },
+  {
+    name: 'Livingston',
+    slug: 'livingston',
+    postcodes: ['EH54'],
+    desc: 'M8 J3 to J3A and the A899 spine. Almondvale, Craigshill, Dedridge and the Houstoun and Kirkton industrial estates.',
+  },
+  {
+    name: 'Edinburgh',
+    slug: 'edinburgh',
+    postcodes: ['EH1', 'EH3', 'EH6', 'EH11', 'EH12'],
+    desc: 'Full city coverage plus the A720 bypass, M8, M9 spur and A1. City centre, Leith, Gorgie, Sighthill and the airport corridor.',
+  },
+  {
+    name: 'Perth',
+    slug: 'perth',
+    postcodes: ['PH1', 'PH2'],
+    desc: 'Gateway to the north. M90, A9 at Broxden, A85 and A93. Perth city, Scone and the Inveralmond estate. Call for a quote.',
+  },
+  {
+    name: 'Moffat',
+    slug: 'moffat',
+    postcodes: ['DG10'],
+    desc: 'M74 J14 to J16 and the Beattock climb. Moffat Services, the A701 and A708. A remote stretch we run regularly.',
+  },
+  {
+    name: 'Carlisle',
+    slug: 'carlisle',
+    postcodes: ['CA1', 'CA2', 'CA3'],
+    desc: 'Cross-border recovery on M6 J42 to J44 and the A74(M). Carlisle, Gretna and Longtown. We bring vehicles both ways.',
+  },
+  {
+    name: 'Stranraer',
+    slug: 'stranraer',
+    postcodes: ['DG9'],
+    desc: 'A75 and A77 coverage down to the Cairnryan ferry terminals. Long-distance run, so call us for a firm price and ETA.',
+  },
+  {
     name: 'Scotland',
     slug: 'scotland',
     postcodes: ['Nationwide'],
     desc: 'Can\'t see your area listed? We cover anywhere in Scotland. Just call and we\'ll quote you an honest price and ETA.',
+  },
+  {
+    name: 'Nationwide (UK)',
+    slug: 'nationwide',
+    href: '/nationwide-recovery',
+    postcodes: ['UK wide'],
+    desc: 'Long distance and cross-border recovery to and from anywhere in the UK. Fixed price agreed before we set off.',
   },
 ]
 
@@ -265,7 +329,7 @@ export default function AreasPage() {
               {AREAS.map((area) => (
                 <Link
                   key={area.slug}
-                  href={`/areas/${area.slug}`}
+                  href={area.href ?? `/areas/${area.slug}`}
                   className={styles.card}
                 >
                   <div className={styles.cardHeader}>

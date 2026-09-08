@@ -31,6 +31,14 @@ export default function Coverage() {
               services across the greater Glasgow area and beyond. If you&apos;re not sure
               we cover your location, just call us. We&apos;ll get to you.
             </p>
+            <p className="section-text">
+              Further afield we run into Edinburgh, West Lothian, Stirling, Perth and
+              down the M74 to Carlisle, plus{' '}
+              <Link href="/nationwide-recovery" className={styles.inlineLink}>
+                long distance recovery anywhere in the UK
+              </Link>
+              .
+            </p>
             <div className={styles.ctaRow}>
               <Link href="/areas" className={`btn ${styles.btn}`}>
                 <span className="material-symbols-rounded">map</span>

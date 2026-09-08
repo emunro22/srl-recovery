@@ -16,6 +16,9 @@ export type AreaInfo = {
   routeBlurb: string
   responseTime: string
   nearbyAreas: string[]
+  /** Administrative area used in schema.org. Defaults to Scotland; cross-border
+   * pages such as Carlisle set their own. */
+  region?: string
   relatedRoutes?: { href: string; title: string; description: string }[]
 }
 
@@ -39,7 +42,7 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
     areaServed: {
       '@type': 'City',
       name: area.name,
-      containedInPlace: { '@type': 'AdministrativeArea', name: 'Scotland' },
+      containedInPlace: { '@type': 'AdministrativeArea', name: area.region ?? 'Scotland' },
     },
     url: `https://srlrecovery.com/areas/${area.slug}`,
     offers: {

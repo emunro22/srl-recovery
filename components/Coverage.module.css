@@ -77,3 +77,10 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.inlineLink {
+  color: var(--pink-light);
+  font-weight: 700;
+}
+
+.inlineLink:hover { text-decoration: underline; }
