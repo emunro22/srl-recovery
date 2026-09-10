@@ -8,7 +8,7 @@ import styles from './page.module.css'
 export const metadata = {
   title: 'Nationwide Vehicle Recovery | UK Wide Breakdown & Transport | SRL Recovery',
   description:
-    'Nationwide vehicle recovery and long distance transport from Scotland to anywhere in the UK. Cross-border breakdowns, dealer and auction moves, ferry ports. Fixed price quoted before we set off. Call 01698 700970.',
+    'Nationwide vehicle recovery and long distance transport from Scotland to anywhere in the UK. Cross-border breakdowns, dealer and trade moves, ferry ports. Fixed price quoted before we set off. Call 01698 700970.',
   alternates: { canonical: 'https://srlrecovery.com/nationwide-recovery' },
 }
 
@@ -17,7 +17,7 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Nationwide Vehicle Recovery and Transport',
   description:
-    'UK wide vehicle recovery and long distance transport. Cross-border breakdown recovery, planned vehicle moves, dealer and auction deliveries and ferry port collections, operating from Central Scotland to anywhere in the UK.',
+    'UK wide vehicle recovery and long distance transport. Cross-border breakdown recovery, planned vehicle moves, dealer and trade deliveries and ferry port collections, operating from Central Scotland to anywhere in the UK.',
   provider: {
     '@type': 'AutoRepair',
     '@id': 'https://srlrecovery.com/#business',
@@ -161,7 +161,7 @@ export default function NationwideRecoveryPage() {
                 Most recovery firms will quote you happily for a ten mile tow and then go quiet when
                 you say the vehicle is in Birmingham. We do the long jobs. A car that has failed its
                 MOT four hundred miles from home, a van recovered off the hard shoulder in Cumbria, a
-                bought-at-auction vehicle that needs collecting in Yorkshire, a customer who has come
+                car bought unseen that needs collecting in Yorkshire, a customer who has come
                 off the Cairnryan ferry and cannot go any further. If it needs to be moved and it is
                 in the UK, ring us and we will price it.
               </p>
@@ -204,7 +204,7 @@ export default function NationwideRecoveryPage() {
                   {[
                     'Emergency breakdown recovery back to your home address, wherever you broke down',
                     'Non-fault and accident recovery, with the claim handled at no upfront cost to you',
-                    'Dealer, trade and auction deliveries and collections across the UK',
+                    'Dealer, trade and fleet deliveries and collections across the UK',
                     'Prestige, classic and low-clearance vehicles moved on the right equipment',
                     'Vans, light commercials and fleet vehicles off-road and back to base',
                     'Ferry port collections at Cairnryan and the Clyde terminals',

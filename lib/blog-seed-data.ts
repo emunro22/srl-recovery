@@ -1094,7 +1094,7 @@ Chrome deserves specific mention. It marks under pressure and it does not polish
 
 ## Non runners, seized cars and barn finds
 
-A large share of classic movements are not breakdowns at all. They are cars that have not run in years being moved to a restorer, to an auction, or between owners.
+A large share of classic movements are not breakdowns at all. They are cars that have not run in years being moved to a restorer, to a storage unit, or between owners.
 
 Those bring their own problems: seized brakes, flat spotted or perished tyres, a gearbox stuck in gear, a handbrake rusted on, or simply no working steering lock key. Wheel skates handle all of it, sliding under wheels that will not turn and letting the car be moved without anything rotating or being dragged.
 
@@ -1102,9 +1102,9 @@ Say so when you book. A car that has sat in a garage since 2009 needs a differen
 
 ## Enclosed and covered transport
 
-For concours cars, cars going to auction, or long distance moves in Scottish weather, covered transport is worth asking about. Road salt, grit and rain on a freshly restored car during a two hundred mile open deck run is a real cost.
+For concours cars, cars going to a show, or long distance moves in Scottish weather, covered transport is worth asking about. Road salt, grit and rain on a freshly restored car during a two hundred mile open deck run is a real cost.
 
-We also handle routine [vehicle transport](https://srlrecovery.com/services/vehicle-transport-glasgow) for cars that are not broken at all, including collection from auctions, dealers and private sellers across the country.
+We also handle routine [vehicle transport](https://srlrecovery.com/services/vehicle-transport-glasgow) for cars that are not broken at all, including collection from dealers and private sellers across the country.
 
 ## Where we work
 
@@ -1125,7 +1125,7 @@ Not with aluminium extension ramps, which reduce the approach angle. Tell us the
 **The car has been off the road for years and the brakes are seized. Can you still move it?**
 Yes, using wheel skates. Nothing needs to turn.
 
-**Do you do covered transport for shows and auctions?**
+**Do you do covered transport for shows and events?**
 Yes, for cars where open deck transport is not appropriate. Ask when you book.`,
   },
   {
@@ -2499,7 +2499,7 @@ Any of these:
 - An automatic locked in park, where the parking pawl will not release because the car has no power or the shift interlock has failed
 - A handbrake seized on, common on cars left standing through a damp winter, where the shoes have rusted to the drums
 - A seized caliper or a brake that has bound solid after overheating
-- No keys, whether lost, locked inside, or a car bought at auction without them
+- No keys, whether lost, locked inside, or a car bought without a set
 - A steering lock engaged with no way to release it
 - A flat tyre off the rim, or a wheel missing entirely
 - A collapsed suspension or a broken driveshaft after an accident
@@ -2537,7 +2537,7 @@ The straps then go over the tyres to rated anchor points, not around suspension 
 
 ## Cars bought without keys
 
-A growing share of this work is not breakdowns at all. It is vehicles bought at auction, from insurance salvage, or from a driveway where someone has died or moved on.
+A growing share of this work is not breakdowns at all. It is vehicles bought unseen, inherited, or lifted from a driveway where someone has died or moved on.
 
 Those cars typically have no keys, no documentation, flat or missing batteries, perished tyres and a handbrake that has been on for years. They may be behind other vehicles, in a garage with a tight door, or on grass that has grown around them.
 
@@ -2612,7 +2612,7 @@ Check yours before deciding. The relevant questions are: does it recover to a de
 
 **When the vehicle is unusual.** [Prestige](https://srlrecovery.com/services/prestige-car-recovery-glasgow), [classic](https://srlrecovery.com/services/classic-car-recovery-glasgow), modified, lowered, electric or non running vehicles need specific equipment, and booking direct lets you confirm what is coming.
 
-**When it is not a breakdown.** Moving a car you have bought, taking a project to a restorer, shifting a non runner off a driveway, transporting to an auction or a track day. No policy covers any of that. See our [vehicle transport](https://srlrecovery.com/services/vehicle-transport-glasgow) service.
+**When it is not a breakdown.** Moving a car you have bought, taking a project to a restorer, shifting a non runner off a driveway, transporting to a show or a track day. No policy covers any of that. See our [vehicle transport](https://srlrecovery.com/services/vehicle-transport-glasgow) service.
 
 **When you already have cover but the wait is unacceptable.** People do this constantly, and there is nothing wrong with it. If your club is quoting three hours and you have somewhere to be, ringing a local operator is a legitimate choice.
 
@@ -2650,7 +2650,7 @@ Per incident it costs more than nothing, but for a driver who breaks down every 
 Yes, and plenty of people do when the queue is too long or the destination is not covered.
 
 **Do you move cars that are not broken down?**
-Yes. Purchases, auctions, restorers, track days and general transport are all routine work.`,
+Yes. Purchases, restorers, track days and general transport are all routine work.`,
   },
   {
     title: 'Car Recovery Near Me and Van Recovery Near Me: What Near Actually Means',
@@ -2740,13 +2740,13 @@ Yes. We do not ask drivers to unload at the roadside.
 Usually, on a busy night, because private jobs are not queued behind contract work.`,
   },
   {
-    title: 'Sports and Supercar Transport in Scotland: Track Days, Dealers and Auctions',
+    title: 'Sports and Supercar Transport in Scotland: Track Days, Dealers and Private Sales',
     slug: 'sports-prestige-and-classic-car-recovery-ajm3',
     category: 'Services',
     published: true,
     excerpt:
-      'Moving a Ferrari, Porsche, McLaren or a restored classic without a breakdown involved. Covered transport, track day logistics, auction collection and dealer delivery across the UK.',
-    content: `Not every job involving a valuable car starts with something going wrong. A large share of the high value work we do is planned transport: a car going to a track day, a purchase being collected from a dealer four hundred miles away, an auction lot needing moved, a restoration going back to its owner.
+      'Moving a Ferrari, Porsche, McLaren or a restored classic without a breakdown involved. Covered transport, track day logistics, private sale collection and dealer delivery across the UK.',
+    content: `Not every job involving a valuable car starts with something going wrong. A large share of the high value work we do is planned transport: a car going to a track day, a purchase being collected from a dealer four hundred miles away, a private sale needing moved, a restoration going back to its owner.
 
 Planned movement has different requirements from roadside recovery, and it is worth understanding what to specify.
 
@@ -2758,7 +2758,7 @@ Mileage on a low mileage car is money. Several hundred miles added to a collecta
 
 Stone chips, road salt and weather do real damage to paint that cost five figures to apply. A winter motorway run puts grit into every seam.
 
-Then there is the practical issue that a lot of these cars are not registered, not insured for the road, not taxed, on trade plates, or not in a state to be driven at all. A restoration that has just been painted has no interior. An auction purchase has no keys. A track car has no MOT.
+Then there is the practical issue that a lot of these cars are not registered, not insured for the road, not taxed, on trade plates, or not in a state to be driven at all. A restoration that has just been painted has no interior. A barn find has no keys. A track car has no MOT.
 
 And a car with a fresh engine build should not be doing a long motorway run as its first outing.
 
@@ -2768,7 +2768,7 @@ The main decision, and it comes down to value and weather.
 
 **Open flatbed** is fine for most performance cars in reasonable conditions over reasonable distances. It is quicker to load, cheaper, and gets into places an enclosed transporter cannot.
 
-**Covered transport** earns its cost for concours cars, freshly restored vehicles, anything going to or from auction where condition is the sale, and any long distance move in Scottish winter. It also matters for cars with soft tops, exposed carbon, or paint finishes that mark.
+**Covered transport** earns its cost for concours cars, freshly restored vehicles, anything going to or from a sale where condition is the sale, and any long distance move in Scottish winter. It also matters for cars with soft tops, exposed carbon, or paint finishes that mark.
 
 If you are unsure, the question is what a full winter motorway run of grit and salt would cost to put right afterwards.
 
@@ -2800,11 +2800,11 @@ Wheels, tyres, tools and spares travelling alongside is normal. So is collecting
 
 Tell us the event, the times and whether the return is confirmed or conditional.
 
-## Auctions, dealers and private purchases
+## Dealers and private purchases
 
 The other regular strand: you have bought a car somewhere else in the country and it needs to get here.
 
-The practical points. Auction lots frequently have no keys, flat batteries and seized brakes, which makes them non runners regardless of condition, so skates need to be on board. Collection windows are tight and storage charges start quickly. Dealers need notice and a named collection contact. Private sellers are often unavailable at the times a transporter is passing.
+The practical points. A car that has been standing frequently has no spare keys, a flat battery and seized brakes, which makes it a non runner regardless of condition, so skates need to be on board. Collection windows are often tight. Dealers need notice and a named collection contact. Private sellers are often unavailable at the times a transporter is passing.
 
 Say what you know when you book: whether it runs, whether it has keys, whether it rolls, where exactly it is standing and what access is like. Those five answers decide whether the job takes forty minutes or four hours.
 
@@ -2823,13 +2823,13 @@ Call 01698 700970 with the car, the two addresses and the dates.
 ## Quick answers
 
 **Do you offer enclosed transport?**
-Yes, for concours, freshly restored and auction cars, and for long distance winter moves where open deck is not appropriate.
+Yes, for concours and freshly restored cars, and for long distance winter moves where open deck is not appropriate.
 
 **My car is extremely low. Will it load?**
 Yes, with aluminium extension ramps or a low approach loader. Tell us the ride height and whether it has a nose lift.
 
-**Can you collect a car with no keys from an auction?**
-Yes. Auction lots are usually non runners and we bring skates as standard.
+**Can you collect a car that has no keys?**
+Yes. A car with no keys is a non runner whatever its condition, and we bring skates as standard.
 
 **Do you cover track days?**
 Yes, including delivery, paddock collection and recovery of a car that does not drive home.`,
@@ -3233,7 +3233,7 @@ The one exception is a pre booked MOT appointment, which permits driving an unta
 That means moving any of the following is a transport job rather than a driving job:
 
 - A car declared SORN that needs to move between addresses
-- A vehicle bought at auction with no tax and no insurance
+- A vehicle bought privately with no tax and no insurance
 - An untaxed car sitting on a street that needs to go
 - A vehicle whose MOT expired while it was off the road
 - An inherited or repossessed car with no current documentation
@@ -3447,13 +3447,13 @@ Five things decide whether this is straightforward or a day lost.
 
 **Does it run and does it roll.** A non runner is fine and entirely routine, but we need to know so skates are on board.
 
-**Are there keys.** Auction and salvage vehicles often have none, which means a locked steering column.
+**Are there keys.** Cars that have stood for years often have none, which means a locked steering column.
 
-**Exactly where it is.** A postcode is not enough for a farm, an industrial unit or an auction site. We need the access point and any gate code or contact.
+**Exactly where it is.** A postcode is not enough for a farm, an industrial unit or a large depot. We need the access point and any gate code or contact.
 
 **What access is like.** Width, height restrictions, overhanging trees, soft ground, whether there is room to turn a transporter.
 
-**Timing constraints.** Auction collection windows, dealer opening hours, storage charges accruing, ferry sailings.
+**Timing constraints.** Dealer opening hours, site access windows, storage charges accruing, ferry sailings.
 
 Getting those right first time is the difference between a smooth collection and a driver standing at a locked gate.
 

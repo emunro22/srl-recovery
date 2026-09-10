@@ -389,7 +389,7 @@ export const services: ServicePageData[] = [
     h1: 'Trade Recovery Accounts',
     subheading: 'A dedicated recovery partner for garages, dealers, and fleet operators',
     introParagraph:
-      "If you're calling a recovery service every week rather than every year, you need more than a one-off callout. You need a partner. SRL Recovery sets up trade accounts for garages, dealerships, auction houses, and fleet operators across Glasgow, with agreed rates, priority dispatch, and invoicing that doesn't waste your admin time.",
+      "If you're calling a recovery service every week rather than every year, you need more than a one-off callout. You need a partner. SRL Recovery sets up trade accounts for garages, dealerships, bodyshops, and fleet operators across Glasgow, with agreed rates, priority dispatch, and invoicing that doesn't waste your admin time.",
     bodySections: [
       {
         heading: 'How a trade account works',
@@ -401,7 +401,7 @@ export const services: ServicePageData[] = [
       {
         heading: 'Who uses a trade account',
         paragraphs: [
-          "Independent garages needing customer vehicles brought in for MOT or repair. Dealerships moving part-exchanges and stock between sites, or collecting from auction. Insurance and claims companies needing a reliable recovery partner. Fleet and van-hire operators covering multiple vehicles. Bodyshops needing accident-damaged cars delivered for repair.",
+          "Independent garages needing customer vehicles brought in for MOT or repair. Dealerships moving part-exchanges and stock between sites. Insurance and claims companies needing a reliable recovery partner. Fleet and van-hire operators covering multiple vehicles. Bodyshops needing accident-damaged cars delivered for repair.",
           "Whatever the volume, we scale to it, from a handful of jobs a month to a standing daily arrangement.",
         ],
       },
@@ -551,7 +551,7 @@ export const services: ServicePageData[] = [
       {
         heading: 'Common classic car jobs',
         paragraphs: [
-          'Breakdown recovery from car shows and rallies, particularly around Knockhill, the Scottish Classic Car Show, and the various local rallies. Transport between owner and restoration shop. Pre-purchase inspection viewings (we collect the car so the buyer doesn\'t risk driving an unknown classic home). End-of-season storage moves. Auction transport.',
+          'Breakdown recovery from car shows and rallies, particularly around Knockhill, the Scottish Classic Car Show, and the various local rallies. Transport between owner and restoration shop. Pre-purchase inspection viewings (we collect the car so the buyer doesn\'t risk driving an unknown classic home). End-of-season storage moves. Delivery to a new owner after a private sale.',
           "Whether you've owned a 1965 E-Type for 30 years or just bought your first MG Midget, your car gets handled like it's irreplaceable.",
         ],
       },
@@ -980,12 +980,12 @@ export const services: ServicePageData[] = [
     h1: 'Vehicle Transport Glasgow',
     subheading: 'Local moves and UK-wide deliveries, fully insured flatbed transport',
     introParagraph:
-      "Not every vehicle move is an emergency. SRL Recovery offers planned vehicle transport across Glasgow and UK-wide for situations where you need a car, van, motorbike, or commercial vehicle moved properly without driving it, buying a car from a distance, moving home, dealership transfers, classic car moves, auction collections.",
+      "Not every vehicle move is an emergency. SRL Recovery offers planned vehicle transport across Glasgow and UK-wide for situations where you need a car, van, motorbike, or commercial vehicle moved properly without driving it, buying a car from a distance, moving home, dealership transfers, classic car moves, restoration projects.",
     bodySections: [
       {
         heading: 'Common transport jobs',
         paragraphs: [
-          "Auction wins (Manheim, BCA, Copart. We collect from any UK auction site). Private sales where the buyer doesn't want to drive an unknown car home. Dealership-to-dealership transfers. House moves where the household car needs to go separately. Restoration projects being moved to or from a workshop. Pre-purchase inspection collections.",
+          "Private sales where the buyer doesn't want to drive an unknown car home. Dealership-to-dealership transfers. House moves where the household car needs to go separately. Restoration projects being moved to or from a workshop. Pre-purchase inspection collections.",
           "If you need a vehicle moved and you don't want to drive it (or you can't), we'll move it.",
         ],
       },
@@ -1001,7 +1001,7 @@ export const services: ServicePageData[] = [
       'Local and UK-wide transport',
       'All vehicle types (cars, vans, bikes, classics, prestige)',
       'Fully insured during transit',
-      'Auction collection (Manheim, BCA, Copart)',
+      'Non-runners collected, wheel skates carried',
       'Custom quote for long-distance moves',
     ],
     faqs: [
@@ -1010,12 +1010,12 @@ export const services: ServicePageData[] = [
         a: "Yes. We can transport anywhere in mainland UK. For long-distance moves we'll give you a custom quote rather than per-mile pricing.",
       },
       {
-        q: 'Can you collect from auctions?',
-        a: 'Yes. We regularly collect from Manheim, BCA, Copart, and other UK auction sites. Provide us the auction reference and collection address.',
-      },
-      {
         q: 'How is the vehicle protected during transport?',
         a: "Flatbed transport with soft straps over wheels. Never towed. Vehicles are inspected before loading and on arrival, and we're fully insured during transit.",
+      },
+      {
+        q: "Can you move a car that doesn't run?",
+        a: "Yes, that's routine. Tell us on the call if it won't roll, has no keys, or has a seized handbrake, and we'll bring wheel skates so it can be loaded without anything turning. There may be a £40 skate fee.",
       },
     ],
     relatedServices: ['classic-car-recovery-glasgow', 'prestige-car-recovery-glasgow', 'car-recovery-prices'],
