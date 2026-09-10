@@ -37,7 +37,7 @@ export default function ServicesIndex() {
             <h1 className={styles.title}>Every Recovery Service You Need</h1>
             <p className={styles.lead}>
               Whatever the situation, whether it is a local breakdown, motorway accident, prestige transport
-              or scrap collection, we have a dedicated page that covers exactly what you need to
+              or trade delivery, we have a dedicated page that covers exactly what you need to
               know. Pick the one that matches your situation.
             </p>
           </div>

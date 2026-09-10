@@ -208,7 +208,6 @@ export default function NationwideRecoveryPage() {
                     'Prestige, classic and low-clearance vehicles moved on the right equipment',
                     'Vans, light commercials and fleet vehicles off-road and back to base',
                     'Ferry port collections at Cairnryan and the Clyde terminals',
-                    'Scrap and end-of-life vehicle collection over distance',
                   ].map((item) => (
                     <li key={item}>
                       <span className="material-symbols-rounded">check_circle</span>

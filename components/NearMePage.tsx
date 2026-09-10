@@ -8,6 +8,13 @@ import type { AreaFacts } from '@/lib/areas-data'
 import { getLinkableNearbyAreas } from '@/lib/areas-data'
 import type { NearMeAngle } from '@/lib/near-me-data'
 import { services } from '@/lib/services-data'
+import AreaCoverageMap from '@/components/AreaCoverageMap'
+import {
+  BASES,
+  averageArrivalLabel,
+  distanceMiles,
+  getAreaCoords,
+} from '@/lib/coverage-geo'
 import styles from './ServicePage.module.css'
 
 export default async function NearMePage({
@@ -23,6 +30,15 @@ export default async function NearMePage({
   const live = await getGoogleReviews()
   const rating = live?.rating ?? 5.0
   const totalReviews = live?.totalReviews ?? 102
+
+  // Same 30-mile boundary map as the area hub page, so a "near me" search lands
+  // on something that shows the caller they are inside the zone.
+  const centre = getAreaCoords(area.slug)
+  const nearestBase = centre
+    ? BASES.reduce((closest, b) =>
+        distanceMiles(centre, b) < distanceMiles(centre, closest) ? b : closest
+      )
+    : null
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -209,6 +225,16 @@ export default async function NearMePage({
             </div>
           </div>
         </section>
+
+        {centre && nearestBase && (
+          <AreaCoverageMap
+            areaName={area.name}
+            centre={centre}
+            arrivalLabel={averageArrivalLabel(area.responseTime)}
+            milesFromBase={Math.round(distanceMiles(centre, nearestBase))}
+            nearestBaseName={nearestBase.name}
+          />
+        )}
 
         <div id="enquire">
           <CallbackForm />

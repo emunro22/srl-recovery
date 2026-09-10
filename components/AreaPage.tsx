@@ -6,6 +6,13 @@ import FAQ from '@/components/FAQ'
 import Testimonials from '@/components/Testimonials'
 import { getGoogleReviews } from '@/lib/googleReviews'
 import { nearMeAngles } from '@/lib/near-me-data'
+import AreaCoverageMap from '@/components/AreaCoverageMap'
+import {
+  BASES,
+  averageArrivalLabel,
+  distanceMiles,
+  getAreaCoords,
+} from '@/lib/coverage-geo'
 import styles from './AreaPage.module.css'
 
 export type AreaInfo = {
@@ -26,6 +33,15 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
   const live = await getGoogleReviews()
   const rating = live?.rating ?? 5.0
   const totalReviews = live?.totalReviews ?? 102
+
+  // The 30-mile coverage map needs a centre point. Region-wide pages such as
+  // /areas/scotland have none, and a 30-mile ring would be meaningless there.
+  const centre = getAreaCoords(area.slug)
+  const nearestBase = centre
+    ? BASES.reduce((closest, b) =>
+        distanceMiles(centre, b) < distanceMiles(centre, closest) ? b : closest
+      )
+    : null
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -186,6 +202,16 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
               </div>
             </div>
           </section>
+        )}
+
+        {centre && nearestBase && (
+          <AreaCoverageMap
+            areaName={area.name}
+            centre={centre}
+            arrivalLabel={averageArrivalLabel(area.responseTime)}
+            milesFromBase={Math.round(distanceMiles(centre, nearestBase))}
+            nearestBaseName={nearestBase.name}
+          />
         )}
 
         <Pricing />

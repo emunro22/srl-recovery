@@ -2555,7 +2555,7 @@ It is often the whole fix. A jump on the battery, or the override, and the car r
 
 SRL Recovery moves non runners across [Glasgow](https://srlrecovery.com/areas/glasgow), [Paisley](https://srlrecovery.com/areas/paisley), [East Kilbride](https://srlrecovery.com/areas/east-kilbride), [Hamilton](https://srlrecovery.com/areas/hamilton), [Motherwell](https://srlrecovery.com/areas/motherwell), [Coatbridge](https://srlrecovery.com/areas/coatbridge), [Clydebank](https://srlrecovery.com/areas/clydebank) and the surrounding towns, twenty four hours a day.
 
-We also handle [scrap car collection](https://srlrecovery.com/services/scrap-car-collection-glasgow), which is almost always non runner work, and [vehicle transport](https://srlrecovery.com/services/vehicle-transport-glasgow) for cars being moved rather than recovered.
+We also handle [vehicle transport](https://srlrecovery.com/services/vehicle-transport-glasgow) for cars being moved rather than recovered, and [trade recovery](https://srlrecovery.com/services/trade-recovery-glasgow) for garages and dealers moving stock.
 
 Call 01698 700970.
 
@@ -3258,7 +3258,7 @@ On private land the position is different and often worse, because the landowner
 
 If a vehicle has been dumped on your land, you cannot simply have it taken away and crushed. The registered keeper retains ownership, and disposing of somebody else's property exposes you to a claim. The process involves attempting to identify the keeper, serving proper notice, allowing a reasonable period for collection, and only then arranging disposal through a licensed operator.
 
-Where the vehicle is genuinely at end of life, [scrap car collection](https://srlrecovery.com/services/scrap-car-collection-glasgow) through an authorised treatment facility gives you a certificate of destruction, which is the document that ends your liability.
+Where the vehicle is genuinely at end of life, disposal through an authorised treatment facility gives you a certificate of destruction, which is the document that ends your liability. That is a job for a licensed ATF rather than a recovery operator, and any ATF will arrange its own collection.
 
 ## Vehicles blocking private land
 
@@ -3284,7 +3284,7 @@ Be cautious of anyone offering to take a vehicle away for cash with no paperwork
 
 ## What we do
 
-SRL Recovery handles statutory and legal removals, untaxed and SORN vehicle movements, non runner collections, abandoned vehicle recovery and end of life collection across Glasgow and Central Scotland, with the insurance, licensing and documentation to go with it.
+SRL Recovery handles statutory and legal removals, untaxed and SORN vehicle movements, non runner collections and abandoned vehicle recovery across Glasgow and Central Scotland, with the insurance, licensing and documentation to go with it. We are a recovery operator, not a scrap dealer or an ATF, so we do not buy vehicles for scrap.
 
 Vehicles that will not roll are handled with wheel skates rather than dragged, which matters for cars that have been standing for years.
 

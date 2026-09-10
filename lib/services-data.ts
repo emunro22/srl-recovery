@@ -1018,59 +1018,7 @@ export const services: ServicePageData[] = [
         a: "Flatbed transport with soft straps over wheels. Never towed. Vehicles are inspected before loading and on arrival, and we're fully insured during transit.",
       },
     ],
-    relatedServices: ['classic-car-recovery-glasgow', 'prestige-car-recovery-glasgow', 'scrap-car-collection-glasgow'],
-  },
-
-  {
-    slug: 'scrap-car-collection-glasgow',
-    serviceCategory: 'addon',
-    title: 'Scrap Car Collection Glasgow | Free Pickup | SRL Recovery',
-    metaDescription:
-      'Scrap car collection across Glasgow. We collect end-of-life vehicles and deliver to authorised treatment facilities. Call SRL Recovery 01698 700970.',
-    h1: 'Scrap Car Collection Glasgow',
-    subheading: 'Got a car past its useful life? We collect and deliver to an ATF',
-    introParagraph:
-      "End-of-life vehicles can't just be parked up indefinitely. They need to go to an Authorised Treatment Facility (ATF) where they're properly de-polluted and dismantled. SRL Recovery handles scrap car collection across Glasgow: we collect the vehicle from your driveway, street, or garage and deliver it to an ATF on your behalf.",
-    bodySections: [
-      {
-        heading: "What we collect",
-        paragraphs: [
-          "Cars, vans, and light commercials that have reached end of life, failed MOTs that aren't worth fixing, accident write-offs, very high mileage cars with terminal issues, abandoned vehicles you've inherited, project cars that never got finished.",
-          "The vehicle doesn't need to be running. It doesn't need to have wheels (though if it doesn't, mention it on the call so we send the right truck with a skate). It does need to have a V5C logbook, without one, transferring ownership to the ATF is complicated.",
-        ],
-      },
-      {
-        heading: "The paperwork side",
-        paragraphs: [
-          "When you scrap a vehicle, you need to inform DVLA. The ATF will give you a Certificate of Destruction (CoD) which is your legal proof that the vehicle has been destroyed. We can hand you the paperwork or arrange for it to be sent on.",
-          "You also need to send your V5C logbook section 9 (the 'sell, transfer or part-exchange your vehicle' bit) to DVLA. Easy 5-minute job. We'll remind you on the call.",
-        ],
-      },
-    ],
-    pricingNote:
-      "Collection costs are charged at our standard local rate, from £60 + £1.50/mile. If your scrap car has resale value at the ATF, this can sometimes offset the collection cost. We'll discuss specifics on the call.",
-    features: [
-      'Collection from anywhere in Glasgow area',
-      'No need for the car to be running',
-      'Delivery to Authorised Treatment Facility',
-      'Help with DVLA paperwork',
-      'Certificate of Destruction provided',
-    ],
-    faqs: [
-      {
-        q: "Do you pay for scrap cars?",
-        a: "We're a recovery service, not a scrap dealer, but the ATF we deliver to may pay you for the vehicle's salvage/metal value. This depends entirely on the vehicle and current scrap metal prices. We'll discuss specifics on the call.",
-      },
-      {
-        q: 'Do I need a V5C to scrap the car?',
-        a: "Yes, without a V5C logbook, transferring ownership to the ATF gets complicated and may not be possible. If you've lost it, you can apply for a replacement from DVLA before we collect.",
-      },
-      {
-        q: 'What if the car has no wheels or is immobilised?',
-        a: "No problem, tell us on the call and we'll bring a skate so we can load the car regardless. There may be a £40 skate fee added.",
-      },
-    ],
-    relatedServices: ['vehicle-transport-glasgow', 'car-recovery-near-me', 'car-recovery-prices'],
+    relatedServices: ['classic-car-recovery-glasgow', 'prestige-car-recovery-glasgow', 'car-recovery-prices'],
   },
 
   // === CLUSTER 5: PRICING ===
