@@ -3,6 +3,9 @@ export type GoogleReview = {
   rating: number
   text: string
   relativeTime: string
+  /** The reviewer's Google profile picture. Absent on the odd account that has
+   *  never set one, so callers still need an initials fallback. */
+  photoUrl: string | null
 }
 
 export type GoogleReviewsData = {
@@ -33,11 +36,17 @@ export async function getGoogleReviews(): Promise<GoogleReviewsData | null> {
       rating: number
       text: string
       relative_time_description: string
+      profile_photo_url?: string
     }) => ({
       author: r.author_name,
       rating: r.rating,
       text: r.text,
       relativeTime: r.relative_time_description,
+      // Google serves these at whatever size the caller asks for via the =s
+      // suffix. Bump it to 128 so the 44px avatar stays sharp on retina.
+      photoUrl: r.profile_photo_url
+        ? r.profile_photo_url.replace(/=s\d+/, '=s128')
+        : null,
     }))
 
     return {

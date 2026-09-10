@@ -75,30 +75,47 @@
 
 .googleStars .material-symbols-rounded { font-size: 1.6rem; }
 
+/* No edge mask: the cards run to the container edge and cut cleanly there. */
 .marquee {
   overflow: hidden;
   width: 100%;
-  -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
 }
 
 .track {
   display: flex;
   gap: 2.4rem;
   width: max-content;
-  animation: marquee 16s ease-in-out infinite alternate;
+  /* Set per render from the card count so five live reviews and nine fallback
+     ones scroll at the same speed. */
+  animation: marquee var(--run-seconds, 35s) linear infinite;
 }
 
-.track:hover {
+.run {
+  display: flex;
+  gap: 2.4rem;
+  flex: 0 0 auto;
+}
+
+.track:hover,
+.track:focus-within {
   animation-play-state: paused;
 }
 
+/* The track is two runs plus one gap between them. Half the track is one run
+   plus half a gap, so shifting by 50% + half a gap lands the second run exactly
+   where the first started and the loop is seamless. */
 @keyframes marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(calc(-100% + 100vw - 4rem)); }
+  to { transform: translateX(calc(-50% - 1.2rem)); }
 }
 
+/* With the animation off, the cards past the third are unreachable, so hand
+   scrolling takes over. */
 @media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+  }
+
   .track {
     animation: none;
   }
@@ -176,6 +193,8 @@
 }
 
 .avatar {
+  position: relative;
+  overflow: hidden;
   width: 4.4rem;
   height: 4.4rem;
   border-radius: 50%;
@@ -212,4 +231,14 @@
 .authorMeta span {
   font-size: 1.2rem;
   color: var(--gray-light);
+}
+/* Sits on top of the initials, so a Google photo that fails to load simply
+   reveals them again rather than leaving a broken image. */
+.avatarPhoto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }

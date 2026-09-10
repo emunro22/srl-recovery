@@ -8,10 +8,10 @@ import { getGoogleReviews } from '@/lib/googleReviews'
 import { nearMeAngles } from '@/lib/near-me-data'
 import AreaCoverageMap from '@/components/AreaCoverageMap'
 import {
-  BASES,
   averageArrivalLabel,
-  distanceMiles,
   getAreaCoords,
+  milesFromHQ,
+  zoneFor,
 } from '@/lib/coverage-geo'
 import styles from './AreaPage.module.css'
 
@@ -34,14 +34,10 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
   const rating = live?.rating ?? 5.0
   const totalReviews = live?.totalReviews ?? 102
 
-  // The 30-mile coverage map needs a centre point. Region-wide pages such as
-  // /areas/scotland have none, and a 30-mile ring would be meaningless there.
+  // The map pins this town against the two rings drawn from G72 7SH.
+  // Region-wide pages such as /areas/scotland have no single point to pin.
   const centre = getAreaCoords(area.slug)
-  const nearestBase = centre
-    ? BASES.reduce((closest, b) =>
-        distanceMiles(centre, b) < distanceMiles(centre, closest) ? b : closest
-      )
-    : null
+  const zone = centre ? zoneFor(centre) : null
 
   const serviceSchema = {
     '@context': 'https://schema.org',
@@ -204,13 +200,15 @@ export default async function AreaPage({ area }: { area: AreaInfo }) {
           </section>
         )}
 
-        {centre && nearestBase && (
+        {centre && zone && (
           <AreaCoverageMap
             areaName={area.name}
             centre={centre}
-            arrivalLabel={averageArrivalLabel(area.responseTime)}
-            milesFromBase={Math.round(distanceMiles(centre, nearestBase))}
-            nearestBaseName={nearestBase.name}
+            arrivalLabel={
+              zone === 'green' ? 'About 30 mins' : averageArrivalLabel(area.responseTime)
+            }
+            milesFromHQ={Math.round(milesFromHQ(centre))}
+            zone={zone}
           />
         )}
 

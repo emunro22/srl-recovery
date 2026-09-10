@@ -1,6 +1,13 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import {
+  GREEN_RADIUS_MILES,
+  HQ,
+  MILES_TO_METRES,
+  YELLOW_RADIUS_MILES,
+  ZONE_COLOURS,
+} from '@/lib/coverage-geo'
 import styles from './CoverageMap.module.css'
 
 // Town markers across the SRL Recovery service area
@@ -62,24 +69,23 @@ export default function CoverageMap() {
         maxZoom: 18,
       }).addTo(map)
 
-      // Outer ring, extended coverage zone, centred on G72 7SH (Cambuslang)
-      L.circle([55.8217724, -4.1395602], {
-        radius: 96561, // 60 miles in metres
-        color: '#cc1493',
-        fillColor: '#cc1493',
-        fillOpacity: 0.03,
-        weight: 1.5,
-        dashArray: '10 8',
+      // Yellow zone first so the green core draws on top of it. Both are centred
+      // on G72 7SH (Cambuslang), the same point the area pages measure from.
+      L.circle([HQ.lat, HQ.lng], {
+        radius: YELLOW_RADIUS_MILES * MILES_TO_METRES,
+        color: ZONE_COLOURS.yellow,
+        fillColor: ZONE_COLOURS.yellow,
+        fillOpacity: 0.1,
+        weight: 2,
+        dashArray: '8 7',
       }).addTo(map)
 
-      // Inner ring, 30 mile local core area, centred on G72 7SH (Cambuslang)
-      L.circle([55.8217724, -4.1395602], {
-        radius: 48280, // 30 miles in metres
-        color: '#cc1493',
-        fillColor: '#cc1493',
-        fillOpacity: 0.08,
-        weight: 2,
-        dashArray: '6 6',
+      L.circle([HQ.lat, HQ.lng], {
+        radius: GREEN_RADIUS_MILES * MILES_TO_METRES,
+        color: ZONE_COLOURS.green,
+        fillColor: ZONE_COLOURS.green,
+        fillOpacity: 0.18,
+        weight: 2.5,
       }).addTo(map)
 
       // Marker icon factory (using emoji + div icon so no PNG dependency)
@@ -122,10 +128,12 @@ export default function CoverageMap() {
           <p className="section-subtitle">Coverage Area</p>
           <h2 className={`section-title ${styles.title}`}>Where We Operate</h2>
           <p className={`section-text ${styles.lead}`}>
-            With bases in Motherwell and Cambuslang (G72 7SH), our core 30-mile service area
-            covers Greater Glasgow and Lanarkshire with a fast, guaranteed arrival time. We
-            also run a 60-mile extended zone reaching Loch Lomond and Argyll &amp; Bute. Beyond
-            that, we cover anywhere in Scotland, just call for a quote.
+            Everything is measured from our Cambuslang yard at G72 7SH. The green zone is
+            30 miles out, covering Greater Glasgow and Lanarkshire, and it is where our
+            30-minute average arrival comes from. The yellow zone runs to 60 miles, out
+            past Loch Lomond, Edinburgh and Argyll &amp; Bute: still routine work, just a
+            longer run. Beyond that we cover anywhere in Scotland and the rest of the UK,
+            just call for a quote.
           </p>
         </div>
 
@@ -139,15 +147,16 @@ export default function CoverageMap() {
               <span className={styles.legendDot} /> Area we cover
             </div>
             <div className={styles.legendRow}>
-              <span className={styles.legendCircle} /> 30-mile core area
+              <span className={styles.legendGreen} /> 30-mile green zone, fastest response
             </div>
             <div className={styles.legendRow}>
-              <span className={styles.legendCircleOuter} /> 60-mile extended zone
+              <span className={styles.legendYellow} /> 60-mile yellow zone
             </div>
           </div>
         </div>
         <p className={styles.beyondNote}>
-          Outside the 60-mile zone? We cover anywhere in Scotland, just call for a quote.
+          Outside the yellow zone? We operate everywhere. Anywhere in Scotland and across
+          the UK, just call for a quote.
         </p>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import styles from './Testimonials.module.css'
 import { getGoogleReviews } from '@/lib/googleReviews'
 
@@ -58,7 +59,12 @@ function initials(name: string) {
   return name.split(' ').map((w) => w[0]).slice(0, 2).join('')
 }
 
-type Testimonial = { quote: string; author: string; stars: number }
+type Testimonial = {
+  quote: string
+  author: string
+  stars: number
+  photoUrl?: string | null
+}
 
 function TestimonialCard({ t }: { t: Testimonial }) {
   return (
@@ -70,7 +76,24 @@ function TestimonialCard({ t }: { t: Testimonial }) {
       </div>
       <blockquote className={styles.quote}>&ldquo;{t.quote}&rdquo;</blockquote>
       <div className={styles.author}>
-        <div className={styles.avatar}>{initials(t.author)}</div>
+        {/* Initials sit underneath the photo rather than instead of it, so a
+            Google avatar that fails to load degrades to them on its own. */}
+        <div className={styles.avatar}>
+          {initials(t.author)}
+          {t.photoUrl && (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={t.photoUrl}
+              alt=""
+              width={44}
+              height={44}
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer"
+              className={styles.avatarPhoto}
+            />
+          )}
+        </div>
         <div className={styles.authorMeta}>
           <strong>{t.author}</strong>
           <span>Verified Google Review</span>
@@ -83,8 +106,13 @@ function TestimonialCard({ t }: { t: Testimonial }) {
 export default async function Testimonials() {
   const live = await getGoogleReviews()
 
-  const displayTestimonials = live && live.reviews.length > 0
-    ? live.reviews.map((r) => ({ quote: r.text, author: r.author, stars: r.rating }))
+  const displayTestimonials: Testimonial[] = live && live.reviews.length > 0
+    ? live.reviews.map((r) => ({
+        quote: r.text,
+        author: r.author,
+        stars: r.rating,
+        photoUrl: r.photoUrl,
+      }))
     : fallbackTestimonials
   const rating = live?.rating ?? 5.0
   const totalReviews = live?.totalReviews ?? 102
@@ -107,10 +135,21 @@ export default async function Testimonials() {
           <a href="/reviews" className={styles.seeAll}>See all reviews →</a>
         </div>
 
+        {/* The track holds two identical runs of the cards and shifts by exactly
+            one run, so the scroll loops with no visible seam and no edge fade.
+            Duration scales with the card count to keep the speed constant
+            whether Google returns five reviews or we fall back to nine. */}
         <div className={styles.marquee}>
-          <div className={styles.track}>
-            {displayTestimonials.map((t, i) => (
-              <TestimonialCard key={i} t={t} />
+          <div
+            className={styles.track}
+            style={{ '--run-seconds': `${displayTestimonials.length * 7}s` } as CSSProperties}
+          >
+            {[0, 1].map((run) => (
+              <div className={styles.run} key={run} aria-hidden={run === 1 || undefined}>
+                {displayTestimonials.map((t, i) => (
+                  <TestimonialCard key={i} t={t} />
+                ))}
+              </div>
             ))}
           </div>
         </div>

@@ -65,21 +65,22 @@
 .legendDot { background: #1f93f0; }
 .legendDotPrimary { background: var(--gradient); }
 
-.legendCircle {
+.legendGreen,
+.legendYellow {
   width: 1.4rem;
   height: 1.4rem;
   border-radius: 50%;
-  border: 2px dashed #cc1493;
   flex-shrink: 0;
 }
 
-.legendCircleOuter {
-  width: 1.4rem;
-  height: 1.4rem;
-  border-radius: 50%;
-  border: 1.5px dashed #cc1493;
-  opacity: 0.5;
-  flex-shrink: 0;
+.legendGreen {
+  border: 2px solid #1fbf6b;
+  background: hsla(153, 72%, 44%, 0.28);
+}
+
+.legendYellow {
+  border: 2px dashed #e8a704;
+  background: hsla(43, 96%, 46%, 0.18);
 }
 
 .beyondNote {

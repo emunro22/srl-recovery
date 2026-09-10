@@ -3,39 +3,36 @@
 import { useEffect, useRef, useState } from 'react'
 import {
   BASES,
-  CORE_RADIUS_MILES,
+  GREEN_RADIUS_MILES,
+  HQ,
   MILES_TO_METRES,
-  distanceMiles,
+  YELLOW_RADIUS_MILES,
+  ZONE_COLOURS,
   type LatLng,
+  type Zone,
 } from '@/lib/coverage-geo'
 import styles from './AreaCoverageMap.module.css'
 
 type Props = {
   areaName: string
+  /** Where this town sits, so it can be pinned against the rings. */
   centre: LatLng
   /** Arrival figure shown beside the map, e.g. "About 30 mins". */
   arrivalLabel: string
-  /** Straight-line distance from the nearest yard, already rounded. */
-  milesFromBase: number
-  nearestBaseName: string
+  /** Straight-line distance from G72 7SH, already rounded. */
+  milesFromHQ: number
+  zone: Zone
 }
-
-/** Beyond this the yards are too far away to plot without shrinking the ring to
- *  nothing, so Stranraer and Carlisle get the ring on its own. */
-const BASE_PIN_LIMIT_MILES = CORE_RADIUS_MILES * 1.5
 
 export default function AreaCoverageMap({
   areaName,
   centre,
   arrivalLabel,
-  milesFromBase,
-  nearestBaseName,
+  milesFromHQ,
+  zone,
 }: Props) {
   const mapRef = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
-
-  const showBases = milesFromBase <= BASE_PIN_LIMIT_MILES
-  const atBase = milesFromBase < 2
 
   // Only pull Leaflet in once the map is close to the viewport. Area pages are
   // read top-down for the phone number, so most visits never scroll this far.
@@ -72,13 +69,13 @@ export default function AreaCoverageMap({
       if (cancelled || !mapRef.current) return
 
       const instance = L.map(mapRef.current, {
-        center: [centre.lat, centre.lng],
-        zoom: 9,
+        center: [HQ.lat, HQ.lng],
+        zoom: 8,
         scrollWheelZoom: false,
         zoomControl: true,
         attributionControl: true,
-        // Fractional zoom so fitBounds sizes the ring to the frame instead of
-        // rounding down a whole level and leaving it small in the middle.
+        // Fractional zoom so fitBounds sizes the rings to the frame instead of
+        // rounding down a whole level and leaving them small in the middle.
         zoomSnap: 0,
       })
       map = instance
@@ -88,14 +85,22 @@ export default function AreaCoverageMap({
         maxZoom: 18,
       }).addTo(instance)
 
-      // The 30-mile boundary, centred on this town rather than on the yard.
-      const ring = L.circle([centre.lat, centre.lng], {
-        radius: CORE_RADIUS_MILES * MILES_TO_METRES,
-        color: '#cc1493',
-        fillColor: '#cc1493',
-        fillOpacity: 0.08,
+      // Yellow first so the green core draws on top of it.
+      const yellowRing = L.circle([HQ.lat, HQ.lng], {
+        radius: YELLOW_RADIUS_MILES * MILES_TO_METRES,
+        color: ZONE_COLOURS.yellow,
+        fillColor: ZONE_COLOURS.yellow,
+        fillOpacity: 0.1,
         weight: 2,
-        dashArray: '6 6',
+        dashArray: '8 7',
+      }).addTo(instance)
+
+      L.circle([HQ.lat, HQ.lng], {
+        radius: GREEN_RADIUS_MILES * MILES_TO_METRES,
+        color: ZONE_COLOURS.green,
+        fillColor: ZONE_COLOURS.green,
+        fillOpacity: 0.18,
+        weight: 2.5,
       }).addTo(instance)
 
       function pin(cls: string, glyph: string) {
@@ -108,17 +113,7 @@ export default function AreaCoverageMap({
         })
       }
 
-      L.marker([centre.lat, centre.lng], { icon: pin(styles.pinArea, '📍') })
-        .addTo(instance)
-        .bindPopup(
-          `<div class="${styles.popup}"><strong>${areaName}</strong><span>Centre of the 30-mile boundary</span></div>`
-        )
-
-      const plottedBases = showBases
-        ? BASES.filter((b) => distanceMiles(centre, b) <= BASE_PIN_LIMIT_MILES)
-        : []
-
-      plottedBases.forEach((b) => {
+      BASES.forEach((b) => {
         L.marker([b.lat, b.lng], { icon: pin(styles.pinBase, '🚚') })
           .addTo(instance)
           .bindPopup(
@@ -126,8 +121,18 @@ export default function AreaCoverageMap({
           )
       })
 
-      const bounds = ring.getBounds()
-      plottedBases.forEach((b) => bounds.extend([b.lat, b.lng]))
+      // The town itself goes on last so it sits above the yard pins when a page
+      // is about somewhere within a few miles of one.
+      L.marker([centre.lat, centre.lng], { icon: pin(styles.pinArea, '📍') })
+        .addTo(instance)
+        .bindPopup(
+          `<div class="${styles.popup}"><strong>${areaName}</strong><span>${milesFromHQ} miles from G72 7SH</span></div>`
+        )
+
+      // Always show the whole yellow zone, and stretch to the town when it sits
+      // outside that (Stranraer, Carlisle).
+      const bounds = yellowRing.getBounds()
+      bounds.extend([centre.lat, centre.lng])
       instance.fitBounds(bounds, { padding: [24, 24] })
     })()
 
@@ -135,7 +140,14 @@ export default function AreaCoverageMap({
       cancelled = true
       map?.remove()
     }
-  }, [visible, centre.lat, centre.lng, areaName, showBases])
+  }, [visible, centre.lat, centre.lng, areaName, milesFromHQ])
+
+  const blurb =
+    zone === 'green'
+      ? `${areaName} is ${milesFromHQ} miles from our Cambuslang yard at G72 7SH, which puts it inside the green zone: our fastest response area and where the 30-minute average comes from.`
+      : zone === 'yellow'
+        ? `${areaName} is ${milesFromHQ} miles from our Cambuslang yard at G72 7SH, in the yellow zone. Still routine work for us, just a longer run than the green core, so we quote the drive honestly on the phone.`
+        : `${areaName} is ${milesFromHQ} miles from our Cambuslang yard at G72 7SH, outside both rings. We still cover it, and do regularly, on a price quoted before we set off.`
 
   return (
     <section className={`section ${styles.section}`} id="coverage">
@@ -143,12 +155,8 @@ export default function AreaCoverageMap({
         <div className={styles.header}>
           <h2 className="section-title">{areaName} Coverage Map</h2>
           <p className="section-text">
-            The ring below is our 30-mile boundary around {areaName}.{' '}
-            {atBase
-              ? `Our ${nearestBaseName} yard sits inside it, so ${areaName} jobs are on our doorstep.`
-              : `Our nearest yard is ${milesFromBase} miles away in ${nearestBaseName}.`}{' '}
-            Anything inside the ring is routine work for us, day or night. Outside it we
-            still come out, just call for a quote first.
+            {blurb} Outside the yellow ring we still travel anywhere in Scotland and
+            across the UK.
           </p>
         </div>
 
@@ -156,27 +164,28 @@ export default function AreaCoverageMap({
           <div
             ref={mapRef}
             className={styles.map}
-            aria-label={`Map showing the 30-mile recovery coverage boundary around ${areaName}`}
+            aria-label={`Map of the 30-mile and 60-mile recovery coverage zones around G72 7SH, showing where ${areaName} sits`}
           />
           <div className={styles.legend}>
             <div className={styles.legendRow}>
-              <span className={styles.legendCircle} /> 30-mile boundary
+              <span className={styles.legendGreen} /> 30-mile green zone, fastest response
+            </div>
+            <div className={styles.legendRow}>
+              <span className={styles.legendYellow} /> 60-mile yellow zone
             </div>
             <div className={styles.legendRow}>
               <span className={styles.legendDotArea} /> {areaName}
             </div>
-            {showBases && (
-              <div className={styles.legendRow}>
-                <span className={styles.legendDotBase} /> Our yards
-              </div>
-            )}
+            <div className={styles.legendRow}>
+              <span className={styles.legendDotBase} /> Our yards
+            </div>
           </div>
         </div>
 
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <strong>30 miles</strong>
-            <span>Core boundary around {areaName}</span>
+            <strong>{milesFromHQ} miles</strong>
+            <span>From our G72 7SH yard</span>
           </div>
           <div className={styles.stat}>
             <strong>{arrivalLabel}</strong>

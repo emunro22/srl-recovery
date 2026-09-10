@@ -1,27 +1,43 @@
-// Coordinates and distance helpers behind the per-area coverage maps.
+// Coordinates and zone helpers behind the coverage maps.
 //
-// Every /areas/{slug} hub page draws a 30-mile boundary centred on its own town
-// so a visitor can see at a glance whether they sit inside the core zone. The
-// arrival figure shown alongside it is derived from the distance to the nearest
-// base, so outlying pages (Stranraer, Carlisle) never claim a 30-minute arrival.
+// Both rings are drawn from the Cambuslang yard at G72 7SH, not from the town
+// the page is about. A 30-mile ring around Stranraer would say nothing about how
+// fast we get there; a 30-mile ring around G72 is exactly the promise being made
+// (~30 minute average arrival), and the town's own pin shows which zone it lands
+// in. The outer 60-mile ring is the slower-but-still-routine zone, and beyond it
+// we still travel, just on a quoted price.
 
 export type LatLng = { lat: number; lng: number }
 
-/** The two yards we dispatch from. Cambuslang (G72 7SH) is the ring centre used
- *  by the homepage coverage map. */
+/** The two yards we dispatch from. Cambuslang (G72 7SH) is the centre of both
+ *  coverage rings across the whole site. */
 export const BASES: { name: string; postcode: string; lat: number; lng: number }[] = [
   { name: 'Motherwell', postcode: 'ML1', lat: 55.7916, lng: -3.9852 },
   { name: 'Cambuslang', postcode: 'G72 7SH', lat: 55.8217724, lng: -4.1395602 },
 ]
 
-/** Core service radius, in miles. Inside this ring we quote the ~30 minute
- *  average arrival; outside it the page's own responseTime is used instead. */
-export const CORE_RADIUS_MILES = 30
+/** G72 7SH: the point both rings are measured from. */
+export const HQ: LatLng = { lat: 55.8217724, lng: -4.1395602 }
+
+/** Green zone: inside this we quote the ~30 minute average arrival. */
+export const GREEN_RADIUS_MILES = 30
+
+/** Yellow zone: still routine work, just a longer run. */
+export const YELLOW_RADIUS_MILES = 60
+
+export type Zone = 'green' | 'yellow' | 'beyond'
+
+/** Ring colours, shared by the maps and their legends so the two never drift. */
+export const ZONE_COLOURS: Record<'green' | 'yellow', string> = {
+  green: '#1fbf6b',
+  yellow: '#e8a704',
+}
 
 export const MILES_TO_METRES = 1609.344
 
-/** Centre point for each /areas/{slug} page. `scotland` is deliberately absent:
- *  a 30-mile ring makes no sense on the nationwide page. */
+/** Pin position for each /areas/{slug} page, used to show where the town sits
+ *  relative to the two rings. `scotland` is deliberately absent: the nationwide
+ *  page has no single point to pin. */
 export const AREA_COORDS: Record<string, LatLng> = {
   abington: { lat: 55.4923, lng: -3.6928 },
   airdrie: { lat: 55.8657, lng: -3.98 },
@@ -91,9 +107,17 @@ export function milesFromNearestBase(point: LatLng): number {
   return Math.min(...BASES.map((b) => distanceMiles(point, b)))
 }
 
-/** True when the town sits inside the 30-mile core zone from either base. */
-export function isInCoreZone(point: LatLng): boolean {
-  return milesFromNearestBase(point) <= CORE_RADIUS_MILES
+/** Straight-line miles from G72 7SH, which is what the rings are drawn against. */
+export function milesFromHQ(point: LatLng): number {
+  return distanceMiles(HQ, point)
+}
+
+/** Which coverage ring a point falls in. */
+export function zoneFor(point: LatLng): Zone {
+  const miles = milesFromHQ(point)
+  if (miles <= GREEN_RADIUS_MILES) return 'green'
+  if (miles <= YELLOW_RADIUS_MILES) return 'yellow'
+  return 'beyond'
 }
 
 /** Turns a page's "20 to 40 mins" response window into the single average
