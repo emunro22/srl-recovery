@@ -50,7 +50,10 @@ export default function PrivacyPage() {
                 </li>
                 <li>
                   <strong>Website usage data</strong>: we use privacy-friendly, cookieless analytics to see
-                  which pages are visited and how the site performs. This does not identify you personally.
+                  which pages are visited and how the site performs. This does not identify you personally and
+                  runs for every visitor. If you accept analytics cookies via our cookie banner, we additionally
+                  use Google Analytics to understand site usage in more detail; it sets cookies, and only loads
+                  after you accept, never before.
                 </li>
               </ul>
 
